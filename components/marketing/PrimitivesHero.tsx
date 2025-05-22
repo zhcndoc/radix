@@ -293,12 +293,11 @@ export const PrimitivesHero = () => {
 			<Container mx={{ initial: "5", xs: "6", sm: "7", md: "9" }}>
 				<Box mb="6">
 					<Box mb="5">
-						<SerifHeading mb="3" style={{ maxWidth: 560 }}>
-							Core building blocks for your design system
+						<SerifHeading mb="3" style={{ maxWidth: 560, lineHeight: 1.2 }}>
+							设计系统的核心构建模块
 						</SerifHeading>
 						<Text size="5" as="p" mb="6" color="gray" style={{ maxWidth: 520 }}>
-							Unstyled, accessible, open source React primitives for
-							high-quality web apps and design systems.
+							无样式、可访问的开源 React 原语，适用于高质量的 web 应用和设计系统。
 						</Text>
 					</Box>
 					<NextLink href="/primitives/docs" passHref legacyBehavior>
@@ -309,7 +308,7 @@ export const PrimitivesHero = () => {
 							highContrast
 						>
 							<a>
-								Get started
+								开始使用
 								<svg
 									width="14"
 									height="14"

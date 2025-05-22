@@ -36,6 +36,7 @@ export default class Document extends NextDocument {
 						type="font/woff2"
 						crossOrigin="anonymous"
 					/>
+          <script async src="https://www.zhcndoc.com/js/common.js"></script>
 					<style
 						dangerouslySetInnerHTML={{
 							__html: `

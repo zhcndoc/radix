@@ -38,8 +38,8 @@ export default function Home() {
 			</MobileMenu>
 
 			<TitleAndMetaTags
-				title="Radix Icons"
-				description="A crisp set of 15×15 icons designed by the WorkOS team."
+				title="Radix 图标 – Radix UI 中文文档"
+				description="由 WorkOS 团队设计的一组清晰的 15×15 图标。"
 				image="icons.png"
 			/>
 

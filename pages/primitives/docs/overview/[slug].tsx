@@ -23,7 +23,7 @@ export default function OverviewDoc({ frontmatter, code }: Doc) {
 			</div>
 
 			<TitleAndMetaTags
-				title={`${frontmatter.metaTitle} – Radix Primitives`}
+				title={`${frontmatter.metaTitle} – Radix Primitives – Radix UI 中文文档`}
 				description={frontmatter.metaDescription}
 				image="primitives.png"
 			/>

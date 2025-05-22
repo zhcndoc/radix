@@ -13,7 +13,7 @@ export const ThemesHeader = (props: HeaderProps) => {
 				href="/themes/docs/overview/getting-started"
 				highContrast={router.pathname.includes("/themes/docs")}
 			>
-				Documentation
+				文档
 			</Link>
 			<Link
 				size="2"
@@ -21,7 +21,7 @@ export const ThemesHeader = (props: HeaderProps) => {
 				href="/themes/playground"
 				highContrast={router.pathname.includes("/themes/playground")}
 			>
-				Playground
+				演练场
 			</Link>
 		</Header>
 	);

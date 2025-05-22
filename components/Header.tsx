@@ -121,25 +121,25 @@ export const Header = ({ children, gitHubLink, ghost }: HeaderProps) => {
 									router.pathname.startsWith("/themes")
 								}
 							>
-								Themes
+								主题
 							</HeaderProductLink>
 							<HeaderProductLink
 								href="/primitives"
 								active={router.pathname.startsWith("/primitives")}
 							>
-								Primitives
+								原语
 							</HeaderProductLink>
 							<HeaderProductLink
 								href="/icons"
 								active={router.pathname.startsWith("/icons")}
 							>
-								Icons
+								图标
 							</HeaderProductLink>
 							<HeaderProductLink
 								href="/colors"
 								active={router.pathname.startsWith("/colors")}
 							>
-								Colors
+								颜色
 							</HeaderProductLink>
 						</div>
 
@@ -161,7 +161,16 @@ export const Header = ({ children, gitHubLink, ghost }: HeaderProps) => {
 								href="/blog"
 								highContrast={router.pathname.includes("/blog")}
 							>
-								Blog
+								博客
+							</Link>
+
+              <Link
+								size="2"
+								color="gray"
+								href="https://www.zhcndoc.com"
+                target="_blank"
+							>
+								简中文档
 							</Link>
 
 							{gitHubLink && (

@@ -13,7 +13,7 @@ export const PrimitivesHeader = (props: HeaderProps) => {
 				href="/primitives/docs"
 				highContrast={router.pathname.includes("/primitives/docs")}
 			>
-				Documentation
+				文档
 			</Link>
 			<Link
 				size="2"
@@ -21,7 +21,7 @@ export const PrimitivesHeader = (props: HeaderProps) => {
 				href="/primitives/case-studies"
 				highContrast={router.pathname.includes("/primitives/case-studies")}
 			>
-				Case studies
+				案例研究
 			</Link>
 		</Header>
 	);

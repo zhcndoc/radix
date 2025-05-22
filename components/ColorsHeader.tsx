@@ -13,7 +13,7 @@ export const ColorsHeader = (props: HeaderProps) => {
 				href="/colors/docs"
 				highContrast={router.pathname.includes("/colors/docs")}
 			>
-				Documentation
+				文档
 			</Link>
 			<Link
 				size="2"
@@ -21,7 +21,7 @@ export const ColorsHeader = (props: HeaderProps) => {
 				href="/colors/custom"
 				highContrast={router.pathname.includes("/colors/custom")}
 			>
-				Custom palette
+				自定义调色板
 			</Link>
 		</Header>
 	);

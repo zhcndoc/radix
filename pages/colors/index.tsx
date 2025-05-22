@@ -65,27 +65,26 @@ export default function ColorsHome() {
 
 			<Box mx={{ initial: "5", xs: "6", sm: "7", md: "9" }} position="relative">
 				<TitleAndMetaTags
-					title="Radix Colors"
-					description="An open-source color system for designing beautiful, accessible websites and apps."
+					title="Radix 颜色 - Radix UI 中文文档"
+					description="一个开源的颜色系统，用于设计美观、可访问的网站和应用程序。"
 					image="colors.png"
 				/>
 				<Section size={{ initial: "2", md: "4" }}>
 					<Container>
-						<SerifHeading mb="3" style={{ maxWidth: 720 }}>
-							A gorgeous, accessible color system for user interfaces
+						<SerifHeading mb="3" style={{ maxWidth: 600, lineHeight: 1.2 }}>
+							一个华丽且易于访问的用户界面颜色系统
 						</SerifHeading>
 
-						<Box style={{ maxWidth: 500 }}>
+						<Box style={{ maxWidth: 600 }}>
 							<Text size="5" as="p" mb="6" color="gray">
-								Comprehensive color system for designing beautiful, accessible
-								websites and apps.
+								全面色彩系统，助力设计美观且无障碍的网站与应用程序。
 							</Text>
 						</Box>
 
 						<Flex gap="4">
 							<ColorsMarketingButton asChild size={{ initial: "3", xs: "4" }}>
 								<NextLink href="/colors/docs/overview/installation">
-									Go to docs
+									前往文档
 									<svg
 										width="14"
 										height="14"
@@ -106,7 +105,7 @@ export default function ColorsHome() {
 								size={{ initial: "3", xs: "4" }}
 								asChild
 							>
-								<NextLink href="/colors/custom">Custom palette</NextLink>
+								<NextLink href="/colors/custom">自定义调色板</NextLink>
 							</Button>
 						</Flex>
 					</Container>
@@ -118,18 +117,18 @@ export default function ColorsHome() {
 					<Container style={{ whiteSpace: "nowrap", minWidth: 880 }}>
 						<div className={styles.ColorsHomeGrid}>
 							<Box />
-							<ColorUsageRange gridColumn="2 / 4">Backgrounds</ColorUsageRange>
+							<ColorUsageRange gridColumn="2 / 4">背景</ColorUsageRange>
 							<ColorUsageRange gridColumn="4 / 7">
-								Interactive components
+								交互组件
 							</ColorUsageRange>
 							<ColorUsageRange gridColumn="7 / 10">
-								Borders and separators
+								边界和分隔符
 							</ColorUsageRange>
 							<ColorUsageRange gridColumn="10 / 12">
-								Solid colors
+								纯色
 							</ColorUsageRange>
 							<ColorUsageRange gridColumn="12 / 14">
-								Accessible text
+								无障碍文本
 							</ColorUsageRange>
 
 							<Box />
@@ -201,7 +200,7 @@ export default function ColorsHome() {
 						<div className={styles.ColorsHomeGrid}>
 							<Box />
 							<ColorUsageRange gridColumn="2 / -1">
-								Shadows, highlights, and overlays
+								阴影、高光和叠加
 							</ColorUsageRange>
 
 							<Box />
@@ -240,11 +239,10 @@ export default function ColorsHome() {
 									<EyeOpenIcon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									Accessibility made easy
+									无障碍变得简单
 								</Heading>
 								<Text as="p" size="3">
-									Text colors are guaranteed to pass target contrast ratios
-									against the corresponding background colors.
+									文本颜色确保能够通过与相应背景色的目标对比度测试。
 								</Text>
 							</Box>
 							<Box style={{ maxWidth: 540 }}>
@@ -252,11 +250,10 @@ export default function ColorsHome() {
 									<MoonIcon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									Automatic dark mode
+									自动深色模式
 								</Heading>
 								<Text as="p" size="3">
-									Switching to dark theme is as simple as applying a class to a
-									container. Dark mode Just Works™.
+									切换到黑暗主题只需对容器应用一个类。黑暗模式即刻可用™。
 								</Text>
 							</Box>
 							<Box style={{ maxWidth: 540 }}>
@@ -264,11 +261,10 @@ export default function ColorsHome() {
 									<TransparencyGridIcon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									Transparent variants
+									透明变体
 								</Heading>
 								<Text as="p" size="3">
-									Each scale has a matching alpha color variant, which is handy
-									for UI components that need to blend into colored backgrounds.
+									每个色阶都有一个匹配的 alpha 颜色变体，这对于需要融入彩色背景的 UI 组件非常方便。
 								</Text>
 							</Box>
 							<Box style={{ maxWidth: 540 }}>
@@ -276,12 +272,10 @@ export default function ColorsHome() {
 									<Half2Icon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									APCA text contrast
+									APCA 文本对比度
 								</Heading>
 								<Text as="p" size="3">
-									Contrast targets are based on the modern APCA contrast
-									algorithm, which accurately predicts how human vision
-									perceives text.
+									对比度目标基于现代 APCA 对比度算法，该算法能精准预测人眼对文本的感知效果。
 								</Text>
 							</Box>
 							<Box style={{ maxWidth: 540 }}>
@@ -289,11 +283,10 @@ export default function ColorsHome() {
 									<DesktopIcon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									P3 color gamut support
+									P3 色域支持
 								</Heading>
 								<Text as="p" size="3">
-									Accounts for the blending differences in the wide gamut color
-									spaces and enables the brightest yellows and reds possible.
+									针对广色域色彩空间中的混合差异进行调整，并实现最明亮的黄色与红色表现。
 								</Text>
 							</Box>
 							<Box style={{ maxWidth: 540 }}>
@@ -301,11 +294,10 @@ export default function ColorsHome() {
 									<InputIcon width="30" height="30" />
 								</Flex>
 								<Heading size="4" as="h3" mb="2">
-									Designed for user interfaces
+									专为用户界面设计
 								</Heading>
 								<Text as="p" size="3">
-									Each step is designed with a specific use case in mind, such
-									as backgrounds, hover states, borders, overlays, or text.
+									每一步的设计都针对特定使用场景，例如背景、悬停状态、边框、遮罩层或文本。
 								</Text>
 							</Box>
 						</Grid>

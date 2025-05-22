@@ -23,8 +23,8 @@ export default function PrimitivesHome() {
 			<PrimitivesMobileMenu />
 
 			<TitleAndMetaTags
-				title="Radix Primitives"
-				description="Unstyled, accessible, open source React primitives for high-quality web apps and design systems."
+				title="Radix Primitives – Radix UI 中文文档"
+				description="无样式、可访问的开源 React 原语，适用于高质量的网页应用和设计系统。"
 				image="primitives.png"
 			/>
 			<Box style={{ height: 0 }}>

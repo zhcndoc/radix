@@ -28,7 +28,7 @@ export default function GuidesDoc({ frontmatter, code }: Doc) {
 			</div>
 
 			<TitleAndMetaTags
-				title={`${frontmatter.metaTitle} – Radix Themes`}
+				title={`${frontmatter.metaTitle} – Radix Themes – Radix UI 中文文档`}
 				description={frontmatter.metaDescription}
 				image="themes.png"
 			/>

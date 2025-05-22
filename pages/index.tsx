@@ -31,8 +31,8 @@ export default function ThemesHome() {
 	return (
 		<MobileMenuProvider>
 			<TitleAndMetaTags
-				title="Radix UI"
-				description="Components, icons, and colors for building high‑quality, accessible UI. Free and open-source."
+				title="Radix UI 中文文档"
+				description="用于构建高质量、无障碍用户界面的组件、图标与色彩方案，免费且开源。"
 				image="themes.png"
 			/>
 
@@ -260,7 +260,7 @@ const MainContent = () => (
 				<Flex align="center" gap="2" mb="6">
 					<Badge asChild size="3" radius="full">
 						<NextLink href="/blog/themes-3">
-							Read about Radix Themes 3.0
+							阅读关于 Radix Themes 3.0 的内容
 							<ArrowRightIcon
 								width="15"
 								height="15"
@@ -271,9 +271,9 @@ const MainContent = () => (
 				</Flex>
 				<Box display={{ lg: "none" }}>
 					<SerifHeading mb="3">
-						Start building
+						开始构建
 						<br />
-						your app now
+						你的应用程序
 					</SerifHeading>
 				</Box>
 				<Box display={{ initial: "none", lg: "block" }}>
@@ -281,14 +281,14 @@ const MainContent = () => (
 						mb="4"
 						style={
 							{
-								lineHeight: 0.9,
+								lineHeight: 1.2,
 								"--heading-font-size-adjust": 1.3,
 							} as React.CSSProperties
 						}
 					>
-						Start building
+						开始构建
 						<br />
-						your app now
+						你的应用程序
 					</SerifHeading>
 				</Box>
 			</Box>
@@ -296,9 +296,7 @@ const MainContent = () => (
 			<Box style={{ maxWidth: 500 }}>
 				<Text size={{ initial: "4", xs: "5" }}>
 					<Text as="p" mb="5" color="gray">
-						An open source component library optimized for fast development,
-						easy maintenance, and accessibility. Just import and go—no
-						configuration required.
+						一个针对快速开发、易于维护和可访问性优化的开源组件库。即插即用，无需任何配置。
 					</Text>
 
 					<Box mb="5">
@@ -332,7 +330,7 @@ const MainContent = () => (
 							style={{ flexGrow: 1 }}
 						>
 							<a>
-								Get started
+								开始使用
 								<svg
 									width="14"
 									height="14"
@@ -356,7 +354,7 @@ const MainContent = () => (
 						>
 							<a>
 								<GridIcon width="18" height="18" style={{ marginTop: 1 }} />
-								Playground
+								演练场
 							</a>
 						</Button>
 					</NextLink>
@@ -365,7 +363,7 @@ const MainContent = () => (
 
 			<ThemesHeroLayout.Controls>
 				<Text weight="bold" size="3" style={{ pointerEvents: "none" }}>
-					Live examples
+					在线示例
 				</Text>
 				<Box mx="-1">
 					<MagicCurtain.MirrorControls />

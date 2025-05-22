@@ -16,11 +16,11 @@ export function DocsPagination({ allRoutes }: { allRoutes: Route[] }) {
 			{(previous || next) && (
 				<Flex aria-label="Pagination navigation" justify="between" my="8">
 					{previous && (
-						<DocsPaginationLink route={previous} direction="Previous" />
+						<DocsPaginationLink route={previous} direction="上一篇" />
 					)}
 					{next && (
 						<Box flexGrow="1" style={{ textAlign: "right" }}>
-							<DocsPaginationLink route={next} direction="Next" />
+							<DocsPaginationLink route={next} direction="下一篇" />
 						</Box>
 					)}
 				</Flex>
