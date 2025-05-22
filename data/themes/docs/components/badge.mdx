@@ -1,128 +1,128 @@
 ---
-metaTitle: Badge
-metaDescription: Stylized badge element.
+metaTitle: 徽章
+metaDescription: 风格化的徽章元素。
 sourcePath: components/badge
 ---
 
 ```jsx live=true
 <Flex gap="2">
-	<Badge color="orange">In progress</Badge>
-	<Badge color="blue">In review</Badge>
-	<Badge color="green">Complete</Badge>
+	<Badge color="orange">进行中</Badge>
+	<Badge color="blue">审核中</Badge>
+	<Badge color="green">完成</Badge>
 </Flex>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `span` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `span` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="badgePropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制尺寸。
 
 ```jsx live=true
 <Flex align="center" gap="2">
 	<Badge size="1" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge size="2" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge size="3" color="indigo">
-		New
+		新
 	</Badge>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉样式。
 
 ```jsx live=true scroll=true
 <Flex gap="2">
 	<Badge variant="solid" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge variant="soft" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge variant="surface" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge variant="outline" color="indigo">
-		New
+		新
 	</Badge>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性来指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="2">
-	<Badge color="indigo">New</Badge>
-	<Badge color="cyan">New</Badge>
-	<Badge color="orange">New</Badge>
-	<Badge color="crimson">New</Badge>
+	<Badge color="indigo">新</Badge>
+	<Badge color="cyan">新</Badge>
+	<Badge color="orange">新</Badge>
+	<Badge color="crimson">新</Badge>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性来增加与背景的颜色对比。
 
 ```jsx live=true
 <Flex direction="column" gap="2">
 	<Flex gap="2">
 		<Badge color="gray" variant="solid">
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="soft">
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="surface">
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="outline">
-			New
+			新
 		</Badge>
 	</Flex>
 	<Flex gap="2">
 		<Badge color="gray" variant="solid" highContrast>
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="soft" highContrast>
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="surface" highContrast>
-			New
+			新
 		</Badge>
 		<Badge color="gray" variant="outline" highContrast>
-			New
+			新
 		</Badge>
 	</Flex>
 </Flex>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性来指定特定的半径值。
 
 ```jsx live=true scroll=true
 <Flex gap="2">
 	<Badge variant="solid" radius="none" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge variant="solid" radius="large" color="indigo">
-		New
+		新
 	</Badge>
 	<Badge variant="solid" radius="full" color="indigo">
-		New
+		新
 	</Badge>
 </Flex>
 ```

@@ -1,113 +1,113 @@
 ---
-metaTitle: Segmented Control
-metaDescription: Toggle buttons for switching between different values or views.
+metaTitle: 分段控制
+metaDescription: 用于在不同值或视图之间切换的切换按钮。
 sourcePath: components/segmented-control
 ---
 
 ```jsx live=true
 <SegmentedControl.Root defaultValue="inbox">
-	<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-	<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-	<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+	<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+	<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+	<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 </SegmentedControl.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props and functionality from the [Toggle Group primitive](/primitives/docs/components/toggle-group). It supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承了 [切换组原语](/primitives/docs/components/toggle-group) 的属性和功能。它支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
-Contains the items of the control.
+包含控制的项。
 
 <ThemesPropsTable defs="segmentedControlRootPropDefs" />
 
-### Item
+### 项
 
-Represents individual values of the control.
+表示控制的单个值。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the control.
+使用 `size` 属性控制控制的大小。
 
 ```jsx live="true"
 <Flex align="start" direction="column" gap="4">
 	<SegmentedControl.Root defaultValue="inbox" size="1">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" size="2">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" size="3">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the control.
+使用 `variant` 属性控制控制的视觉样式。
 
 ```jsx live="true"
 <Flex align="start" direction="column" gap="4">
 	<SegmentedControl.Root defaultValue="inbox" variant="surface">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" variant="classic">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 </Flex>
 ```
 
-### Radius
+### 边角半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性分配特定的半径值。
 
 ```jsx live="true"
 <Flex align="start" direction="column" gap="4">
 	<SegmentedControl.Root defaultValue="inbox" radius="none">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" radius="small">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" radius="medium">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" radius="large">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 
 	<SegmentedControl.Root defaultValue="inbox" radius="full">
-		<SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-		<SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-		<SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+		<SegmentedControl.Item value="inbox">收件箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="drafts">草稿箱</SegmentedControl.Item>
+		<SegmentedControl.Item value="sent">已发送</SegmentedControl.Item>
 	</SegmentedControl.Root>
 </Flex>
 ```

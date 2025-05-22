@@ -1,6 +1,6 @@
 ---
-metaTitle: Code
-metaDescription: Marks text to signify a short fragment of computer code.
+metaTitle: 代码
+metaDescription: 标记文本以表示一小段计算机代码。
 sourcePath: components/code
 ---
 
@@ -8,17 +8,17 @@ sourcePath: components/code
 <Code>console.log()</Code>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `code` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `code` 元素，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="codePropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control text size. This prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+使用 `size` 属性来控制文本大小。此属性还提供正确的行高和修正的字母间距——随着文本大小的增加，相对行高和字母间距会减小。
 
 ```jsx live=true scroll=true
 <Flex direction="column" gap="3" align="start">
@@ -34,9 +34,9 @@ Use the `size` prop to control text size. This prop also provides correct line h
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉样式。
 
 ```jsx live=true
 <Flex direction="column" align="start" gap="2">
@@ -47,9 +47,9 @@ Use the `variant` prop to control the visual style.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性为文本指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" align="start" gap="2">
@@ -60,9 +60,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性以增加与背景的颜色对比。
 
 ```jsx live=true
 <Flex gap="3">
@@ -98,9 +98,9 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Flex>
 ```
 
-### Weight
+### 字重
 
-Use the `weight` prop to set the text weight.
+使用 `weight` 属性来设置文本的字重。
 
 ```jsx live="true"
 <Flex direction="column" gap="2" align="start">
@@ -109,9 +109,9 @@ Use the `weight` prop to set the text weight.
 </Flex>
 ```
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性，在文本溢出其容器时用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="200px">

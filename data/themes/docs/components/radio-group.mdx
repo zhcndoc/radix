@@ -1,36 +1,36 @@
 ---
-metaTitle: Radio Group
-metaDescription: Set of interactive radio buttons where only one can be selected at a time.
+metaTitle: 单选组
+metaDescription: 一组交互式单选按钮，一次只能选择一个按钮。
 sourcePath: components/radio-group
 ---
 
 ```jsx live=true
 <RadioGroup.Root defaultValue="1" name="example">
-	<RadioGroup.Item value="1">Default</RadioGroup.Item>
-	<RadioGroup.Item value="2">Comfortable</RadioGroup.Item>
-	<RadioGroup.Item value="3">Compact</RadioGroup.Item>
+	<RadioGroup.Item value="1">默认</RadioGroup.Item>
+	<RadioGroup.Item value="2">舒适</RadioGroup.Item>
+	<RadioGroup.Item value="3">紧凑</RadioGroup.Item>
 </RadioGroup.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Radio Group primitive](/primitives/docs/components/radio-group) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [单选组原语](/primitives/docs/components/radio-group) 的属性，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
-Contains all the parts of a radio group.
+包含单选组的所有部分。
 
 <ThemesPropsTable defs="radioGroupRootPropDefs" />
 
-### Item
+### 项目
 
-An item in the group that can be checked.
+组内可选中的项。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the radiobutton size.
+使用 `size` 属性来控制单选按钮的大小。
 
 ```jsx live=true
 <Flex align="center" gap="2">
@@ -48,9 +48,9 @@ Use the `size` prop to control the radiobutton size.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the radio buttons.
+使用 `variant` 属性来控制单选按钮的视觉风格。
 
 ```jsx live=true
 <Flex gap="2">
@@ -77,9 +77,9 @@ Use the `variant` prop to control the visual style of the radio buttons.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="2">
@@ -101,9 +101,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性提高与背景的颜色对比度。
 
 ```jsx live=true
 <Grid rows="2" gap="2" display="inline-grid" flow="column">
@@ -149,22 +149,22 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Grid>
 ```
 
-### Alignment
+### 对齐
 
-Composing `RadioGroup.Item` within `Text` automatically centers it with the first line of text.
+将 `RadioGroup.Item` 组合在 `Text` 中会自动与文本的第一行居中对齐。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
 	<RadioGroup.Root size="1" defaultValue="1">
 		<Text as="label" size="2">
 			<Flex gap="2">
-				<RadioGroup.Item value="1" /> Default
+				<RadioGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="2">
 			<Flex gap="2">
-				<RadioGroup.Item value="2" /> Compact
+				<RadioGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</RadioGroup.Root>
@@ -172,13 +172,13 @@ Composing `RadioGroup.Item` within `Text` automatically centers it with the firs
 	<RadioGroup.Root size="2" defaultValue="1">
 		<Text as="label" size="3">
 			<Flex gap="2">
-				<RadioGroup.Item value="1" /> Default
+				<RadioGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="3">
 			<Flex gap="2">
-				<RadioGroup.Item value="2" /> Compact
+				<RadioGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</RadioGroup.Root>
@@ -186,38 +186,38 @@ Composing `RadioGroup.Item` within `Text` automatically centers it with the firs
 	<RadioGroup.Root size="3" defaultValue="1">
 		<Text as="label" size="4">
 			<Flex gap="2">
-				<RadioGroup.Item value="1" /> Default
+				<RadioGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="4">
 			<Flex gap="2">
-				<RadioGroup.Item value="2" /> Compact
+				<RadioGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</RadioGroup.Root>
 </Flex>
 ```
 
-It is automatically well-aligned with multi-line text too.
+在多行文本中也会自动保持良好的对齐。
 
-### Disabled
+### 禁用
 
-Use the native `disabled` attribute to create a disabled radiobutton.
+使用原生 `disabled` 属性创建一个禁用的单选按钮。
 
 ```jsx live="true"
 <Flex direction="column" gap="2">
 	<RadioGroup.Root defaultValue="2">
-		<RadioGroup.Item value="1">Off</RadioGroup.Item>
-		<RadioGroup.Item value="2">On</RadioGroup.Item>
+		<RadioGroup.Item value="1">关闭</RadioGroup.Item>
+		<RadioGroup.Item value="2">开启</RadioGroup.Item>
 	</RadioGroup.Root>
 
 	<RadioGroup.Root defaultValue="2">
 		<RadioGroup.Item value="1" disabled>
-			Off
+			关闭
 		</RadioGroup.Item>
 		<RadioGroup.Item value="2" disabled>
-			On
+			开启
 		</RadioGroup.Item>
 	</RadioGroup.Root>
 </Flex>

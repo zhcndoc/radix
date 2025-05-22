@@ -1,28 +1,28 @@
 ---
-metaTitle: Cursors
-metaDescription: Customizing cursors used for interactive elements.
+metaTitle: 光标
+metaDescription: 自定义用于互动元素的光标。
 ---
 
-# Cursors
+# 光标
 
-<Description>Customizing cursors used for interactive elements.</Description>
+<Description>自定义用于互动元素的光标。</Description>
 
-## Default cursors
+## 默认光标
 
-By default, interactive elements that don’t link to another page use the regular arrow cursor. This also matches the browser defaults. However, disabled elements use an explicit disabled cursor.
+默认情况下，不链接到其他页面的互动元素使用常规箭头光标。这也与浏览器的默认设置相匹配。然而，禁用的元素则使用显式的禁用光标。
 
 ```jsx live="true"
 <Flex align="center" gap="4" wrap="wrap">
 	<Flex align="center" gap="3" wrap="wrap">
-		<Button>Button</Button>
+		<Button>按钮</Button>
 		<Button asChild>
-			<a href="#">Link</a>
+			<a href="#">链接</a>
 		</Button>
-		<Button disabled>Disabled</Button>
+		<Button disabled>禁用</Button>
 	</Flex>
-	<Button variant="ghost">Ghost button</Button>
+	<Button variant="ghost">幽灵按钮</Button>
 	<Link href="#" size="2">
-		Link
+		链接
 	</Link>
 	<Checkbox defaultChecked />
 	<Switch defaultChecked />
@@ -30,12 +30,12 @@ By default, interactive elements that don’t link to another page use the regul
 </Flex>
 ```
 
-## Cursor tokens
+## 光标令牌
 
-Cursor settings can be accessed using CSS variables. You can use these tokens to style your custom components, ensuring they are accessible and consistent with the rest of your theme.
+光标设置可以通过 CSS 变量访问。您可以使用这些令牌来为您的自定义组件设置样式，确保它们可访问且与主题的其他部分一致。
 
 ```css
-/* Available cursor tokens */
+/* 可用的光标令牌 */
 var(--cursor-button);
 var(--cursor-checkbox);
 var(--cursor-disabled);
@@ -47,11 +47,11 @@ var(--cursor-slider-thumb-active);
 var(--cursor-switch);
 ```
 
-## Customization
+## 自定义
 
-It’s common to use a pointer cursor for interactive elements. Radix Themes cursors can be customized by overriding the corresponding CSS variables of the token system.
+通常，对于互动元素使用指针光标。Radix 主题的光标可以通过覆盖令牌系统的相应 CSS 变量进行自定义。
 
-Here’s an example of how you can customize the cursor tokens to set `cursor: pointer` for most interactive elements in the theme:
+以下是如何自定义光标令牌以为主题中的大多数互动元素设置 `cursor: pointer` 的示例：
 
 ```css
 .radix-themes {
@@ -67,4 +67,4 @@ Here’s an example of how you can customize the cursor tokens to set `cursor: p
 }
 ```
 
-Make sure that your CSS is applied after the Radix Themes styles so that it takes precedence.
+确保您的 CSS 在 Radix 主题样式之后应用，以便它具备优先权。

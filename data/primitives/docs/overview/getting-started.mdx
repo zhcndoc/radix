@@ -1,30 +1,30 @@
 ---
-metaTitle: Getting started
-metaDescription: A quick tutorial to get you up and running with Radix Primitives.
+metaTitle: 入门指南
+metaDescription: 快速教程，让您快速上手 Radix Primitives。
 name: popover
 ---
 
-# Getting started
+# 入门指南
 
 <Description>
-	A quick tutorial to get you up and running with Radix Primitives.
+	快速教程，让您快速上手 Radix Primitives。
 </Description>
 
-## Implementing a Popover
+## 实现弹出框
 
-In this quick tutorial, we will install and style the [Popover](../components/popover) component.
+在这个快速教程中，我们将安装并样式化 [Popover](../components/popover) 组件。
 
-### 1. Install the primitive
+### 1. 安装基础组件
 
-Install Radix Primitives from your command line.
+从命令行安装 Radix Primitives。
 
 ```bash
 npm install radix-ui@latest
 ```
 
-### 2. Import the parts
+### 2. 导入组件
 
-Import and structure the parts.
+导入并结构化组件。
 
 ```jsx line=3,6-14
 // index.jsx
@@ -33,10 +33,10 @@ import { Popover } from "radix-ui";
 
 const PopoverDemo = () => (
 	<Popover.Root>
-		<Popover.Trigger>More info</Popover.Trigger>
+		<Popover.Trigger>更多信息</Popover.Trigger>
 		<Popover.Portal>
 			<Popover.Content>
-				Some more info…
+				更多信息…
 				<Popover.Arrow />
 			</Popover.Content>
 		</Popover.Portal>
@@ -46,9 +46,9 @@ const PopoverDemo = () => (
 export default PopoverDemo;
 ```
 
-### 3. Add your styles
+### 3. 添加样式
 
-Add styles where desired.
+在需要的地方添加样式。
 
 ```jsx line=4,8,10,12
 // index.jsx
@@ -58,10 +58,10 @@ import "./styles.css";
 
 const PopoverDemo = () => (
 	<Popover.Root>
-		<Popover.Trigger __className__="PopoverTrigger">Show info</Popover.Trigger>
+		<Popover.Trigger __className__="PopoverTrigger">显示信息</Popover.Trigger>
 		<Popover.Portal>
 			<Popover.Content __className__="PopoverContent">
-				Some content
+				一些内容
 				<Popover.Arrow __className__="PopoverArrow" />
 			</Popover.Content>
 		</Popover.Portal>
@@ -90,9 +90,9 @@ export default PopoverDemo;
 }
 ```
 
-### Demo
+### 演示
 
-Here's a complete demo.
+这是一个完整的演示。
 
 <HeroContainer>
 	<GettingStartedDemo />
@@ -100,17 +100,17 @@ Here's a complete demo.
 
 <HeroCodeBlock folder="GettingStarted" cssLib="css" />
 
-## Summary
+## 总结
 
-The steps above outline briefly what's involved in using a Radix Primitive in your application.
+上述步骤简单概述了在您的应用中使用 Radix Primitive 所涉及的内容。
 
-These components are low-level enough to give you control over how you want to wrap them. You're free to introduce your own high-level API to better suit the needs of your team and product.
+这些组件的低级设计使您能够控制如何包装它们。您可以自由地引入自己的高层 API，以更好地满足您团队和产品的需求。
 
-In a few simple steps, we've implemented a fully accessible Popover component, without having to worry about many of its complexities.
+通过几个简单的步骤，我们实现了一个完全可访问的弹出框组件，而无需担心其复杂性。
 
-- Adheres to [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal) design pattern.
-- Can be controlled or uncontrolled.
-- Customize side, alignment, offsets, collision handling.
-- Optionally render a pointing arrow.
-- Focus is fully managed and customizable.
-- Dismissing and layering behavior is highly customizable.
+- 遵循 [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal) 设计模式。
+- 可以是受控或非受控。
+- 自定义侧边、对齐方式、偏移量、碰撞处理。
+- 可选择性地渲染指向箭头。
+- 焦点被完全管理且可自定义。
+- 关闭和层叠行为高度可定制。

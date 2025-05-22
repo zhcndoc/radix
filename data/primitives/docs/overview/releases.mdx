@@ -1,754 +1,752 @@
 ---
-metaTitle: Releases
-metaDescription: Radix Primitives releases and their changelogs.
+metaTitle: 发布
+metaDescription: Radix Primitives 发布及其变更日志。
 ---
 
-# Releases
+# 发布
 
-<Description>Radix Primitives releases and their changelogs.</Description>
+<Description>Radix Primitives 发布及其变更日志。</Description>
 
-## May 5, 2025
+## 2025年5月5日
 
-This release introduces a brand new primitive in preview: [`PasswordToggleField`](../components/password-toggle-field).
+本次发布介绍了一种全新的预览原语：[`PasswordToggleField`](../components/password-toggle-field)。
 
-This new primitive provides components for rendering a password input alongside a button to toggle its visibility. Aside from its primary functionality, it also includes:
+该新原语提供了一个用于渲染密码输入框及其可见性切换按钮的组件。除了主要功能外，它还包括：
 
-- Returning focus to the input when toggling with a pointer
-- Maintaining focus when toggling with keyboard or virtual navigation
-- Resetting visibility to hidden after form submission to prevent accidental storage
-- Implicit accessible labeling for icon-based toggle buttons
+- 切换时将焦点返回输入框
+- 用键盘或虚拟导航切换时保持焦点
+- 表单提交后将可见性重置为隐藏，以防止意外存档
+- 基于图标的切换按钮的隐式无障碍标签
 
-This API is currently unstable, and we hope you'll help us test it out! Import the primitive using the `unstable_` prefix.
+此 API 目前不稳定，我们希望您能帮助我们进行测试！使用 `unstable_` 前缀导入该原语。
 
 ```tsx
 import { unstable_PasswordToggleField as PasswordToggleField } from "radix-ui";
 
 export function PasswordField() {
-	return (
-		<PasswordToggleField.Root>
-			<PasswordToggleField.Input />
-			<PasswordToggleField.Toggle>
-				<PasswordToggleField.Icon
-					visible={<EyeOpenIcon />}
-					hidden={<EyeClosedIcon />}
-				/>
-			</PasswordToggleField.Toggle>
-		</PasswordToggleField.Root>
-	);
+    return (
+        <PasswordToggleField.Root>
+            <PasswordToggleField.Input />
+            <PasswordToggleField.Toggle>
+                <PasswordToggleField.Icon
+                    visible={<EyeOpenIcon />}
+                    hidden={<EyeClosedIcon />}
+                />
+            </PasswordToggleField.Toggle>
+        </PasswordToggleField.Root>
+    );
 }
 ```
 
-### Other updates
+### 其他更新
 
-- Add unstable `Provider`, `Trigger` and `BubbleInput` parts to Checkbox ([#3459](https://github.com/radix-ui/primitives/pull/3459))
-- Update default input type to `text` and pass to the underlying input element ([#3510](https://github.com/radix-ui/primitives/pull/3510))
+- 为复选框添加不稳定的 `Provider`、`Trigger` 和 `BubbleInput` 部件 ([#3459](https://github.com/radix-ui/primitives/pull/3459))
+- 更新默认输入类型为 `text` 并传递给基础输入元素 ([#3510](https://github.com/radix-ui/primitives/pull/3510))
 
-## April 22, 2025
+## 2025年4月22日
 
-- Update the dependency for `use-sync-external-store` to ensure entrypoint is valid <PRLink id={3491} />
+- 更新 `use-sync-external-store` 的依赖以确保入口点有效 <PRLink id={3491} />
 
-## April 17, 2025
+## 2025年4月17日
 
-This release introduces a brand new primitive in preview: [`OneTimePasswordField`](../components/one-time-password-field).
+本次发布引入了一种全新的预览原语：[`OneTimePasswordField`](../components/one-time-password-field)。
 
-This new group of components are designed to implement a common design pattern for one-time password fields displayed as separate input fields for each character. This UI is deceptively complex to implement in such a way that interactions follow user expectations. The new primitive handles all of this complexity for you, including:
+这一组新组件旨在实现一次性密码字段的常见设计模式，显示为每个字符的独立输入框。这种用户界面的实现看似复杂，但确保交互顺应用户期望。新原语为您处理所有这些复杂性，包括：
 
-- Keyboard navigation mimicking the behavior of a single input field
-- Overriding values on paste
-- Password manager autofill support
-- Input validation for numeric and alphanumeric values
-- Auto-submit on completion
-- Focus management
-- Hidden input to provide a single value to form data
+- 模拟单一输入框行为的键盘导航
+- 覆盖粘贴值
+- 密码管理器的自动填充支持
+- 对数字和字母数字值的输入验证
+- 完成时自动提交
+- 焦点管理
+- 提供单个值给表单数据的隐藏输入
 
-As this is a preview release, **the API is currently unstable**. We hope you'll help us test it out and let us know how it goes.
+由于这是一个预览版本，**API当前不稳定**。我们希望您能帮助我们进行测试并告诉我们结果。
 
-Import the primitive using the `unstable_` prefix.
+使用 `unstable_` 前缀导入该原语。
 
 ```tsx
 import { unstable_OneTimePasswordField as OneTimePasswordField } from "radix-ui";
 
 export function Verify() {
-	return (
-		<OneTimePasswordField.Root>
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.Input />
-			<OneTimePasswordField.HiddenInput />
-		</OneTimePasswordField.Root>
-	);
+    return (
+        <OneTimePasswordField.Root>
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.Input />
+            <OneTimePasswordField.HiddenInput />
+        </OneTimePasswordField.Root>
+    );
 }
 ```
 
-### Other updates
+### 其他更新
 
-- All form controls with internal bubble inputs now use the Radix `Primitive` component by default. This will allow us to expose these components in a future release so users can better control this behavior in the future.
-- Minor improvements to `useControllableState` to enhance performance, reduce surface area for bugs, and log warnings when misused
+- 所有内部气泡输入的表单控件现在默认使用 Radix `Primitive` 组件。这将允许我们在未来的版本中公开这些组件，以便用户能够更好地控制此行为。
+- 对 `useControllableState` 进行小幅改进，以增强性能，减少错误的发生，并在误用时记录警告
 
-## April 8, 2025
+## 2025年4月8日
 
-- Improved rendering performance for the Tooltip provider <PRLink id={2720} />
-- Ensure Tooltip is closed when `pointerdown` is fired on the trigger <PRLink id={3380} />
-- Add support for `crossOrigin` in Avatar images <PRLink id={3261} />
-- Fix Avatar flashing when an image is already cached <PRLink id={3008} />
-- Improve `displayName` for better debugging of slottable components <PRLink id={3441} />
+- 改进工具提示提供者的渲染性能 <PRLink id={2720} />
+- 确保在触发器上触发 `pointerdown` 时关闭工具提示 <PRLink id={3380} />
+- 为头像图像添加对 `crossOrigin` 的支持 <PRLink id={3261} />
+- 修复当图像已缓存在头像时的闪烁问题 <PRLink id={3008} />
+- 改善 `displayName` 以便更好调试可插槽组件 <PRLink id={3441} />
 
-## February 5, 2025
+## 2025年2月5日
 
-- Updated dependencies to remove peer dependency warnings for `react` and `react-dom` <PRLink id={3350} />
-- Skip forwarding refs to `SlotClone` when the child is a `Fragment` <PRLink id={3229} />
+- 更新依赖以消除对 `react` 和 `react-dom` 的对等依赖警告 <PRLink id={3350} />
+- 当子项为 `Fragment` 时跳过将 refs 转发到 `SlotClone` <PRLink id={3229} />
 
-## January 22, 2025
+## 2025年1月22日
 
-- Added a `radix-ui` package that exposes the latest version of all Radix Primitives from a single place. This tree-shakable entrypoint makes it easier to bring in whatever components you need and keep them up-to-date without worrying about conflicting or duplicate dependencies.
-- Updated `aria-hidden` and `react-remove-scroll` dependencies for the following components:
-  - Alert Dialog
-  - Context Menu
-  - Dialog
-  - Dropdown Menu
-  - Hover Card
-  - Menubar
-  - Navigation Menu
-  - Popover
-  - Select
-  - Toast
-  - Tooltip
+- 增加一个 `radix-ui` 包，该包从单一位置公开所有 Radix Primitives 的最新版本。这个可树摇的入口点使得导入所需组件并保持最新变得更为简便，无需担心依赖冲突或重复。
+- 更新以下组件的 `aria-hidden` 和 `react-remove-scroll` 依赖：
+  - 警报对话框
+  - 上下文菜单
+  - 对话框
+  - 下拉菜单
+  - 悬停卡片
+  - 菜单栏
+  - 导航菜单
+  - 弹出框
+  - 选择
+  - 吐司
+  - 工具提示
 
-## October 1, 2024
+## 2024年10月1日
 
 <PackageRelease name="Alert Dialog" version="1.1.2" />
 
-- Fix `allowPinchZoom` bug for trackpad users <PRLink id={3127} />
+- 修复轨迹板用户的 `allowPinchZoom` 故障 <PRLink id={3127} />
 
 <PackageRelease name="Avatar" version="1.1.1" />
 
-- Check for `referrerPolicy` when checking the image loading status <PRLink id={2772} />
+- 检查图像加载状态时的 `referrerPolicy` <PRLink id={2772} />
 
 <PackageRelease name="Checkbox" version="1.1.2" />
 
-- Fix a bug where `defaultChecked` unexpectedly changed for uncontrolled checkboxes <PRLink id={2135} />
-- Forward the `form` prop to the bubble input element to fix non-parent form submissions <PRLink id={3161} />
+- 修复无法预计更改无控复选框" 的故障 <PRLink id={2135} />
+- 将 `form` 属性转发到气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
 
 <PackageRelease name="Dialog" version="1.1.2" />
 
-- Fix `allowPinchZoom` bug for trackpad users <PRLink id={3127} />
+- 修复轨迹板用户的 `allowPinchZoom` 故障 <PRLink id={3127} />
 
 <PackageRelease name="Radio Group" version="1.2.1" />
 
-- Forward the `form` prop to the bubble input element to fix non-parent form submissions <PRLink id={3161} />
+- 将 `form` 属性转发到气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
 
 <PackageRelease name="Scroll Area" version="1.2.0" />
 
-- Fix `asChild` prop not working as expected on the `Viewport` <PRLink id={2945} />
-- Update internal styles to fix other issues with `Viewport` <PRLink id={2945} />
+- 修复 `asChild` 属性在 `Viewport` 上的功能异常 <PRLink id={2945} />
+- 更新内部样式以修复与 `Viewport` 的其他问题 <PRLink id={2945} />
 
 <PackageRelease name="Select" version="2.1.2" />
 
-- Fix error thrown when items are initially undefined <PRLink id={2623} />
-- Fix several bugs for touch devices <PRLink id={2939} />
-- Forward the `form` prop to the bubble input element to fix non-parent form submissions <PRLink id={3161} />
-- Fix position bug where popover may start off-screen for long items <PRLink id={3149} />
+- 修复当项目最初是未定义时引发的错误 <PRLink id={2623} />
+- 修复触摸设备上的多个故障 <PRLink id={2939} />
+- 将 `form` 属性转发到气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
+- 修复弹出框可能在长项目的情况下偏移屏幕的定位错误 <PRLink id={3149} />
 
 <PackageRelease name="Slider" version="1.2.1" />
 
-- Forward the root `form` prop to each thumb's bubble input element to fix non-parent form submissions <PRLink id={3161} />
+- 将根 `form` 属性转发到每个拇指的气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
 
 <PackageRelease name="Switch" version="1.1.1" />
 
-- Forward the `form` prop to the bubble input element to fix non-parent form submissions <PRLink id={3161} />
+- 将 `form` 属性转发到气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
 
 <PackageRelease name="Toast" version="1.2.2" />
 
-- Fix incorrect focus when `hotkey` is an empty array <PRLink id={2491} />
+- 修复当 `hotkey` 为空数组时的不正确焦点 <PRLink id={2491} />
 
-## June 28, 2024
+## 2024年6月28日
 
 <PackageRelease name="Checkbox" version="1.1.1" />
 
-- Export `CheckedState` type
+- 导出 `CheckedState` 类型
 
 <PackageRelease name="Tooltip" version="1.1.2" />
 
-- Export `TooltipProviderProps` type
+- 导出 `TooltipProviderProps` 类型
 
-## June 21, 2024
+## 2024年6月21日
 
 <PackageRelease name="Portal" version="1.1.1" />
 
-- Add a missing internal utility to `package.json`. The corresponding packages that provide a Portal part also received a patch update. <PRLink id={2966} />
+- 向 `package.json` 添加一个缺失的内部实用程序。提供 Portal 部件的相应包也进行了补丁更新。 <PRLink id={2966} />
 
-## June 19, 2024
+## 2024年6月19日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
 <br />
 
-Released minor versions for all primitives with the following changes:
+发布了所有原语的小版本，包含以下更改：
 
-- Full React 19 compatability <PRLink id={2952} />
-- Full RSC compatibility <PRLink id={2923} />
-- Internal build tooling changes <PRLink id={2922} /> <PRLink id={2931} />
-- Update and pin `react-remove-scroll` dependency version to avoid double scrollbar bugs in edge cases <PRLink id={2776} />
-- Don’t scroll menu items in response to hover <PRLink id={2451} />
-- Make sure that components that close on Escape key press capture the corresponding keyboard event. This way you can call `stopPropagation` in `onEscapeKeyDown` if you need more control rendering Radix components within another component that closes on Escape key press.
-- Make sure that components with roving focus do not interfere with browser or system hotkeys, such as back navigation <PRLink id={2739} />
-- Make sure that components that support `hideWhenDetached` prop do not allow interactions with hidden content <PRLink id={2743} /> <PRLink id={2745} />
+- 完全与 React 19 兼容 <PRLink id={2952} />
+- 完全与 RSC 兼容 <PRLink id={2923} />
+- 内部构建工具更改 <PRLink id={2922} /> <PRLink id={2931} />
+- 更新并固定 `react-remove-scroll` 依赖版本以避免在边缘情况下出现双滚动条bug <PRLink id={2776} />
+- 不要在响应悬停时滚动菜单项 <PRLink id={2451} />
+- 确保在按Escape键时关闭的组件能够捕捉到相应的键盘事件。这样您可以在需要更好控制在另一个按Escape键关闭的组件中渲染Radix组件时调用 `stopPropagation`。
+- 确保具有游走焦点的组件不干扰浏览器或系统的快捷方式，例如后退导航 <PRLink id={2739} />
+- 确保支持 `hideWhenDetached` 属性的组件不允许与隐藏内容进行交互 <PRLink id={2743} /> <PRLink id={2745} />
 
 <PackageRelease name="Dialog" version="1.1.0" />
 
-- Log an error when an accessible title via the `Dialog.Title` part is missing <PRLink id={2948} />
-- Log a warning when an accessible description via the `Dialog.Description` part is missing <PRLink id={2948} />
+- 当缺少可访问的标题时记录一个错误，通过 `Dialog.Title` 部件 <PRLink id={2948} />
+- 当缺少可访问的描述时记录一个警告，通过 `Dialog.Description` 部件 <PRLink id={2948} />
 
 <PackageRelease name="Label" version="2.1.0" />
 
-- Make sure that the component doesn’t interfere when clicking on the spinner of a number input
+- 确保组件在为数字输入的旋转器单击时不会产生干扰
 
 <PackageRelease name="Navigation Menu" version="1.2.0" />
 
-- Remove unsupported `disableOutsidePointerEvents` prop
+- 删除不支持的 `disableOutsidePointerEvents` 属性
 
 <PackageRelease name="Portal" version="1.1.0" />
 
-- Fix hydration error in SSR on the initial render <PRLink id={2923} />
+- 修复初始渲染时的SSR水合错误 <PRLink id={2923} />
 
 <PackageRelease name="Progress" version="1.2.0" />
 
-- Explicitly allow `value={undefined}` to represent an indeterminate state, matching the current practical behaviour <PRLink id={2947} />
+- 明确允许 `value={undefined}` 以表示不确定状态，匹配当前的实际行为 <PRLink id={2947} />
 
 <PackageRelease name="Select" version="2.1.0" />
 
-- Add `nonce` prop to be able to pass CSP nonce to the inline styles <PRLink id={2728} />
+- 将 `nonce` 属性添加以能够将CSP nonce传递给内联样式 <PRLink id={2728} />
 
 <PackageRelease name="Scroll Area" version="1.1.0" />
 
-- Add `nonce` prop to be able to pass CSP nonce to the inline styles <PRLink id={2728} />
+- 将 `nonce` 属性添加以能够将CSP nonce传递给内联样式 <PRLink id={2728} />
 
-## September 25, 2023
+## 2023年9月25日
 
 <PackageRelease name="Alert Dialog" version="1.0.5" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Avatar" version="1.0.4" />
 
-- Prevent image flash <PRLink id={2340} />
+- 防止图像闪烁 <PRLink id={2340} />
 
 <PackageRelease name="Context Menu" version="2.1.5" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Dialog" version="1.0.5" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Dropdown Menu" version="2.0.6" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Hover Card" version="1.0.7" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Menubar" version="1.0.4" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Navigation Menu" version="1.1.4" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Popover" version="1.0.7" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
-- Fix `Popover` nested inside `Dialog` not opening <PRLink id={2182} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
+- 修复 `Popover` 嵌套在 `Dialog` 中时无法打开的问题 <PRLink id={2182} />
 
 <PackageRelease name="Scroll Area" version="1.0.5" />
 
-- Add `scroll-behavior: smooth` compatibility <PRLink id={2175} />
+- 添加与 `scroll-behavior: smooth` 的兼容性 <PRLink id={2175} />
 
-<PackageRelease name="Select" version="2.0.0" major />
+<PackageRelease name="Select" version="2.0.0" 重大 />
 
-- **\[Breaking\]** Add ability to reset to placeholder using `""` `value`. Note that this is only a breaking change if you were using an option with a `value` of `""`. <PRLink id={2174} />
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
+- **\[破坏性\]** 添加使用 `""` 值重置为占位符的能力。请注意，只有当您使用值为 `""` 的选项时这才是一个破坏性更改。 <PRLink id={2174} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
 
 <PackageRelease name="Toast" version="1.1.5" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
 
 <PackageRelease name="Tooltip" version="1.0.7" />
 
-- Fix pointer-events issue when clicking outside <PRLink id={2177} />
-- Fix `Portal` part types lying about accepting DOM props <PRLink id={2178} />
-- Fix issue with boundary padding calculations <PRLink id={2185} />
-- Add option to always re-position `Content` on the fly <PRLink id={2092} />
+- 修复在外部单击时的指针事件问题 <PRLink id={2177} />
+- 修复 `Portal` 部件类型与接受DOM属性的谎言 <PRLink id={2178} />
+- 修复边界填充计算的问题 <PRLink id={2185} />
+- 添加选项以始终实时重新定位 `Content` <PRLink id={2092} />
 
-## May 26, 2023
+## 2023年5月26日
 
-This release ensures all of our primitives are ESM compatible. We have also updated to the latest version of [Floating UI](https://floating-ui.com/) for all of our popper-positioned primitives.
+本次发布确保我们所有的原语都与ESM兼容。我们还为所有弹出位置的原语更新到了最新版本的[Floating UI](https://floating-ui.com/)。
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve ESM compatibility <PRLink id={2130} />
-- Fix possible upstream compiler errors (`@types/react` phantom dependency) <PRLink id={1896} />
+- 提升 ESM 兼容性 <PRLink id={2130} />
+- 修复可能的上游编译器错误（`@types/react` 幽灵依赖） <PRLink id={1896} />
 
 <PackageRelease name="Context Menu" version="2.1.4" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
 
 <PackageRelease name="Dialog" version="1.0.4" />
 
-- Prevent non-modal dialog from re-opening when closing using trigger in Safari <PRLink id={2110} />
-- Ensure focus trapping is maintained when the focused item is deleted <PRLink id={2145} />
+- 防止非模态对话框在使用触发器关闭时重新打开 <PRLink id={2110} />
+- 确保在删除聚焦项时保持焦点捕获 <PRLink id={2145} />
 
 <PackageRelease name="Dropdown Menu" version="2.0.5" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
 
 <PackageRelease name="Hover Card" version="1.0.6" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
 
 <PackageRelease name="Menubar" version="1.0.3" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
 
 <PackageRelease name="Navigation Menu" version="1.1.3" />
 
-- Do not close when clicking items and meta key is down <PRLink id={2080} />
+- 单击项目时不关闭且meta键按下 <PRLink id={2080} />
 
 <PackageRelease name="Popover" version="1.0.6" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
-- Prevent non-modal popover from re-opening when closing using trigger in Safari <PRLink id={2110} />
-- Ensure `--radix-popper-available-width` is calculated correctly when using `collisionBoundary` <PRLink id={2032} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
+- 防止非模态弹出框在使用触发器关闭时重新打开 <PRLink id={2110} />
+- 确保在使用 `collisionBoundary` 时正确计算 `--radix-popper-available-width` <PRLink id={2032} />
 
 <PackageRelease name="Select" version="1.2.2" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
-- Improve scroll buttons touch screen support <PRLink id={1771} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
+- 改进滚动按钮触摸屏支持 <PRLink id={1771} />
 
 <PackageRelease name="Slider" version="1.1.2" />
 
-- Clamp thumb position within range <PRLink id={1988} />
+- 确保拇指位置在范围内 <PRLink id={1988} />
 
 <PackageRelease name="Slot" version="1.0.2" />
 
-- Ensure `Slot` can be used in a React Server Component <PRLink id={2116} />
+- 确保 `Slot` 可用于 React 服务器组件 <PRLink id={2116} />
 
 <PackageRelease name="Tooltip" version="1.0.6" />
 
-- Position content correctly when matching trigger size <PRLink id={1995} />
-- Improve large content hoverability <PRLink id={2155} />
+- 当匹配触发器大小时正确定位内容 <PRLink id={1995} />
+- 改进大内容的悬停性 <PRLink id={2155} />
 
-## March 8, 2023
+## 2023年3月8日
 
-This release introduces a brand new primitive in preview: [`Form`](../components/form).
+本次发布引入了一种全新的预览原语：[`Form`](../components/form)。
 
-<PackageRelease name="Form" version="0.0.2" preview />
+<PackageRelease name="Form" version="0.0.2" 预览 />
 
-- New primitive <PRLink id={1998} />
+- 新原语 <PRLink id={1998} />
 
-## February 24, 2023
+## 2023年2月24日
 
 <PackageRelease name="Checkbox" version="1.0.2" />
 
-- Reset checkbox state when form is reset <PRLink id={1733} />
+- 表单重置时重置复选框状态 <PRLink id={1733} />
 
 <PackageRelease name="ContextMenu" version="2.1.2" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1942} />
-- Don't exit fullscreen mode when pressing escape to dismiss from submenu <PRLink id={1752} />
-- Relax `onCheckedChange` type on `ContextMenu.CheckboxItem` <PRLink id={1778} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1942} />
+- 按Escape键从子菜单解除时不退出全屏模式 <PRLink id={1752} />
+- 放宽 `onCheckedChange` 在 `ContextMenu.CheckboxItem` 上的类型 <PRLink id={1778} />
 
 <PackageRelease name="DropdownMenu" version="2.0.3" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1942} />
-- Don't exit fullscreen mode when pressing escape to dismiss from submenu <PRLink id={1752} />
-- Relax `onCheckedChange` type on `DropdownMenu.CheckboxItem` <PRLink id={1778} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1942} />
+- 按Escape键从子菜单解除时不退出全屏模式 <PRLink id={1752} />
+- 放宽 `onCheckedChange` 在 `DropdownMenu.CheckboxItem` 上的类型 <PRLink id={1778} />
 
 <PackageRelease name="HoverCard" version="1.0.4" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1942} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1942} />
 
 <PackageRelease name="Menubar" version="1.0.1" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1943} />
-- Don't exit fullscreen mode when pressing escape to dismiss from submenu <PRLink id={1752} />
-- Relax `onCheckedChange` type on `Menubar.CheckboxItem` <PRLink id={1778} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1943} />
+- 按Escape键从子菜单解除时不退出全屏模式 <PRLink id={1752} />
+- 放宽 `onCheckedChange` 在 `Menubar.CheckboxItem` 上的类型 <PRLink id={1778} />
 
 <PackageRelease name="Popover" version="1.0.4" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1942} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1942} />
 
 <PackageRelease name="Tooltip" version="1.0.4" />
 
-- Expose new CSS custom properties to enable size constraints <PRLink id={1942} />
+- 暴露新的CSS自定义属性以启用大小约束 <PRLink id={1942} />
 
-## January 17, 2023
+## 2023年1月17日
 
-This release introduces a brand new primitive: [`Menubar`](../components/menubar). It also adds support for a highly requested feature for [`Select`](../components/select): the ability to position the content in a similar way to `Popover` or `DropdownMenu`.
+本次发布引入了一种全新的原语：[`Menubar`](../components/menubar)。同时为 [`Select`](../components/select) 添加了一个备受欢迎的功能支持：以类似于 `Popover` 或 `DropdownMenu` 的方式定位内容的能力。
 
 <PackageRelease name="Accordion" version="1.1.0" />
 
-- Add horizontal orientation support with new `orientation` prop, as well as RTL support with `dir` <PRLink id={1850} />
+- 增加水平方向支持，并添加新的 `orientation` 属性，以及使用 `dir` 的RTL支持 <PRLink id={1850} />
 
 <PackageRelease name="Context Menu" version="2.1.1" />
 
-- Fix consistency issue with RTL positioning <PRLink id={1890} />
+- 修复RTL定位的一致性问题 <PRLink id={1890} />
 
 <PackageRelease name="Dropdown Menu" version="2.0.2" />
 
-- Fix consistency issue with RTL positioning <PRLink id={1890} />
+- 修复RTL定位的一致性问题 <PRLink id={1890} />
 
 <PackageRelease name="Hover Card" version="1.0.3" />
 
-- Fix consistency issue with RTL positioning <PRLink id={1890} />
+- 修复RTL定位的一致性问题 <PRLink id={1890} />
 
-<PackageRelease name="Menubar" version="1.0.0" major />
+<PackageRelease name="Menubar" version="1.0.0" 主要 />
 
-- New primitive <PRLink id={1846} />
+- 新原语 <PRLink id={1846} />
 
 <PackageRelease name="Popover" version="1.0.3" />
 
-- Fix consistency issue with RTL positioning <PRLink id={1890} />
+- 修复RTL定位的一致性问题 <PRLink id={1890} />
 
 <PackageRelease name="Select" version="1.2.0" />
 
-- Add `position` prop to `Select.Content` to enable popper positioning <PRLink id={1853} />
+- 添加 `position` 属性到 `Select.Content` 以启用弹出定位 <PRLink id={1853} />
 
 <PackageRelease name="Tooltip" version="1.0.3" />
 
-- Fix consistency issue with RTL positioning <PRLink id={1890} />
+- 修复RTL定位的一致性问题 <PRLink id={1890} />
 
-## December 14, 2022
+## 2022年12月14日
 
 <PackageRelease name="Context Menu" version="2.1.0" />
 
-- Add `disabled` prop to `ContextMenu.Trigger` <PRLink id={1746} />
+- 为 `ContextMenu.Trigger` 添加 `disabled` 属性 <PRLink id={1746} />
 
-## November 15, 2022
+## 2022年11月15日
 
 <PackageRelease name="Select" version="1.1.2" />
 
-- Fix invalid `pointerId` in Cypress when running Firefox <PRLink id={1753} />
+- 修复FireFox运行Cypress时的无效 `pointerId` <PRLink id={1753} />
 
-## October 17, 2022
+## 2022年10月17日
 
 <PackageRelease name="Accordion" version="1.0.1" />
 
-- Fix initial animation playback in Firefox and Safari <PRLink id={1710} />
+- 修复Firefox和Safari中的初始动画播放 <PRLink id={1710} />
 
 <PackageRelease name="Alert Dialog" version="1.0.2" />
 
-- Fix issue with textarea elements not being scrollable in Firefox <PRLink id={1550} />
+- 修复Firefox中textarea元素无法滚动的问题 <PRLink id={1550} />
 
 <PackageRelease name="Collapsible" version="1.0.1" />
 
-- Fix initial animation playback in Firefox and Safari <PRLink id={1710} />
+- 修复Firefox和Safari中的初始动画播放 <PRLink id={1710} />
 
-<PackageRelease name="Context Menu" version="2.0.1" major />
+<PackageRelease name="Context Menu" version="2.0.1" 主要 />
 
-- **\[Breaking\]** Add support for indeterminate state on `ContextMenu.CheckboxItem`. Note that this is only a breaking change if you are currently using the `CheckboxItem` part and your codebase is written in TypeScript. <PRLink id={1624} />
+- **\[破坏性\]** 添加对 `ContextMenu.CheckboxItem` 中不确定状态的支持。请注意，只有当您当前正在使用 `CheckboxItem` 部件并且您的代码基于TypeScript时这才是一个破坏性更改。 <PRLink id={1624} />
 
 <PackageRelease name="Dialog" version="1.0.2" />
 
-- Fix issue with textarea elements not being scrollable in Firefox <PRLink id={1550} />
+- 修复Firefox中textarea元素无法滚动的问题 <PRLink id={1550} />
 
-<PackageRelease name="Dropdown Menu" version="2.0.1" major />
+<PackageRelease name="Dropdown Menu" version="2.0.1" 主要 />
 
-- **\[Breaking\]** Add support for indeterminate state on `DropdownMenu.CheckboxItem`. Note that this is only a breaking change if you are currently using the `CheckboxItem` part and your codebase is written in TypeScript. <PRLink id={1624} />
-- Correctly pair `DropdownMenu.Trigger` open state with `aria-expanded` when closed <PRLink id={1644} />
-- Fix issue with eager selection of items when using `asChild` <PRLink id={1647} />
-- Fix issue with dismissing when the component is used in a separate popup window <PRLink id={1677} />
+- **\[破坏性\]** 添加对 `DropdownMenu.CheckboxItem` 中不确定状态的支持。请注意，只有当您当前正在使用 `CheckboxItem` 部件并且您的代码基于TypeScript时这才是一个破坏性更改。 <PRLink id={1624} />
+- 关闭时正确配对 `DropdownMenu.Trigger` 的打开状态与 `aria-expanded` <PRLink id={1644} />
+- 修复使用 `asChild` 时快速选择项目的问题 <PRLink id={1647} />
+- 修复在单独的弹出窗口中使用该组件时出现的关闭问题 <PRLink id={1677} />
 
 <PackageRelease name="Hover Card" version="1.0.2" />
 
-- Improve text selection experience <PRLink id={1692} />
+- 改善文本选择体验 <PRLink id={1692} />
 
-<PackageRelease name="Label" version="2.0.0" major />
+<PackageRelease name="Label" version="2.0.0" 主要 />
 
-- **\[Breaking\]** Remove `useLabelContext` and support for fully custom controls. For native labelling to work, ensure your custom controls are based on native elements such as `button` or `input`. <PRLink id={1686} />
-- Improve native behavior by using the native `label` element <PRLink id={1686} />
+- **\[破坏性\]** 移除 `useLabelContext` 和对完全自定义控件的支持。要确保本地标签正常工作，请确保您的自定义控件基于本地元素，例如 `button` 或 `input`。 <PRLink id={1686} />
+- 通过使用本地 `label` 元素改善本地行为 <PRLink id={1686} />
 
 <PackageRelease name="Navigation Menu" version="1.1.1" />
 
-- Prevent menu from re-opening with the pointer after being dismissed with escape <PRLink id={1579} />
-- Add `delayDuration` and `skipDelayDuration` props to `NavigationMenu.Root`. Note that by default, triggers now have a brief delay before opening in order to improve UX, this can be modified using the props provided. <PRLink id={1716} />
+- 防止菜单在通过Escape键关闭后再次打开 <PRLink id={1579} />
+- 向 `NavigationMenu.Root` 添加 `delayDuration` 和 `skipDelayDuration` 属性。注意，默认情况下，触发器打开前都有短暂延迟，以便改善用户体验，这可以通过提供的属性进行修改。 <PRLink id={1716} />
 
 <PackageRelease name="Radio Group" version="1.1.0" />
 
-- Add `disabled` prop to `RadioGroup.Root` <PRLink id={1530} />
-- Fix issue where `RadioGroup.Root` was focusable when all items were disabled <PRLink id={1530} />
+- 为 `RadioGroup.Root` 添加 `disabled` 属性 <PRLink id={1530} />
+- 修复 `RadioGroup.Root` 在所有项目被禁用时可聚焦的问题 <PRLink id={1530} />
 
 <PackageRelease name="Select" version="1.1.1" />
 
-- Add `disabled` prop to `Select.Root` <PRLink id={1699} />
-- Add `required` prop to `Select.Root` <PRLink id={1598} />
+- 为 `Select.Root` 添加 `disabled` 属性 <PRLink id={1699} />
+- 为 `Select.Root` 添加 `required` 属性 <PRLink id={1598} />
 
 <PackageRelease name="Slider" version="1.1.0" />
 
-- Add ability to visually invert the slider using the new `inverted` prop on `Slider.Root` <PRLink id={1695} />
-- Add `onValueCommit` prop to `Slider.Root` to better handle discrete value changes <PRLink id={1696} />
+- 添加在 `Slider.Root` 上使用新 `inverted` 属性视觉上反转滑块的能力 <PRLink id={1695} />
+- 为 `Slider.Root` 添加 `onValueCommit` 属性以更好地处理离散值更改 <PRLink id={1696} />
 
 <PackageRelease name="Slot" version="1.0.1" />
 
-- Stop eagerly creating callback props <PRLink id={1713} />
+- 停止过早创建回调属性 <PRLink id={1713} />
 
 <PackageRelease name="Toast" version="1.1.1" />
 
-- Fix regression with screen readers announcing as "group" rather than "status" <PRLink id={1556} />
-- Fix regression with `ref` assignments on child elements returning `null` <PRLink id={1668} />
-- Add `onPause` and `onResume` props to `Toast.Root` <PRLink id={1669} />
-- Fix timer reset issue which would cause toasts to dismiss early in some cases <PRLink id={1682} />
+- 修复屏幕阅读器以“组”而不是“状态”宣布的回归 <PRLink id={1556} />
+- 修复子元素上 `ref` 分配返回 `null` 的回归 <PRLink id={1668} />
+- 为 `Toast.Root` 添加 `onPause` 和 `onResume` 属性 <PRLink id={1669} />
+- 修复计时器重置问题，可能导致吐司在某些情况下提前消失 <PRLink id={1682} />
 
 <PackageRelease name="Toolbar" version="1.0.1" />
 
-- Prevent `Toolbar.Item` click handlers firing twice <PRLink id={1526} />
+- 防止 `Toolbar.Item` 的点击处理程序触发两次 <PRLink id={1526} />
 
 <PackageRelease name="Tooltip" version="1.0.2" />
 
-- Ensure tooltip doesn't open if interacting with the trigger before the open timer expires <PRLink id={1693} />
+- 确保在打开计时器到期之前与触发器交互不会打开工具提示 <PRLink id={1693} />
 
-## July 21, 2022
+## 2022年7月21日
 
-With this release, we start following semantic versioning strictly. All primitives are now versioned <Badge size="1" color="yellow">1.0.0</Badge>.
+通过此发布，我们开始严格遵循语义版本控制。所有原语现在都已版本化 <Badge size="1" color="yellow">1.0.0</Badge>。
 
-We also move the [`Select`](../components/select), [`Toast`](../components/toast) and [`NavigationMenu`](../components/navigation-menu) from preview to stable.
+我们还将 [`Select`](../components/select)、[`Toast`](../components/toast) 和 [`NavigationMenu`](../components/navigation-menu) 从预览转为稳定。
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve support for React 18 <PRLink id={1329} />
-- **\[Breaking\]** Improve RTL performance. You need to use [`DirectionProvider`](../utilities/direction-provider) if you were relying on `dir` attribute inheritance from document (or any element). <PRLink id={1119} />
+- 改善对 React 18 的支持 <PRLink id={1329} />
+- **\[破坏性\]** 改善 RTL 性能。如果您依赖于文档（或任何元素）的 `dir` 属性继承，则需要使用 [`DirectionProvider`](../utilities/direction-provider)。 <PRLink id={1119} />
 
-<PackageRelease name="Alert Dialog" version="1.0.0" major />
+<PackageRelease name="Alert Dialog" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Remove `allowPinchZoom` prop, now defaults to `true` <PRLink id={1514} />
-- Improve compatibility with JS animation libraries with `forceMount` on `AlertDialog.Portal` <PRLink id={1075} />
-- Fix regressions with page interactivity while/after closing dialog <PRLink id={1401} />
+- **\[破坏性\]** 移除 `allowPinchZoom` 属性，默认为 `true` <PRLink id={1514} />
+- 通过在 `AlertDialog.Portal` 上使用 `forceMount` 改善与 JS 动画库的兼容性 <PRLink id={1075} />
+- 修复关闭对话框时页面交互性的回归 <PRLink id={1401} />
 
-<PackageRelease name="Context Menu" version="1.0.0" major />
+<PackageRelease name="Context Menu" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Improve indirect nesting of context menus. Submenus must now be created using explicit parts. <PRLink id={1394} />
-- **\[Breaking\]** Remove `allowPinchZoom` prop, now defaults to `true` <PRLink id={1514} />
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1429} />
-- **\[Breaking\]** Remove `offset` on `Arrow` part <PRLink id={1531} />
-- **\[Breaking\]** Rename `collisionTolerance` to `collisionPadding` on `Content` part and accepts a number or a padding object <PRLink id={1531} />
-- Fix issue with native context menu appearing in React 18 <PRLink id={1378} />
-- Add `data-highlighted` attribute to support styling <PRLink id={1388} />
-- Add `data-state` attribute to `Trigger` part <PRLink id={1455} />
-- Add `collisionBoundary`, `arrowPadding`, `sticky`, `hideWhenDetached` props on `Content` part <PRLink id={1531} />
+- **\[破坏性\]** 改善上下文菜单的间接嵌套。子菜单现在必须使用显式部件创建。 <PRLink id={1394} />
+- **\[破坏性\]** 移除 `allowPinchZoom` 属性，默认为 `true` <PRLink id={1514} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1429} />
+- **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
+- **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
+- 修复React 18中本地上下文菜单出现的问题 <PRLink id={1378} />
+- 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
+- 添加 `data-state` 属性到 `Trigger` 部件 <PRLink id={1455} />
+- 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
 
-<PackageRelease name="Dialog" version="1.0.0" major />
+<PackageRelease name="Dialog" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Remove `allowPinchZoom` prop, now defaults to `true` <PRLink id={1514} />
-- Improve compatibility with JS animation libraries with `forceMount` on `Dialog.Portal` <PRLink id={1075} />
-- Fix regressions with page interactivity while/after closing dialog <PRLink id={1401} />
+- **\[破坏性\]** 移除 `allowPinchZoom` 属性，默认为 `true` <PRLink id={1514} />
+- 通过在 `Dialog.Portal` 上使用 `forceMount` 改善与 JS 动画库的兼容性 <PRLink id={1075} />
+- 修复关闭对话框时页面交互性的回归 <PRLink id={1401} />
 
-<PackageRelease name="Dropdown Menu" version="1.0.0" major />
+<PackageRelease name="Dropdown Menu" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Improve indirect nesting of dropdown menus. Submenus must now be created using explicit parts. <PRLink id={1394} />
-- **\[Breaking\]** Remove `allowPinchZoom` prop, now defaults to `true` <PRLink id={1514} />
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1429} />
-- **\[Breaking\]** Remove `offset` on `Arrow` part <PRLink id={1531} />
-- **\[Breaking\]** Rename `collisionTolerance` to `collisionPadding` on `Content` part and accepts a number or a padding object <PRLink id={1531} />
-- Add `data-highlighted` attribute to support styling <PRLink id={1388} />
-- Prevent escape key from exiting fullscreen mode in Firefox & Safari <PRLink id={1423} />
-- Add `collisionBoundary`, `arrowPadding`, `sticky`, `hideWhenDetached` props on `Content` part <PRLink id={1531} />
+- **\[破坏性\]** 改善下拉菜单的间接嵌套。子菜单现在必须使用显式部件创建。 <PRLink id={1394} />
+- **\[破坏性\]** 移除 `allowPinchZoom` 属性，默认为 `true` <PRLink id={1514} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1429} />
+- **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
+- **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
+- 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
+- 防止Escape键在Firefox和Safari中退出全屏模式 <PRLink id={1423} />
+- 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
 
-<PackageRelease name="Hover Card" version="1.0.0" major />
+<PackageRelease name="Hover Card" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1426} />
-- **\[Breaking\]** Remove `offset` on `Arrow` part <PRLink id={1531} />
-- **\[Breaking\]** Rename `collisionTolerance` to `collisionPadding` on `Content` part and accepts a number or a padding object <PRLink id={1531} />
-- Add `collisionBoundary`, `arrowPadding`, `sticky`, `hideWhenDetached` props on `Content` part <PRLink id={1531} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1426} />
+- **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
+- **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
+- 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
 
-<PackageRelease name="Navigation Menu" version="1.0.0" major />
+<PackageRelease name="Navigation Menu" version="1.0.0" 主要 />
 
-- Ensure menu closes after clicking `NavigationMenu.Link` <PRLink id={1347} />
-- Add `onSelect` prop to `NavigationMenu.Link` <PRLink id={1372} />
+- 确保菜单在单击 `NavigationMenu.Link` 后关闭 <PRLink id={1347} />
+- 向 `NavigationMenu.Link` 添加 `onSelect` 属性 <PRLink id={1372} />
 
-<PackageRelease name="Popover" version="1.0.0" major />
+<PackageRelease name="Popover" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Remove `allowPinchZoom` prop, now defaults to `true` <PRLink id={1514} />
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1425} />
-- **\[Breaking\]** Remove `offset` on `Arrow` part <PRLink id={1531} />
-- **\[Breaking\]** Rename `collisionTolerance` to `collisionPadding` on `Content` part and accepts a number or a padding object <PRLink id={1531} />
-- Add `collisionBoundary`, `arrowPadding`, `sticky`, `hideWhenDetached` props on `Content` part <PRLink id={1531} />
+- **\[破坏性\]** 移除 `allowPinchZoom` 属性，默认为 `true` <PRLink id={1514} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1425} />
+- **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
+- **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
+- 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
 
-<PackageRelease name="Portal" version="1.0.0" major />
+<PackageRelease name="Portal" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Note that `z-index` isn't managed anymore so you have full control of layering. The prop to provide a custom container evolves from `containerRef` (ref) to `container` (element). The `data-radix-portal` was removed because you can use `asChild` to control the element. <PRLink id={1463} />
+- **\[破坏性\]** 请注意，不再管理 `z-index`，因此您可以完全控制分层。为提供自定义容器，prop 导向客制化的	containerRef（ref）演变为 container（element）。 `data-radix-portal` 被移除，因为您可以使用 `asChild` 控制元素。 <PRLink id={1463} />
 
-<PackageRelease name="RadioGroup" version="1.0.0" major />
+<PackageRelease name="RadioGroup" version="1.0.0" 主要 />
 
-- Add `aria-required` to root <PRLink id={1422} />
+- 为根元素添加 `aria-required` <PRLink id={1422} />
 
-<PackageRelease name="Scroll Area" version="1.0.0" major />
+<PackageRelease name="Scroll Area" version="1.0.0" 主要 />
 
-- `ScrollArea.Thumb` is now animatable <PRLink id={1392} />
+- `ScrollArea.Thumb` 现在可以动画化 <PRLink id={1392} />
 
-<PackageRelease name="Select" version="1.0.0" major />
+<PackageRelease name="Select" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Renamed `data-state` values from `active|inactive` to `checked|unchecked` <PRLink id={1388} />
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1459} />
-- Fix position breaking when using `asChild` on `Select.Content` <PRLink id={1245} />
-- Improve trigger/content alignment when `Select.Content` has padding <PRLink id={1312} />
-- Fix trigger/content alignment when there are less than 5 items <PRLink id={1355} />
-- Support trigger/content alignment when no value is provided <PRLink id={1379} />
-- Add `data-highlighted` attribute to support styling <PRLink id={1388} />
-- Add support for placeholder via `placeholder` prop on `Select.Value` <PRLink id={1384} />
-- Resolve value mismatch with underlying native select <PRLink id={1421} />
+- **\[破坏性\]** 将 `data-state` 的值从 `active|inactive` 重命名为 `checked|unchecked` <PRLink id={1388} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1459} />
+- 修复使用 `asChild` 时定位破坏的问题 <PRLink id={1245} />
+- 改善 `Select.Content` 具有填充时的触发器/内容对齐 <PRLink id={1312} />
+- 修复当项目少于5个时触发器/内容的对齐 <PRLink id={1355} />
+- 在未提供值时支持触发器/内容的对齐 <PRLink id={1379} />
+- 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
+- 通过在 `Select.Value` 上使用 `placeholder` 属性支持占位符 <PRLink id={1384} />
+- 解决与基础本地选择器的值不匹配问题 <PRLink id={1421} />
 
-<PackageRelease name="Slot" version="1.0.0" major />
+<PackageRelease name="Slot" version="1.0.0" 主要 />
 
-- Fix issue with children ordering when using `Slottable` <PRLink id={1376} />
+- 修复使用 `Slottable` 时的子项排序问题 <PRLink id={1376} />
 
-<PackageRelease name="Tabs" version="1.0.0" major />
+<PackageRelease name="Tabs" version="1.0.0" 主要 />
 
-- Add support for lifecycle animation to `Tabs.Content` <PRLink id={1346} />
+- 为 `Tabs.Content` 添加支持生命周期动画 <PRLink id={1346} />
 
-<PackageRelease name="Toast" version="1.0.0" major />
+<PackageRelease name="Toast" version="1.0.0" 主要 />
 
-- **\[Breaking\]** The default toast order has changed, they now render top to bottom from oldest to newest <PRLink id={1469} />
-- Improve Typescript types when using `asChild` <PRLink id={1300} />
-- Fix issue with toast reordering when updating React's `key` prop <PRLink id={1283} />
-- Improve compatability with animation libraries <PRLink id={1468} />
+- **\[破坏性\]** 默认的吐司顺序已更改，它们现在从旧到新自上而下呈现 <PRLink id={1469} />
+- 改善使用 `asChild` 时的TypeScript类型 <PRLink id={1300} />
+- 修复更新React的 `key` 属性时吐司重排序的问题 <PRLink id={1283} />
+- 改善与动画库的兼容性 <PRLink id={1468} />
 
-<PackageRelease name="Tooltip" version="1.0.0" major />
+<PackageRelease name="Tooltip" version="1.0.0" 主要 />
 
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. Note that `z-index` isn't managed anymore so you have full control of layering. <PRLink id={1427} />
-- **\[Breaking\]** By default `Tooltip.Content` will remain open when hovering (WCAG 2.1 Content on Hover compliance). `disableHoverableContent` can be supplied to `Tooltip.Provider` to restore previous behavior <PRLink id={1490} />
-- **\[Breaking\]** `side` on `Tooltip.Content` now defaults to `top` <PRLink id={1490} />
-- **\[Breaking\]** `Tooltip.Provider` is now required, you must wrap your app to avoid regressions. <PRLink id={1490} />
-- **\[Breaking\]** Remove `offset` on `Arrow` part <PRLink id={1531} />
-- **\[Breaking\]** Rename `collisionTolerance` to `collisionPadding` on `Content` part and accepts a number or a padding object <PRLink id={1531} />
-- Improve layering of tooltip with other primitives <PRLink id={1314} />
-- Fix tooltip closing when transforming/animation trigger <PRLink id={937} />
-- Add `collisionBoundary`, `arrowPadding`, `sticky`, `hideWhenDetached` props on `Content` part <PRLink id={1531} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1427} />
+- **\[破坏性\]** 默认情况下，`Tooltip.Content`将在悬停时保持打开（符合WCAG 2.1悬停内容要求）。可以提供 `disableHoverableContent` 到 `Tooltip.Provider`以恢复之前的行为 <PRLink id={1490} />
+- **\[破坏性\]** `Tooltip.Content` 的 `side` 现在默认为 `top` <PRLink id={1490} />
+- **\[破坏性\]** `Tooltip.Provider` 现在是必需的，您必须包装您的应用以避免回归。 <PRLink id={1490} />
+- **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
+- **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
+- 改善工具提示与其他原语的分层 <PRLink id={1314} />
+- 修复当转换/动画触发器时工具提示关闭的问题 <PRLink id={937} />
 
-## February 28, 2022
+## 2022年2月28日
 
-This release introduces 3 brand new primitives in preview: [`Select`](../components/select), [`Toast`](../components/toast) and [`NavigationMenu`](../components/navigation-menu), whilst also shipping a ton of fixes and improvements.
+本次发布引入了3种全新的原语预览：[`Select`](../components/select)、[`Toast`](../components/toast) 和 [`NavigationMenu`](../components/navigation-menu)，同时还提交了大量修复和改进。
 
 <PackageRelease name="Accordion" version="0.1.6" />
 
-- Prevent form submission when pressing `Accordion.Trigger` <PRLink id={1085} />
-- Fix animation issue with React 18 <PRLink id={1125} />
+- 按下 `Accordion.Trigger` 时防止表单提交 <PRLink id={1085} />
+- 修复与 React 18 的动画问题 <PRLink id={1125} />
 
 <PackageRelease name="Alert Dialog" version="0.1.7" />
 
-- Improve pointer-events management <PRLink id={1079} />
+- 改进指针事件管理 <PRLink id={1079} />
 
 <PackageRelease name="Checkbox" version="0.1.5" />
 
-- Prevent activation via enter key <PRLink id={1104} />
+- 防止通过enter键激活 <PRLink id={1104} />
 
 <PackageRelease name="Collapsible" version="0.1.6" />
 
-- Fix animation issue with React 18 <PRLink id={1125} />
+- 修复与 React 18 的动画问题 <PRLink id={1125} />
 
 <PackageRelease name="Context Menu" version="0.1.6" />
 
-- Prevent `DropdownMenu.TriggerItem` click from firing twice <PRLink id={1057} />
-- Improve idle performance <PRLink id={1040} />
+- 防止 `DropdownMenu.TriggerItem` 单击触发两次 <PRLink id={1057} />
+- 改善空闲性能 <PRLink id={1040} />
 
-<PackageRelease name="Dialog" version="0.1.7" major />
+<PackageRelease name="Dialog" version="0.1.7" 主要 />
 
-- Improve pointer-events management <PRLink id={1079} />
-- **\[Breaking\]** `Dialog.Title` is now a required part so will throw an error if not used. `aria-describedby={undefined}` must be passed to `Dialog.Content` if no description is needed. <PRLink id={1098} />
+- 改进指针事件管理 <PRLink id={1079} />
+- **\[破坏性\]** `Dialog.Title` 现在是必需部件，因此如果未使用，将会抛出错误。如果不需要描述，必须将 `aria-describedby={undefined}` 传递给 `Dialog.Content`。 <PRLink id={1098} />
 
 <PackageRelease name="Dropdown Menu" version="0.1.6" />
 
-- Improve composability with `Dialog`/`AlertDialog` <PRLink id={1097} />
-- Prevent clicking trigger to close from immediately reopening in non-modal mode <PRLink id={1059} />
-- Prevent `DropdownMenu.TriggerItem` click from firing twice <PRLink id={1057} />
-- Improve idle performance <PRLink id={1040} />
+- 改善与 `Dialog`/`AlertDialog` 的组合 <PRLink id={1097} />
+- 防止单击触发器关闭后立即重新打开非模态模式 <PRLink id={1059} />
+- 防止 `DropdownMenu.TriggerItem` 单击触发两次 <PRLink id={1057} />
+- 改善空闲性能 <PRLink id={1040} />
 
-<PackageRelease name="Navigation Menu" version="0.1.2" preview />
+<PackageRelease name="Navigation Menu" version="0.1.2" 预览 />
 
-- New primitive <PRLink id={1172} />
+- 新原语 <PRLink id={1172} />
 
 <PackageRelease name="Radio Group" version="0.1.5" />
 
-- Prevent activation via enter key <PRLink id={1104} />
+- 防止通过enter键激活 <PRLink id={1104} />
 
-<PackageRelease name="Select" version="0.1.1" preview />
+<PackageRelease name="Select" version="0.1.1" 预览 />
 
-- New primitive <PRLink id={1169} />
+- 新原语 <PRLink id={1169} />
 
 <PackageRelease name="Slider" version="0.1.4" />
 
-- Prevent page scroll when using `Home` and `End` keys <PRLink id={1076} />
+- 在使用 `Home` 和 `End` 键时防止页面滚动 <PRLink id={1076} />
 
 <PackageRelease name="Tabs" version="0.1.5" />
 
-- Prevent accidental focus activation via right click <PRLink id={1114} />
+- 防止通过右键单击意外激活焦点 <PRLink id={1114} />
 
-<PackageRelease name="Toast" version="0.1.1" preview />
+<PackageRelease name="Toast" version="0.1.1" 预览 />
 
-- New primitive <PRLink id={1165} />
+- 新原语 <PRLink id={1165} />
 
 <PackageRelease name="Toggle Group" version="0.1.5" />
 
-- Improve accessibility by using radio role for single toggle group <PRLink id={1118} />
+- 通过使用单选角色来改善可访问性 <PRLink id={1118} />
 
-## December 13, 2021
+## 2021年12月13日
 
-This release focuses on React 18 support and introduces a number of breaking changes to some packages, mostly related to portalling dialogs.
+本次发布侧重于对 React 18 的支持，并引入了一些包的重大破坏性更改，主要与对话框的端口化有关。
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- **\[Breaking\]** Deprecate `IdProvider`. Improves support for React 18 going forward and is no longer needed in older versions. Remove from your app to avoid deprecation warnings. <PRLink id={1006} />
+- **\[破坏性\]** 废弃 `IdProvider`。提高对 React 18 的支持，并不再需要使用旧版本。请从您的应用中移除，以避免过时的警告。 <PRLink id={1006} />
 
-<PackageRelease name="Accordion" version="0.1.5" major />
+<PackageRelease name="Accordion" version="0.1.5" 主要 />
 
-- Improve React 18 support <PRLink id={984} />
-- Improve dev mode errors with mismatched `type` and `value` props <PRLink id={979} />
-- Prevent `Accordion.Content` height animation on initial page load <PRLink id={977} />
+- 改善对 React 18 的支持 <PRLink id={984} />
+- 改善开发模式中错误与不匹配的 `type` 和 `value` 属性 <PRLink id={979} />
+- 防止 `Accordion.Content` 高度动画在初始页面加载时 <PRLink id={977} />
 
-<PackageRelease name="Alert Dialog" version="0.1.5" major />
+<PackageRelease name="Alert Dialog" version="0.1.5" 主要 />
 
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. <PRLink id={936} />
-- **\[Breaking\]** Support scrolling within `AlertDialog.Overlay`. Move `allowPinchZoom` to root. <PRLink id={963} />
-- Fix `asChild` TypeScript error <PRLink id={924} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。 <PRLink id={936} />
+- **\[破坏性\]** 支持在 `AlertDialog.Overlay` 中滚动。将 `allowPinchZoom` 移动到根元素。 <PRLink id={963} />
+- 修复 `asChild` 的TypeScript错误 <PRLink id={924} />
 
-<PackageRelease name="Collapsible" version="0.1.5" />
+<PackageRelease name="Collapsible" version="0.1.5" 主要 />
 
-- Prevent `Collapsible.Content` height animation on initial page load <PRLink id={977} />
+- 防止 `Collapsible.Content` 高度动画在初始页面加载时 <PRLink id={977} />
 
-<PackageRelease name="Dialog" version="0.1.5" major />
+<PackageRelease name="Dialog" version="0.1.5" 主要 />
 
-- **\[Breaking\]** Add new `Portal` part. To avoid regressions, use this part if you want portalling behavior. <PRLink id={936} />
-- **\[Breaking\]** Support scrolling within `Dialog.Overlay`. Move `allowPinchZoom` to root. <PRLink id={963} />
+- **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。 <PRLink id={936} />
+- **\[破坏性\]** 支持在 `Dialog.Overlay` 中滚动。将 `allowPinchZoom` 移动到根元素。 <PRLink id={963} />
 
-<PackageRelease name="Dropdown Menu" version="0.1.4" />
+<PackageRelease name="Dropdown Menu" version="0.1.4" 主要 />
 
-- Prevent disabled trigger from opening menu <PRLink id={974} />
+- 防止禁用触发器打开菜单 <PRLink id={974} />
 
 <PackageRelease name="Hover Card" version="0.1.3" />
 
-- Fix ability to focus `HoverCard` when inside a dialog <PRLink id={920} />
+- 修复在对话框内聚焦 `HoverCard` 的能力 <PRLink id={920} />
 
 <PackageRelease name="Radio Group" version="0.1.4" />
 
-- Prevent programmatic focus from changing value <PRLink id={939} />
+- 防止程序性聚焦更改值 <PRLink id={939} />
 
-<PackageRelease name="Tabs" version="0.1.4" major />
+<PackageRelease name="Tabs" version="0.1.4" 主要 />
 
-- **\[Breaking\]** Change `Tabs.Trigger` to `button` element <PRLink id={981} />
-- Improve TSDocs <PRLink id={978} />
+- **\[破坏性\]** 在 `Tabs.Content` 中卸载内容，当标签不活跃时 <PRLink id={859} />
 
 <PackageRelease name="Toggle Group" version="0.1.4" />
 
@@ -771,528 +769,527 @@ This release focuses on React 18 support and introduces a number of breaking cha
 
 <Separator mt="7" />
 
-## October 15, 2021
+## 2021年10月15日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- All primitives are now versioned <Badge size="1" color="blue">0.1.1</Badge>
-- Fix composability issues between primitives by scoping context <PRLink id={906} />
-- Fix CSS unmount animations <PRLink id={851} />
+- 所有原语现在均版本化为 <Badge size="1" color="blue">0.1.1</Badge>
+- 修复原语之间的组合性问题，通过作用域上下文 <PRLink id={906} />
+- 修复 CSS 卸载动画 <PRLink id={851} />
 
 <PackageRelease name="Accordion" version="0.1.1" />
 
-- Add new CSS variable to `Accordion.Content` to help with width animations <PRLink id={879} />
+- 为 `Accordion.Content` 添加新的 CSS 变量，以帮助宽度动画 <PRLink id={879} />
 
-<PackageRelease name="Alert Dialog" version="0.1.1" major />
+<PackageRelease name="Alert Dialog" version="0.1.1" 主要 />
 
-- Improve composability with `Dialog` <PRLink id={906} />
-- **\[Breaking\]** Remove `AlertDialog.Content` `onInteractOutside` prop <PRLink id={846} />
+- 改进与 `Dialog` 的组合 <PRLink id={906} />
+- **\[破坏性\]** 移除 `AlertDialog.Content` 的 `onInteractOutside` 属性 <PRLink id={846} />
 
 <PackageRelease name="Dialog" version="0.1.1" />
 
-- Improve composability with `AlertDialog` <PRLink id={906} />
-- Add pinch to zoom support to `DropdownMenu.Content` via `allowPinchZoom` prop <PRLink id={884} />
+- 改进与 `AlertDialog` 的组合 <PRLink id={906} />
+- 通过 `allowPinchZoom` 属性向 `DropdownMenu.Content` 添加支持 <PRLink id={884} />
 
 <PackageRelease name="Context Menu" version="0.1.1" />
 
-- Add pinch to zoom support to `ContextMenu.Content` via `allowPinchZoom` prop <PRLink id={884} />
-- Prevent scroll via arrow keypress on submenu triggers <PRLink id={908} />
+- 通过 `allowPinchZoom` 属性向 `ContextMenu.Content` 添加支持 <PRLink id={884} />
+- 阻止子菜单触发器的箭头键滚动 <PRLink id={908} />
 
 <PackageRelease name="Collapsible" version="0.1.1" />
 
-- Add new CSS variable to `Collapsible.Content` to help with width animations <PRLink id={879} />
+- 为 `Collapsible.Content` 添加新的 CSS 变量，以帮助宽度动画 <PRLink id={879} />
 
 <PackageRelease name="Checkbox" version="0.1.1" />
 
-- Prevent screen reader virtual cursor from accessing hidden input <PRLink id={870} />
+- 防止屏幕阅读器虚拟光标访问隐藏的输入 <PRLink id={870} />
 
 <PackageRelease name="Dropdown Menu" version="0.1.1" />
 
-- Improve composability with `Tooltip` <PRLink id={906} />
-- Add pinch to zoom support to `DropdownMenu.Content` via `allowPinchZoom` prop <PRLink id={884} />
-- Prevent scroll via arrow keypress on submenu triggers <PRLink id={908} />
+- 改进与 `Tooltip` 的组合 <PRLink id={906} />
+- 通过 `allowPinchZoom` 属性向 `DropdownMenu.Content` 添加支持 <PRLink id={884} />
+- 阻止子菜单触发器的箭头键滚动 <PRLink id={908} />
 
 <PackageRelease name="Hover Card" version="0.1.1" />
 
-- Open on focus to improve keyboard support <PRLink id={902} />
-- Compose correct pointer events internally <PRLink id={893} />
+- 打开时聚焦以改善键盘支持 <PRLink id={902} />
+- 正确组合内部指针事件 <PRLink id={893} />
 
 <PackageRelease name="Label" version="0.1.1" />
 
-- Allow its children to prevent event propagation <PRLink id={861} />
+- 允许其子元素防止事件传播 <PRLink id={861} />
 
 <PackageRelease name="Radio Group" version="0.1.1" />
 
-- Prevent screen reader virtual cursor from accessing hidden inputs <PRLink id={870} />
+- 防止屏幕阅读器虚拟光标访问隐藏输入 <PRLink id={870} />
 
 <PackageRelease name="Popover" version="0.1.1" />
 
-- Add pinch to zoom support to `Popover.Content` via `allowPinchZoom` prop <PRLink id={884} />
+- 通过 `allowPinchZoom` 属性向 `Popover.Content` 添加支持 <PRLink id={884} />
 
 <PackageRelease name="Slider" version="0.1.1" />
 
-- Fix calculations when value is `0` <PRLink id={866} />
+- 修复当值为 `0` 时的计算 <PRLink id={866} />
 
 <PackageRelease name="Switch" version="0.1.1" />
 
-- Prevent screen reader virtual cursor from accessing hidden input <PRLink id={870} />
+- 防止屏幕阅读器虚拟光标访问隐藏输入 <PRLink id={870} />
 
-<PackageRelease name="Tabs" version="0.1.1" major />
+<PackageRelease name="Tabs" version="0.1.1" 主要 />
 
-- **\[Breaking\]** Unmount content within `Tabs.Content` when tab is inactive <PRLink id={859} />
+- **\[破坏性\]** 在 `Tabs.Content` 中卸载内容，当选项卡不活跃时 <PRLink id={859} />
 
 <Separator mt="7" />
 
-## September 7, 2021
+## 2021年9月7日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- All primitives moved to **Beta** and are now versioned <Badge size="1" color="blue">0.1.0</Badge>
-- **\[Breaking\]** Replace polymorphic `as` prop with `asChild` boolean prop. Learn more
-  about how to [change the rendered element here](/primitives/docs/guides/composition) <PRLink id={835} />
+- 所有原语移动到 **Beta** 并已版本化为 <Badge size="1" color="blue">0.1.0</Badge>
+- **\[破坏性\]** 用 `asChild` 布尔属性替换多态的 `as` 属性。了解如何通过 [在这里更改渲染的元素](/primitives/docs/guides/composition)。 <PRLink id={835} />
 
 <PackageRelease name="Dialog" version="0.1.0" />
 
-- Improve composability with `DropdownMenu` <PRLink id={818} />
+- 改进与 `DropdownMenu` 的组合 <PRLink id={818} />
 
 <PackageRelease name="Dropdown Menu" version="0.1.0" />
 
-- Improve composability with `Dialog` <PRLink id={818} />
-- Re-enable `pointer-events` when closed <PRLink id={819} />
-- Prevent body text from selecting on close (Firefox) <PRLink id={812} />
-- Ensure sub triggers receive focus on click (iOS Safari) <PRLink id={820} />
+- 改进与 `Dialog` 的组合 <PRLink id={818} />
+- 关闭时重新启用 `pointer-events` <PRLink id={819} />
+- 防止body文本在关闭时选择（Firefox） <PRLink id={812} />
+- 确保子触发器在单击时获得焦点（iOS Safari） <PRLink id={820} />
 
-<PackageRelease name="Primitive" version="0.1.0" major />
+<PackageRelease name="Primitive" version="0.1.0" 主要 />
 
-- **\[Breaking\]** Deprecate `extendPrimitive` utility <PRLink id={840} />
+- **\[破坏性\]** 废弃 `extendPrimitive` 实用程序 <PRLink id={840} />
 
 <Separator mt="7" />
 
-## August 4, 2021
+## 2021年8月4日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve polymorphic types performance <PRLink id={784} />
+- 改善多态类型性能 <PRLink id={784} />
 
-<PackageRelease name="Alert Dialog" version="0.0.20" major />
+<PackageRelease name="Alert Dialog" version="0.0.20" 主要 />
 
-- **\[Breaking\]** Remove `AlertDialog.Content` `onPointerDownOutside` prop <PRLink id={700} />
-- Prevent outside pointer events triggering prematurely on touch devices <PRLink id={767} />
+- **\[破坏性\]** 移除 `AlertDialog.Content` 的 `onPointerDownOutside` 属性 <PRLink id={700} />
+- 防止在触摸设备上溢出的指针事件过早触发 <PRLink id={767} />
 
-<PackageRelease name="Context Menu" version="0.0.24" major />
+<PackageRelease name="Context Menu" version="0.0.24" 主要 />
 
-- Add modality support via `modal` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `ContextMenu.Content` `disableOutsidePointerEvents` prop <PRLink id={700} />
-- Prevent outside pointer events triggering prematurely on touch devices <PRLink id={767} />
+- 通过 `modal` 属性添加模式支持 <PRLink id={700} />
+- **\[破坏性\]** 移除 `ContextMenu.Content` 的 `disableOutsidePointerEvents` 属性 <PRLink id={700} />
+- 防止在触摸设备上溢出的指针事件过早触发 <PRLink id={767} />
 
 <PackageRelease name="Dialog" version="0.0.20" />
 
-- Add modality support via `modal` prop <PRLink id={700} />
-- Improve animation rendering in React 18 <PRLink id={776} />
-- Ensure focus is restored to trigger on close when using the `autofocus` attribute on a child element <PRLink id={739} />
-- Prevent outside pointer events triggering prematurely on touch devices <PRLink id={767} />
-- Ensure iOS Safari consistently focuses the first focusable element <PRLink id={776} />
+- 通过 `modal` 属性添加模式支持 <PRLink id={700} />
+- 改善React 18 中的动画渲染 <PRLink id={776} />
+- 确保在关闭时将焦点恢复到触发器上，当使用子元素的 `autofocus` 属性时 <PRLink id={739} />
+- 防止在触摸设备上溢出的指针事件过早触发 <PRLink id={767} />
+- 确保 iOS Safari 始终聚焦第一个可聚焦的元素 <PRLink id={776} />
 
-<PackageRelease name="Dropdown Menu" version="0.0.23" major />
+<PackageRelease name="Dropdown Menu" version="0.0.23" 主要 />
 
-- Add modality support via `modal` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `DropdownMenu.Content` `disableOutsideScroll` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `DropdownMenu.Content` `disableOutsidePointerEvents` prop <PRLink id={700} />
-- Prevent outside pointer events triggering prematurely on touch devices <PRLink id={767} />
+- 通过 `modal` 属性添加模式支持 <PRLink id={700} />
+- **\[破坏性\]** 移除 `DropdownMenu.Content` 的 `disableOutsideScroll` 属性 <PRLink id={700} />
+- **\[破坏性\]** 移除 `DropdownMenu.Content` 的 `disableOutsidePointerEvents` 属性 <PRLink id={700} />
+- 防止在触摸设备上溢出的指针事件过早触发 <PRLink id={767} />
 
-<PackageRelease name="Popover" version="0.0.20" major />
+<PackageRelease name="Popover" version="0.0.20" 主要 />
 
-- Add modality support via `modal` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `Popover.Content` `disableOutsideScroll` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `Popover.Content` `disableOutsidePointerEvents` prop <PRLink id={700} />
-- **\[Breaking\]** Remove `Popover.Content` `trapFocus` prop <PRLink id={700} />
-- Improve animation rendering in React 18 <PRLink id={776} />
-- Ensure focus is restored to trigger on close when using the `autofocus` attribute on a child element <PRLink id={739} />
-- Prevent outside pointer events triggering prematurely on touch devices <PRLink id={767} />
-- Ensure iOS Safari consistently focuses the first focusable element <PRLink id={776} />
+- 通过 `modal` 属性添加模式支持 <PRLink id={700} />
+- **\[破坏性\]** 移除 `Popover.Content` 的 `disableOutsideScroll` 属性 <PRLink id={700} />
+- **\[破坏性\]** 移除 `Popover.Content` 的 `disableOutsidePointerEvents` 属性 <PRLink id={700} />
+- **\[破坏性\]** 移除 `Popover.Content` 的 `trapFocus` 属性 <PRLink id={700} />
+- 改善动画渲染在 React 18 中 <PRLink id={776} />
+- 确保在关闭时将焦点恢复到触发器上，当使用子元素的 `autofocus` 属性时 <PRLink id={739} />
+- 防止在触摸设备上溢出的指针事件过早触发 <PRLink id={767} />
+- 确保 iOS Safari 始终聚焦第一个可聚焦的元素 <PRLink id={776} />
 
-<PackageRelease name="Scroll Area" version="0.0.16" />
+<PackageRelease name="Scroll Area" version="0.0.16" 主要 />
 
-- Add `data-state` to `ScrollBar` part <PRLink id={801} />
+- 向 `Scrollbar` 部件添加 `data-state` 属性 <PRLink id={801} />
 
 <PackageRelease name="Slider" version="0.0.17" />
 
-- Prevent thumb receiving focus when disabled <PRLink id={777} />
-- Prevent focus loss on thumb when using `React.StrictMode` <PRLink id={794} />
+- 防止拇指在禁用时获得焦点 <PRLink id={777} />
+- 防止在 `React.StrictMode` 中拇指失去焦点 <PRLink id={794} />
 
 <Separator mt="7" />
 
-## June 24, 2021
+## 2021年6月24日
 
 <PackageRelease name="Context Menu" version="0.0.23" />
 
-- Can now be triggered on touch with a long press <PRLink id={743} />
+- 现在可以在触摸时长按以触发 <PRLink id={743} />
 
 <PackageRelease name="Dialog" version="0.0.19" />
 
-- Add optional `Title` and `Description` parts for simpler labelling <PRLink id={741} />
+- 添加可选的 `Title` 和 `Description` 部件以便简单标记 <PRLink id={741} />
 
 <PackageRelease name="Scroll Area" version="0.0.15" />
 
-- Add `data-orientation` to `Scrollbar` for styling convenience <PRLink id={720} />
-- Fix `forceMount` type issue on `Scrollbar` <PRLink id={738} />
+- 向 `Scrollbar` 添加 `data-orientation` 以方便样式 <PRLink id={720} />
+- 修复 `forceMount` 在 `Scrollbar` 上的类型问题 <PRLink id={738} />
 
 <PackageRelease name="Slider" version="0.0.16" />
 
-- Ensure the correct thumb is focused when using keyboard and crossing another thumb <PRLink id={731} />
-- Ensure only one arrow press is needed when crossing another thumb <PRLink id={733} />
+- 确保在使用键盘并跨越另一个拇指时聚焦正确的拇指 <PRLink id={731} />
+- 确保跨越另一个拇指时只需一箭头键 <PRLink id={733} />
 
 <PackageRelease name="Slot" version="0.0.12" />
 
-- Improve types compatibility <PRLink id={737} />
+- 改善类型兼容性 <PRLink id={737} />
 
 <PackageRelease name="Toggle Group" version="0.0.10" />
 
-- Ensure only one click is needed to toggle a single controlled toggle group <PRLink id={722} />
-- Ensure focus behavior is consistent on Safari <PRLink id={727} />
+- 确保只需点击一次即可切换单个受控切换组 <PRLink id={722} />
+- 确保焦点行为在 Safari 中一致 <PRLink id={727} />
 
 <Separator mt="7" />
 
-## June 15, 2021
+## 2021年6月15日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve polymorphic types <PRLink id={648} />
+- 改善多态类型 <PRLink id={648} />
 
-<PackageRelease name="Accordion" version="0.0.16" major />
+<PackageRelease name="Accordion" version="0.0.16" 主要 />
 
-- **\[Breaking\]** Rename `Accordion.Button` to `Accordion.Trigger` <PRLink id={651} />
-- **\[Breaking\]** Rename `Accordion.Panel` to `Accordion.Content` <PRLink id={651} />
-- **\[Breaking\]** Rename custom property accordingly (`--radix-accordion-content-height`) <PRLink id={651} />
-- **\[Breaking\]** `type=“single”` `Accordion` now has a new `collapsible` prop which is `false` by default. This means that the default behavior has now changed. By default a user cannot close all items. <PRLink id={651} />
+- **\[破坏性\]** 将 `Accordion.Button` 重命名为 `Accordion.Trigger` <PRLink id={651} />
+- **\[破坏性\]** 将 `Accordion.Panel` 重命名为 `Accordion.Content` <PRLink id={651} />
+- **\[破坏性\]** 相应地重命名自定义属性（`--radix-accordion-content-height`） <PRLink id={651} />
+- **\[破坏性\]** `type=“single”` 的 `Accordion` 现在具有新的 `collapsible` 属性，默认为 `false`。这意味着默认行为现在已改变，默认情况下用户无法关闭所有项。 <PRLink id={651} />
 
-<PackageRelease name="Alert Dialog" version="0.0.18" major />
+<PackageRelease name="Alert Dialog" version="0.0.18" 主要 />
 
-- **\[Breaking\]** Allow preventing default in `onPointerDownOutside` without inadvertently preventing focus <PRLink id={654} />
+- **\[破坏性\]** 允许在 `onPointerDownOutside` 中防止默认行为，而不会意外地防止聚焦 <PRLink id={654} />
 
-<PackageRelease name="Checkbox" version="0.0.16" major />
+<PackageRelease name="Checkbox" version="0.0.16" 主要 />
 
-- **\[Breaking\]** `onCheckedChange(event)` is now `onCheckedChange(checked: CheckedState)` <PRLink id={672} />
-- Improve compatibility with native form validation <PRLink id={650} />
-- Allow stopping propagation on `Checkbox` `onClick` <PRLink id={672} />
-- Improve compatibility with native `label` <PRLink id={672} />
-- Improve accessibility when wrapped in native `label` <PRLink id={672} />
+- **\[破坏性\]** `onCheckedChange(event)` 现在是 `onCheckedChange(checked: CheckedState)` <PRLink id={672} />
+- 改进与本地表单验证的兼容性 <PRLink id={650} />
+- 允许在 `Checkbox` 的 `onClick` 中停止传播 <PRLink id={672} />
+- 改进与本地 `label` 的兼容性 <PRLink id={672} />
+- 在包裹时在本地 `label` 中改善无障碍性 <PRLink id={672} />
 
-<PackageRelease name="Collapsible" version="0.0.16" major />
+<PackageRelease name="Collapsible" version="0.0.16" 主要 />
 
-- **\[Breaking\]** Rename `Collapsible.Button` to `Collapsible.Trigger` <PRLink id={651} />
+- **\[破坏性\]** 将 `Collapsible.Button` 重命名为 `Collapsible.Trigger` <PRLink id={651} />
 
-<PackageRelease name="Context Menu" version="0.0.22" major />
+<PackageRelease name="Context Menu" version="0.0.22" 主要 />
 
-- Add submenu support <PRLink id={682} />
-- Add `ContextMenu.TriggerItem` <PRLink id={682} />
-- Add `ContextMenu.Arrow` <PRLink id={682} />
-- Add `dir` prop for RTL support with submenus <PRLink id={682} />
-- **\[Breaking\]** Allow preventing default in `onPointerDownOutside` without inadvertently preventing focus <PRLink id={654} />
-- **\[Breaking\]** Remove `ContextMenu.Content` `side` prop <PRLink id={658} />
-- **\[Breaking\]** Remove `ContextMenu.Content` `align` prop <PRLink id={658} />
-- **\[Breaking\]** If you had `sideOffset` on `ContextMenu.Content` before, you should now use `alignOffset`. This is to standardize vertical alignment for both root and sub-menus. <PRLink id={712} />
-- **\[Breaking\]** `onFocusOutside` is now a custom event <PRLink id={671} />
-- Improve support of content and item with no padding <PRLink id={658} />
-- Align with WAI-ARIA spec by focusing first item when opening via keyboard <PRLink id={694} />
+- 添加子菜单支持 <PRLink id={682} />
+- 添加 `ContextMenu.TriggerItem` <PRLink id={682} />
+- 添加 `ContextMenu.Arrow` <PRLink id={682} />
+- 为子菜单添加 `dir` 属性以支持RTL <PRLink id={682} />
+- **\[破坏性\]** 允许在 `onPointerDownOutside` 中防止默认行为，而不会意外地防止聚焦 <PRLink id={654} />
+- **\[破坏性\]** 移除 `ContextMenu.Content` 的 `side` 属性 <PRLink id={658} />
+- **\[破坏性\]** 移除 `ContextMenu.Content` 的 `align` 属性 <PRLink id={658} />
+- **\[破坏性\]** 如果您之前在 `ContextMenu.Content` 上具有 `sideOffset`，则应该使用 `alignOffset`。这是为了标准化根菜单和子菜单的垂直对齐。 <PRLink id={712} />
+- **\[破坏性\]** `onFocusOutside` 现在是一个自定义事件 <PRLink id={671} />
+- 改善内容和没有填充的项目的支持 <PRLink id={658} />
+- 验证根据WAI-ARIA规范的首个项目聚焦时应聚焦 <PRLink id={694} />
 
-<PackageRelease name="Dialog" version="0.0.18" major />
+<PackageRelease name="Dialog" version="0.0.18" 主要 />
 
-- **\[Breaking\]** Allow preventing default in `onPointerDownOutside` without inadvertently preventing focus <PRLink id={654} />
+- **\[破坏性\]** 允许在 `onPointerDownOutside` 中防止默认行为，而不会意外地防止聚焦 <PRLink id={654} />
 
-<PackageRelease name="Dropdown Menu" version="0.0.21" major />
+<PackageRelease name="Dropdown Menu" version="0.0.21" 主要 />
 
-- Add submenu support <PRLink id={682} />
-- Add `DropdownMenu.TriggerItem` <PRLink id={682} />
-- Add `dir` prop for RTL support with submenus <PRLink id={682} />
-- **\[Breaking\]** Allow preventing default in `onPointerDownOutside` without inadvertently preventing focus <PRLink id={654} />
-- **\[Breaking\]** `onFocusOutside` is now a custom event <PRLink id={671} />
-- **\[Breaking\]** The up arrow no longer opens the menu <PRLink id={702} />
-- Align with WAI-ARIA spec by focusing first item when opening via keyboard <PRLink id={694} />
+- 添加子菜单支持 <PRLink id={682} />
+- 添加 `DropdownMenu.TriggerItem` <PRLink id={682} />
+- 为子菜单添加 `dir` 属性以支持RTL <PRLink id={682} />
+- **\[破坏性\]** 允许在 `onPointerDownOutside` 中防止默认行为，而不会意外地防止聚焦 <PRLink id={654} />
+- **\[破坏性\]** `onFocusOutside` 现在是一个自定义事件 <PRLink id={671} />
+- **\[破坏性\]** 向上箭头不再打开菜单 <PRLink id={702} />
+- 验证在通过键盘打开时的首个项目聚焦 <PRLink id={694} />
 
-<PackageRelease name="Popover" version="0.0.18" major />
+<PackageRelease name="Popover" version="0.0.18" 主要 />
 
-- **\[Breaking\]** Allow preventing default in `onPointerDownOutside` without inadvertently preventing focus <PRLink id={654} />
-- **\[Breaking\]** `onFocusOutside` is now a custom event <PRLink id={671} />
+- **\[破坏性\]** 允许在 `onPointerDownOutside` 中防止默认行为，而不会意外地防止聚焦 <PRLink id={654} />
+- **\[破坏性\]** `onFocusOutside` 现在是一个自定义事件 <PRLink id={671} />
 
-<PackageRelease name="Radio Group" version="0.0.17" major />
+<PackageRelease name="Radio Group" version="0.0.17" 主要 />
 
-- **\[Breaking\]** `onValueChange(event)` is now `onValueChange(value: string)` <PRLink id={685} />
-- **\[Breaking\]** Remove `RadioGroup.Item` `onCheckedChange` prop <PRLink id={685} />
-- Improve compatibility with native form validation <PRLink id={650} />
-- Improve usage within forms <PRLink id={685} />
+- **\[破坏性\]** `onValueChange(event)` 现在是 `onValueChange(value: string)` <PRLink id={685} />
+- **\[破坏性\]** 移除 `RadioGroup.Item` 的 `onCheckedChange` 属性 <PRLink id={685} />
+- 改善与本地表单验证的兼容性 <PRLink id={650} />
+- 在表单中的使用中改进 <PRLink id={685} />
 
-<PackageRelease name="Scroll Area" version="0.0.14" major />
+<PackageRelease name="Scroll Area" version="0.0.14" 主要 />
 
-- Brand new version with a simpler API <PRLink id={624} />
-- Improve Safari support <PRLink id={624} />
-- Improve RTL support <PRLink id={624} />
-- Improve touch support <PRLink id={624} />
-- `Scrollbar` mount/unmount can now be animated <PRLink id={624} />
-- Add minimum width/height to thumb so it's always grabbable <PRLink id={624} />
-- Move functional CSS into component to improve DX <PRLink id={624} />
-- Bundle size significantly reduced <PRLink id={624} />
-- **\[Breaking\]** Remove `overflowX` and `overflowY` props <PRLink id={624} />
-- **\[Breaking\]** Remove `ScrollAreaButtonStart`, `ScrollAreaButtonEnd` and `ScrollAreaTrack` <PRLink id={624} />
-- **\[Breaking\]** Rename `scrollbarVisibility` prop to `type`. The values are `auto`, `always`, `scroll` or `hover` <PRLink id={624} />
-- **\[Breaking\]** Rename `scrollbarVisibilityRestTimeout` prop to `scrollHideDelay` <PRLink id={624} />
-- **\[Breaking\]** Remove `trackClickBehavior` prop as we've removed built-in animation. Clicking on track always snaps to pointer position <PRLink id={624} />
-- **\[Breaking\]** `ScrollAreaScrollbarX` and `ScrollAreaScrollbarY` are now `<ScrollAreaScrollbar orientation="horizontal" />` and `<ScrollAreaScrollbar orientation="vertical" />` <PRLink id={624} />
-- Ensure no scrollbars are shown when scrolling is disabled <PRLink id={624} />
-- Ensure children event handlers don't break <PRLink id={624} />
-- Ensure scroll area updates when children content size changes <PRLink id={624} />
+- 全新版本，提供更简单的API <PRLink id={624} />
+- 改善 Safari 支持 <PRLink id={624} />
+- 改善 RTL 支持 <PRLink id={624} />
+- 改善触摸支持 <PRLink id={624} />
+- `Scrollbar` 的挂载/卸载现在可以动画化 <PRLink id={624} />
+- 添加最小宽度/高度，以便始终可抓取 <PRLink id={624} />
+- 将功能性CSS移至组件，以改善DX <PRLink id={624} />
+- 打包大小显著缩小 <PRLink id={624} />
+- **\[破坏性\]** 移除 `overflowX` 和 `overflowY` 属性 <PRLink id={624} />
+- **\[破坏性\]** 移除 `ScrollAreaButtonStart`、`ScrollAreaButtonEnd` 和 `ScrollAreaTrack` <PRLink id={624} />
+- **\[破坏性\]** 将 `scrollbarVisibility` 属性重命名为 `type`。值为 `auto`、`always`、`scroll` 或 `hover` <PRLink id={624} />
+- **\[破坏性\]** 将 `scrollbarVisibilityRestTimeout` 属性重命名为 `scrollHideDelay` <PRLink id={624} />
+- **\[破坏性\]** 移除 `trackClickBehavior` 属性，因为我们删除了内置动画。单击轨道始终会快速返回到指针位置 <PRLink id={624} />
+- **\[破坏性\]** `ScrollAreaScrollbarX` 和 `ScrollAreaScrollbarY` 现在是 `<ScrollAreaScrollbar orientation="horizontal" />` 和 `<ScrollAreaScrollbar orientation="vertical" />` <PRLink id={624} />
+- 确保在禁用滚动时不会显示滚动条 <PRLink id={624} />
+- 确保子元素的事件处理程序不会破坏 <PRLink id={624} />
+- 确保在子内容大小变化时更新滚动区域 <PRLink id={624} />
 
-<PackageRelease name="Slider" version="0.0.15" />
+<PackageRelease name="Slider" version="0.0.15" 主要 />
 
-- Improve usage within forms <PRLink id={678} />
-- Fix key binding issue in LTR <PRLink id={718} />
+- 改善在表单中的使用 <PRLink id={678} />
+- 修复LTR中的键绑定问题 <PRLink id={718} />
 
-<PackageRelease name="Switch" version="0.0.14" major />
+<PackageRelease name="Switch" version="0.0.14" 主要 />
 
-- **\[Breaking\]** `onCheckedChange(event)` is now `onCheckedChange(checked: boolean)` <PRLink id={679} />
-- Improve compatibility with native form validation <PRLink id={650} />
-- Improve usage within forms <PRLink id={679} />
-- Improve accessibility when wrapped in native `label` <PRLink id={679} />
+- **\[破坏性\]** `onCheckedChange(event)` 现在是 `onCheckedChange(checked: boolean)` <PRLink id={679} />
+- 改善与本地表单验证的兼容性 <PRLink id={650} />
+- 改善在表单中的使用 <PRLink id={679} />
+- 改善在本地 `label` 中的无障碍性 <PRLink id={679} />
 
-<PackageRelease name="Tabs" version="0.0.14" major />
+<PackageRelease name="Tabs" version="0.0.14" 主要 />
 
-- **\[Breaking\]** Rename `Tabs.Tab` to `Tabs.Trigger` <PRLink id={652} />
-- **\[Breaking\]** Rename `Tabs.Panel` to `Tabs.Content` <PRLink id={652} />
+- **\[破坏性\]** 将 `Tabs.Tab` 重命名为 `Tabs.Trigger` <PRLink id={652} />
+- **\[破坏性\]** 将 `Tabs.Panel` 重命名为 `Tabs.Content` <PRLink id={652} />
 
 <Separator mt="7" />
 
-## May 3, 2021
+## 2021年5月3日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve polymorphic types performance <PRLink id={613} />
+- 改善多态类型的性能 <PRLink id={613} />
 
 <PackageRelease name="Accordion" version="0.0.14" />
 
-- Ensure only one click is needed to close a single controlled accordion <PRLink id={594} />
+- 确保只需单击一次即可关闭单个受控手风琴 <PRLink id={594} />
 
-<PackageRelease name="Checkbox" version="0.0.14" major />
+<PackageRelease name="Checkbox" version="0.0.14" 主要 />
 
-- **\[Breaking\]** Remove `readOnly` prop <PRLink id={600} />
+- **\[破坏性\]** 移除 `readOnly` 属性 <PRLink id={600} />
 
 <PackageRelease name="Context Menu" version="0.0.18" />
 
-- Add `onOpenChange` prop <PRLink id={604} />
+- 添加 `onOpenChange` 属性 <PRLink id={604} />
 
 <PackageRelease name="Dialog" version="0.0.16" />
 
-- Ensure focus position isn't lost when blurring out window and re-focusing it <PRLink id={589} />
+- 确保当聚焦窗口重新聚焦时，焦点位置不会丢失 <PRLink id={589} />
 
-<PackageRelease name="Dropdown Menu" version="0.0.18" major />
+<PackageRelease name="Dropdown Menu" version="0.0.18" 主要 />
 
-- Take into account non-visible items <PRLink id={618} />
-- **\[Breaking\]** Remove `anchorRef` prop <PRLink id={580} />
-- Prevent page from scrolling when selecting an item with space key <PRLink id={626} />
+- 考虑不可见项目 <PRLink id={618} />
+- **\[破坏性\]** 移除 `anchorRef` 属性 <PRLink id={580} />
+- 防止选择空间键时页面滚动 <PRLink id={626} />
 
 <PackageRelease name="Hover Card" version="0.0.1" />
 
-- New primitive <PRLink id={595} />
+- 新原语 <PRLink id={595} />
 
-<PackageRelease name="Popover" version="0.0.16" major />
+<PackageRelease name="Popover" version="0.0.16" 主要 />
 
-- **\[Breaking\]** Remove `anchorRef` prop and replace with optional `Anchor` part <PRLink id={580} />
+- **\[破坏性\]** 移除 `anchorRef` 属性，并替换为可选的 `Anchor` 部件 <PRLink id={580} />
 
-<PackageRelease name="Radio Group" version="0.0.15" major />
+<PackageRelease name="Radio Group" version="0.0.15" 主要 />
 
-- Add optional `orientation`, `dir`, `loop` props <PRLink id={618} />
-- **\[Breaking\]** Remove `readOnly` prop <PRLink id={600} />
+- 添加可选的 `orientation`、`dir`、`loop` 属性 <PRLink id={618} />
+- **\[破坏性\]** 移除 `readOnly` 属性 <PRLink id={600} />
 
-<PackageRelease name="Switch" version="0.0.12" major />
+<PackageRelease name="Switch" version="0.0.12" 主要 />
 
-- **\[Breaking\]** Remove `readOnly` prop <PRLink id={600} />
+- **\[破坏性\]** 移除 `readOnly` 属性 <PRLink id={600} />
 
 <PackageRelease name="Toggle Group" version="0.0.7" />
 
-- Add optional `orientation`, `dir`, `loop` props <PRLink id={618} />
+- 添加可选的 `orientation`、`dir`、`loop` 属性 <PRLink id={618} />
 
-<PackageRelease name="Tooltip" version="0.0.17" major />
+<PackageRelease name="Tooltip" version="0.0.17" 主要 />
 
-- **\[Breaking\]** Remove `anchorRef` prop <PRLink id={580} />
+- **\[破坏性\]** 移除 `anchorRef` 属性 <PRLink id={580} />
 
 <Separator mt="7" />
 
-## March 26, 2021
+## 2021年3月26日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Improve tree-shaking <PRLink id={577} />
+- 改善树摇 <PRLink id={577} />
 
 <PackageRelease name="Context Menu" version="0.0.17" />
 
-- Ensure you can open a context menu when one is already open <PRLink id={565} />
+- 确保您可以在已经开启的情况下打开上下文菜单 <PRLink id={565} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.17" />
 
-- Fix potential overlap issue <PRLink id={541} />
+- 修复潜在的重叠问题 <PRLink id={541} />
 
 <PackageRelease name="Popover" version="0.0.15" />
 
-- Ensure `Content` closes when it has multiple close animations <PRLink id={571} />
+- 确保在具有多个关闭动画时关闭 `Content` <PRLink id={571} />
 
-<PackageRelease name="Toggle" version="0.0.6" major />
+<PackageRelease name="Toggle" version="0.0.6" 主要 />
 
-- **\[Breaking\]** Rename `ToggleButton` primitive to `Toggle` <PRLink id={546} />
-- **\[Breaking\]** Rename `toggled` prop to `pressed` <PRLink id={546} />
-- **\[Breaking\]** Rename `defaultToggled` prop to `defaultPressed` <PRLink id={546} />
-- **\[Breaking\]** Rename `onToggledChange` prop to `onPressedChange` <PRLink id={546} />
+- **\[破坏性\]** 将 `ToggleButton` 原语重命名为 `Toggle` <PRLink id={546} />
+- **\[破坏性\]** 将 `toggled` 属性重命名为 `pressed` <PRLink id={546} />
+- **\[破坏性\]** 将 `defaultToggled` 属性重命名为 `defaultPressed` <PRLink id={546} />
+- **\[破坏性\]** 将 `onToggledChange` 属性重命名为 `onPressedChange` <PRLink id={546} />
 
 <PackageRelease name="Toggle Group" version="0.0.6" />
 
-- New primitive <PRLink id={376} />
+- 新原语 <PRLink id={376} />
 
 <PackageRelease name="Toolbar" version="0.0.9" />
 
-- New primitive <PRLink id={[412,451,545]} />
+- 新原语 <PRLink id={[412,451,545]} />
 
 <PackageRelease name="Tooltip" version="0.0.16" />
 
-- Add custom timing support <PRLink id={[550,551,554,558]} />
-- Add unmount animation support <PRLink id={558} />
+- 添加自定义时间支持 <PRLink id={[550,551,554,558]} />
+- 添加卸载动画支持 <PRLink id={558} />
 
 <Separator mt="7" />
 
-## March 5, 2021
+## 2021年3月5日
 
 <PackageRelease name="Accordion" version="0.0.7" />
 
-- Add height CSS custom property to panel for easier animation <PRLink id={537} />
+- 添加高度 CSS 自定义属性到面板，以便于动画 <PRLink id={537} />
 
 <PackageRelease name="Collapsible" version="0.0.7" />
 
-- Add height CSS custom property to content for easier animation <PRLink id={537} />
+- 添加高度 CSS 自定义属性到内容，以便于动画 <PRLink id={537} />
 
 <PackageRelease name="Tooltip" version="0.0.9" />
 
-- Fix type definition conflicts <PRLink id={538} />
+- 修复类型定义冲突 <PRLink id={538} />
 
 <Separator mt="7" />
 
-## March 3, 2021
+## 2021年3月3日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Add support for SSR
-- **\[Breaking\]** Remove `selector` prop and `data-radix-*` atributes <PRLink id={517} />
+- 添加对SSR的支持
+- **\[破坏性\]** 移除 `selector` 属性和 `data-radix-*` 属性 <PRLink id={517} />
 
-<PackageRelease name="Accordion" version="0.0.6" major />
+<PackageRelease name="Accordion" version="0.0.6" 主要 />
 
-- **\[Breaking\]** Add support for multiple values. Note that this is a breaking change because the new `type` prop is required <PRLink id={527} />
+- **\[破坏性\]** 添加对多个值的支持。请注意，这是一个破坏性更改，因为新的 `type` 属性是必需的 <PRLink id={527} />
 
 <PackageRelease name="Slider" version="0.0.6" />
 
-- Ensure `step` is rounded correctly <PRLink id={463} />
+- 确保 `step` 被正确四舍五入 <PRLink id={463} />
 
 <PackageRelease name="Tabs" version="0.0.6" />
 
-- Add RTL support (`dir` prop) <PRLink id={497} />
+- 添加 RTL 支持（`dir` 属性） <PRLink id={497} />
 
 <Separator mt="7" />
 
-## February 17, 2021
+## 2021年2月17日
 
 <PackageRelease name="Tooltip" version="0.0.7" />
 
-- Ensure events are composed when using `<Trigger as={Slot}>` <PRLink id={461} />
+- 确保在使用 `<Trigger as={Slot}>` 时组合事件 <PRLink id={461} />
 
 <Separator mt="7" />
 
-## February 15, 2021
+## 2021年2月15日
 
 <PackageRelease name="Context Menu" version="0.0.8" />
 
-- Expose `onCloseAutoFocus` prop <PRLink id={456} />
+- 暴露 `onCloseAutoFocus` 属性 <PRLink id={456} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.8" />
 
-- Expose `onCloseAutoFocus` prop <PRLink id={456} />
+- 暴露 `onCloseAutoFocus` 属性 <PRLink id={456} />
 
 <Separator mt="7" />
 
-## February 10, 2021
+## 2021年2月10日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Fix type autocompletion when using `as` prop <PRLink id={421} />
+- 修复使用 `as` 属性时的类型自动补全 <PRLink id={421} />
 
 <PackageRelease name="Accordion" version="0.0.5" />
 
-- Prevent open/close flickering <PRLink id={431} />
+- 防止打开/关闭闪烁 <PRLink id={431} />
 
 <PackageRelease name="Dialog" version="0.0.6" />
 
-- Ensure focus is returned properly on close <PRLink id={422} />
+- 确保关闭时焦点正确返回 <PRLink id={422} />
 
-<PackageRelease name="Radio Group" version="0.0.5" major />
+<PackageRelease name="Radio Group" version="0.0.5" 主要 />
 
-- **\[Breaking\]** Move `name` prop from `Item` to `Root` <PRLink id={424} />
+- **\[破坏性\]** 将 `name` 属性从 `Item` 移动到 `Root` <PRLink id={424} />
 
 <Separator mt="7" />
 
-## February 1, 2021
+## 2021年2月1日
 
 <PackageRelease name="Context Menu" version="0.0.6" />
 
-- Re–add missing `children` <PRLink id={414} />
+- 重新添加缺失的 `children` <PRLink id={414} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.6" />
 
-- Re–add missing `children` <PRLink id={414} />
+- 重新添加缺失的 `children` <PRLink id={414} />
 
 <PackageRelease name="Popover" version="0.0.5" />
 
-- Prevent flickering (sliding) issue <PRLink id={415} />
+- 防止闪烁（滑动）问题 <PRLink id={415} />
 
 <Separator mt="7" />
 
-## January 29, 2021
+## 2021年1月29日
 
 <PackageRelease name="Slot" version="0.0.1" />
 
-- New utility <PRLink id={409} />
+- 新工具 <PRLink id={409} />
 
 <Separator mt="7" />
 
-## January 25, 2021
+## 2021年1月25日
 
 <PackageRelease name="Dialog" version="0.0.3" />
 
-- Fix regression when tabbing out would close <PRLink id={403} />
+- 修复在tabbing out时会关闭的回归 <PRLink id={403} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.3" />
 
-- Fix broken arrow keys navigation <PRLink id={404} />
+- 修复坏掉的箭头键导航 <PRLink id={404} />
 
 <Separator mt="7" />
 
-## January 22, 2021
+## 2021年1月22日
 
-<PackageRelease name="All primitives" />
+<PackageRelease name="所有原语" />
 
-- Add `selector` prop <PRLink id={347} />
+- 添加 `selector` 属性 <PRLink id={347} />
 
 <PackageRelease name="Accordion" version="0.0.2" />
 
-- Ensure setting `disabled={false}` on `Root` doesn't enable disabled items <PRLink id={400} />
+- 确保在 `Root` 上设置 `disabled={false}` 但不启用禁用项 <PRLink id={400} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.2" />
 
-- Add enter key support on trigger <PRLink id={381} />
-- Prevent focus race condition <PRLink id={394} />
+- 在触发器上添加回车键支持 <PRLink id={381} />
+- 防止焦点竞赛条件 <PRLink id={394} />
 
 <PackageRelease name="Popover" version="0.0.2" />
 
-- Ensure `Content` repositions on window resize <PRLink id={359} />
-- Ensure last element inside `Content` triggers blur event <PRLink id={395} />
+- 确保 `Content` 在窗口调整大小时重新定位 <PRLink id={359} />
+- 确保 `Content` 内的最后一个元素触发模糊事件 <PRLink id={395} />
 
 <Separator mt="7" />
 
-## December 15, 2020
+## 2020年12月15日
 
-<PackageRelease name="All primitives" version="0.0.1" major />
+<PackageRelease name="所有原语" version="0.0.1" major />
 
-- Initial release! 🎉 <PRLink id={338} />
+- 初始版本发布！ 🎉 <PRLink id={338} />

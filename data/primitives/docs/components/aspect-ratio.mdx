@@ -1,12 +1,12 @@
 ---
-metaTitle: Aspect Ratio
-metaDescription: Displays content within a desired ratio.
+metaTitle: 长宽比
+metaDescription: 在所需比例内显示内容。
 name: aspect-ratio
 ---
 
-# Aspect Ratio
+# 长宽比
 
-<Description>Displays content within a desired ratio.</Description>
+<Description>在所需比例内显示内容。</Description>
 
 <HeroContainer>
 	<AspectRatioDemo />
@@ -14,19 +14,19 @@ name: aspect-ratio
 
 <HeroCodeBlock folder="AspectRatio" />
 
-<Highlights features={["Accepts any custom ratio."]} />
+<Highlights features={["接受任何自定义比例。"]} />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+通过命令行安装该组件。
 
 ```bash
 npm install @radix-ui/react-aspect-ratio
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { AspectRatio } from "radix-ui";
@@ -34,11 +34,11 @@ import { AspectRatio } from "radix-ui";
 export default () => <AspectRatio.Root />;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根
 
-Contains the content you want to constrain to a given ratio.
+包含您要限制在给定比例内的内容。
 
 <PropsTable
 	data={[
@@ -49,12 +49,12 @@ Contains the content you want to constrain to a given ratio.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多细节。
 				</>
 			),
 		},
@@ -62,7 +62,7 @@ Contains the content you want to constrain to a given ratio.
 			name: "ratio",
 			type: "number",
 			default: "1",
-			description: "The desired ratio",
+			description: "所需比例",
 		},
 	]}
 />

@@ -1,26 +1,25 @@
 ---
-metaTitle: Breakpoints
-metaDescription: Built-in breakpoints allow you to easily build
-  adapative layouts.
+metaTitle: 响应式断点
+metaDescription: 内置的响应式断点让您轻松构建自适应布局。
 ---
 
-# Breakpoints
+# 响应式断点
 
 <Description>
-	Built-in breakpoints allow you to easily build adaptive layouts.
+	内置的响应式断点让您轻松构建自适应布局。
 </Description>
 
-## Available sizes
+## 可用尺寸
 
-Each breakpoint matches a fixed screen width. Values are `min-width` based and apply when the screen width is equal or greater.
+每个断点对应一个固定的屏幕宽度。值是基于 `min-width` 的，当屏幕宽度大于或等于时适用。
 
 <ThemesBreakpointsTable />
 
-## Usage
+## 用法
 
-Most component size and layout props will accept an additional `Responsive` object shape for modifying the given prop across breakpoints.
+大多数组件的尺寸和布局属性将接受一个额外的 `Responsive` 对象形状，用于在不同断点修改给定属性。
 
-Each size maps to a corresponding key, the value of each will be applied when the screen size is greater than or equal to the named breakpoint.
+每个尺寸都映射到相应的键，当屏幕尺寸大于或等于所命名的断点时，应用每个键的值。
 
 ```jsx
 <Heading

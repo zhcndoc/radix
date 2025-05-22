@@ -1,6 +1,6 @@
 ---
-metaTitle: Card
-metaDescription: Container that groups related content and actions.
+metaTitle: 卡片
+metaDescription: 用于分组相关内容和操作的容器。
 sourcePath: components/card
 ---
 
@@ -19,7 +19,7 @@ sourcePath: components/card
 					Teodros Girmay
 				</Text>
 				<Text as="div" size="2" color="gray">
-					Engineering
+					工程师
 				</Text>
 			</Box>
 		</Flex>
@@ -27,36 +27,36 @@ sourcePath: components/card
 </Box>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `div` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `div` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="cardPropDefs" />
 
-## Examples
+## 示例
 
-### As another element
+### 作为其他元素
 
-Use the `asChild` prop to render the card as a link or a button. This prop adds styles for the interactive states, like hover and focus.
+使用 `asChild` 属性将卡片呈现为链接或按钮。此属性为交互状态（如悬停和聚焦）添加样式。
 
 ```jsx live=true
 <Box maxWidth="350px">
 	<Card asChild>
 		<a href="#">
 			<Text as="div" size="2" weight="bold">
-				Quick start
+				快速开始
 			</Text>
 			<Text as="div" color="gray" size="2">
-				Start building your next project in minutes
+				在几分钟内开始构建下一个项目
 			</Text>
 		</a>
 	</Card>
 </Box>
 ```
 
-### Size
+### 大小
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制大小。
 
 ```jsx live=true
 <Flex gap="3" direction="column">
@@ -69,7 +69,7 @@ Use the `size` prop to control the size.
 						Teodros Girmay
 					</Text>
 					<Text as="div" size="2" color="gray">
-						Engineering
+						工程师
 					</Text>
 				</Box>
 			</Flex>
@@ -85,7 +85,7 @@ Use the `size` prop to control the size.
 						Teodros Girmay
 					</Text>
 					<Text as="div" color="gray">
-						Engineering
+						工程师
 					</Text>
 				</Box>
 			</Flex>
@@ -101,7 +101,7 @@ Use the `size` prop to control the size.
 						Teodros Girmay
 					</Text>
 					<Text as="div" size="4" color="gray">
-						Engineering
+						工程师
 					</Text>
 				</Box>
 			</Flex>
@@ -110,35 +110,35 @@ Use the `size` prop to control the size.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉样式。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="350px">
 	<Card variant="surface">
 		<Text as="div" size="2" weight="bold">
-			Quick start
+			快速开始
 		</Text>
 		<Text as="div" color="gray" size="2">
-			Start building your next project in minutes
+			在几分钟内开始构建下一个项目
 		</Text>
 	</Card>
 
 	<Card variant="classic">
 		<Text as="div" size="2" weight="bold">
-			Quick start
+			快速开始
 		</Text>
 		<Text as="div" color="gray" size="2">
-			Start building your next project in minutes
+			在几分钟内开始构建下一个项目
 		</Text>
 	</Card>
 </Flex>
 ```
 
-### With inset content
+### 带有内嵌内容
 
-Use the [Inset](/themes/docs/components/inset) component to align content flush with the sides of the card.
+使用 [插入](/themes/docs/components/inset) 组件将内容与卡片的边缘对齐。
 
 ```jsx live=true
 <Box maxWidth="240px">
@@ -146,7 +146,7 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 		<Inset clip="padding-box" side="top" pb="current">
 			<img
 				src="https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-				alt="Bold typography"
+				alt="大胆的排版"
 				style={{
 					display: "block",
 					objectFit: "cover",
@@ -157,8 +157,7 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 			/>
 		</Inset>
 		<Text as="p" size="3">
-			<Strong>Typography</Strong> is the art and technique of arranging type to
-			make written language legible, readable and appealing when displayed.
+			<Strong>排版</Strong> 是安排字体的艺术和技巧，使书面语言在显示时清晰、易读和吸引人。
 		</Text>
 	</Card>
 </Box>

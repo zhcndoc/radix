@@ -1,14 +1,14 @@
 ---
-metaTitle: Toggle Group
-metaDescription: A set of two-state buttons that can be toggled on or off.
+metaTitle: 切换组
+metaDescription: 一组可以切换开启或关闭的两态按钮。
 name: toggle-group
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/button
 ---
 
-# Toggle Group
+# 切换组
 
 <Description>
-	A set of two-state buttons that can be toggled on or off.
+	一组可以切换开启或关闭的两态按钮。
 </Description>
 
 <HeroContainer>
@@ -19,24 +19,24 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/button
 
 <Highlights
 	features={[
-		"Full keyboard navigation.",
-		"Supports horizontal/vertical orientation.",
-		"Support single and multiple pressed buttons.",
-		"Can be controlled or uncontrolled.",
+		"完整的键盘导航。",
+		"支持水平/垂直方向。",
+		"支持单个和多个被按下的按钮。",
+		"可以是受控或非受控。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-toggle-group
 ```
 
-## Anatomy
+## 解剖学
 
-Import the component.
+导入组件。
 
 ```jsx
 import { ToggleGroup } from "radix-ui";
@@ -48,11 +48,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根
 
-Contains all the parts of a toggle group.
+包含切换组的所有部分。
 
 <PropsTable
 	data={[
@@ -63,12 +63,12 @@ Contains all the parts of a toggle group.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染的元素为作为子元素传递的元素，
+					合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多详细信息。
 				</>
 			),
 		},
@@ -79,8 +79,7 @@ Contains all the parts of a toggle group.
 			typeSimple: "enum",
 			description: (
 				<span>
-					Determines whether a single or multiple items can be pressed at a
-					time.
+					确定一次可以被按下的项目是单个还是多个。
 				</span>
 			),
 		},
@@ -90,9 +89,8 @@ Contains all the parts of a toggle group.
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the pressed item when <Code>type</Code> is{" "}
-					<Code>"single"</Code>. Must be used in conjunction with{" "}
-					<Code>onValueChange</Code>.
+					当 <Code>type</Code> 为 <Code>"single"</Code> 时被按下的项目的受控值。必须与{" "}
+					<Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -102,9 +100,7 @@ Contains all the parts of a toggle group.
 			type: "string",
 			description: (
 				<span>
-					The value of the item to show as pressed when initially rendered and{" "}
-					<Code>type</Code> is <Code>"single"</Code>. Use when you do not need
-					to control the state of the items.
+					当最初渲染并且 <Code>type</Code> 为 <Code>"single"</Code> 时显示为按下的项目的值。使用当您不需要控制项目的状态时。
 				</span>
 			),
 		},
@@ -115,8 +111,7 @@ Contains all the parts of a toggle group.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the pressed state of an item changes and{" "}
-					<Code>type</Code> is <Code>"single"</Code>.
+					在项目的按下状态更改时被调用的事件处理程序，当 <Code>type</Code> 为 <Code>"single"</Code>。
 				</span>
 			),
 		},
@@ -127,9 +122,8 @@ Contains all the parts of a toggle group.
 			type: "string[]",
 			description: (
 				<span>
-					The controlled value of the pressed items when <Code>type</Code> is{" "}
-					<Code>"multiple"</Code>. Must be used in conjunction with{" "}
-					<Code>onValueChange</Code>.
+					当 <Code>type</Code> 为 <Code>"multiple"</Code> 时被按下的项目的受控值。必须与{" "}
+					<Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -140,9 +134,7 @@ Contains all the parts of a toggle group.
 			type: "string[]",
 			description: (
 				<span>
-					The values of the items to show as pressed when initially rendered and{" "}
-					<Code>type</Code> is <Code>"multiple"</Code>. Use when you do not need
-					to control the state of the items.
+					当最初渲染并且 <Code>type</Code> 为 <Code>"multiple"</Code> 时显示为按下的项目的值。使用当您不需要控制项目的状态时。
 				</span>
 			),
 		},
@@ -153,8 +145,7 @@ Contains all the parts of a toggle group.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the pressed state of an item changes and{" "}
-					<Code>type</Code> is <Code>"multiple"</Code>.
+					在项目的按下状态更改时被调用的事件处理程序，当 <Code>type</Code> 为 <Code>"multiple"</Code>。
 				</span>
 			),
 		},
@@ -165,8 +156,7 @@ Contains all the parts of a toggle group.
 			default: "false",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					toggle group and all its items.
+					当 <Code>true</Code> 时，防止用户与切换组及其所有项目交互。
 				</span>
 			),
 		},
@@ -177,8 +167,7 @@ Contains all the parts of a toggle group.
 			default: "true",
 			description: (
 				<span>
-					When <Code>false</Code>, navigating through the items using arrow keys
-					will be disabled.
+					当 <Code>false</Code> 时，使用箭头键导航项目将被禁用。
 				</span>
 			),
 		},
@@ -190,9 +179,9 @@ Contains all the parts of a toggle group.
 			default: "undefined",
 			description: (
 				<span>
-					The orientation of the component, which determines how focus moves:{" "}
-					<Code>horizontal</Code> for left/right arrows and{" "}
-					<Code>vertical</Code> for up/down arrows.
+					组件的方向，决定焦点如何移动：{" "}
+					<Code>horizontal</Code> 用于左右箭头，{" "}
+					<Code>vertical</Code> 用于上下箭头。
 				</span>
 			),
 		},
@@ -203,9 +192,8 @@ Contains all the parts of a toggle group.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the toggle group. If omitted, inherits
-					globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
+					切换组的阅读方向。如果省略，则全局继承自 <Code>DirectionProvider</Code> 或默认假设为 LTR
+					(从左到右) 阅读模式。
 				</span>
 			),
 		},
@@ -216,9 +204,8 @@ Contains all the parts of a toggle group.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code> and <Code>rovingFocus</Code> is{" "}
-					<Code>true</Code>, keyboard navigation will loop from last item to
-					first, and vice versa.
+					当 <Code>true</Code> 且 <Code>rovingFocus</Code> 为{" "}
+					<Code>true</Code> 时，键盘导航将从最后一个项目循环到第一个项目，反之亦然。
 				</span>
 			),
 		},
@@ -234,9 +221,9 @@ Contains all the parts of a toggle group.
 	]}
 />
 
-### Item
+### 项目
 
-An item in the group.
+组中的一个项目。
 
 <PropsTable
 	data={[
@@ -247,12 +234,12 @@ An item in the group.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染的元素为作为子元素传递的元素，
+					合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多详细信息。
 				</>
 			),
 		},
@@ -260,15 +247,14 @@ An item in the group.
 			name: "value",
 			required: true,
 			type: "string",
-			description: "A unique value for the item.",
+			description: "项目的唯一值。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，防止用户与该项目交互。
 				</span>
 			),
 		},
@@ -283,7 +269,7 @@ An item in the group.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 		{
 			attribute: "[data-orientation]",
@@ -292,11 +278,11 @@ An item in the group.
 	]}
 />
 
-## Examples
+## 示例
 
-### Ensuring there is always a value
+### 确保始终有值
 
-You can control the component to ensure a value.
+您可以控制组件以确保一个值。
 
 ```jsx line=5,8
 import * as React from "react";
@@ -327,50 +313,50 @@ export default () => {
 };
 ```
 
-## Accessibility
+## 可访问性
 
-Uses [roving tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/radio/radio.html) to manage focus movement among items.
+使用 [移动 tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/radio/radio.html) 来管理项目之间的焦点移动。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Tab"],
 			description:
-				"Moves focus to either the pressed item or the first item in the group.",
+				"将焦点移动到被按下的项目或组中的第一个项目。",
 		},
 		{
 			keys: ["Space"],
-			description: "Activates/deactivates the item.",
+			description: "激活/取消激活该项目。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Activates/deactivates the item.",
+			description: "激活/取消激活该项目。",
 		},
 		{
 			keys: ["ArrowDown"],
-			description: "Moves focus to the next item in the group.",
+			description: "将焦点移动到组中的下一个项目。",
 		},
 		{
 			keys: ["ArrowRight"],
-			description: "Moves focus to the next item in the group.",
+			description: "将焦点移动到组中的下一个项目。",
 		},
 		{
 			keys: ["ArrowUp"],
-			description: "Moves focus to the previous item in the group.",
+			description: "将焦点移动到组中的上一个项目。",
 		},
 		{
 			keys: ["ArrowLeft"],
-			description: "Moves focus to the previous item in the group.",
+			description: "将焦点移动到组中的上一个项目。",
 		},
 		{
 			keys: ["Home"],
-			description: "Moves focus to the first item.",
+			description: "将焦点移动到第一个项目。",
 		},
 		{
 			keys: ["End"],
-			description: "Moves focus to the last item.",
+			description: "将焦点移动到最后一个项目。",
 		},
 	]}
 />

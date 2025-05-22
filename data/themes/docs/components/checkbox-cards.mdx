@@ -1,6 +1,6 @@
 ---
-metaTitle: Checkbox Cards
-metaDescription: Set of interactive cards where multiple options can be selected at a time.
+metaTitle: 复选框卡片
+metaDescription: 一组可以同时选择多个选项的互动卡片。
 sourcePath: components/checkbox-cards
 ---
 
@@ -9,155 +9,155 @@ sourcePath: components/checkbox-cards
 	<CheckboxCards.Root defaultValue={["1"]} columns={{ initial: "1", sm: "3" }}>
 		<CheckboxCards.Item value="1">
 			<Flex direction="column" width="100%">
-				<Text weight="bold">A1 Keyboard</Text>
-				<Text>US Layout</Text>
+				<Text weight="bold">A1 键盘</Text>
+				<Text>美国布局</Text>
 			</Flex>
 		</CheckboxCards.Item>
 		<CheckboxCards.Item value="2">
 			<Flex direction="column" width="100%">
-				<Text weight="bold">Pro Mouse</Text>
-				<Text>Zero-lag wireless</Text>
+				<Text weight="bold">专业鼠标</Text>
+				<Text>零延迟无线</Text>
 			</Flex>
 		</CheckboxCards.Item>
 		<CheckboxCards.Item value="3">
 			<Flex direction="column" width="100%">
-				<Text weight="bold">Lightning Mat</Text>
-				<Text>Wireless charging</Text>
+				<Text weight="bold">闪电垫</Text>
+				<Text>无线充电</Text>
 			</Flex>
 		</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Box>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `div` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `div` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
 <ThemesPropsTable defs="checkboxCardsRootPropDefs" />
 
-### Item
+### 项
 
-An item in the group that can be checked.
+组中的一个可以被选中的项。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制尺寸。
 
 ```jsx live=true
 <Flex align="center" gap="3">
 	<CheckboxCards.Root defaultValue={["1"]} size="1">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} size="2">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} size="3">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉风格。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="200px">
 	<CheckboxCards.Root defaultValue={["1"]} variant="surface">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} variant="classic">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性来指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="200px">
 	<CheckboxCards.Root defaultValue={["1"]} color="indigo">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="cyan">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="orange">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="crimson">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性来增加与背景的颜色对比。
 
 ```jsx live=true
 <Grid columns="2" gap="3" display="inline-grid">
 	<CheckboxCards.Root defaultValue={["1"]} color="indigo">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="indigo" highContrast>
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="cyan">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="cyan" highContrast>
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="orange">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="orange" highContrast>
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="crimson">
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root defaultValue={["1"]} color="crimson" highContrast>
-		<CheckboxCards.Item value="1">Agree to Terms</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">同意条款</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Grid>
 ```
 
-### Disabled
+### 禁用
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="450px">
 	<CheckboxCards.Root columns="2" defaultValue="2">
-		<CheckboxCards.Item value="1">Off</CheckboxCards.Item>
-		<CheckboxCards.Item value="2">On</CheckboxCards.Item>
+		<CheckboxCards.Item value="1">关闭</CheckboxCards.Item>
+		<CheckboxCards.Item value="2">开启</CheckboxCards.Item>
 	</CheckboxCards.Root>
 
 	<CheckboxCards.Root columns="2" defaultValue="2">
 		<CheckboxCards.Item value="1" disabled>
-			Off
+			关闭
 		</CheckboxCards.Item>
 		<CheckboxCards.Item value="2" disabled>
-			On
+			开启
 		</CheckboxCards.Item>
 	</CheckboxCards.Root>
 </Flex>

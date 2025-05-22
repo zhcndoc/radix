@@ -1,141 +1,141 @@
 ---
-metaTitle: Text
-metaDescription: Foundational text primitive.
+metaTitle: 文本
+metaDescription: 基本文本原语。
 sourcePath: components/text
 ---
 
 ```jsx live=true
-<Text>The quick brown fox jumps over the lazy dog.</Text>
+<Text>敏捷的棕色狐狸跳过懒狗。</Text>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `span` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `span` 元素，支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="textPropDefs" />
 
-## Examples
+## 示例
 
-### As another element
+### 作为其他元素
 
-Use the `as` prop to render text as a `p`, `label`, `div` or `span`. This prop is purely semantic and does not alter visual appearance.
+使用 `as` 属性将文本呈现为 `p`、`label`、`div` 或 `span`。该属性纯粹是语义上的，不会改变视觉外观。
 
 ```jsx live=true
-<Text as="p">This is a <Strong>paragraph</Strong> element.</Text>
-<Text as="label">This is a <Strong>label</Strong> element.</Text>
-<Text as="div">This is a <Strong>div</Strong> element.</Text>
-<Text as="span">This is a <Strong>span</Strong> element.</Text>
+<Text as="p">这是一个 <Strong>段落</Strong> 元素。</Text>
+<Text as="label">这是一个 <Strong>标签</Strong> 元素。</Text>
+<Text as="div">这是一个 <Strong>div</Strong> 元素。</Text>
+<Text as="span">这是一个 <Strong>span</Strong> 元素。</Text>
 ```
 
-### Size
+### 大小
 
-Use the `size` prop to control text size. This prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+使用 `size` 属性控制文本大小。该属性还提供正确的行高和修正的字距——随着文本大小的增加，相对行高和字距会减小。
 
 ```jsx live=true scroll=true
 <Flex direction="column" gap="3">
-	<Text size="1">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="2">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="3">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="4">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="5">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="6">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="7">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="8">The quick brown fox jumps over the lazy dog.</Text>
-	<Text size="9">The quick brown fox jumps over the lazy dog.</Text>
+	<Text size="1">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="2">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="3">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="4">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="5">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="6">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="7">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="8">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text size="9">敏捷的棕色狐狸跳过懒狗。</Text>
 </Flex>
 ```
 
-Sizes 2–4 are designed to work well for long-form content.
+大小 2–4 设计为可以良好适用于长格式内容。
 
 ```jsx live=true
 <Text as="p" mb="5" size="4">
-  The goal of typography is to relate font size, line height, and line width in a proportional way that maximizes beauty and makes reading easier and more pleasant. The question is: What proportion(s) will give us the best results? The golden ratio is often observed in nature where beauty and utility intersect; perhaps we can use this “divine” proportion to enhance these attributes in our typography.
+  排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。问题是：什么比例能够给我们最好的结果？黄金比例常常在自然界中被观察到，当美和实用相交时；或许我们可以使用这种“神圣”的比例来增强我们的排版特性。
 </Text>
 
 <Text as="p" mb="5" size="3">
-  The goal of typography is to relate font size, line height, and line width in a proportional way that maximizes beauty and makes reading easier and more pleasant. The question is: What proportion(s) will give us the best results? The golden ratio is often observed in nature where beauty and utility intersect; perhaps we can use this “divine” proportion to enhance these attributes in our typography.
+  排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。问题是：什么比例能够给我们最好的结果？黄金比例常常在自然界中被观察到，当美和实用相交时；或许我们可以使用这种“神圣”的比例来增强我们的排版特性。
 </Text>
 
 <Text as="p" size="2" color="gray">
-  The goal of typography is to relate font size, line height, and line width in a proportional way that maximizes beauty and makes reading easier and more pleasant. The question is: What proportion(s) will give us the best results? The golden ratio is often observed in nature where beauty and utility intersect; perhaps we can use this “divine” proportion to enhance these attributes in our typography.
+  排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。问题是：什么比例能够给我们最好的结果？黄金比例常常在自然界中被观察到，当美和实用相交时；或许我们可以使用这种“神圣”的比例来增强我们的排版特性。
 </Text>
 ```
 
-Sizes 1–3 are designed to work well for UI labels.
+大小 1–3 设计为可以良好适用于用户界面标签。
 
 ```jsx live=true
 <Grid align="center" columns="2" gap="5" p="3">
 	<Flex direction="column">
 		<Text size="3" weight="bold">
-			Get started
+			开始
 		</Text>
 		<Text color="gray" size="2">
-			Start your next project in minutes
+			几分钟内开始您的下一个项目
 		</Text>
 	</Flex>
 
 	<Flex direction="column">
 		<Text size="2" weight="bold">
-			Get started
+			开始
 		</Text>
 		<Text color="gray" size="2">
-			Start your next project in minutes
+			几分钟内开始您的下一个项目
 		</Text>
 	</Flex>
 
 	<Flex direction="column">
 		<Text size="2" weight="bold">
-			Get started
+			开始
 		</Text>
 		<Text color="gray" size="1">
-			Start your next project in minutes
+			几分钟内开始您的下一个项目
 		</Text>
 	</Flex>
 
 	<Flex direction="column">
 		<Text size="1" weight="bold">
-			Get started
+			开始
 		</Text>
 		<Text color="gray" size="1">
-			Start your next project in minutes
+			几分钟内开始您的下一个项目
 		</Text>
 	</Flex>
 </Grid>
 ```
 
-### Weight
+### 权重
 
-Use the `weight` prop to set the text weight.
+使用 `weight` 属性设置文本权重。
 
 ```jsx live=true scroll=true
 <Text weight="regular" as="div">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过懒狗。
 </Text>
 
 <Text weight="medium" as="div">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过懒狗。
 </Text>
 
 <Text weight="bold" as="div">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过懒狗。
 </Text>
 ```
 
-### Align
+### 对齐
 
-Use the `align` prop to set text alignment.
+使用 `align` 属性设置文本对齐方式。
 
 ```jsx live=true
-<Text align="left" as="div">Left-aligned</Text>
-<Text align="center" as="div">Center-aligned</Text>
-<Text align="right" as="div">Right-aligned</Text>
+<Text align="left" as="div">左对齐</Text>
+<Text align="center" as="div">居中对齐</Text>
+<Text align="right" as="div">右对齐</Text>
 ```
 
-### Trim
+### 修剪
 
-Use the `trim` prop to trim the leading space at the start, end, or both sides of the text box.
+使用 `trim` 属性修剪文本框开头、结尾或两侧的前导空格。
 
-The prop works similarly to the upcoming [half-leading control](https://www.w3.org/TR/css-inline-3/#leading-trim) spec, but uses a common [negative margin workaround](https://seek-oss.github.io/capsize/) under the hood for cross-browser support.
+该属性的工作方式与即将推出的 [半行距控制](https://www.w3.org/TR/css-inline-3/#leading-trim) 规范相似，但在底层使用了常见的 [负边距变通法](https://seek-oss.github.io/capsize/) 以支持跨浏览器兼容性。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
@@ -147,7 +147,7 @@ The prop works similarly to the upcoming [half-leading control](https://www.w3.o
 			borderBottom: "1px dashed var(--gray-a7)",
 		}}
 	>
-		Without trim
+		无修剪
 	</Text>
 	<Text
 		trim="both"
@@ -157,12 +157,12 @@ The prop works similarly to the upcoming [half-leading control](https://www.w3.o
 			borderBottom: "1px dashed var(--gray-a7)",
 		}}
 	>
-		With trim
+		有修剪
 	</Text>
 </Flex>
 ```
 
-Trimming the leading is useful when dialing in vertical spacing in cards or other “boxy” components. Otherwise, padding looks larger on top and bottom than on the sides.
+修剪前导空格在调整卡片或其他“盒子”组件的垂直间距时非常有用。否则，填充在上下的看起来比在两侧的要大。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
@@ -174,12 +174,10 @@ Trimming the leading is useful when dialing in vertical spacing in cards or othe
 		p="4"
 	>
 		<Heading mb="1" size="3">
-			Without trim
+			无修剪
 		</Heading>
 		<Text>
-			The goal of typography is to relate font size, line height, and line width
-			in a proportional way that maximizes beauty and makes reading easier and
-			more pleasant.
+			排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 		</Text>
 	</Box>
 
@@ -191,18 +189,16 @@ Trimming the leading is useful when dialing in vertical spacing in cards or othe
 		}}
 	>
 		<Heading mb="1" size="3" trim="start">
-			With trim
+			有修剪
 		</Heading>
 		<Text trim="end">
-			The goal of typography is to relate font size, line height, and line width
-			in a proportional way that maximizes beauty and makes reading easier and
-			more pleasant.
+			排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 		</Text>
 	</Box>
 </Flex>
 ```
 
-The default trim values are configured for the system font stack that’s used by Radix Themes. If you are using custom fonts, you can [adjust](/themes/docs/theme/typography#customization) the trim values using the corresponding CSS variables.
+默认的修剪值配置为 Radix 主题使用的系统字体栈。如果您使用自定义字体，可以使用相应的 CSS 变量 [调整](/themes/docs/theme/typography#customization) 修剪值。
 
 ```css
 .radix-themes {
@@ -213,30 +209,26 @@ The default trim values are configured for the system font stack that’s used b
 }
 ```
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性在文本超出其容器时用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
 	<Text truncate>
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 	</Text>
 </Flex>
 ```
 
-### Wrap
+### 包裹
 
-Use the `wrap` prop to control text wrapping.
+使用 `wrap` 属性控制文本换行。
 
 ```jsx live=true line=2
 <Flex maxWidth="270px">
 	<Text wrap="nowrap">
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 	</Text>
 </Flex>
 ```
@@ -244,9 +236,7 @@ Use the `wrap` prop to control text wrapping.
 ```jsx live=true line=2
 <Flex maxWidth="270px">
 	<Text wrap="balance">
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 	</Text>
 </Flex>
 ```
@@ -254,9 +244,7 @@ Use the `wrap` prop to control text wrapping.
 ```jsx live=true line=2
 <Flex maxWidth="270px">
 	<Text wrap="pretty">
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是将字体大小、行高和行宽以比例的方式关联起来，最大限度地提升美感，使阅读更加轻松和愉快。
 	</Text>
 </Flex>
 ```
@@ -268,65 +256,62 @@ Use the `wrap` prop to control text wrapping.
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		<Code>text-wrap: pretty</Code> is an experimental value that is{" "}
+		<Code>text-wrap: pretty</Code> 是一个实验性值，{" "}
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#browser_compatibility">
-			not yet supported in all browsers
+			在所有浏览器中尚不支持
 		</a>
-		. However, it can be treated as a progressive enhancement for browsers that
-		do support it.
+		。 然而，对于支持它的浏览器，它可以被视为一种渐进增强。
 	</Callout.Text>
 </Callout.Root>
 
 }
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color). The text colors are designed to achieve at least Lc 60 APCA contrast over common background colors.
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。文本颜色的设计旨在在常见的背景色上实现至少 Lc 60 APCA 对比度。
 
 ```jsx live=true scroll=true
 <Flex direction="column">
-	<Text color="indigo">The quick brown fox jumps over the lazy dog.</Text>
-	<Text color="cyan">The quick brown fox jumps over the lazy dog.</Text>
-	<Text color="orange">The quick brown fox jumps over the lazy dog.</Text>
-	<Text color="crimson">The quick brown fox jumps over the lazy dog.</Text>
+	<Text color="indigo">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text color="cyan">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text color="orange">敏捷的棕色狐狸跳过懒狗。</Text>
+	<Text color="crimson">敏捷的棕色狐狸跳过懒狗。</Text>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live="true"
 <Flex direction="column">
-	<Text color="gray">The quick brown fox jumps over the lazy dog.</Text>
+	<Text color="gray">敏捷的棕色狐狸跳过懒狗。</Text>
 	<Text color="gray" highContrast>
-		The quick brown fox jumps over the lazy dog.
+		敏捷的棕色狐狸跳过懒狗。
 	</Text>
 </Flex>
 ```
 
-### With formatting
+### 带格式化
 
-Compose `Text` with formatting components to add emphasis and structure to content.
+将 `Text` 与格式化组件组合以增加内容的强调和结构。
 
 ```jsx live="true"
 <Text as="p">
-	Look, such a helpful <Link href="#">link</Link>, an <Em>italic emphasis</Em>,
-	a piece of computer <Code>code</Code>, and even a hotkey combination{" "}
-	<Kbd>⇧⌘A</Kbd> within the text.
+	看，这么有用的 <Link href="#">链接</Link>、一个 <Em>斜体强调</Em>、一段计算机 <Code>代码</Code>，甚至在文本中还有一个热键组合{" "}
+	<Kbd>⇧⌘A</Kbd>。
 </Text>
 ```
 
-### With form controls
+### 与表单控件一起使用
 
-Composing `Text` with a form control like [`Checkbox`](/themes/docs/components/checkbox), [`RadioGroup`](/themes/docs/components/radio-group), or [`Switch`](/themes/docs/components/switch) automatically centers the control with the first line of text, even when the text is multi-line.
+将 `Text` 与表单控件如 [`Checkbox`](/themes/docs/components/checkbox)、[`RadioGroup`](/themes/docs/components/radio-group) 或 [`Switch`](/themes/docs/components/switch) 组合时，控件会自动与第一行文本居中对齐，即使文本是多行的。
 
 ```jsx live="true"
 <Box maxWidth="300px">
 	<Text as="label" size="3">
 		<Flex gap="2">
-			<Checkbox defaultChecked /> I understand that these documents are
-			confidential and cannot be shared with a third party.
+			<Checkbox defaultChecked /> 我理解这些文件是保密的，不能与第三方分享。
 		</Flex>
 	</Text>
 </Box>

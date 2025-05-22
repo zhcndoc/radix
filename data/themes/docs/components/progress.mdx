@@ -1,6 +1,6 @@
 ---
-metaTitle: Progress
-metaDescription: Displays a progress bar related to a task.
+metaTitle: 进度条
+metaDescription: 显示与任务相关的进度条。
 sourcePath: components/progress
 ---
 
@@ -10,17 +10,17 @@ sourcePath: components/progress
 </Box>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Progress primitive](/primitives/docs/components/progress) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [Progress 基础组件](/primitives/docs/components/progress)，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="progressPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制尺寸。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -30,9 +30,9 @@ Use the `size` prop to control the size.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉风格。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -42,9 +42,9 @@ Use the `variant` prop to control the visual style.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性为进度条指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -55,9 +55,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性以提高与背景的颜色对比度。
 
 ```jsx live=true
 <Grid columns="2" gap="4">
@@ -74,9 +74,9 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Grid>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性指定特定的半径值。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -86,20 +86,20 @@ Use the `radius` prop to assign a specific radius value.
 </Flex>
 ```
 
-### With controlled value
+### 使用受控值
 
-Use the `value` prop to provide a precise indication of the task progress.
+使用 `value` 属性提供任务进度的准确指示。
 
 ```jsx live=true
 <Progress value={75} />
 ```
 
-### With custom duration
+### 自定义持续时间
 
-Use the `duration` prop to indicate an approximate duration of an indeterminate task. Once the duration times out, the progress bar will start an indeterminate animation.
+使用 `duration` 属性指示不确定任务的近似持续时间。一旦持续时间超时，进度条将开始不确定动画。
 
 ```jsx live=true
 <Progress duration="30s" />
 ```
 
-When an approximate duration can be estimated, the Progress component is still useful over [Spinner](./spinner), which doesn’t provide any visual cues towards the progress of the task.
+当可以估计近似持续时间时，进度组件仍然比 [Spinner](./spinner) 更有用，因为后者并不提供任何有关任务进度的视觉提示。

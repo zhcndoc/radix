@@ -1,84 +1,84 @@
 ---
-metaTitle: Text Area
-metaDescription: Captures multi-line user input.
+metaTitle: 文本区域
+metaDescription: 捕获多行用户输入。
 sourcePath: components/text-area
 ---
 
 ```jsx live=true
-<TextArea placeholder="Reply to comment…" />
+<TextArea placeholder="回复评论…" />
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `textarea` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `textarea` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="textAreaPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制大小。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
 	<Box maxWidth="200px">
-		<TextArea size="1" placeholder="Reply to comment…" />
+		<TextArea size="1" placeholder="回复评论…" />
 	</Box>
 	<Box maxWidth="250px">
-		<TextArea size="2" placeholder="Reply to comment…" />
+		<TextArea size="2" placeholder="回复评论…" />
 	</Box>
 	<Box maxWidth="300px">
-		<TextArea size="3" placeholder="Reply to comment…" />
+		<TextArea size="3" placeholder="回复评论…" />
 	</Box>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉风格。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="250px">
-	<TextArea variant="surface" placeholder="Reply to comment…" />
-	<TextArea variant="classic" placeholder="Reply to comment…" />
-	<TextArea variant="soft" placeholder="Reply to comment…" />
+	<TextArea variant="surface" placeholder="回复评论…" />
+	<TextArea variant="classic" placeholder="回复评论…" />
+	<TextArea variant="soft" placeholder="回复评论…" />
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="250px">
-	<TextArea color="blue" variant="soft" placeholder="Reply to comment…" />
-	<TextArea color="green" variant="soft" placeholder="Reply to comment…" />
-	<TextArea color="red" variant="soft" placeholder="Reply to comment…" />
+	<TextArea color="blue" variant="soft" placeholder="回复评论…" />
+	<TextArea color="green" variant="soft" placeholder="回复评论…" />
+	<TextArea color="red" variant="soft" placeholder="回复评论…" />
 </Flex>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性分配特定的半径值。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="250px">
-	<TextArea radius="none" placeholder="Search the docs…" />
-	<TextArea radius="large" placeholder="Search the docs…" />
-	<TextArea radius="full" placeholder="Search the docs…" />
+	<TextArea radius="none" placeholder="搜索文档…" />
+	<TextArea radius="large" placeholder="搜索文档…" />
+	<TextArea radius="full" placeholder="搜索文档…" />
 </Flex>
 ```
 
-### Resize
+### 大小调整
 
-Use the `resize` prop to enable resizing on one or both axis.
+使用 `resize` 属性启用一个或两个轴上的大小调整。
 
 ```jsx live=true
 <Flex direction="column" gap="3" maxWidth="250px">
-	<TextArea resize="none" placeholder="Search the docs…" />
-	<TextArea resize="vertical" placeholder="Search the docs…" />
-	<TextArea resize="horizontal" placeholder="Search the docs…" />
-	<TextArea resize="both" placeholder="Search the docs…" />
+	<TextArea resize="none" placeholder="搜索文档…" />
+	<TextArea resize="vertical" placeholder="搜索文档…" />
+	<TextArea resize="horizontal" placeholder="搜索文档…" />
+	<TextArea resize="both" placeholder="搜索文档…" />
 </Flex>
 ```

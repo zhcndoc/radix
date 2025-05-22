@@ -1,13 +1,13 @@
 ---
-metaTitle: Avatar
-metaDescription: An image element with a fallback for representing the user.
+metaTitle: 头像
+metaDescription: 一个带有后备方案的图像元素，用于表示用户。
 name: avatar
 ---
 
-# Avatar
+# 头像
 
 <Description>
-	An image element with a fallback for representing the user.
+	一个带有后备方案的图像元素，用于表示用户。
 </Description>
 
 <HeroContainer>
@@ -18,23 +18,23 @@ name: avatar
 
 <Highlights
 	features={[
-		"Automatic and manual control over when the image renders.",
-		"Fallback part accepts any children.",
-		"Optionally delay fallback rendering to avoid content flashing.",
+		"对图像渲染时机的自动和手动控制。",
+		"后备部分接受任何子元素。",
+		"可以选择延迟后备渲染以避免内容闪烁。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-avatar
 ```
 
-## Anatomy
+## 解剖结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Avatar } from "radix-ui";
@@ -47,11 +47,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根元素
 
-Contains all the parts of an avatar.
+包含头像的所有部分。
 
 <PropsTable
 	data={[
@@ -62,21 +62,20 @@ Contains all the parts of an avatar.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
 	]}
 />
 
-### Image
+### 图像
 
-The image to render. By default it will only render when it has loaded. You can use the `onLoadingStatusChange` handler if you need more control.
+要渲染的图像。默认情况下，它仅在加载完成后渲染。如果您需要更多控制，可以使用 `onLoadingStatusChange` 处理程序。
 
 <PropsTable
 	data={[
@@ -87,12 +86,11 @@ The image to render. By default it will only render when it has loaded. You can 
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -101,14 +99,14 @@ The image to render. By default it will only render when it has loaded. You can 
 			type: '(status: "idle" | "loading" | "loaded" | "error") => void',
 			typeSimple: "function",
 			description:
-				"A callback providing information about the loading status of the image. This is useful in case you want to control more precisely what to render as the image is loading.",
+				"一个回调，提供有关图像加载状态的信息。如果您想更精确地控制在图像加载时渲染什么，这很有用。",
 		},
 	]}
 />
 
-### Fallback
+### 后备
 
-An element that renders when the image hasn't loaded. This means whilst it's loading, or if there was an error. If you notice a flash during loading, you can provide a `delayMs` prop to delay its rendering so it only renders for those with slower connections. For more control, use the `onLoadingStatusChange` handler on `Avatar.Image`.
+在图像未加载时渲染的元素。这意味着在加载时或如果出现错误。如果您在加载期间注意到闪烁，可以提供 `delayMs` 属性来延迟其渲染，以便仅在连接较慢的情况下渲染。要获得更多控制，请在 `Avatar.Image` 上使用 `onLoadingStatusChange` 处理程序。
 
 <PropsTable
 	data={[
@@ -119,12 +117,11 @@ An element that renders when the image hasn't loaded. This means whilst it's loa
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -132,16 +129,16 @@ An element that renders when the image hasn't loaded. This means whilst it's loa
 			name: "delayMs",
 			type: "number",
 			description:
-				"Useful for delaying rendering so it only appears for those with slower connections.",
+				"用于延迟渲染，以便仅在连接较慢的情况下显示。",
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Clickable Avatar with tooltip
+### 可点击的头像与工具提示
 
-You can compose the Avatar with a [Tooltip](/primitives/docs/components/tooltip) to display extra information.
+您可以将头像与 [工具提示](/primitives/docs/components/tooltip) 组合，以显示额外的信息。
 
 ```jsx line=1,4,5,7,9-13
 import { Avatar, __Tooltip__ } from "radix-ui";
@@ -153,7 +150,7 @@ export default () => (
 		</Tooltip.Trigger>
 
 		<Tooltip.Content side="top">
-			Tooltip content
+			工具提示内容
 			<Tooltip.Arrow />
 		</Tooltip.Content>
 	</Tooltip.Root>

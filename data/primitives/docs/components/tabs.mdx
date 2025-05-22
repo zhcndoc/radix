@@ -1,15 +1,14 @@
 ---
-metaTitle: Tabs
-metaDescription: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+metaTitle: 标签
+metaDescription: 一组分层内容部分——称为选项卡面板——一次只能显示一个。
 name: tabs
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/tabs
 ---
 
-# Tabs
+# 标签
 
 <Description>
-	A set of layered sections of content—known as tab panels—that are displayed
-	one at a time.
+	一组分层内容部分——称为选项卡面板——一次只能显示一个。
 </Description>
 
 <HeroContainer>
@@ -20,24 +19,24 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/tabs
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Supports horizontal/vertical orientation.",
-		"Supports automatic/manual activation.",
-		"Full keyboard navigation.",
+		"可以是可控或不可控的。",
+		"支持水平/垂直方向。",
+		"支持自动/手动激活。",
+		"完全的键盘导航。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-tabs
 ```
 
-## Anatomy
+## 解剖结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Tabs } from "radix-ui";
@@ -52,11 +51,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根节点
 
-Contains all the tabs component parts.
+包含所有选项卡组件部分。
 
 <PropsTable
 	data={[
@@ -67,12 +66,10 @@ Contains all the tabs component parts.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查看我们的 <a href="../guides/composition">合成</a> 指南了解更多细节。
 				</>
 			),
 		},
@@ -81,7 +78,7 @@ Contains all the tabs component parts.
 			required: false,
 			type: "string",
 			description:
-				"The value of the tab that should be active when initially rendered. Use when you do not need to control the state of the tabs.",
+				"初始渲染时应处于活动状态的选项卡值。用于不需要控制选项卡状态的情况。",
 		},
 		{
 			name: "value",
@@ -89,8 +86,7 @@ Contains all the tabs component parts.
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the tab to activate. Should be used in
-					conjunction with <Code>onValueChange</Code>.
+					要激活的选项卡的受控值。应与 <Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -99,7 +95,7 @@ Contains all the tabs component parts.
 			required: false,
 			type: "(value: string) => void",
 			typeSimple: "function",
-			description: "Event handler called when the value changes.",
+			description: "当值变化时调用的事件处理程序。",
 		},
 		{
 			name: "orientation",
@@ -107,7 +103,7 @@ Contains all the tabs component parts.
 			type: '"horizontal" | "vertical" | undefined',
 			typeSimple: "enum",
 			default: '"horizontal"',
-			description: "The orientation of the component.",
+			description: "组件的方向。",
 		},
 		{
 			name: "dir",
@@ -116,9 +112,8 @@ Contains all the tabs component parts.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the tabs. If omitted, inherits globally from{" "}
-					<Code>DirectionProvider</Code> or assumes LTR (left-to-right) reading
-					mode.
+					选项卡的阅读方向。如果省略，全球继承自{" "}
+					<Code>DirectionProvider</Code> 或假设 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
@@ -130,8 +125,7 @@ Contains all the tabs component parts.
 			default: '"automatic"',
 			description: (
 				<span>
-					When <Code>automatic</Code>, tabs are activated when receiving focus.
-					When <Code>manual</Code>, tabs are activated when clicked.
+					当 <Code>automatic</Code> 时，选项卡在获得焦点时激活。 当 <Code>manual</Code> 时，选项卡在点击时激活。
 				</span>
 			),
 		},
@@ -147,9 +141,9 @@ Contains all the tabs component parts.
 	]}
 />
 
-### List
+### 列表
 
-Contains the triggers that are aligned along the edge of the active content.
+包含沿活动内容边缘对齐的触发器。
 
 <PropsTable
 	data={[
@@ -160,12 +154,10 @@ Contains the triggers that are aligned along the edge of the active content.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查看我们的 <a href="../guides/composition">合成</a> 指南了解更多细节。
 				</>
 			),
 		},
@@ -176,8 +168,7 @@ Contains the triggers that are aligned along the edge of the active content.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, keyboard navigation will loop from last tab to
-					first, and vice versa.
+					当 <Code>true</Code> 时，键盘导航将从最后一个选项卡循环到第一个选项卡，反之亦然。
 				</span>
 			),
 		},
@@ -193,9 +184,9 @@ Contains the triggers that are aligned along the edge of the active content.
 	]}
 />
 
-### Trigger
+### 触发器
 
-The button that activates its associated content.
+激活其关联内容的按钮。
 
 <PropsTable
 	data={[
@@ -206,12 +197,10 @@ The button that activates its associated content.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查看我们的 <a href="../guides/composition">合成</a> 指南了解更多细节。
 				</>
 			),
 		},
@@ -219,7 +208,7 @@ The button that activates its associated content.
 			name: "value",
 			required: true,
 			type: "string",
-			description: "A unique value that associates the trigger with a content.",
+			description: "一个唯一值，将触发器与内容关联。",
 		},
 		{
 			name: "disabled",
@@ -228,8 +217,7 @@ The button that activates its associated content.
 			default: "false",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					tab.
+					当 <Code>true</Code> 时，防止用户与选项卡交互。
 				</span>
 			),
 		},
@@ -244,7 +232,7 @@ The button that activates its associated content.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 		{
 			attribute: "[data-orientation]",
@@ -253,9 +241,9 @@ The button that activates its associated content.
 	]}
 />
 
-### Content
+### 内容
 
-Contains the content associated with each trigger.
+包含与每个触发器关联的内容。
 
 <PropsTable
 	data={[
@@ -266,12 +254,10 @@ Contains the content associated with each trigger.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查看我们的 <a href="../guides/composition">合成</a> 指南了解更多细节。
 				</>
 			),
 		},
@@ -279,15 +265,14 @@ Contains the content associated with each trigger.
 			name: "value",
 			required: true,
 			type: "string",
-			description: "A unique value that associates the content with a trigger.",
+			description: "一个唯一值，将内容与触发器关联。",
 		},
 		{
 			name: "forceMount",
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					在需要更多控制时用于强制挂载。在使用 React 动画库控制动画时非常有用。
 				</span>
 			),
 		},
@@ -307,34 +292,34 @@ Contains the content associated with each trigger.
 	]}
 />
 
-## Examples
+## 示例
 
-### Vertical
+### 垂直
 
-You can create vertical tabs by using the `orientation` prop.
+您可以通过使用 `orientation` 属性来创建垂直选项卡。
 
 ```jsx line=4
 import { Tabs } from "radix-ui";
 
 export default () => (
 	<Tabs.Root defaultValue="tab1" __orientation__="vertical">
-		<Tabs.List aria-label="tabs example">
-			<Tabs.Trigger value="tab1">One</Tabs.Trigger>
-			<Tabs.Trigger value="tab2">Two</Tabs.Trigger>
-			<Tabs.Trigger value="tab3">Three</Tabs.Trigger>
+		<Tabs.List aria-label="选项卡示例">
+			<Tabs.Trigger value="tab1">一</Tabs.Trigger>
+			<Tabs.Trigger value="tab2">二</Tabs.Trigger>
+			<Tabs.Trigger value="tab3">三</Tabs.Trigger>
 		</Tabs.List>
-		<Tabs.Content value="tab1">Tab one content</Tabs.Content>
-		<Tabs.Content value="tab2">Tab two content</Tabs.Content>
-		<Tabs.Content value="tab3">Tab three content</Tabs.Content>
+		<Tabs.Content value="tab1">选项卡一内容</Tabs.Content>
+		<Tabs.Content value="tab2">选项卡二内容</Tabs.Content>
+		<Tabs.Content value="tab3">选项卡三内容</Tabs.Content>
 	</Tabs.Root>
 );
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs).
+遵循 [选项卡 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/tabs)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
@@ -342,8 +327,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["Tab"],
 			description: (
 				<span>
-					When focus moves onto the tabs, focuses the active trigger. When a
-					trigger is focused, moves focus to the active content.
+					当焦点移动到选项卡时，聚焦活动触发器。 当触发器获得焦点时，焦点移动到活动内容。
 				</span>
 			),
 		},
@@ -351,8 +335,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["ArrowDown"],
 			description: (
 				<span>
-					Moves focus to the next trigger depending on <Code>orientation</Code>{" "}
-					and activates its associated content.
+					根据 <Code>orientation</Code> 移动焦点到下一个触发器，并激活其关联内容。
 				</span>
 			),
 		},
@@ -360,8 +343,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["ArrowRight"],
 			description: (
 				<span>
-					Moves focus to the next trigger depending on <Code>orientation</Code>{" "}
-					and activates its associated content.
+					根据 <Code>orientation</Code> 移动焦点到下一个触发器，并激活其关联内容。
 				</span>
 			),
 		},
@@ -369,8 +351,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["ArrowUp"],
 			description: (
 				<span>
-					Moves focus to the previous trigger depending on{" "}
-					<Code>orientation</Code> and activates its associated content.
+					根据 <Code>orientation</Code> 移动焦点到上一个触发器，并激活其关联内容。
 				</span>
 			),
 		},
@@ -378,8 +359,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["ArrowLeft"],
 			description: (
 				<span>
-					Moves focus to the previous trigger depending on{" "}
-					<Code>orientation</Code> and activates its associated content.
+					根据 <Code>orientation</Code> 移动焦点到上一个触发器，并激活其关联内容。
 				</span>
 			),
 		},
@@ -387,7 +367,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["Home"],
 			description: (
 				<span>
-					Moves focus to the first trigger and activates its associated content.
+					将焦点移动到第一个触发器并激活其关联内容。
 				</span>
 			),
 		},
@@ -395,7 +375,7 @@ Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/pa
 			keys: ["End"],
 			description: (
 				<span>
-					Moves focus to the last trigger and activates its associated content.
+					将焦点移动到最后一个触发器并激活其关联内容。
 				</span>
 			),
 		},

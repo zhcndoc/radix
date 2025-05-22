@@ -1,16 +1,16 @@
 ---
-metaTitle: Data List
-metaDescription: Displays metadata as a list of key-value pairs.
+metaTitle: 数据列表
+metaDescription: 以键值对的形式显示元数据列表。
 sourcePath: components/data-list
 ---
 
 ```jsx live=true
 <DataList.Root>
 	<DataList.Item align="center">
-		<DataList.Label minWidth="88px">Status</DataList.Label>
+		<DataList.Label minWidth="88px">状态</DataList.Label>
 		<DataList.Value>
 			<Badge color="jade" variant="soft" radius="full">
-				Authorized
+				已授权
 			</Badge>
 		</DataList.Value>
 	</DataList.Item>
@@ -21,7 +21,7 @@ sourcePath: components/data-list
 				<Code variant="ghost">u_2J89JSA4GJ</Code>
 				<IconButton
 					size="1"
-					aria-label="Copy value"
+					aria-label="复制值"
 					color="gray"
 					variant="ghost"
 				>
@@ -31,17 +31,17 @@ sourcePath: components/data-list
 		</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Name</DataList.Label>
-		<DataList.Value>Vlad Moroz</DataList.Value>
+		<DataList.Label minWidth="88px">姓名</DataList.Label>
+		<DataList.Value>弗拉基米尔·莫若兹</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Email</DataList.Label>
+		<DataList.Label minWidth="88px">邮箱</DataList.Label>
 		<DataList.Value>
 			<Link href="mailto:vlad@workos.com">vlad@workos.com</Link>
 		</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Company</DataList.Label>
+		<DataList.Label minWidth="88px">公司</DataList.Label>
 		<DataList.Value>
 			<Link target="_blank" href="https://workos.com">
 				WorkOS
@@ -51,52 +51,52 @@ sourcePath: components/data-list
 </DataList.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `dl` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `dl` 元素，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
-Contains all the parts of the data list.
+包含数据列表的所有部分。
 
 <ThemesPropsTable defs="dataListRootPropDefs" />
 
-### Item
+### 项
 
-Wraps a key-value pair.
+包裹一个键值对。
 
 <ThemesPropsTable defs="dataListItemPropDefs" />
 
-### Label
+### 标签
 
-Contains the key of the key-value pair.
+包含键值对中的键。
 
 <ThemesPropsTable defs="dataListLabelPropDefs" />
 
-### Value
+### 值
 
-Contains the value of the key-value pair.
+包含键值对中的值。
 
-## Examples
+## 示例
 
-### Orientation
+### 方向
 
-Use the `orientation` prop to change the way the data list is layed-out.
+使用 `orientation` 属性来改变数据列表的布局方式。
 
 ```jsx live=true
 <DataList.Root orientation={{ initial: "vertical", sm: "horizontal" }}>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Name</DataList.Label>
-		<DataList.Value>Vlad Moroz</DataList.Value>
+		<DataList.Label minWidth="88px">姓名</DataList.Label>
+		<DataList.Value>弗拉基米尔·莫若兹</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Email</DataList.Label>
+		<DataList.Label minWidth="88px">邮箱</DataList.Label>
 		<DataList.Value>
 			<Link href="mailto:vlad@workos.com">vlad@workos.com</Link>
 		</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label minWidth="88px">Company</DataList.Label>
+		<DataList.Label minWidth="88px">公司</DataList.Label>
 		<DataList.Value>
 			<Link target="_blank" href="https://workos.com">
 				WorkOS
@@ -106,25 +106,25 @@ Use the `orientation` prop to change the way the data list is layed-out.
 </DataList.Root>
 ```
 
-### Size
+### 尺寸
 
-Use the `size` prop to change the size of the data list.
+使用 `size` 属性来改变数据列表的大小。
 
 ```jsx live=true
 <Flex direction="column" gap="6">
 	<DataList.Root size="1">
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Name</DataList.Label>
-			<DataList.Value>Vlad Moroz</DataList.Value>
+			<DataList.Label minWidth="88px">姓名</DataList.Label>
+			<DataList.Value>弗拉基米尔·莫若兹</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Email</DataList.Label>
+			<DataList.Label minWidth="88px">邮箱</DataList.Label>
 			<DataList.Value>
 				<Link href="mailto:vlad@workos.com">vlad@workos.com</Link>
 			</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Company</DataList.Label>
+			<DataList.Label minWidth="88px">公司</DataList.Label>
 			<DataList.Value>
 				<Link target="_blank" href="https://workos.com">
 					WorkOS
@@ -135,17 +135,17 @@ Use the `size` prop to change the size of the data list.
 
 	<DataList.Root size="2">
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Name</DataList.Label>
-			<DataList.Value>Vlad Moroz</DataList.Value>
+			<DataList.Label minWidth="88px">姓名</DataList.Label>
+			<DataList.Value>弗拉基米尔·莫若兹</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Email</DataList.Label>
+			<DataList.Label minWidth="88px">邮箱</DataList.Label>
 			<DataList.Value>
 				<Link href="mailto:vlad@workos.com">vlad@workos.com</Link>
 			</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Company</DataList.Label>
+			<DataList.Label minWidth="88px">公司</DataList.Label>
 			<DataList.Value>
 				<Link target="_blank" href="https://workos.com">
 					WorkOS
@@ -156,17 +156,17 @@ Use the `size` prop to change the size of the data list.
 
 	<DataList.Root size="3">
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Name</DataList.Label>
-			<DataList.Value>Vlad Moroz</DataList.Value>
+			<DataList.Label minWidth="88px">姓名</DataList.Label>
+			<DataList.Value>弗拉基米尔·莫若兹</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Email</DataList.Label>
+			<DataList.Label minWidth="88px">邮箱</DataList.Label>
 			<DataList.Value>
 				<Link href="mailto:vlad@workos.com">vlad@workos.com</Link>
 			</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label minWidth="88px">Company</DataList.Label>
+			<DataList.Label minWidth="88px">公司</DataList.Label>
 			<DataList.Value>
 				<Link target="_blank" href="https://workos.com">
 					WorkOS
@@ -177,80 +177,80 @@ Use the `size` prop to change the size of the data list.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop on the Label part to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性在标签部分分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <DataList.Root orientation="vertical">
 	<DataList.Item>
-		<DataList.Label color="indigo">Name</DataList.Label>
-		<DataList.Value>Indigo</DataList.Value>
+		<DataList.Label color="indigo">姓名</DataList.Label>
+		<DataList.Value>靛蓝</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label color="cyan">Name</DataList.Label>
-		<DataList.Value>Cyan</DataList.Value>
+		<DataList.Label color="cyan">姓名</DataList.Label>
+		<DataList.Value>青色</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label color="orange">Name</DataList.Label>
-		<DataList.Value>Orange</DataList.Value>
+		<DataList.Label color="orange">姓名</DataList.Label>
+		<DataList.Value>橙色</DataList.Value>
 	</DataList.Item>
 	<DataList.Item>
-		<DataList.Label color="crimson">Name</DataList.Label>
-		<DataList.Value>Crimson</DataList.Value>
+		<DataList.Label color="crimson">姓名</DataList.Label>
+		<DataList.Value>深红色</DataList.Value>
 	</DataList.Item>
 </DataList.Root>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live=true
 <Flex gap="9">
 	<DataList.Root orientation="vertical">
 		<DataList.Item>
-			<DataList.Label color="indigo">Name</DataList.Label>
-			<DataList.Value>Indigo</DataList.Value>
+			<DataList.Label color="indigo">姓名</DataList.Label>
+			<DataList.Value>靛蓝</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label color="cyan">Name</DataList.Label>
-			<DataList.Value>Cyan</DataList.Value>
+			<DataList.Label color="cyan">姓名</DataList.Label>
+			<DataList.Value>青色</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label color="orange">Name</DataList.Label>
-			<DataList.Value>Orange</DataList.Value>
+			<DataList.Label color="orange">姓名</DataList.Label>
+			<DataList.Value>橙色</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
-			<DataList.Label color="crimson">Name</DataList.Label>
-			<DataList.Value>Crimson</DataList.Value>
+			<DataList.Label color="crimson">姓名</DataList.Label>
+			<DataList.Value>深红色</DataList.Value>
 		</DataList.Item>
 	</DataList.Root>
 
 	<DataList.Root orientation="vertical">
 		<DataList.Item>
 			<DataList.Label color="indigo" highContrast>
-				Name
+				姓名
 			</DataList.Label>
-			<DataList.Value>Indigo</DataList.Value>
+			<DataList.Value>靛蓝</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
 			<DataList.Label color="cyan" highContrast>
-				Name
+				姓名
 			</DataList.Label>
-			<DataList.Value>Cyan</DataList.Value>
+			<DataList.Value>青色</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
 			<DataList.Label color="orange" highContrast>
-				Name
+				姓名
 			</DataList.Label>
-			<DataList.Value>Orange</DataList.Value>
+			<DataList.Value>橙色</DataList.Value>
 		</DataList.Item>
 		<DataList.Item>
 			<DataList.Label color="crimson" highContrast>
-				Name
+				姓名
 			</DataList.Label>
-			<DataList.Value>Crimson</DataList.Value>
+			<DataList.Value>深红色</DataList.Value>
 		</DataList.Item>
 	</DataList.Root>
 </Flex>

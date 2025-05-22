@@ -1,6 +1,6 @@
 ---
-metaTitle: Checkbox
-metaDescription: Base input element to toggle an option on and off.
+metaTitle: 复选框
+metaDescription: 基础输入元素，用于开启和关闭选项。
 sourcePath: components/checkbox
 ---
 
@@ -8,22 +8,22 @@ sourcePath: components/checkbox
 <Text as="label" size="2">
 	<Flex gap="2">
 		<Checkbox defaultChecked />
-		Agree to Terms and Conditions
+		同意条款和条件
 	</Flex>
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Checkbox primitive](/primitives/docs/components/checkbox) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [Checkbox 原始组件](/primitives/docs/components/checkbox) 的属性，并支持 [常用边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="checkboxPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the checkbox.
+使用 `size` 属性来控制复选框的大小。
 
 ```jsx live=true
 <Flex align="center" gap="2">
@@ -33,9 +33,9 @@ Use the `size` prop to control the size of the checkbox.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the checkbox.
+使用 `variant` 属性来控制复选框的视觉样式。
 
 ```jsx live=true
 <Flex align="center" gap="4">
@@ -56,9 +56,9 @@ Use the `variant` prop to control the visual style of the checkbox.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性为复选框指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="2">
@@ -69,9 +69,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性以增加与背景的颜色对比度。
 
 ```jsx live=true
 <Grid columns="5" display="inline-grid" gap="2">
@@ -89,84 +89,83 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Grid>
 ```
 
-### Alignment
+### 对齐
 
-Composing `Checkbox` within `Text` automatically centers it with the first line of text.
+将 `Checkbox` 嵌套在 `Text` 中会自动将其与第一行文本居中对齐。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
 	<Text as="label" size="2">
 		<Flex as="span" gap="2">
-			<Checkbox size="1" defaultChecked /> Agree to Terms and Conditions
+			<Checkbox size="1" defaultChecked /> 同意条款和条件
 		</Flex>
 	</Text>
 
 	<Text as="label" size="3">
 		<Flex as="span" gap="2">
-			<Checkbox size="2" defaultChecked /> Agree to Terms and Conditions
+			<Checkbox size="2" defaultChecked /> 同意条款和条件
 		</Flex>
 	</Text>
 
 	<Text as="label" size="4">
 		<Flex as="span" gap="2">
-			<Checkbox size="3" defaultChecked /> Agree to Terms and Conditions
+			<Checkbox size="3" defaultChecked /> 同意条款和条件
 		</Flex>
 	</Text>
 </Flex>
 ```
 
-It is automatically well-aligned with multi-line text too.
+它也会与多行文本自动良好对齐。
 
 ```jsx live="true"
 <Box maxWidth="300px">
 	<Text as="label" size="3">
 		<Flex as="span" gap="2">
-			<Checkbox defaultChecked /> I understand that these documents are
-			confidential and cannot be shared with a third party.
+			<Checkbox defaultChecked /> 我理解这些文件是保密的，不能分享给第三方。
 		</Flex>
 	</Text>
 </Box>
 ```
 
-### Disabled
+### 禁用
 
-Use the native `disabled` attribute to create a disabled checkbox.
+使用原生的 `disabled` 属性创建一个禁用的复选框。
 
 ```jsx live="true"
 <Flex direction="column" gap="2">
 	<Text as="label" size="2">
 		<Flex as="span" gap="2">
 			<Checkbox />
-			Not checked
+			未选中
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2">
 		<Flex as="span" gap="2">
 			<Checkbox defaultChecked />
-			Checked
+			已选中
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2" color="gray">
 		<Flex as="span" gap="2">
 			<Checkbox disabled />
-			Not checked
+			未选中
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2" color="gray">
 		<Flex as="span" gap="2">
 			<Checkbox disabled defaultChecked />
-			Checked
+			已选中
 		</Flex>
 	</Text>
 </Flex>
 ```
 
-### Indeterminate
+### 不确定
 
-Use the `"indeterminate"` value to create an indeterminate checkbox.
+使用 `"indeterminate"` 值创建一个不确定状态的复选框。
 
 ```jsx live="true"
 <Flex gap="2">

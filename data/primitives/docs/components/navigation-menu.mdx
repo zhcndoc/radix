@@ -1,13 +1,13 @@
 ---
-metaTitle: Navigation Menu
-metaDescription: A collection of links for navigating websites.
+metaTitle: 导航菜单
+metaDescription: 用于浏览网站的链接集合。
 name: navigation-menu
 aria: https://www.w3.org/TR/wai-aria/#navigation
 ---
 
-# Navigation Menu
+# 导航菜单
 
-<Description>A collection of links for navigating websites.</Description>
+<Description>用于浏览网站的链接集合。</Description>
 
 <HeroContainer>
 	<NavigationMenuDemo />
@@ -17,27 +17,27 @@ aria: https://www.w3.org/TR/wai-aria/#navigation
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Flexible layout structure with managed tab focus.",
-		"Supports submenus.",
-		"Optional active item indicator.",
-		"Full keyboard navigation.",
-		"Exposes CSS variables for advanced animation.",
-		"Supports custom timings.",
+		"可以是受控或非受控的。",
+		"灵活的布局结构，带有管理的标签焦点。",
+		"支持子菜单。",
+		"可选的活动项指示器。",
+		"全面的键盘导航。",
+		"暴露用于高级动画的 CSS 变量。",
+		"支持自定义时机。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-navigation-menu
 ```
 
-## Anatomy
+## 组成结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { NavigationMenu } from "radix-ui";
@@ -74,11 +74,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Contains all the parts of a navigation menu.
+包含导航菜单的所有部分。
 
 <PropsTable
 	data={[
@@ -87,7 +87,7 @@ Contains all the parts of a navigation menu.
 			required: false,
 			type: "string",
 			description:
-				"The value of the menu item that should be active when initially rendered. Use when you do not need to control the value state.",
+				"初次渲染时应处于活动状态的菜单项值。在不需要控制值状态时使用。",
 		},
 		{
 			name: "value",
@@ -95,8 +95,7 @@ Contains all the parts of a navigation menu.
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the menu item to activate. Should be used in
-					conjunction with <Code>onValueChange</Code>.
+					应用于激活的菜单项的受控值。应与 <Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -105,21 +104,21 @@ Contains all the parts of a navigation menu.
 			required: false,
 			type: "(value: string) => void",
 			typeSimple: "function",
-			description: "Event handler called when the value changes.",
+			description: "当值更改时调用的事件处理程序。",
 		},
 		{
 			name: "delayDuration",
 			type: "number",
 			default: 200,
 			description:
-				"The duration from when the mouse enters a trigger until the content opens.",
+				"鼠标进入触发器到内容打开之间的持续时间。",
 		},
 		{
 			name: "skipDelayDuration",
 			type: "number",
 			default: 300,
 			description:
-				"How much time a user has to enter another trigger without incurring a delay again.",
+				"用户进入另一个触发器而不产生延迟的时间。",
 		},
 		{
 			name: "dir",
@@ -128,9 +127,7 @@ Contains all the parts of a navigation menu.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the menu when applicable. If omitted,
-					inherits globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
+					当适用时，菜单的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承或假设 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
@@ -140,7 +137,7 @@ Contains all the parts of a navigation menu.
 			type: '"horizontal" | "vertical"',
 			typeSimple: "enum",
 			default: '"horizontal"',
-			description: "The orientation of the menu.",
+			description: "菜单的方向。",
 		},
 	]}
 />
@@ -156,7 +153,7 @@ Contains all the parts of a navigation menu.
 
 ### Sub
 
-Signifies a submenu. Use it in place of the root part when nested to create a submenu.
+表示子菜单。在嵌套时要用它替代根部分以创建子菜单。
 
 <PropsTable
 	data={[
@@ -165,7 +162,7 @@ Signifies a submenu. Use it in place of the root part when nested to create a su
 			required: false,
 			type: "string",
 			description:
-				"The value of the menu item that should be active when initially rendered. Use when you do not need to control the value state.",
+				"初次渲染时应处于活动状态的菜单项值。在不需要控制值状态时使用。",
 		},
 		{
 			name: "value",
@@ -173,8 +170,7 @@ Signifies a submenu. Use it in place of the root part when nested to create a su
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the sub menu item to activate. Should be used
-					in conjunction with <Code>onValueChange</Code>.
+					应用于激活的子菜单项的受控值。应与 <Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -183,7 +179,7 @@ Signifies a submenu. Use it in place of the root part when nested to create a su
 			required: false,
 			type: "(value: string) => void",
 			typeSimple: "function",
-			description: "Event handler called when the value changes.",
+			description: "当值更改时调用的事件处理程序。",
 		},
 		{
 			name: "orientation",
@@ -191,7 +187,7 @@ Signifies a submenu. Use it in place of the root part when nested to create a su
 			type: '"horizontal" | "vertical"',
 			typeSimple: "enum",
 			default: '"horizontal"',
-			description: "The orientation of the menu.",
+			description: "菜单的方向。",
 		},
 	]}
 />
@@ -207,7 +203,7 @@ Signifies a submenu. Use it in place of the root part when nested to create a su
 
 ### List
 
-Contains the top level menu items.
+包含顶级菜单项。
 
 <PropsTable
 	data={[
@@ -218,12 +214,10 @@ Contains the top level menu items.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -241,7 +235,7 @@ Contains the top level menu items.
 
 ### Item
 
-A top level menu item, contains a link or trigger with content combination.
+一个顶级菜单项，包含链接或触发器和内容组合。
 
 <PropsTable
 	data={[
@@ -252,12 +246,10 @@ A top level menu item, contains a link or trigger with content combination.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -267,9 +259,7 @@ A top level menu item, contains a link or trigger with content combination.
 			type: "string",
 			description: (
 				<span>
-					A unique value that associates the item with an active value when the
-					navigation menu is controlled. This prop is managed automatically when
-					uncontrolled.
+					一个唯一值，将该项与受控的活动值关联。当导航菜单为非受控时，此属性会自动管理。
 				</span>
 			),
 		},
@@ -278,7 +268,7 @@ A top level menu item, contains a link or trigger with content combination.
 
 ### Trigger
 
-The button that toggles the content.
+切换内容的按钮。
 
 <PropsTable
 	data={[
@@ -289,12 +279,10 @@ The button that toggles the content.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -309,14 +297,14 @@ The button that toggles the content.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时显示",
 		},
 	]}
 />
 
 ### Content
 
-Contains the content associated with each trigger.
+包含与每个触发器关联的内容。
 
 <PropsTable
 	data={[
@@ -327,12 +315,10 @@ Contains the content associated with each trigger.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -342,8 +328,7 @@ Contains the content associated with each trigger.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当按下 escape 键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -353,9 +338,8 @@ Contains the content associated with each trigger.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当指针事件发生在组件边界外时调用的事件处理程序。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -365,9 +349,8 @@ Contains the content associated with each trigger.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves outside the bounds of the
-					component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当焦点移出组件边界时调用的事件处理程序。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -377,9 +360,7 @@ Contains the content associated with each trigger.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when an interaction (pointer or focus event)
-					happens outside the bounds of the component. It can be prevented by
-					calling <Code>event.preventDefault</Code>.
+					当互动（指针或焦点事件）发生在组件边界外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -388,8 +369,7 @@ Contains the content associated with each trigger.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					用于在需要更多控制时强制挂载。对于使用 React 动画库控制动画时很有用。
 				</span>
 			),
 		},
@@ -415,7 +395,7 @@ Contains the content associated with each trigger.
 
 ### Link
 
-A navigational link.
+一个导航链接。
 
 <PropsTable
 	data={[
@@ -426,12 +406,10 @@ A navigational link.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -440,7 +418,7 @@ A navigational link.
 			required: false,
 			type: "boolean",
 			default: "false",
-			description: "Used to identify the link as the currently active page.",
+			description: "用于将链接标识为当前活动页面。",
 		},
 		{
 			name: "onSelect",
@@ -448,10 +426,7 @@ A navigational link.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the user selects a link (via mouse or
-					keyboard). Calling <Code>event.preventDefault</Code> in this handler
-					will prevent the navigation menu from closing when selecting that
-					link.
+					当用户选择链接（通过鼠标或键盘）时调用的事件处理程序。可以在此处理程序中调用 <Code>event.preventDefault</Code>，以防止在选择该链接时关闭导航菜单。
 				</span>
 			),
 		},
@@ -462,14 +437,14 @@ A navigational link.
 	data={[
 		{
 			attribute: "[data-active]",
-			values: "Present when active",
+			values: "当活动时显示",
 		},
 	]}
 />
 
 ### Indicator
 
-An optional indicator element that renders below the list, is used to highlight the currently active trigger.
+一个可选的指示器元素，渲染在列表下面，用于突出显示当前活动的触发器。
 
 <PropsTable
 	data={[
@@ -480,12 +455,10 @@ An optional indicator element that renders below the list, is used to highlight 
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -494,8 +467,7 @@ An optional indicator element that renders below the list, is used to highlight 
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					用于在需要更多控制时强制挂载。对于使用 React 动画库控制动画时很有用。
 				</span>
 			),
 		},
@@ -517,7 +489,7 @@ An optional indicator element that renders below the list, is used to highlight 
 
 ### Viewport
 
-An optional viewport element that is used to render active content outside of the list.
+一个可选的视口元素，用于在列表之外渲染活动内容。
 
 <PropsTable
 	data={[
@@ -528,12 +500,10 @@ An optional viewport element that is used to render active content outside of th
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -542,8 +512,7 @@ An optional viewport element that is used to render active content outside of th
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					用于在需要更多控制时强制挂载。对于使用 React 动画库控制动画时很有用。
 				</span>
 			),
 		},
@@ -568,65 +537,63 @@ An optional viewport element that is used to render active content outside of th
 		{
 			cssVariable: "--radix-navigation-menu-viewport-width",
 			description:
-				"The width of the viewport when visible/hidden, computed from the active content",
+				"视口在可见/隐藏状态下的宽度，从活动内容计算",
 		},
 		{
 			cssVariable: "--radix-navigation-menu-viewport-height",
 			description:
-				"The height of the viewport when visible/hidden, computed from the active content",
+				"视口在可见/隐藏状态下的高度，从活动内容计算",
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Vertical
+### 垂直
 
-You can create a vertical menu by using the `orientation` prop.
+您可以通过使用 `orientation` 属性创建一个垂直菜单。
 
 ```jsx line=1
 <NavigationMenu.Root __orientation__="vertical">
 	<NavigationMenu.List>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
-			<NavigationMenu.Content>Item one content</NavigationMenu.Content>
+			<NavigationMenu.Trigger>项目一</NavigationMenu.Trigger>
+			<NavigationMenu.Content>项目一内容</NavigationMenu.Content>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
-			<NavigationMenu.Content>Item Two content</NavigationMenu.Content>
+			<NavigationMenu.Trigger>项目二</NavigationMenu.Trigger>
+			<NavigationMenu.Content>项目二内容</NavigationMenu.Content>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>
 </NavigationMenu.Root>
 ```
 
-### Flexible layouts
+### 灵活布局
 
-Use the `Viewport` part when you need extra control over where `Content` is rendered. This can be helpful when your design
-requires an adjusted DOM structure or if you need flexibility to achieve [advanced animation](/primitives/docs/components/navigation-menu#advanced-animation).
-Tab focus will be maintained automatically.
+当你需要额外控制 `Content` 的渲染位置时，使用 `Viewport` 部分。当你的设计需要调整的 DOM 结构，或需要灵活性以实现 [高级动画](/primitives/docs/components/navigation-menu#advanced-animation) 时，这非常有用。
+标签焦点将自动保持。
 
 ```jsx line=14
 <NavigationMenu.Root>
 	<NavigationMenu.List>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
-			<NavigationMenu.Content>Item one content</NavigationMenu.Content>
+			<NavigationMenu.Trigger>项目一</NavigationMenu.Trigger>
+			<NavigationMenu.Content>项目一内容</NavigationMenu.Content>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
-			<NavigationMenu.Content>Item two content</NavigationMenu.Content>
+			<NavigationMenu.Trigger>项目二</NavigationMenu.Trigger>
+			<NavigationMenu.Content>项目二内容</NavigationMenu.Content>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>
 
-	{/* NavigationMenu.Content will be rendered here when active */}
+	{/* NavigationalMenu.Content激活时将在这里渲染 */}
 	<NavigationMenu.Viewport />
 </NavigationMenu.Root>
 ```
 
-### With indicator
+### 带指示器
 
-You can use the optional `Indicator` part to highlight the currently active `Trigger`, this is useful when you want to provide
-an animated visual cue such as an arrow or highlight to accompany the `Viewport`.
+您可以使用可选的 `Indicator` 部分来突出显示当前活动的 `Trigger`，这在您希望提供动画视觉提示（例如箭头或高亮显示）以伴随 `Viewport` 时非常有用。
 
 ```jsx line=17
 // index.jsx
@@ -637,12 +604,12 @@ export default () => (
 	<NavigationMenu.Root>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
-				<NavigationMenu.Content>Item one content</NavigationMenu.Content>
+				<NavigationMenu.Trigger>项目一</NavigationMenu.Trigger>
+				<NavigationMenu.Content>项目一内容</NavigationMenu.Content>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
-				<NavigationMenu.Content>Item two content</NavigationMenu.Content>
+				<NavigationMenu.Trigger>项目二</NavigationMenu.Trigger>
+				<NavigationMenu.Content>项目二内容</NavigationMenu.Content>
 			</NavigationMenu.Item>
 
 			<NavigationMenu.Indicator __className__="NavigationMenuIndicator" />
@@ -667,34 +634,33 @@ export default () => (
 }
 ```
 
-### With submenus
+### 带子菜单
 
-Create a submenu by nesting your `NavigationMenu` and using the `Sub` part in place of its `Root`.
-Submenus work differently to `Root` navigation menus and are similar to [`Tabs`](/primitives/docs/components/tabs) in that one item should always be active, so be
-sure to assign and set a `defaultValue`.
+通过嵌套您的 `NavigationMenu` 并用 `Sub` 部分替换其 `Root` 来创建子菜单。
+子菜单与 `Root` 导航菜单的工作方式不同，更像是 [`Tabs`](/primitives/docs/components/tabs)，因为始终应该有一个项目处于活动状态，因此请务必分配并设置 `defaultValue`。
 
 ```jsx line=10,25
 <NavigationMenu.Root>
 	<NavigationMenu.List>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
-			<NavigationMenu.Content>Item one content</NavigationMenu.Content>
+			<NavigationMenu.Trigger>项目一</NavigationMenu.Trigger>
+			<NavigationMenu.Content>项目一内容</NavigationMenu.Content>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
+			<NavigationMenu.Trigger>项目二</NavigationMenu.Trigger>
 			<NavigationMenu.Content>
 				<NavigationMenu.__Sub__ __defaultValue__="sub1">
 					<NavigationMenu.List>
 						<NavigationMenu.Item value="sub1">
-							<NavigationMenu.Trigger>Sub item one</NavigationMenu.Trigger>
+							<NavigationMenu.Trigger>子项目一</NavigationMenu.Trigger>
 							<NavigationMenu.Content>
-								Sub item one content
+								子项目一内容
 							</NavigationMenu.Content>
 						</NavigationMenu.Item>
 						<NavigationMenu.Item value="sub2">
-							<NavigationMenu.Trigger>Sub item two</NavigationMenu.Trigger>
+							<NavigationMenu.Trigger>子项目二</NavigationMenu.Trigger>
 							<NavigationMenu.Content>
-								Sub item two content
+								子项目二内容
 							</NavigationMenu.Content>
 						</NavigationMenu.Item>
 					</NavigationMenu.List>
@@ -705,10 +671,10 @@ sure to assign and set a `defaultValue`.
 </NavigationMenu.Root>
 ```
 
-### With client side routing
+### 带客户端路由
 
-If you need to use the `Link` component provided by your routing package then we recommend composing with `NavigationMenu.Link` via a custom component.
-This will ensure accessibility and consistent keyboard control is maintained. Here's an example using Next.js:
+如果您需要使用路由包提供的 `Link` 组件，我们建议通过自定义组件与 `NavigationMenu.Link` 组合使用。
+这将确保无障碍性和一致的键盘控制。以下是使用 Next.js 的示例：
 
 ```jsx line=7-16,22,25
 // index.jsx
@@ -732,10 +698,10 @@ export default () => (
 	<NavigationMenu.Root>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
-				<Link href="/">Home</Link>
+				<Link href="/">首页</Link>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
-				<Link href="/about">About</Link>
+				<Link href="/about">关于</Link>
 			</NavigationMenu.Item>
 		</NavigationMenu.List>
 	</NavigationMenu.Root>
@@ -748,16 +714,15 @@ export default () => (
 	text-decoration: none;
 }
 .NavigationMenuLink[data-active] {
-	text-decoration: "underline";
+	text-decoration: underline;
 }
 ```
 
-### Advanced animation
+### 高级动画
 
-We expose `--radix-navigation-menu-viewport-[width|height]` and `data-motion['from-start'|'to-start'|'from-end'|'to-end']` attributes
-to allow you to animate `Viewport` size and `Content` position based on the enter/exit direction.
+我们暴露了 `--radix-navigation-menu-viewport-[width|height]` 和 `data-motion['from-start'|'to-start'|'from-end'|'to-end']` 属性，以允许您根据进入/退出方向动画化 `Viewport` 的大小和 `Content` 的位置。
 
-Combining these with `position: absolute;` allows you to create smooth overlapping animation effects when moving between items.
+将这些与 `position: absolute;` 结合使用，可以在移动项目之间时创建平滑的重叠动画效果。
 
 ```jsx line=10-12,16-18,22
 // index.jsx
@@ -768,15 +733,15 @@ export default () => (
 	<NavigationMenu.Root>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
+				<NavigationMenu.Trigger>项目一</NavigationMenu.Trigger>
 				<NavigationMenu.Content __className__="NavigationMenuContent">
-					Item one content
+					项目一内容
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
+				<NavigationMenu.Trigger>项目二</NavigationMenu.Trigger>
 				<NavigationMenu.Content __className__="NavigationMenuContent">
-					Item two content
+					项目二内容
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
 		</NavigationMenu.List>
@@ -863,27 +828,25 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 无障碍性
 
-Adheres to the [`navigation` role requirements](https://www.w3.org/TR/wai-aria-1.2/#navigation).
+遵循 [`navigation` 角色要求](https://www.w3.org/TR/wai-aria-1.2/#navigation)。
 
-### Differences to menubar
+### 与菜单栏的区别
 
-`NavigationMenu` should not be confused with `menubar`, although this primitive shares the name `menu` in the colloquial sense to refer to a set of navigation links, it does not use the WAI-ARIA `menu` role.
-This is because `menu` and `menubars` behave like native operating system menus most commonly found in desktop application windows, as such they feature complex functionality like composite focus management and first-character navigation.
+`NavigationMenu` 不应与 `menubar` 混淆，尽管此原语在口头上使用 `menu` 来指代一组导航链接，但它并未使用 WAI-ARIA `menu` 角色。
+这是因为 `menu` 和 `menubars` 的行为与最常见于桌面应用程序窗口的本机操作系统菜单类似，因此它们具有复杂的功能，例如复合焦点管理和首字符导航。
 
-These features are often considered [unnecessary for website navigation](https://github.com/w3c/aria-practices/issues/353) and at worst can confuse users who are familiar with established website patterns.
+这些功能通常被认为是 [网站导航中不必要的](https://github.com/w3c/aria-practices/issues/353)，在最坏的情况下，可能会混淆熟悉成熟网站模式的用户。
 
-See the W3C [Disclosure Navigation Menu](https://w3c.github.io/aria-practices/examples/disclosure/disclosure-navigation.html) example for more information.
+请参见 W3C [Disclosure Navigation Menu](https://w3c.github.io/aria-practices/examples/disclosure/disclosure-navigation.html) 示例以获取更多信息。
 
-### Link usage and aria-current
+### 链接使用和 aria-current
 
-It's important to use `NavigationMenu.Link` for all navigational links within a menu, this not only applies to the main list
-but also within any content rendered via `NavigationMenu.Content`. This will ensure consistent keyboard interactions and accessibility
-while also giving access to the `active` prop for setting `aria-current` and the active styles.
-See [this example](/primitives/docs/components/navigation-menu#with-client-side-routing) for more information on usage with third party routing components.
+在菜单中使用 `NavigationMenu.Link` 进行所有导航链接很重要，这不仅适用于主列表，也适用于通过 `NavigationMenu.Content` 渲染的任何内容。这将确保一致的键盘交互和无障碍性，同时也提供了 `active` 属性以设置 `aria-current` 和活动样式。
+有关与第三方路由组件一起使用的更多信息，请参见 [此示例](/primitives/docs/components/navigation-menu#with-client-side-routing)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
@@ -891,25 +854,21 @@ See [this example](/primitives/docs/components/navigation-menu#with-client-side-
 			keys: ["Space", "Enter"],
 			description: (
 				<span>
-					When focus is on <Code>NavigationMenu.Trigger</Code>, opens the
-					content.
+					当焦点在 <Code>NavigationMenu.Trigger</Code> 上时，打开内容。
 				</span>
 			),
 		},
 		{
 			keys: ["Tab"],
-			description: "Moves focus to the next focusable element.",
+			description: "将焦点移动到下一个可聚焦元素。",
 		},
 		{
 			keys: ["ArrowDown"],
 			description: (
 				<span>
-					When <Code>horizontal</Code> and focus is on an open{" "}
-					<Code>NavigationMenu.Trigger</Code>, moves focus into{" "}
-					<Code>NavigationMenu.Content</Code>.
+					当 <Code>horizontal</Code> 并且焦点在打开的 <Code>NavigationMenu.Trigger</Code> 上时，将焦点移入 <Code>NavigationMenu.Content</Code>。
 					<br />
-					Moves focus to the next <Code>NavigationMenu.Trigger</Code> or{" "}
-					<Code>NavigationMenu.Link</Code>.
+					将焦点移到下一个 <Code>NavigationMenu.Trigger</Code> 或 <Code>NavigationMenu.Link</Code>。
 				</span>
 			),
 		},
@@ -917,8 +876,7 @@ See [this example](/primitives/docs/components/navigation-menu#with-client-side-
 			keys: ["ArrowUp"],
 			description: (
 				<span>
-					Moves focus to the previous <Code>NavigationMenu.Trigger</Code> or{" "}
-					<Code>NavigationMenu.Link</Code>.
+					将焦点移到上一个 <Code>NavigationMenu.Trigger</Code> 或 <Code>NavigationMenu.Link</Code>。
 				</span>
 			),
 		},
@@ -926,14 +884,9 @@ See [this example](/primitives/docs/components/navigation-menu#with-client-side-
 			keys: ["ArrowRight", "ArrowLeft"],
 			description: (
 				<span>
-					When <Code>vertical</Code> and focus is on an open{" "}
-					<Code>NavigationMenu.Trigger</Code>, moves focus into its{" "}
-					<Code>NavigationMenu.Content</Code>.
+					当 <Code>vertical</Code> 并且焦点在打开的 <Code>NavigationMenu.Trigger</Code> 上时，将焦点移入其 <Code>NavigationMenu.Content</Code>。
 					<br />
-					Moves focus to the next / previous <Code>
-						NavigationMenu.Trigger
-					</Code>{" "}
-					or <Code>NavigationMenu.Link</Code>.
+					将焦点移到下一个/上一个 <Code>NavigationMenu.Trigger</Code> 或 <Code>NavigationMenu.Link</Code>。
 				</span>
 			),
 		},
@@ -941,8 +894,7 @@ See [this example](/primitives/docs/components/navigation-menu#with-client-side-
 			keys: ["Home", "End"],
 			description: (
 				<span>
-					Moves focus to the first/last <Code>NavigationMenu.Trigger</Code> or{" "}
-					<Code>NavigationMenu.Link</Code>.
+					将焦点移到第一个/最后一个 <Code>NavigationMenu.Trigger</Code> 或 <Code>NavigationMenu.Link</Code>。
 				</span>
 			),
 		},
@@ -950,8 +902,7 @@ See [this example](/primitives/docs/components/navigation-menu#with-client-side-
 			keys: ["Esc"],
 			description: (
 				<span>
-					Closes open <Code>NavigationMenu.Content</Code> and moves focus to its{" "}
-					<Code>NavigationMenu.Trigger</Code>.
+					关闭打开的 <Code>NavigationMenu.Content</Code> 并将焦点移到其 <Code>NavigationMenu.Trigger</Code>。
 				</span>
 			),
 		},

@@ -1,6 +1,6 @@
 ---
-metaTitle: Dropdown Menu
-metaDescription: Menu representing a set of actions, triggered by a button.
+metaTitle: 下拉菜单
+metaDescription: 表示一组由按钮触发的操作的菜单。
 sourcePath: components/dropdown-menu
 ---
 
@@ -8,126 +8,126 @@ sourcePath: components/dropdown-menu
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger>
 		<Button variant="soft">
-			Options
+			选项
 			<DropdownMenu.TriggerIcon />
 		</Button>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content>
-		<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-		<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+		<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+		<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+		<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 
 		<DropdownMenu.Sub>
-			<DropdownMenu.SubTrigger>More</DropdownMenu.SubTrigger>
+			<DropdownMenu.SubTrigger>更多</DropdownMenu.SubTrigger>
 			<DropdownMenu.SubContent>
-				<DropdownMenu.Item>Move to project…</DropdownMenu.Item>
-				<DropdownMenu.Item>Move to folder…</DropdownMenu.Item>
+				<DropdownMenu.Item>移动到项目…</DropdownMenu.Item>
+				<DropdownMenu.Item>移动到文件夹…</DropdownMenu.Item>
 
 				<DropdownMenu.Separator />
-				<DropdownMenu.Item>Advanced options…</DropdownMenu.Item>
+				<DropdownMenu.Item>高级选项…</DropdownMenu.Item>
 			</DropdownMenu.SubContent>
 		</DropdownMenu.Sub>
 
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item>Share</DropdownMenu.Item>
-		<DropdownMenu.Item>Add to favorites</DropdownMenu.Item>
+		<DropdownMenu.Item>分享</DropdownMenu.Item>
+		<DropdownMenu.Item>添加到收藏夹</DropdownMenu.Item>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-			Delete
+			删除
 		</DropdownMenu.Item>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Dropdown Menu primitive](/primitives/docs/components/dropdown-menu).
+该组件继承自 [下拉菜单原语](/primitives/docs/components/dropdown-menu)。
 
-### Root
+### 根节点
 
-Contains all the parts of a dropdown menu.
+包含下拉菜单的所有部分。
 
-### Trigger
+### 触发器
 
-Wraps the control that will open the dropdown menu.
+包裹将打开下拉菜单的控制。
 
-### Trigger Icon
+### 触发器图标
 
-An optional icon part.
+一个可选的图标部分。
 
-### Content
+### 内容
 
-The component that pops out when the dropdown menu is open.
+下拉菜单打开时弹出的组件。
 
 <ThemesPropsTable defs="dropdownMenuContentPropDefs" />
 
-### Label
+### 标签
 
-Used to render a label. It won't be focusable using arrow keys.
+用于渲染标签。不能使用箭头键聚焦。
 
-### Item
+### 项目
 
-The component that contains the dropdown menu items.
+包含下拉菜单项的组件。
 
 <ThemesPropsTable defs="dropdownMenuItemPropDefs" />
 
-### Group
+### 组
 
-Used to group multiple `Item` parts.
+用于组合多个 `Item` 部分。
 
-### RadioGroup
+### 单选组
 
-Used to group multiple `RadioItem` parts.
+用于组合多个 `RadioItem` 部分。
 
-### RadioItem
+### 单选项
 
-An item that can be controlled and rendered like a radio.
+可以像单选按钮一样被控制和渲染的项。
 
 <ThemesPropsTable defs="dropdownMenuRadioItemPropDefs" />
 
-### CheckboxItem
+### 复选项
 
-An item that can be controlled and rendered like a checkbox.
+可以像复选框一样被控制和渲染的项。
 
 <ThemesPropsTable defs="dropdownMenuCheckboxItemPropDefs" />
 
-### Sub
+### 子菜单
 
-Contains all the parts of a submenu.
+包含所有子菜单的部分。
 
-### SubTrigger
+### 子触发器
 
-An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
+打开子菜单的项。必须渲染在 `DropdownMenu.Sub` 内部。
 
-### SubContent
+### 子内容
 
-The component that pops out when a submenu is open. Must be rendered inside `DropdownMenu.Sub`.
+子菜单打开时弹出的组件。必须渲染在 `DropdownMenu.Sub` 内部。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性控制尺寸。
 
 ```jsx live=true
 <Flex gap="3" align="center">
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" size="1">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content size="1">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
@@ -135,47 +135,47 @@ Use the `size` prop to control the size.
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" size="2">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content size="2">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to customize the visual style of the dropdown menu.
+使用 `variant` 属性自定义下拉菜单的视觉样式。
 
 ```jsx live=true
 <Flex gap="3" align="center">
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="solid">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="solid">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
@@ -183,156 +183,156 @@ Use the `variant` prop to customize the visual style of the dropdown menu.
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="soft">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 
 			<DropdownMenu.Separator />
 			<DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color). You can also pass `color` to a specific item to override for semantic reasons (ie. destruction action).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。您也可以把 `color` 传递给特定的项以覆盖此行为（例如，销毁操作）。
 
 ```jsx live=true
 <Flex gap="3">
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" color="indigo">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="soft" color="indigo">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" color="cyan">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="soft" color="cyan">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" color="orange">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="soft" color="orange">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button variant="soft" color="crimson">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content variant="soft" color="crimson">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比。
 
 ```jsx live=true line="24,54"
 <Grid columns="2" gap="3" display="inline-grid">
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button color="gray">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content color="gray">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button color="gray" highContrast>
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content color="gray" highContrast>
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button color="gray" variant="soft">
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content color="gray" variant="soft">
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger>
 			<Button color="gray" variant="soft" highContrast>
-				Options
+				选项
 				<DropdownMenu.TriggerIcon />
 			</Button>
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content color="gray" variant="soft" highContrast>
-			<DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-			<DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ E">编辑</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ D">重复</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+			<DropdownMenu.Item shortcut="⌘ N">归档</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 </Grid>

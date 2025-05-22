@@ -1,155 +1,155 @@
 ---
-metaTitle: Reset
-metaDescription: Removes default browser styles from any component.
+metaTitle: 重置
+metaDescription: 移除任何组件的默认浏览器样式。
 sourcePath: components/reset
 ---
 
-## API Reference
+## API 参考
 
-Reset component is used to aggressively reset browser styles on a specific element.
+重置组件用于在特定元素上强制重置浏览器样式。
 
-It renders a [Slot primitive](/primitives/docs/utilities/slot) that:
+它渲染一个 [Slot 原始元素](/primitives/docs/utilities/slot)，如下：
 
-- Accepts a single React element as its child
-- Removes opinionated browser styles
-- Sets idiomatic layout defaults, like `display: block` for images or `width: stretch` for inputs
-- Sets the [cursor](/themes/docs/theme/cursors) style according to your theme settings
-- Adds `box-sizing: border-box`
+- 接受一个 React 元素作为其子元素
+- 移除特定的浏览器样式
+- 设置惯用的布局默认值，例如图像的 `display: block` 或输入框的 `width: stretch`
+- 根据您的主题设置设置 [cursor](/themes/docs/theme/cursors) 样式
+- 添加 `box-sizing: border-box`
 
-## Examples
+## 示例
 
-### Anchor
-
-```jsx live="true"
-<Reset>
-	<a href="#">Anchor</a>
-</Reset>
-```
-
-### Abbreviation
+### 锚
 
 ```jsx live="true"
 <Reset>
-	<abbr title="Abbreviation">ABR</abbr>
+	<a href="#">锚</a>
 </Reset>
 ```
 
-### Address
+### 缩写
 
 ```jsx live="true"
 <Reset>
-	<address>Address</address>
+	<abbr title="缩写">缩写</abbr>
 </Reset>
 ```
 
-### Article
+### 地址
 
 ```jsx live="true"
 <Reset>
-	<article>Article</article>
+	<address>地址</address>
 </Reset>
 ```
 
-### Aside
+### 文章
 
 ```jsx live="true"
 <Reset>
-	<aside>Aside content</aside>
+	<article>文章</article>
 </Reset>
 ```
 
-### Bold
+### 侧边栏
 
 ```jsx live="true"
 <Reset>
-	<b>Bold text</b>
+	<aside>侧边内容</aside>
 </Reset>
 ```
 
-### Bi-directional isolation
+### 粗体
 
 ```jsx live="true"
 <Reset>
-	<bdi>Bi-directional isolation</bdi>
+	<b>粗体文本</b>
 </Reset>
 ```
 
-### Bi-directional override
+### 双向隔离
 
 ```jsx live="true"
 <Reset>
-	<bdo>Bi-directional override</bdo>
+	<bdi>双向隔离</bdi>
 </Reset>
 ```
 
-### Block quote
+### 双向覆盖
 
 ```jsx live="true"
 <Reset>
-	<blockquote>Block quote</blockquote>
+	<bdo>双向覆盖</bdo>
 </Reset>
 ```
 
-### Button
+### 块引用
 
 ```jsx live="true"
 <Reset>
-	<button>Button</button>
+	<blockquote>块引用</blockquote>
 </Reset>
 ```
 
-### Citation
+### 按钮
 
 ```jsx live="true"
 <Reset>
-	<cite>Citation</cite>
+	<button>按钮</button>
 </Reset>
 ```
 
-### Code
+### 引用
 
 ```jsx live="true"
 <Reset>
-	<code>Computer code</code>
+	<cite>引用</cite>
 </Reset>
 ```
 
-### Data
+### 代码
 
 ```jsx live="true"
 <Reset>
-	<data>Machine-readable equivalent</data>
+	<code>计算机代码</code>
 </Reset>
 ```
 
-### Deleted text
+### 数据
 
 ```jsx live="true"
 <Reset>
-	<del>Deleted text</del>
+	<data>机器可读等效</data>
 </Reset>
 ```
 
-### Details
+### 删除的文本
+
+```jsx live="true"
+<Reset>
+	<del>删除的文本</del>
+</Reset>
+```
+
+### 详细信息
 
 ```jsx live="true"
 <Reset>
 	<details>
-		<summary>Summary for a details element</summary>
-		Additional details
+		<summary>详细信息元素的摘要</summary>
+		附加详细信息
 	</details>
 </Reset>
 ```
 
-### Definition
+### 定义
 
 ```jsx live="true"
 <Reset>
-	<dfn>Definition</dfn>
+	<dfn>定义</dfn>
 </Reset>
 ```
 
-### Div
+### div
 
 ```jsx live="true"
 <Reset>
@@ -157,81 +157,81 @@ It renders a [Slot primitive](/primitives/docs/utilities/slot) that:
 </Reset>
 ```
 
-### Emphasized text
+### 强调文本
 
 ```jsx live="true"
 <Reset>
-	<em>Emphasized text</em>
+	<em>强调文本</em>
 </Reset>
 ```
 
-### Fieldset
+### 字段集
 
 ```jsx live="true"
 <Reset>
-	<fieldset>Fieldset</fieldset>
+	<fieldset>字段集</fieldset>
 </Reset>
 ```
 
-### Figure
+### 图形
 
 ```jsx live="true"
 <Reset>
-	<figure>Figure</figure>
+	<figure>图形</figure>
 </Reset>
 ```
 
-### Figure caption
+### 图形标题
 
 ```jsx live="true"
 <Reset>
-	<figcaption>Figure caption</figcaption>
+	<figcaption>图形标题</figcaption>
 </Reset>
 ```
 
-### Footer
+### 页脚
 
 ```jsx live="true"
 <Reset>
-	<footer>Footer</footer>
+	<footer>页脚</footer>
 </Reset>
 ```
 
-### Form
+### 表单
 
 ```jsx live="true"
 <Reset>
-	<form>Form</form>
+	<form>表单</form>
 </Reset>
 ```
 
-### Heading
+### 标题
 
 ```jsx live="true"
 <Reset>
-	<h1>Heading</h1>
+	<h1>标题</h1>
 </Reset>
 ```
 
-### Header
+### 头部
 
 ```jsx live="true"
 <Reset>
-	<header>Header</header>
+	<header>头部</header>
 </Reset>
 ```
 
-### Italic text
+### 斜体文本
 
 ```jsx live="true"
 <Reset>
-	<i>Italic text</i>
+	<i>斜体文本</i>
 </Reset>
 ```
 
-### Inline frame
+### 内联框架
 
-When reset, `<iframe>` elements get `display: block` and `width: stretch`.
+重置后，`<iframe>` 元素获取 `display: block` 和 `width: stretch`。
 
 ```jsx live="true"
 <Reset>
@@ -239,9 +239,9 @@ When reset, `<iframe>` elements get `display: block` and `width: stretch`.
 </Reset>
 ```
 
-### Image
+### 图像
 
-When reset, `<img>` elements get `display: block` and `max-width: 100%`.
+重置后，`<img>` 元素获取 `display: block` 和 `max-width: 100%`。
 
 ```jsx live="true"
 <Reset>
@@ -249,166 +249,166 @@ When reset, `<img>` elements get `display: block` and `max-width: 100%`.
 </Reset>
 ```
 
-### Input
+### 输入框
 
-When reset, textual `<input>` types get `display: block` and `width: stretch`.
-
-```jsx live="true"
-<Reset>
-	<input placeholder="Input control" />
-</Reset>
-```
-
-### Inserted text
+重置后，文本 `<input>` 类型获取 `display: block` 和 `width: stretch`。
 
 ```jsx live="true"
 <Reset>
-	<ins>Inserted text</ins>
+	<input placeholder="输入控件" />
 </Reset>
 ```
 
-### Keyboard input
+### 插入文本
 
 ```jsx live="true"
 <Reset>
-	<kbd>Keyboard input</kbd>
+	<ins>插入的文本</ins>
 </Reset>
 ```
 
-### Label
+### 键盘输入
 
 ```jsx live="true"
 <Reset>
-	<label>Label</label>
+	<kbd>键盘输入</kbd>
 </Reset>
 ```
 
-### Legend
+### 标签
 
 ```jsx live="true"
 <Reset>
-	<legend>Legend</legend>
+	<label>标签</label>
 </Reset>
 ```
 
-### List item
+### 图例
 
 ```jsx live="true"
 <Reset>
-	<li>List item</li>
+	<legend>图例</legend>
 </Reset>
 ```
 
-### Main
+### 列表项
 
 ```jsx live="true"
 <Reset>
-	<main>Main</main>
+	<li>列表项</li>
 </Reset>
 ```
 
-### Marked text
+### 主要内容
 
 ```jsx live="true"
 <Reset>
-	<mark>Marked text</mark>
+	<main>主要内容</main>
 </Reset>
 ```
 
-### Navigation
+### 标记文本
 
 ```jsx live="true"
 <Reset>
-	<nav>Navigation</nav>
+	<mark>标记文本</mark>
 </Reset>
 ```
 
-### Ordered list
+### 导航
+
+```jsx live="true"
+<Reset>
+	<nav>导航</nav>
+</Reset>
+```
+
+### 有序列表
 
 ```jsx live="true"
 <Reset>
 	<ol>
-		<li>Coffee</li>
-		<li>Tea</li>
-		<li>Milk</li>
+		<li>咖啡</li>
+		<li>茶</li>
+		<li>牛奶</li>
 	</ol>
 </Reset>
 ```
 
-### Output
+### 输出
 
 ```jsx live="true"
 <Reset>
-	<output>Output</output>
+	<output>输出</output>
 </Reset>
 ```
 
-### Paragraph
+### 段落
 
 ```jsx live="true"
 <Reset>
-	<p>Paragraph</p>
+	<p>段落</p>
 </Reset>
 ```
 
-### Preformatted text
+### 预格式文本
 
 ```jsx live="true"
 <Reset>
-	<pre>{'Preformatted text: "    "'}</pre>
+	<pre>{'预格式文本: "    "'}</pre>
 </Reset>
 ```
 
-### Quote
+### 引用
 
 ```jsx live="true"
 <Reset>
-	<q>Quote</q>
+	<q>引用</q>
 </Reset>
 ```
 
-### Strikethrough text
+### 删除线文本
 
 ```jsx live="true"
 <Reset>
-	<s>Strikethrough text</s>
+	<s>删除线文本</s>
 </Reset>
 ```
 
-### Sample output
+### 示例输出
 
 ```jsx live="true"
 <Reset>
-	<samp>Sample output</samp>
+	<samp>示例输出</samp>
 </Reset>
 ```
 
-### Section
+### 区段
 
 ```jsx live="true"
 <Reset>
-	<section>Section</section>
+	<section>区段</section>
 </Reset>
 ```
 
-### Select
+### 选择框
 
 ```jsx live="true"
 <Reset>
 	<select>
-		<option value="1">Option 1</option>
-		<option value="2">Option 2</option>
-		<option value="3">Option 3</option>
-		<option value="4">Option 4</option>
+		<option value="1">选项 1</option>
+		<option value="2">选项 2</option>
+		<option value="3">选项 3</option>
+		<option value="4">选项 4</option>
 	</select>
 </Reset>
 ```
 
-### Small text
+### 小文本
 
 ```jsx live="true"
 <Reset>
-	<small>Small text</small>
+	<small>小文本</small>
 </Reset>
 ```
 
@@ -416,37 +416,37 @@ When reset, textual `<input>` types get `display: block` and `width: stretch`.
 
 ```jsx live="true"
 <Reset>
-	<span>Span</span>
+	<span>行内块</span>
 </Reset>
 ```
 
-### Strong text
+### 强文本
 
 ```jsx live="true"
 <Reset>
-	<strong>Strong text</strong>
+	<strong>强文本</strong>
 </Reset>
 ```
 
-### Subscript text
+### 下标文本
 
 ```jsx live="true"
 <Reset>
-	<sub>Subscript text</sub>
+	<sub>下标文本</sub>
 </Reset>
 ```
 
-### Superscript text
+### 上标文本
 
 ```jsx live="true"
 <Reset>
-	<sup>Superscript text</sup>
+	<sup>上标文本</sup>
 </Reset>
 ```
 
 ### SVG
 
-When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-shrink: 0`.
+重置后，`<svg>` 元素获取 `display: block`、`max-width: 100%` 和 `flex-shrink: 0`。
 
 ```jsx live="true"
 <Reset>
@@ -470,13 +470,13 @@ When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-
 </Reset>
 ```
 
-### Table
+### 表格
 
 ```jsx live="true"
 <Reset>
 	<table>
 		<Reset>
-			<caption>Table caption</caption>
+			<caption>表格标题</caption>
 		</Reset>
 
 		<Reset>
@@ -484,10 +484,10 @@ When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-
 				<Reset>
 					<tr>
 						<Reset>
-							<th scope="col">Column header</th>
+							<th scope="col">列标题</th>
 						</Reset>
 						<Reset>
-							<th scope="col">Column header</th>
+							<th scope="col">列标题</th>
 						</Reset>
 					</tr>
 				</Reset>
@@ -499,20 +499,20 @@ When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-
 				<Reset>
 					<tr>
 						<Reset>
-							<th scope="row">Row header</th>
+							<th scope="row">行标题</th>
 						</Reset>
 						<Reset>
-							<td>Cell data</td>
+							<td>单元格数据</td>
 						</Reset>
 					</tr>
 				</Reset>
 				<Reset>
 					<tr>
 						<Reset>
-							<th scope="row">Row header</th>
+							<th scope="row">行标题</th>
 						</Reset>
 						<Reset>
-							<td>Cell data</td>
+							<td>单元格数据</td>
 						</Reset>
 					</tr>
 				</Reset>
@@ -524,10 +524,10 @@ When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-
 				<Reset>
 					<tr>
 						<Reset>
-							<th scope="row">Row header</th>
+							<th scope="row">行标题</th>
 						</Reset>
 						<Reset>
-							<td>Cell data</td>
+							<td>单元格数据</td>
 						</Reset>
 					</tr>
 				</Reset>
@@ -537,46 +537,46 @@ When reset, `<svg>` elements get `display: block`, `max-width: 100%`, and `flex-
 </Reset>
 ```
 
-### Text area
+### 文本区域
 
 ```jsx live="true"
 <Reset>
-	<textarea placeholder="Text area" />
+	<textarea placeholder="文本区域" />
 </Reset>
 ```
 
-### Time
+### 时间
 
 ```jsx live="true"
 <Reset>
-	<time dateTime="2021-01-01">Time</time>
+	<time dateTime="2021-01-01">时间</time>
 </Reset>
 ```
 
-### Unarticulated annotation
+### 未表述注释
 
 ```jsx live="true"
 <Reset>
-	<u>Unarticulated annotation</u>
+	<u>未表述注释</u>
 </Reset>
 ```
 
-### Unordered list
+### 无序列表
 
 ```jsx live="true"
 <Reset>
 	<ul>
-		<li>Coffee</li>
-		<li>Tea</li>
-		<li>Milk</li>
+		<li>咖啡</li>
+		<li>茶</li>
+		<li>牛奶</li>
 	</ul>
 </Reset>
 ```
 
-### Variable
+### 变量
 
 ```jsx live="true"
 <Reset>
-	<var>Variable</var>
+	<var>变量</var>
 </Reset>
 ```

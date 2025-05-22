@@ -1,53 +1,50 @@
 ---
-metaTitle: Use cases
-metaDescription: How to use Radix Colors.
+metaTitle: 使用案例
+metaDescription: 如何使用 Radix Colors。
 ---
 
-# Understanding the scale
+# 理解色阶
 
 <Description>
-	Learn which scale step is the most appropriate for each use case.
+	了解哪个色阶步骤最适合每种使用案例。
 </Description>
 
-## Use cases
+## 使用案例
 
-There are 12 steps in each scale. Each step was designed for at least one specific use case.
+每个色阶共有 12 个步骤。每个步骤都设计用于至少一种特定的使用案例。
 
-This table is a simple overview of the most common use case for each step. However, there are many exceptions and caveats to factor in, which are covered in further detail below.
+这张表提供了每个步骤最常见使用案例的简单概述。然而，实际上有许多例外和注意事项需考虑，下面将进一步详细说明。
 
 <UseCasesTable />
 
-## Steps 1–2: Backgrounds
+## 步骤 1–2: 背景
 
 <ColorScale01 />
 
-Steps `1` and `2` are designed for app backgrounds and subtle component backgrounds. You can use them interchangeably, depending on the vibe you're going for.
+步骤 `1` 和 `2` 适用于应用程序背景和细微的组件背景。你可以根据想要的氛围互换使用它们。
 
-Appropriate applications include:
+适当的应用场合包括：
 
-- Main app background
-- Striped table background
-- Code block background
-- Card background
-- Sidebar background
-- Canvas area background
+- 主要应用背景
+- 条纹表格背景
+- 代码块背景
+- 卡片背景
+- 边栏背景
+- 画布区域背景
 
 <Note>
-	You may want to use white for your app background in light mode, and Step `1`
-	or `2` from a gray or coloured scale in dark mode. In this case, set up a
-	[mutable alias](/colors/docs/overview/aliasing#mutable-aliases) for `AppBg`
-	and map it to a different color for each color mode.
+	在浅色模式下，你可能想使用白色作为应用程序背景，而在深色模式下使用灰色或有色阶的 `1` 或 `2`。在这种情况下，请为 `AppBg` 设置一个[可变别名](/colors/docs/overview/aliasing#mutable-aliases)，并为每种颜色模式映射到不同的颜色。
 </Note>
 
-## Steps 3–5: Component backgrounds
+## 步骤 3–5: 组件背景
 
 <ColorScale02 />
 
-Steps `3`, `4`, and `5` are designed for UI component backgrounds.
+步骤 `3`、`4` 和 `5` 适用于 UI 组件背景。
 
-- Step `3` is for normal states.
-- Step `4` is for hover states.
-- Step `5` is for pressed or selected states.
+- 步骤 `3` 用于正常状态。
+- 步骤 `4` 用于悬停状态。
+- 步骤 `5` 用于按下或选中状态。
 
 {
 
@@ -59,27 +56,27 @@ Steps `3`, `4`, and `5` are designed for UI component backgrounds.
 
 <Flex direction="column" maxWidth="max-content">
 	<MenuItemButton color="gray" data-state="active">
-		Menu item
+		菜单项
 	</MenuItemButton>
-	<MenuItemButton color="gray">Second menu item</MenuItemButton>
-	<MenuItemButton color="gray">Third menu item</MenuItemButton>
+	<MenuItemButton color="gray">第二个菜单项</MenuItemButton>
+	<MenuItemButton color="gray">第三个菜单项</MenuItemButton>
 </Flex>
 
   <Flex direction="column" maxWidth="max-content">
     <MenuItemButton color="pink" data-state="active">
-      Menu item
+      菜单项
     </MenuItemButton>
     <MenuItemButton color="pink">
-      Second menu item
+      第二个菜单项
     </MenuItemButton>
     <MenuItemButton color="pink">
-      Third menu item
+      第三个菜单项
     </MenuItemButton>
   </Flex>
 </Flex>
 }
 
-If your component has a transparent background in its default state, you can use Step `3` for its hover state.
+如果你的组件在默认状态下有透明背景，可以在悬停状态下使用步骤 `3`。
 
 {
 
@@ -97,238 +94,235 @@ If your component has a transparent background in its default state, you can use
 }
 
 <Note>
-	Steps `11` and `12`—which are designed for text—are guaranteed to Lc 60 and Lc
-	90 APCA contrast ratio on top of a step `2` background from the same scale.
+	步骤 `11` 和 `12`——为文字设计——在步骤 `2` 的背景上，保证具有 Lc 60 和 Lc 90 的 APCA 对比度比率。
 </Note>
 
-## Steps 6–8: Borders
+## 步骤 6–8: 边框
 
 <ColorScale03 />
 
-Steps `6`, `7`, and `8` are designed for borders.
+步骤 `6`、`7` 和 `8` 用于边框。
 
-- Step `6` is designed for subtle borders on components which are not interactive. For example sidebars, headers, cards, alerts, and separators.
-- Step `7` is designed for subtle borders on interactive components.
-- Step `8` is designed for stronger borders on interactive components and focus rings.
+- 步骤 `6` 适用于非交互组件上的细微边框，例如边栏、头部、卡片、提示和分隔线。
+- 步骤 `7` 适用于交互组件上的细微边框。
+- 步骤 `8` 适用于交互组件和焦点环上的较强边框。
 
 {
 
 <Grid columns="7" gap="3" my="5">
 	<Button variant="surface" color="gold">
-		Gold
+		金色
 	</Button>
 	<Button variant="surface" color="bronze">
-		Bronze
+		青铜
 	</Button>
 	<Button variant="surface" color="brown">
-		Brown
+		棕色
 	</Button>
 	<Button variant="surface" color="yellow">
-		Yellow
+		黄色
 	</Button>
 	<Button variant="surface" color="amber">
-		Amber
+		琥珀色
 	</Button>
 	<Button variant="surface" color="orange">
-		Orange
+		橙色
 	</Button>
 	<Button variant="surface" color="tomato">
-		Tomato
+		番茄色
 	</Button>
 	<Button variant="surface" color="red">
-		Red
+		红色
 	</Button>
 	<Button variant="surface" color="ruby">
-		Ruby
+		红宝石色
 	</Button>
 	<Button variant="surface" color="crimson">
-		Crimson
+		深红色
 	</Button>
 	<Button variant="surface" color="pink">
-		Pink
+		粉色
 	</Button>
 	<Button variant="surface" color="plum">
-		Plum
+		梅子色
 	</Button>
 	<Button variant="surface" color="purple">
-		Purple
+		紫色
 	</Button>
 	<Button variant="surface" color="violet">
-		Violet
+		紫罗兰色
 	</Button>
 	<Button variant="surface" color="iris">
-		Iris
+		鸢尾色
 	</Button>
 	<Button variant="surface" color="indigo">
-		Indigo
+		靛蓝色
 	</Button>
 	<Button variant="surface" color="blue">
-		Blue
+		蓝色
 	</Button>
 	<Button variant="surface" color="cyan">
-		Cyan
+		青色
 	</Button>
 	<Button variant="surface" color="teal">
-		Teal
+		青绿色
 	</Button>
 	<Button variant="surface" color="jade">
-		Jade
+		玉色
 	</Button>
 	<Button variant="surface" color="green">
-		Green
+		绿色
 	</Button>
 	<Button variant="surface" color="grass">
-		Grass
+		草绿色
 	</Button>
 	<Button variant="surface" color="lime">
-		Lime
+		青柠色
 	</Button>
 	<Button variant="surface" color="mint">
-		Mint
+		薄荷色
 	</Button>
 	<Button variant="surface" color="sky">
-		Sky
+		天空色
 	</Button>
 </Grid>
 
 }
 
-## Steps 9–10: Solid backgrounds
+## 步骤 9–10: 实心背景
 
 <ColorScale04 />
 
-Steps `9` and `10` are designed for solid backgrounds.
+步骤 `9` 和 `10` 适用于实心背景。
 
-Step `9` has the highest chroma of all steps in the scale. In other words, it's the purest step, the step mixed with the least amount of white or black. Because `9` is the purest step, it has a wide range of applications:
+步骤 `9` 的色度是所有步骤中最高的。换句话说，这是最纯的一个步骤，混合了最少数量的白色或黑色。因为 `9` 是最纯的步骤，所以它的应用范围很广泛：
 
-- Website/App backgrounds
-- Website section backgrounds
-- Header backgrounds
-- Component backgrounds
-- Graphics/Logos
-- Overlays
-- Coloured shadows
-- Accent borders
+- 网站/应用背景
+- 网站部分背景
+- 头部背景
+- 组件背景
+- 图形/标志
+- 叠层
+- 彩色阴影
+- 强调边框
 
-Step `10` is designed for component hover states, where step `9` is the component's normal state background.
+步骤 `10` 用于组件的悬停状态，步骤 `9` 是组件的正常状态背景。
 
 <Note>
-	Most step 9 colors are designed for white foreground text. `Sky`, `Mint`,
-	`Lime`, `Yellow`, and `Amber` are designed for dark foreground text and steps
-	`9` and `10`.
+	大多数步骤 9 的颜色适用于白色前景文字。`Sky`、`Mint`、`Lime`、`Yellow` 和 `Amber` 适用于深色前景文字和步骤 `9` 和 `10`。
 </Note>
 
 {
 
 <Grid columns="7" gap="3" my="5">
 	<Button variant="solid" color="gold">
-		Gold
+		金色
 	</Button>
 	<Button variant="solid" color="bronze">
-		Bronze
+		青铜
 	</Button>
 	<Button variant="solid" color="brown">
-		Brown
+		棕色
 	</Button>
 	<Button variant="solid" color="yellow">
-		Yellow
+		黄色
 	</Button>
 	<Button variant="solid" color="amber">
-		Amber
+		琥珀色
 	</Button>
 	<Button variant="solid" color="orange">
-		Orange
+		橙色
 	</Button>
 	<Button variant="solid" color="tomato">
-		Tomato
+		番茄色
 	</Button>
 	<Button variant="solid" color="red">
-		Red
+		红色
 	</Button>
 	<Button variant="solid" color="ruby">
-		Ruby
+		红宝石色
 	</Button>
 	<Button variant="solid" color="crimson">
-		Crimson
+		深红色
 	</Button>
 	<Button variant="solid" color="pink">
-		Pink
+		粉色
 	</Button>
 	<Button variant="solid" color="plum">
-		Plum
+		梅子色
 	</Button>
 	<Button variant="solid" color="purple">
-		Purple
+		紫色
 	</Button>
 	<Button variant="solid" color="violet">
-		Violet
+		紫罗兰色
 	</Button>
 	<Button variant="solid" color="iris">
-		Iris
+		鸢尾色
 	</Button>
 	<Button variant="solid" color="indigo">
-		Indigo
+		靛蓝色
 	</Button>
 	<Button variant="solid" color="blue">
-		Blue
+		蓝色
 	</Button>
 	<Button variant="solid" color="cyan">
-		Cyan
+		青色
 	</Button>
 	<Button variant="solid" color="teal">
-		Teal
+		青绿色
 	</Button>
 	<Button variant="solid" color="jade">
-		Jade
+		玉色
 	</Button>
 	<Button variant="solid" color="green">
-		Green
+		绿色
 	</Button>
 	<Button variant="solid" color="grass">
-		Grass
+		草绿色
 	</Button>
 	<Button variant="solid" color="lime">
-		Lime
+		青柠色
 	</Button>
 	<Button variant="solid" color="mint">
-		Mint
+		薄荷色
 	</Button>
 	<Button variant="solid" color="sky">
-		Sky
+		天空色
 	</Button>
 </Grid>
 
 }
 
-## Steps 11–12: Text
+## 步骤 11–12: 文字
 
 <ColorScale05 />
 
-Steps `11` and `12` are designed for text.
+步骤 `11` 和 `12` 适用于文本。
 
-- Step `11` is designed for low-contrast text.
-- Step `12` is designed for high-contrast text.
+- 步骤 `11` 适用于低对比度文本。
+- 步骤 `12` 适用于高对比度文本。
 
 {
 
 <Flex gap="2" direction="column" my="5">
 	<Text size="3" style={{ color: "var(--pink-11)" }}>
-		This text is Pink 11
+		这段文字是粉色 11
 	</Text>
 	<Text size="3" style={{ color: "var(--slate-11)" }}>
-		This text is Slate 11
+		这段文字是蓝灰色 11
 	</Text>
 	<Text size="3" style={{ color: "var(--gray-11)" }}>
-		This text is Gray 11
+		这段文字是灰色 11
 	</Text>
 	<Text size="3" weight="bold" style={{ color: "var(--pink-12)" }}>
-		This text is Pink 12
+		这段文字是粉色 12
 	</Text>
 	<Text size="3" weight="bold" style={{ color: "var(--slate-12)" }}>
-		This text is Slate 12
+		这段文字是蓝灰色 12
 	</Text>
 	<Text size="3" weight="bold" style={{ color: "var(--gray-12)" }}>
-		This text is Gray 12
+		这段文字是灰色 12
 	</Text>
 </Flex>
 

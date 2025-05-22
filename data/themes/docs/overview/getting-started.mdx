@@ -1,21 +1,21 @@
 ---
-metaTitle: Getting started
-metaDescription: Install Radix Themes and start building in minutes
+metaTitle: 开始使用
+metaDescription: 安装 Radix 主题并在几分钟内开始构建
 ---
 
-# Getting started
+# 开始使用
 
-<Description>Install Radix Themes and start building in minutes.</Description>
+<Description>安装 Radix 主题并在几分钟内开始构建。</Description>
 
-Radix Themes is a pre-styled component library that is designed to work out of the box with minimal configuration. If you are looking for the unstyled components, go to [Radix Primitives](/primitives).
+Radix 主题是一个预样式组件库，旨在开箱即用，配置简单。如果您正在寻找未样式的组件，请访问 [Radix Primitives](/primitives)。
 
-## Installation
+## 安装
 
-Getting up and running is quick and easy.
+快速轻松地启动和运行。
 
-### 1. Install Radix Themes
+### 1. 安装 Radix 主题
 
-Install the package from your command line.
+从命令行安装该包。
 
 <Tabs.Root asChild defaultValue="npm">
   <CodeBlock.Root my="5">
@@ -63,17 +63,17 @@ Install the package from your command line.
   </CodeBlock.Root>
 </Tabs.Root>
 
-### 2. Import the CSS file
+### 2. 导入 CSS 文件
 
-Import the global CSS file at the root of your application.
+在应用的根目录导入全局 CSS 文件。
 
 ```ts
 import "@radix-ui/themes/styles.css";
 ```
 
-### 3. Add the Theme component
+### 3. 添加主题组件
 
-Add `Theme` to your application, wrapping the root component inside of `body`.
+将 `Theme` 添加到您的应用程序中，包裹 `MyApp` 组件在 `body` 内部。
 
 ```jsx line=7,9
 import { Theme } from "@radix-ui/themes";
@@ -91,9 +91,9 @@ export default function () {
 }
 ```
 
-### 4. Start building
+### 4. 开始构建
 
-You are now ready to use Radix Themes components.
+您现在可以使用 Radix 主题组件。
 
 ```jsx
 import { Flex, Text, Button } from "@radix-ui/themes";
@@ -101,20 +101,20 @@ import { Flex, Text, Button } from "@radix-ui/themes";
 export default function MyApp() {
 	return (
 		<Flex direction="column" gap="2">
-			<Text>Hello from Radix Themes :)</Text>
-			<Button>Let's go</Button>
+			<Text>来自 Radix 主题的问候 :)</Text>
+			<Button>让我们开始</Button>
 		</Flex>
 	);
 }
 ```
 
-## Customizing your theme
+## 自定义您的主题
 
-Configuration is managed and applied via the [Theme](/themes/docs/components/theme) component.
+配置通过 [Theme](/themes/docs/components/theme) 组件进行管理和应用。
 
-### Basic configuration
+### 基本配置
 
-Pass [configuration](/themes/docs/components/theme) to the `Theme` to customize appearance.
+将 [配置](/themes/docs/components/theme) 传递给 `Theme` 以自定义外观。
 
 ```jsx line=1
 <Theme accentColor="crimson" grayColor="sand" radius="large" scaling="95%">
@@ -122,11 +122,11 @@ Pass [configuration](/themes/docs/components/theme) to the `Theme` to customize 
 </Theme>
 ```
 
-### Using the theme panel
+### 使用主题面板
 
-`ThemePanel` is a drop-in component that allows you to preview the theme in real time. Visit the [component playground](/themes/playground) to see it in action.
+`ThemePanel` 是一个可即插即用的组件，允许您实时预览主题。访问 [组件游乐场](/themes/playground) 来查看其实际效果。
 
-To add `ThemePanel` to your app, import it from the package and drop it inside your root `Theme`.
+要将 `ThemePanel` 添加到您的应用程序中，从包中导入并放入您的根 `Theme` 内部。
 
 ```jsx line=7
 import { Theme, ThemePanel } from "@radix-ui/themes";
@@ -141,46 +141,46 @@ export default function () {
 }
 ```
 
-### Take it further
+### 更进一步
 
-Get the most out of Radix Themes by exploring more concepts and features.
+通过探索更多概念和功能，充分利用 Radix 主题。
 
 {
 
   <Grid columns={{ initial: '1', xs: '2' }} my="6" gap="4">
       <ThemesLinkCard
-        title="Styling"
-        desc="Learn how to approach styling and overrides with Radix Themes."
+        title="样式"
+        desc="了解如何使用 Radix 主题进行样式和覆盖。"
         href="/themes/docs/overview/styling"
       />
 
       <ThemesLinkCard
-        title="Layout"
-        desc="Get to know the layout primitives and their available properties."
+        title="布局"
+        desc="了解布局原语及其可用属性。"
         href="/themes/docs/overview/layout"
       />
 
       <ThemesLinkCard
-        title="Theme overview"
-        desc="Anatomy of a theme and how to create the perfect style for your app."
+        title="主题概述"
+        desc="主题的构成以及如何为您的应用程序创建完美的样式。"
         href="/themes/docs/theme/overview"
       />
 
       <ThemesLinkCard
-        title="Color"
-        desc="Understand the color system and its application in your theme."
+        title="颜色"
+        desc="理解颜色系统及其在您主题中的应用。"
         href="/themes/docs/theme/color"
       />
 
        <ThemesLinkCard
-        title="Dark mode"
-        desc="Integrate a great looking dark mode into your app using appearances."
+        title="黑暗模式"
+        desc="将外观的良好黑暗模式集成到您的应用程序中。"
         href="/themes/docs/theme/dark-mode"
       />
 
       <ThemesLinkCard
-        title="Typography"
-        desc="Add custom typefaces and fine tune typographic details."
+        title="排版"
+        desc="添加自定义字体，并微调排版细节。"
         href="/themes/docs/theme/typography"
       />
 

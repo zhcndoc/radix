@@ -1,33 +1,31 @@
 ---
 metaTitle: Em
-metaDescription: Marks text to stress emphasis.
+metaDescription: 标记文本以强调重音。
 sourcePath: components/em
 ---
 
 ```jsx live=true
 <Text>
-	We <Em>had</Em> to do something about it.
+	我们 <Em>必须</Em> 对此采取措施。
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `em` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `em` 元素，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="emPropDefs" />
 
-## Examples
+## 示例
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性在文本溢出其容器时用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
 	<Em truncate>
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是以一种最大化美感并使阅读更加轻松和愉快的方式，相关字体大小、行高和行宽。
 	</Em>
 </Flex>
 ```

@@ -1,42 +1,42 @@
 ---
-metaTitle: Slot
-metaDescription: Merges its props onto its immediate child.
-name: slot
+metaTitle: 插槽
+metaDescription: 将其属性合并到其直接子元素上。
+name: 插槽
 ---
 
-# Slot
+# 插槽
 
-<Description>Merges its props onto its immediate child.</Description>
+<Description>将其属性合并到其直接子元素上。</Description>
 
-<Highlights features={["Can be used to support your own `asChild` prop."]} />
+<Highlights features={["可以用来支持您自己的 `asChild` 属性。"]} />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-slot
 ```
 
-## Anatomy
+## 解剖结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Slot } from "radix-ui";
 
 export default () => (
 	<Slot.Root>
-		<div>Hello</div>
+		<div>你好</div>
 	</Slot.Root>
 );
 ```
 
-## Basic example
+## 基本示例
 
-Use to create your own `asChild` API.
+用于创建您自己的 `asChild` API。
 
-When your component has a single children element:
+当您的组件有一个子元素时：
 
 ```jsx line=9
 // your-button.jsx
@@ -49,7 +49,7 @@ function Button({ asChild, ...props }) {
 }
 ```
 
-Use `Slottable` when your component has multiple children to pass the props to the correct element:
+当您的组件有多个子元素时使用 `Slottable` 将属性传递给正确的元素：
 
 ```jsx
 // your-button.jsx
@@ -68,25 +68,25 @@ function Button({ asChild, children, leftElement, rightElement, ...props }) {
 }
 ```
 
-### Usage
+### 用法
 
 ```jsx
 import { Button } from "./your-button";
 
 export default () => (
 	<Button asChild>
-		<a href="/contact">Contact</a>
+		<a href="/contact">联系</a>
 	</Button>
 );
 ```
 
-### Event handlers
+### 事件处理程序
 
-Any prop that starts with `on` (e.g., `onClick`) is considered an event handler.
+任何以 `on` 开头的属性（例如，`onClick`）都被视为事件处理程序。
 
-When merging event handlers, `Slot` will create a new function where the child handler takes precedence over the slot handler.
+在合并事件处理程序时，`Slot` 将创建一个新函数，其中子处理程序优先于插槽处理程序。
 
-If one of the event handlers relies on `event.defaultPrevented` make sure that the order is correct.
+如果其中一个事件处理程序依赖于 `event.defaultPrevented`，请确保顺序正确。
 
 ```jsx
 import { Slot } from "radix-ui";
@@ -95,7 +95,7 @@ export default () => (
 	<Slot.Root
 		onClick={(event) => {
 			if (!event.defaultPrevented)
-				console.log("Not logged because default is prevented.");
+				console.log("未记录，因为默认被阻止。");
 		}}
 	>
 		<button onClick={(event) => event.preventDefault()} />

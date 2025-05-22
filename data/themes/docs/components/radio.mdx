@@ -1,6 +1,6 @@
 ---
-metaTitle: Radio
-metaDescription: Standalone radio button that can be used in any layout.
+metaTitle: 单选框
+metaDescription: 可以在任何布局中使用的独立单选按钮。
 sourcePath: components/radio-group
 ---
 
@@ -9,45 +9,45 @@ sourcePath: components/radio-group
 	<Flex asChild gap="2">
 		<Text as="label" size="2">
 			<Radio name="example" value="1" defaultChecked />
-			Default
+			默认
 		</Text>
 	</Flex>
 
 	<Flex asChild gap="2">
 		<Text as="label" size="2">
 			<Radio name="example" value="2" />
-			Comfortable
+			舒适
 		</Text>
 	</Flex>
 
 	<Flex asChild gap="2">
 		<Text as="label" size="2">
 			<Radio name="example" value="3" />
-			Compact
+			紧凑
 		</Text>
 	</Flex>
 </Flex>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Radio Group primitive](/primitives/docs/components/radio-group) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [单选框组原语](/primitives/docs/components/radio-group) 的属性，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
-Contains all the parts of a radio group.
+包含单选框组的所有部分。
 
 <ThemesPropsTable defs="radioGroupRootPropDefs" />
 
-### Item
+### 项目
 
-An item in the group that can be checked.
+可以被选中的组中的一项。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the radio button size.
+使用 `size` 属性来控制单选按钮的大小。
 
 ```jsx live=true
 <Flex align="center" gap="4">
@@ -68,9 +68,9 @@ Use the `size` prop to control the radio button size.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the radio buttons.
+使用 `variant` 属性来控制单选按钮的视觉风格。
 
 ```jsx live=true
 <Flex align="center" gap="4">
@@ -91,9 +91,9 @@ Use the `variant` prop to control the visual style of the radio buttons.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性来指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex as="span" gap="2">
@@ -104,9 +104,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性来增加与背景的颜色对比度。
 
 ```jsx live=true
 <Grid columns="5" display="inline-grid" gap="2">
@@ -124,9 +124,9 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Grid>
 ```
 
-### Alignment
+### 对齐
 
-Composing `Radio` within `Text` automatically centers it with the first line of text. It is automatically well-aligned with multi-line text too.
+在 `Text` 中组合 `Radio` 会自动将其与第一行文本居中对齐。对于多行文本也会自动对齐良好。
 
 ```jsx live="true" line="3-8,18-23,33-38"
 <Flex direction="column" gap="3">
@@ -134,13 +134,13 @@ Composing `Radio` within `Text` automatically centers it with the first line of 
 		<Flex asChild gap="2">
 			<Text as="label" size="2">
 				<Radio size="1" name="alignment-1" value="1" defaultChecked />
-				Default
+				默认
 			</Text>
 		</Flex>
 		<Flex asChild gap="2">
 			<Text as="label" size="2">
 				<Radio size="1" name="alignment-1" value="2" />
-				Compact
+				紧凑
 			</Text>
 		</Flex>
 	</Flex>
@@ -149,13 +149,13 @@ Composing `Radio` within `Text` automatically centers it with the first line of 
 		<Flex asChild gap="2">
 			<Text as="label" size="3">
 				<Radio size="2" name="alignment-2" value="1" defaultChecked />
-				Default
+				默认
 			</Text>
 		</Flex>
 		<Flex asChild gap="2">
 			<Text as="label" size="3">
 				<Radio size="2" name="alignment-2" value="2" />
-				Compact
+				紧凑
 			</Text>
 		</Flex>
 	</Flex>
@@ -164,22 +164,22 @@ Composing `Radio` within `Text` automatically centers it with the first line of 
 		<Flex asChild gap="2">
 			<Text as="label" size="4">
 				<Radio size="3" name="alignment-3" value="1" defaultChecked />
-				Default
+				默认
 			</Text>
 		</Flex>
 		<Flex asChild gap="2">
 			<Text as="label" size="4">
 				<Radio size="3" name="alignment-3" value="2" />
-				Compact
+				紧凑
 			</Text>
 		</Flex>
 	</Flex>
 </Flex>
 ```
 
-### Disabled
+### 禁用
 
-Use the native `disabled` attribute to create a disabled radio button.
+使用原生 `disabled` 属性来创建一个禁用的单选按钮。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
@@ -187,13 +187,13 @@ Use the native `disabled` attribute to create a disabled radio button.
 		<Flex asChild gap="2">
 			<Text as="label" size="2">
 				<Radio name="enabled" value="1" defaultChecked />
-				On
+				开
 			</Text>
 		</Flex>
 		<Flex asChild gap="2">
 			<Text as="label" size="2">
 				<Radio name="enabled" value="2" />
-				Off
+				关
 			</Text>
 		</Flex>
 	</Flex>
@@ -202,13 +202,13 @@ Use the native `disabled` attribute to create a disabled radio button.
 		<Flex asChild gap="2">
 			<Text as="label" size="2" color="gray">
 				<Radio disabled name="disabled" value="1" defaultChecked />
-				On
+				开
 			</Text>
 		</Flex>
 		<Flex asChild gap="2">
 			<Text as="label" size="2" color="gray">
 				<Radio disabled name="disabled" value="2" />
-				Off
+				关
 			</Text>
 		</Flex>
 	</Flex>

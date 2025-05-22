@@ -1,6 +1,6 @@
 ---
-metaTitle: Slider
-metaDescription: Provides user selection from a range of values.
+metaTitle: 滑动条
+metaDescription: 提供用户从一系列值中选择。
 sourcePath: components/slider
 ---
 
@@ -8,17 +8,17 @@ sourcePath: components/slider
 <Slider defaultValue={[50]} />
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Slider primitive](/primitives/docs/components/slider) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承了 [Slider 原语](/primitives/docs/components/slider) 的属性，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="sliderPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制尺寸。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -28,9 +28,9 @@ Use the `size` prop to control the size.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉风格。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -40,9 +40,9 @@ Use the `variant` prop to control the visual style.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性来分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -53,9 +53,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast in light mode.
+使用 `highContrast` 属性在亮模式下增加颜色对比度。
 
 ```jsx live=true
 <Grid columns="2" gap="4">
@@ -72,9 +72,9 @@ Use the `highContrast` prop to increase color contrast in light mode.
 </Grid>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性来分配特定的半径值。
 
 ```jsx live=true
 <Flex direction="column" gap="4" maxWidth="300px">
@@ -84,9 +84,9 @@ Use the `radius` prop to assign a specific radius value.
 </Flex>
 ```
 
-### Range
+### 范围
 
-Provide multiple values to create a range slider.
+提供多个值以创建范围滑动条。
 
 ```jsx live=true
 <Slider defaultValue={[25, 75]} />

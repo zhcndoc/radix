@@ -1,390 +1,362 @@
 ---
-metaTitle: Alert Dialog
-metaDescription: A modal dialog that interrupts the user with important content and expects a response.
+metaTitle: 警告对话框
+metaDescription: 一个中断用户的重要内容并期待回应的模态对话框。
 name: alert-dialog
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog
 ---
 
-# Alert Dialog
+# 警告对话框
 
 <Description>
-	A modal dialog that interrupts the user with important content and expects a
-	response.
+    一个中断用户的重要内容并期待回应的模态对话框。
 </Description>
 
 <HeroContainer>
-	<AlertDialogDemo />
+    <AlertDialogDemo />
 </HeroContainer>
 
 <HeroCodeBlock folder="AlertDialog" />
 
 <Highlights
-	features={[
-		"Focus is automatically trapped.",
-		"Can be controlled or uncontrolled.",
-		<span>
-			Manages screen reader announcements with <Code>Title</Code> and{" "}
-			<Code>Description</Code> components.
-		</span>,
-		"Esc closes the component automatically.",
-	]}
+    features={[
+        "焦点会被自动捕获。",
+        "可以是受控或非受控。",
+        <span>
+            使用 <Code>Title</Code> 和 <Code>Description</Code> 组件来管理屏幕阅读器通知。
+        </span>,
+        "按 Esc 键会自动关闭组件。",
+    ]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+可以从命令行中安装该组件。
 
 ```bash
 npm install @radix-ui/react-alert-dialog
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部分并将其组合在一起。
 
 ```jsx
 import { AlertDialog } from "radix-ui";
 
 export default () => (
-	<AlertDialog.Root>
-		<AlertDialog.Trigger />
-		<AlertDialog.Portal>
-			<AlertDialog.Overlay />
-			<AlertDialog.Content>
-				<AlertDialog.Title />
-				<AlertDialog.Description />
-				<AlertDialog.Cancel />
-				<AlertDialog.Action />
-			</AlertDialog.Content>
-		</AlertDialog.Portal>
-	</AlertDialog.Root>
+    <AlertDialog.Root>
+        <AlertDialog.Trigger />
+        <AlertDialog.Portal>
+            <AlertDialog.Overlay />
+            <AlertDialog.Content>
+                <AlertDialog.Title />
+                <AlertDialog.Description />
+                <AlertDialog.Cancel />
+                <AlertDialog.Action />
+            </AlertDialog.Content>
+        </AlertDialog.Portal>
+    </AlertDialog.Root>
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains all the parts of an alert dialog.
+包含警告对话框的所有部分。
 
 <PropsTable
-	data={[
-		{
-			name: "defaultOpen",
-			type: "boolean",
-			description:
-				"The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.",
-		},
-		{
-			name: "open",
-			type: "boolean",
-			description: (
-				<span>
-					The controlled open state of the dialog. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onOpenChange",
-			type: "(open: boolean) => void",
-			typeSimple: "function",
-			description:
-				"Event handler called when the open state of the dialog changes.",
-		},
-	]}
+    data={[
+        {
+            name: "defaultOpen",
+            type: "boolean",
+            description:
+                "对话框在初次渲染时的打开状态。当您无需控制其打开状态时，请使用。",
+        },
+        {
+            name: "open",
+            type: "boolean",
+            description: (
+                <span>
+                    对话框的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
+                </span>
+            ),
+        },
+        {
+            name: "onOpenChange",
+            type: "(open: boolean) => void",
+            typeSimple: "function",
+            description:
+                "当对话框的打开状态变化时调用的事件处理程序。",
+        },
+    ]}
 />
 
-### Trigger
+### 触发器
 
-A button that opens the dialog.
+一个打开对话框的按钮。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["open", "closed"],
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-state]",
+            values: ["open", "closed"],
+        },
+    ]}
 />
 
-### Portal
+### 门口
 
-When used, portals your overlay and content parts into the `body`.
+使用时，将您的覆盖层和内容部分传送到 `body` 中。
 
 <PropsTable
-	data={[
-		{
-			name: "forceMount",
-			type: "boolean",
-			description: (
-				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>AlertDialog.Overlay</Code> and{" "}
-					<Code>AlertDialog.Content</Code>.
-				</span>
-			),
-		},
-		{
-			name: "container",
-			type: "HTMLElement",
-			default: "document.body",
-			description: "Specify a container element to portal the content into.",
-		},
-	]}
+    data={[
+        {
+            name: "forceMount",
+            type: "boolean",
+            description: (
+                <span>
+                    当需要更多控制时用于强制挂载。对使用 React 动画库控制动画时非常有用。如果在此部分使用，则会被 <Code>AlertDialog.Overlay</Code> 和 <Code>AlertDialog.Content</Code> 继承。
+                </span>
+            ),
+        },
+        {
+            name: "container",
+            type: "HTMLElement",
+            default: "document.body",
+            description: "指定将内容门户化的容器元素。",
+        },
+    ]}
 />
 
-### Overlay
+### 覆盖层
 
-A layer that covers the inert portion of the view when the dialog is open.
+对话框打开时覆盖视图的无效部分的层。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "forceMount",
-			type: "boolean",
-			description: (
-				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>AlertDialog.Portal</Code>.
-				</span>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+        {
+            name: "forceMount",
+            type: "boolean",
+            description: (
+                <span>
+                    当需要更多控制时用于强制挂载。对使用 React 动画库控制动画时非常有用。它从 <Code>AlertDialog.Portal</Code> 继承。
+                </span>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["open", "closed"],
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-state]",
+            values: ["open", "closed"],
+        },
+    ]}
 />
 
-### Content
+### 内容
 
-Contains content to be rendered when the dialog is open.
+包含在对话框打开时要呈现的内容。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "forceMount",
-			type: "boolean",
-			description: (
-				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>AlertDialog.Portal</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onOpenAutoFocus",
-			type: "(event: Event) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when focus moves to the destructive action after
-					opening. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onCloseAutoFocus",
-			type: "(event: Event) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when focus moves to the trigger after closing. It
-					can be prevented by calling <Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onEscapeKeyDown",
-			type: "(event: KeyboardEvent) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+        {
+            name: "forceMount",
+            type: "boolean",
+            description: (
+                <span>
+                    当需要更多控制时用于强制挂载。对使用 React 动画库控制动画时非常有用。它从 <Code>AlertDialog.Portal</Code> 继承。
+                </span>
+            ),
+        },
+        {
+            name: "onOpenAutoFocus",
+            type: "(event: Event) => void",
+            typeSimple: "function",
+            description: (
+                <span>
+                    当焦点移动到破坏性动作时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 防止它。
+                </span>
+            ),
+        },
+        {
+            name: "onCloseAutoFocus",
+            type: "(event: Event) => void",
+            typeSimple: "function",
+            description: (
+                <span>
+                    当焦点移动到触发器时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 防止它。
+                </span>
+            ),
+        },
+        {
+            name: "onEscapeKeyDown",
+            type: "(event: KeyboardEvent) => void",
+            typeSimple: "function",
+            description: (
+                <span>
+                    当按下 Esc 键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 防止它。
+                </span>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["open", "closed"],
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-state]",
+            values: ["open", "closed"],
+        },
+    ]}
 />
 
-### Cancel
+### 取消
 
-A button that closes the dialog. This button should be distinguished visually from `AlertDialog.Action` buttons.
+一个关闭对话框的按钮。该按钮应该在视觉上与 `AlertDialog.Action` 按钮区分开来。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+    ]}
 />
 
-### Action
+### 动作
 
-A button that closes the dialog. These buttons should be distinguished visually from the `AlertDialog.Cancel` button.
+一个关闭对话框的按钮。这些按钮应该在视觉上与 `AlertDialog.Cancel` 按钮区分开来。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+    ]}
 />
 
-### Title
+### 标题
 
-An accessible name to be announced when the dialog is opened. Alternatively, you can provide `aria-label` or `aria-labelledby` to `AlertDialog.Content` and exclude this component.
+打开对话框时将被宣布的可访问名称。或者，您可以为 `AlertDialog.Content` 提供 `aria-label` 或 `aria-labelledby`，并排除此组件。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+    ]}
 />
 
-### Description
+### 描述
 
-An accessible description to be announced when the dialog is opened. Alternatively, you can provide `aria-describedby` to `AlertDialog.Content` and exclude this component.
+打开对话框时将被宣布的可访问描述。或者，您可以为 `AlertDialog.Content` 提供 `aria-describedby`，并排除此组件。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    用传递的子元素替换默认呈现的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
+                </>
+            ),
+        },
+    ]}
 />
 
-## Examples
+## 示例
 
-### Close after asynchronous form submission
+### 在异步表单提交后关闭
 
-Use the controlled props to programmatically close the Alert Dialog after an async operation has completed.
+使用受控属性在异步操作完成后以编程方式关闭警告对话框。
 
 ```jsx line=4,7,10,15,17
 import * as React from "react";
@@ -393,84 +365,84 @@ import { AlertDialog } from "radix-ui";
 const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
 
 export default () => {
-	const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
 
-	return (
-		<AlertDialog.Root __open__={open} __onOpenChange__={setOpen}>
-			<AlertDialog.Trigger>Open</AlertDialog.Trigger>
-			<AlertDialog.Portal>
-				<AlertDialog.Overlay />
-				<AlertDialog.Content>
-					<form
-						onSubmit={(event) => {
-							wait().then(() => setOpen(false));
-							event.preventDefault();
-						}}
-					>
-						{/** some inputs */}
-						<button type="submit">Submit</button>
-					</form>
-				</AlertDialog.Content>
-			</AlertDialog.Portal>
-		</AlertDialog.Root>
-	);
+    return (
+        <AlertDialog.Root __open__={open} __onOpenChange__={setOpen}>
+            <AlertDialog.Trigger>打开</AlertDialog.Trigger>
+            <AlertDialog.Portal>
+                <AlertDialog.Overlay />
+                <AlertDialog.Content>
+                    <form
+                        onSubmit={(event) => {
+                            wait().then(() => setOpen(false));
+                            event.preventDefault();
+                        }}
+                    >
+                        {/** 一些输入 */}
+                        <button type="submit">提交</button>
+                    </form>
+                </AlertDialog.Content>
+            </AlertDialog.Portal>
+        </AlertDialog.Root>
+    );
 };
 ```
 
-### Custom portal container
+### 自定义门户容器
 
-Customise the element that your alert dialog portals into.
+自定义您的警告对话框门户的元素。
 
 ```jsx line=2,13
 export default () => {
-	const [container, setContainer] = React.useState(null);
-	return (
-		<div>
-			<AlertDialog.Root>
-				<AlertDialog.Trigger />
-				<AlertDialog.Portal __container__={container}>
-					<AlertDialog.Overlay />
-					<AlertDialog.Content>...</AlertDialog.Content>
-				</AlertDialog.Portal>
-			</AlertDialog.Root>
+    const [container, setContainer] = React.useState(null);
+    return (
+        <div>
+            <AlertDialog.Root>
+                <AlertDialog.Trigger />
+                <AlertDialog.Portal __container__={container}>
+                    <AlertDialog.Overlay />
+                    <AlertDialog.Content>...</AlertDialog.Content>
+                </AlertDialog.Portal>
+            </AlertDialog.Root>
 
-			<div ref={setContainer} />
-		</div>
-	);
+            <div ref={setContainer} />
+        </div>
+    );
 };
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Alert and Message Dialogs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog).
+遵循 [警告和消息对话框 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
-	data={[
-		{
-			keys: ["Space"],
-			description: "Opens/closes the dialog.",
-		},
-		{
-			keys: ["Enter"],
-			description: "Opens/closes the dialog.",
-		},
-		{
-			keys: ["Tab"],
-			description: "Moves focus to the next focusable element.",
-		},
-		{
-			keys: ["Shift + Tab"],
-			description: "Moves focus to the previous focusable element.",
-		},
-		{
-			keys: ["Esc"],
-			description: (
-				<span>
-					Closes the dialog and moves focus to <Code>AlertDialog.Trigger</Code>.
-				</span>
-			),
-		},
-	]}
+    data={[
+        {
+            keys: ["Space"],
+            description: "打开/关闭对话框。",
+        },
+        {
+            keys: ["Enter"],
+            description: "打开/关闭对话框。",
+        },
+        {
+            keys: ["Tab"],
+            description: "将焦点移动到下一个可聚焦元素。",
+        },
+        {
+            keys: ["Shift + Tab"],
+            description: "将焦点移动到上一个可聚焦元素。",
+        },
+        {
+            keys: ["Esc"],
+            description: (
+                <span>
+                    关闭对话框并将焦点移动到 <Code>AlertDialog.Trigger</Code>。
+                </span>
+            ),
+        },
+    ]}
 />

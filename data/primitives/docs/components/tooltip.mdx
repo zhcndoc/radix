@@ -1,15 +1,14 @@
 ---
-metaTitle: Tooltip
-metaDescription: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+metaTitle: 工具提示
+metaDescription: 当元素获得键盘焦点或鼠标悬停在其上时，显示与该元素相关的信息的弹出窗口。
 name: tooltip
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/tooltip
 ---
 
-# Tooltip
+# 工具提示
 
 <Description>
-	A popup that displays information related to an element when the element
-	receives keyboard focus or the mouse hovers over it.
+	当元素获得键盘焦点或鼠标悬停在其上时，显示与该元素相关的信息的弹出窗口。
 </Description>
 
 <HeroContainer>
@@ -20,24 +19,24 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/tooltip
 
 <Highlights
 	features={[
-		"Provider to control display delay globally.",
-		"Opens when the trigger is focused or hovered.",
-		"Closes when the trigger is activated or when pressing escape.",
-		"Supports custom timings.",
+		"提供者控制全局显示延迟。",
+		"在触发器获得焦点或被悬停时打开。",
+		"当触发器被激活或按下 escape 键时关闭。",
+		"支持自定义时间设置。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-tooltip
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部件并将它们组合在一起。
 
 ```jsx
 import { Tooltip } from "radix-ui";
@@ -56,11 +55,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Provider
 
-Wraps your app to provide global functionality to your tooltips.
+将您的应用程序包裹起来，为工具提示提供全局功能。
 
 <PropsTable
 	data={[
@@ -69,31 +68,30 @@ Wraps your app to provide global functionality to your tooltips.
 			type: "number",
 			default: 700,
 			description:
-				"The duration from when the mouse enters a tooltip trigger until the tooltip opens.",
+				"鼠标进入工具提示触发器到工具提示打开之间的持续时间。",
 		},
 		{
 			name: "skipDelayDuration",
 			type: "number",
 			default: 300,
 			description:
-				"How much time a user has to enter another trigger without incurring a delay again.",
+				"用户在不再次等待延迟的情况下进入另一个触发器的时间。",
 		},
 		{
 			name: "disableHoverableContent",
 			type: "boolean",
 			description: (
 				<span>
-					Prevents <Code>Tooltip.Content</Code> from remaining open when
-					hovering. Disabling this has accessibility consequences.
+					阻止 <Code>Tooltip.Content</Code> 在悬停时保持打开。禁用此项会影响可访问性。
 				</span>
 			),
 		},
 	]}
-/>
+	/>
 
 ### Root
 
-Contains all the parts of a tooltip.
+包含工具提示的所有部分。
 
 <PropsTable
 	data={[
@@ -102,8 +100,7 @@ Contains all the parts of a tooltip.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the tooltip when it is initially rendered. Use when
-					you do not need to control its open state.
+					工具提示在初次渲染时的打开状态。当您不需要控制其打开状态时使用。
 				</span>
 			),
 		},
@@ -112,8 +109,7 @@ Contains all the parts of a tooltip.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the tooltip. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					工具提示的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -123,7 +119,7 @@ Contains all the parts of a tooltip.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the tooltip changes.
+					当工具提示的打开状态改变时调用的事件处理程序。
 				</span>
 			),
 		},
@@ -132,7 +128,7 @@ Contains all the parts of a tooltip.
 			type: "number",
 			default: 700,
 			description:
-				"Override the duration given to the `Provider` to customise the open delay for a specific tooltip.",
+				"覆盖提供给 `Provider` 的持续时间，以自定义特定工具提示的打开延迟。",
 		},
 		{
 			name: "disableHoverableContent",
@@ -140,18 +136,16 @@ Contains all the parts of a tooltip.
 			default: false,
 			description: (
 				<span>
-					Prevents <Code>Tooltip.Content</Code> from remaining open when
-					hovering. Disabling this has accessibility consequences. Inherits from{" "}
-					<Code>Tooltip.Provider</Code>.
+					阻止 <Code>Tooltip.Content</Code> 在悬停时保持打开。禁用此项会影响可访问性。从 <Code>Tooltip.Provider</Code> 继承。
 				</span>
 			),
 		},
 	]}
-/>
+	/>
 
 ### Trigger
 
-The button that toggles the tooltip. By default, the `Tooltip.Content` will position itself against the trigger.
+切换工具提示的按钮。默认情况下，<Code>Tooltip.Content</Code> 会根据触发器的位置。
 
 <PropsTable
 	data={[
@@ -162,17 +156,15 @@ The button that toggles the tooltip. By default, the `Tooltip.Content` will posi
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请阅读我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
 	]}
-/>
+	/>
 
 <DataAttributesTable
 	data={[
@@ -181,11 +173,11 @@ The button that toggles the tooltip. By default, the `Tooltip.Content` will posi
 			values: ["closed", "delayed-open", "instant-open"],
 		},
 	]}
-/>
+	/>
 
 ### Portal
 
-When used, portals the content part into the `body`.
+使用时，将内容部分门户到 `body` 中。
 
 <PropsTable
 	data={[
@@ -194,9 +186,7 @@ When used, portals the content part into the `body`.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>Tooltip.Content</Code>.
+					当需要更多控制时，强制挂载。对于使用 React 动画库控制动画时很有用。如果在此部分上使用，它将从 <Code>Tooltip.Content</Code> 继承。
 				</span>
 			),
 		},
@@ -204,14 +194,14 @@ When used, portals the content part into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定一个容器元素以将内容门户到其中。",
 		},
 	]}
-/>
+	/>
 
 ### Content
 
-The component that pops out when the tooltip is open.
+工具提示打开时弹出的组件。
 
 <PropsTable
 	data={[
@@ -222,12 +212,10 @@ The component that pops out when the tooltip is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请阅读我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
@@ -236,10 +224,7 @@ The component that pops out when the tooltip is open.
 			type: "string",
 			description: (
 				<span>
-					By default, screenreaders will announce the content inside the
-					component. If this is not descriptive enough, or you have content that
-					cannot be announced, use <Code>aria-label</Code> as a more descriptive
-					label.
+					默认情况下，屏幕阅读器会宣布组件内部的内容。如果这不够描述性，或者您有无法宣布的内容，请使用 <Code>aria-label</Code> 作为更详细的标签。
 				</span>
 			),
 		},
@@ -249,8 +234,7 @@ The component that pops out when the tooltip is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当 escape 键按下时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止其发生。
 				</span>
 			),
 		},
@@ -260,9 +244,7 @@ The component that pops out when the tooltip is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当指针事件发生在组件边界之外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止其发生。
 				</span>
 			),
 		},
@@ -271,9 +253,7 @@ The component that pops out when the tooltip is open.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>Tooltip.Portal</Code>.
+					当需要更多控制时，强制挂载。对于使用 React 动画库控制动画时很有用。从 <Code>Tooltip.Portal</Code> 继承。
 				</span>
 			),
 		},
@@ -284,9 +264,7 @@ The component that pops out when the tooltip is open.
 			default: '"top"',
 			description: (
 				<span>
-					The preferred side of the trigger to render against when open. Will be
-					reversed when collisions occur and <Code>avoidCollisions</Code> is
-					enabled.
+					打开时，渲染相对于触发器的首选侧面。当发生冲突且启用了 <Code>avoidCollisions</Code> 时，将会反转。
 				</span>
 			),
 		},
@@ -296,7 +274,7 @@ The component that pops out when the tooltip is open.
 			default: "0",
 			description: (
 				<span>
-					<span>The distance in pixels from the trigger.</span>
+					<span>距离触发器的像素距离。</span>
 				</span>
 			),
 		},
@@ -307,8 +285,7 @@ The component that pops out when the tooltip is open.
 			default: '"center"',
 			description: (
 				<span>
-					The preferred alignment against the trigger. May change when
-					collisions occur.
+					相对于触发器的首选对齐方式。当发生冲突时可能会改变。
 				</span>
 			),
 		},
@@ -318,8 +295,7 @@ The component that pops out when the tooltip is open.
 			default: "0",
 			description: (
 				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options.
+					相对于 <Code>"start"</Code> 或 <Code>"end"</Code> 对齐选项的偏移量，单位为像素。
 				</span>
 			),
 		},
@@ -329,9 +305,7 @@ The component that pops out when the tooltip is open.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges.
+					当 <Code>true</Code> 时，覆盖 <Code>side</Code> 和 <Code>align</Code> 偏好以防止与边界边缘发生冲突。
 				</span>
 			),
 		},
@@ -342,9 +316,7 @@ The component that pops out when the tooltip is open.
 			default: "[]",
 			description: (
 				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check.
+					用作碰撞边界的元素。默认情况下，这是视口，您可以提供附加元素来包含在此检查中。
 				</span>
 			),
 		},
@@ -355,10 +327,8 @@ The component that pops out when the tooltip is open.
 			default: "0",
 			description: (
 				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>.
+					距离边界边缘的像素距离，在此处进行碰撞检测。接受一个数字（对所有边相同），或一个部分填充对象，例如:{" "}
+					<Code>{`{ top: 20, left: 20 }`}</Code>。
 				</span>
 			),
 		},
@@ -368,9 +338,7 @@ The component that pops out when the tooltip is open.
 			default: "0",
 			description: (
 				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners.
+					箭头与内容边缘之间的填充。如果您的内容具有 <Code>border-radius</Code>，这将防止其溢出角落。
 				</span>
 			),
 		},
@@ -381,10 +349,7 @@ The component that pops out when the tooltip is open.
 			default: '"partial"',
 			description: (
 				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless.
+					在对齐轴上的粘性行为。 <Code>"partial"</Code> 将保持内容在边界内，只要触发器至少部分在边界内，而 <Code>"always"</Code> 将无论如何保持内容在边界内。
 				</span>
 			),
 		},
@@ -394,12 +359,12 @@ The component that pops out when the tooltip is open.
 			default: "false",
 			description: (
 				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
+					当触发器完全被遮挡时，是否隐藏内容。
 				</span>
 			),
 		},
 	]}
-/>
+	/>
 
 <DataAttributesTable
 	data={[
@@ -416,7 +381,7 @@ The component that pops out when the tooltip is open.
 			values: ["start", "end", "center"],
 		},
 	]}
-/>
+	/>
 
 <CssVariablesTable
 	data={[
@@ -424,37 +389,36 @@ The component that pops out when the tooltip is open.
 			cssVariable: "--radix-tooltip-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets
+					从内容和箭头位置/偏移计算出的 <Code>transform-origin</Code>
 				</>
 			),
 		},
 		{
 			cssVariable: "--radix-tooltip-content-available-width",
 			description: (
-				<>The remaining width between the trigger and the boundary edge</>
+				<>触发器与边界边缘之间的剩余宽度</>
 			),
 		},
 		{
 			cssVariable: "--radix-tooltip-content-available-height",
 			description: (
-				<>The remaining height between the trigger and the boundary edge</>
+				<>触发器与边界边缘之间的剩余高度</>
 			),
 		},
 		{
 			cssVariable: "--radix-tooltip-trigger-width",
-			description: <>The width of the trigger</>,
+			description: <>触发器的宽度</>,
 		},
 		{
 			cssVariable: "--radix-tooltip-trigger-height",
-			description: <>The height of the trigger</>,
+			description: <>触发器的高度</>,
 		},
 	]}
-/>
+	/>
 
-### Arrow
+### 箭头
 
-An optional arrow element to render alongside the tooltip. This can be used to help visually link the trigger with the `Tooltip.Content`. Must be rendered inside `Tooltip.Content`.
+一个可选的箭头元素，与工具提示一起渲染。可以用于帮助直观地将触发器与 <Code>Tooltip.Content</Code> 相连。必须在 <Code>Tooltip.Content</Code> 内部渲染。
 
 <PropsTable
 	data={[
@@ -465,12 +429,10 @@ An optional arrow element to render alongside the tooltip. This can be used to h
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请阅读我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
@@ -478,22 +440,22 @@ An optional arrow element to render alongside the tooltip. This can be used to h
 			name: "width",
 			type: "number",
 			default: 10,
-			description: <span>The width of the arrow in pixels.</span>,
+			description: <span>箭头的宽度（单位：像素）。</span>,
 		},
 		{
 			name: "height",
 			type: "number",
 			default: 5,
-			description: <span>The height of the arrow in pixels.</span>,
+			description: <span>箭头的高度（单位：像素）。</span>,
 		},
 	]}
-/>
+	/>
 
-## Examples
+## 示例
 
-### Configure globally
+### 全局配置
 
-Use the `Provider` to control `delayDuration` and `skipDelayDuration` globally.
+使用 `Provider` 来全局控制 `delayDuration` 和 `skipDelayDuration`。
 
 ```jsx line=4
 import { Tooltip } from "radix-ui";
@@ -512,9 +474,9 @@ export default () => (
 );
 ```
 
-### Show instantly
+### 立即显示
 
-Use the `delayDuration` prop to control the time it takes for the tooltip to open.
+使用 `delayDuration` 属性控制工具提示打开所需的时间。
 
 ```jsx line=4
 import { Tooltip } from "radix-ui";
@@ -527,11 +489,11 @@ export default () => (
 );
 ```
 
-### Constrain the content size
+### 限制内容大小
 
-You may want to constrain the width of the content so that it matches the trigger width. You may also want to constrain its height to not exceed the viewport.
+您可能希望限制内容的宽度以匹配触发器的宽度。您也可能希望限制高度以不超过视口。
 
-We expose several CSS custom properties such as `--radix-tooltip-trigger-width` and `--radix-tooltip-content-available-height` to support this. Use them to constrain the content dimensions.
+我们公开了几个 CSS 自定义属性，例如 `--radix-tooltip-trigger-width` 和 `--radix-tooltip-content-available-height` 以支持此功能。使用它们来限制内容的尺寸。
 
 ```jsx line=9
 // index.jsx
@@ -553,14 +515,14 @@ export default () => (
 ```css
 /* styles.css */
 .TooltipContent {
-	width: var(__--radix-tooltip-trigger-width__);
-	max-height: var(__--radix-tooltip-content-available-height__);
+	width: var(--radix-tooltip-trigger-width);
+	max-height: var(--radix-tooltip-content-available-height);
 }
 ```
 
-### Origin-aware animations
+### 以原点为基础的动画
 
-We expose a CSS custom property `--radix-tooltip-content-transform-origin`. Use it to animate the content from its computed origin based on `side`, `sideOffset`, `align`, `alignOffset` and any collisions.
+我们公开了一个 CSS 自定义属性 `--radix-tooltip-content-transform-origin`。使用它根据 `side`、`sideOffset`、`align`、`alignOffset` 和任何碰撞从其计算的原点动画内容。
 
 ```jsx line=8
 // index.jsx
@@ -594,9 +556,9 @@ export default () => (
 }
 ```
 
-### Collision-aware animations
+### 碰撞感知动画
 
-We expose `data-side` and `data-align` attributes. Their values will change at runtime to reflect collisions. Use them to create collision and direction-aware animations.
+我们公开了 `data-side` 和 `data-align` 属性。它们的值将在运行时根据碰撞情况进行更改。使用它们来创建碰撞和方向感知的动画。
 
 ```jsx line=8
 // index.jsx
@@ -647,54 +609,54 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Tab"],
-			description: "Opens/closes the tooltip without delay.",
+			description: "打开/关闭工具提示，不延迟。",
 		},
 		{
 			keys: ["Space"],
-			description: "If open, closes the tooltip without delay.",
+			description: "如果打开，则立即关闭工具提示。",
 		},
 		{
 			keys: ["Enter"],
-			description: "If open, closes the tooltip without delay.",
+			description: "如果打开，则立即关闭工具提示。",
 		},
 		{
 			keys: ["Escape"],
-			description: "If open, closes the tooltip without delay.",
+			description: "如果打开，则立即关闭工具提示。",
 		},
 	]}
 />
 
-## Custom APIs
+## 自定义 API
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将原始部件抽象到您自己的组件中创建自己的 API。
 
-### Abstract parts and introduce a content prop
+### 抽象部件并引入内容属性
 
-This example abstracts all of the `Tooltip` parts and introduces a new `content` prop.
+此示例抽象化了所有 `Tooltip` 部件，并引入了新的 `content` 属性。
 
-#### Usage
+#### 用法
 
 ```jsx
 import { Tooltip } from "./your-tooltip";
 
 export default () => (
-	<Tooltip content="Tooltip content">
-		<button>Tooltip trigger</button>
+	<Tooltip content="工具提示内容">
+		<button>工具提示触发器</button>
 	</Tooltip>
 );
 ```
 
-#### Implementation
+#### 实现
 
-Use the [`asChild` prop](/primitives/docs/guides/composition) to convert the trigger part into a slottable area. It will replace the trigger with the child that gets passed to it.
+使用 [`asChild` 属性](/primitives/docs/guides/composition) 将触发器部分转换为可插入的区域。它将用传递给它的子元素替换触发器。
 
 ```jsx line=8-10
 // your-tooltip.jsx

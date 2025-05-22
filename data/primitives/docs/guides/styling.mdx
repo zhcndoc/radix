@@ -1,34 +1,33 @@
 ---
-metaTitle: Styling
-metaDescription: Radix Primitives are unstyled—and compatible with any styling solution—giving you complete control over styling.
+metaTitle: 样式
+metaDescription: Radix Primitives 是无样式的——并且与任何样式解决方案兼容——让您对样式有完全的控制权。
 ---
 
-# Styling
+# 样式
 
 <Description>
-	Radix Primitives are unstyled—and compatible with any styling solution—giving
-	you complete control over styling.
+	Radix Primitives 是无样式的——并且与任何样式解决方案兼容——让您对样式有完全的控制权。
 </Description>
 
-## Styling overview
+## 样式概述
 
-### Functional styles
+### 功能样式
 
-You are in control of all aspects of styling, including functional styles. For example—by default—a [Dialog Overlay](../components/dialog) won't cover the entire viewport. You're responsible for adding those styles, plus any presentation styles.
+您可以控制所有样式方面，包括功能样式。例如——默认情况下——一个 [Dialog Overlay](../components/dialog) 不会覆盖整个视口。您需要负责添加这些样式，以及任何演示样式。
 
-### Classes
+### 类
 
-All components and their parts accept a `className` prop. This class will be passed through to the DOM element. You can use it in CSS as expected.
+所有组件及其部分接受一个 `className` 属性。这个类将传递到 DOM 元素。您可以像预期的那样在 CSS 中使用它。
 
-### Data attributes
+### 数据属性
 
-When components are stateful, their state will be exposed in a `data-state` attribute. For example, when an [Accordion Item](../components/accordion) is opened, it includes a `data-state="open"` attribute.
+当组件是有状态的，它们的状态将在 `data-state` 属性中暴露。例如，当一个 [Accordion Item](../components/accordion) 被打开时，它会包含一个 `data-state="open"` 属性。
 
-## Styling with CSS
+## 使用 CSS 样式
 
-### Styling a part
+### 样式一个部分
 
-You can style a component part by targeting the `className` that you provide.
+您可以通过定位您提供的 `className` 来样式化组件部分。
 
 ```jsx line=3,7
 import * as React from "react";
@@ -45,9 +44,9 @@ const AccordionDemo = () => (
 export default AccordionDemo;
 ```
 
-### Styling a state
+### 样式一个状态
 
-You can style a component state by targeting its `data-state` attribute.
+您可以通过定位其 `data-state` 属性来样式化组件状态。
 
 ```css
 .AccordionItem {
@@ -59,13 +58,13 @@ You can style a component state by targeting its `data-state` attribute.
 }
 ```
 
-## Styling with CSS-in-JS
+## 使用 CSS-in-JS 样式
 
-The examples below are using [styled-components](https://styled-components.com/), but you can use any CSS-in-JS library of your choice.
+以下示例使用 [styled-components](https://styled-components.com/)，但您可以使用任何选择的 CSS-in-JS 库。
 
-### Styling a part
+### 样式一个部分
 
-Most CSS-in-JS libraries export a function for passing components and their styles. You can provide the Radix primitive component directly.
+大多数 CSS-in-JS 库都会导出一个用于传递组件及其样式的函数。您可以直接提供 Radix 原语组件。
 
 ```jsx line=5-7,11
 import * as React from "react";
@@ -86,9 +85,9 @@ const AccordionDemo = () => (
 export default AccordionDemo;
 ```
 
-### Styling a state
+### 样式一个状态
 
-You can style a component state by targeting its `data-state` attribute.
+您可以通过定位其 `data-state` 属性来样式化组件状态。
 
 ```jsx
 import { Accordion } from "radix-ui";
@@ -103,9 +102,9 @@ const StyledItem = styled(Accordion.Item)`
 `;
 ```
 
-## Extending a primitive
+## 扩展原语
 
-Extending a primitive is done the same way you extend any React component.
+扩展原语的方式与扩展任何 React 组件的方式相同。
 
 ```tsx
 import * as React from "react";
@@ -120,8 +119,8 @@ const AccordionItem = React.forwardRef<
 AccordionItem.displayName = "AccordionItem";
 ```
 
-## Summary
+## 总结
 
-Radix Primitives were designed to encapsulate accessibility concerns and other complex functionalities, while ensuring you retain complete control over styling.
+Radix Primitives 旨在封装可访问性问题和其他复杂功能，同时确保您对样式保持完全控制。
 
-For convenience, stateful components include a `data-state` attribute.
+为了方便，有状态的组件包含一个 `data-state` 属性。

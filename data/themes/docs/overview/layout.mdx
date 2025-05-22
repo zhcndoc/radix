@@ -1,60 +1,60 @@
 ---
-metaTitle: Layout
-metaDescription: Get the layout concerns right.
+metaTitle: 布局
+metaDescription: 正确处理布局问题。
 ---
 
-# Layout
+# 布局
 
-<Description>Get the layout concerns right.</Description>
+<Description>正确处理布局问题。</Description>
 
-## Layout components
+## 布局组件
 
-Layout components are used to separate layout responsibilities from content and interactivity. This is _the_ separation of concerns that makes your app maintainable and easy to reason about, and understanding these principles is key to building your interfaces effectively.
+布局组件用于将布局职责与内容和交互分开。这是_关注点分离_，使您的应用程序易于维护和理解，理解这些原则对于有效构建您的界面至关重要。
 
 ### Box
 
 <ThemesBoxExample />
 
-[Box](/themes/docs/components/box) is the most fundamental layout component. Box is used to:
+[Box](/themes/docs/components/box) 是最基本的布局组件。Box 用于：
 
-- Provide spacing to child elements.
-- Impose sizing constraints on content.
-- Control layout behaviour within flex and grid containers.
-- Hide content based on screen size using its responsive `display` prop.
+- 为子元素提供间距。
+- 对内容施加尺寸限制。
+- 控制 Flex 和 Grid 容器内的布局行为。
+- 根据屏幕大小使用其响应式 `display` 属性隐藏内容。
 
 ### Flex
 
 <ThemesFlexExample />
 
-[Flex](/themes/docs/components/flex) component does everything that Box can do, but comes with an additional set of props to organize items along an axis. It provides convenient access to the CSS [flexbox properties](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+[Flex](/themes/docs/components/flex) 组件可以做 Box 所能做的一切，但附带一组额外的属性来沿着某个轴组织项目。它提供方便访问 CSS [flexbox 属性](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 的功能。
 
 ### Grid
 
 <ThemesGridExample />
 
-[Grid](/themes/docs/components/grid) is used to organize the content in columns and rows. Like Box and Flex, it’s made to provide convenient access to the underlying CSS [grid properties](https://css-tricks.com/snippets/css/complete-guide-grid/) without any magic of its own.
+[Grid](/themes/docs/components/grid) 用于以列和行的方式组织内容。与 Box 和 Flex 类似，它旨在提供对底层 CSS [grid 属性](https://css-tricks.com/snippets/css/complete-guide-grid/) 的方便访问，而不需任何额外的魔法。
 
 ### Section
 
 <ThemesSectionExample />
 
-[Section](/themes/docs/components/section) provides a consistent vertical spacing between the larger parts of your page content, creating a sense of hierarchy and separation. There’s just a few pre-defined sizes for different spacing levels to keep things simple and consistent.
+[Section](/themes/docs/components/section) 在页面内容的较大部分之间提供一致的垂直间距，创造出层次感和分隔感。它仅提供几个预定义的大小，以保持简单和一致。
 
 ### Container
 
 <ThemesContainerExample />
 
-[Container](/themes/docs/components/container)’s sole responsibility is to provide a consistent `max-width` to the content it wraps. Like Section, it comes just with a couple of pre-defined sizes that work well with common breakpoints and typical content widths for comfortable reading.
+[Container](/themes/docs/components/container) 唯一的职责是给其包装的内容提供一致的 `max-width`。像 Section 一样，它仅提供几个与常见断点和典型内容宽度相适应的预定义大小，以确保舒适阅读。
 
 ---
 
-## Common layout props
+## 常见布局属性
 
-Each layout component has a set of it’s own specialized props and also a shared set of common layout props. All layout props support [responsive object values](/themes/docs/theme/breakpoints).
+每个布局组件都有自己的一组专门属性，以及一组共享的常见布局属性。所有布局属性都支持 [响应式对象值](/themes/docs/theme/breakpoints)。
 
-### Padding
+### 内边距
 
-Padding props can access the [space scale steps](/themes/docs/theme/spacing) or accept any valid [CSS padding value](https://developer.mozilla.org/en-US/docs/Web/CSS/padding).
+内边距属性可以访问 [空间比例步骤](/themes/docs/theme/spacing) 或接受任何有效的 [CSS 内边距值](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)。
 
 ```jsx
 <Box p="4" />
@@ -64,9 +64,9 @@ Padding props can access the [space scale steps](/themes/docs/theme/spacing) or 
 
 <ThemesPropsTable defs="paddingPropDefs" />
 
-### Width
+### 宽度
 
-Width props accept any valid [CSS width value](https://developer.mozilla.org/en-US/docs/Web/CSS/width).
+宽度属性接受任何有效的 [CSS 宽度值](https://developer.mozilla.org/en-US/docs/Web/CSS/width)。
 
 ```jsx
 <Box width="100px" />
@@ -75,9 +75,9 @@ Width props accept any valid [CSS width value](https://developer.mozilla.org/en-
 
 <ThemesPropsTable defs="widthPropDefs" />
 
-### Height
+### 高度
 
-Height props accept any valid [CSS height value](https://developer.mozilla.org/en-US/docs/Web/CSS/height).
+高度属性接受任何有效的 [CSS 高度值](https://developer.mozilla.org/en-US/docs/Web/CSS/height)。
 
 ```jsx
 <Box height="100px" />
@@ -86,9 +86,9 @@ Height props accept any valid [CSS height value](https://developer.mozilla.org/e
 
 <ThemesPropsTable defs="heightPropDefs" />
 
-### Positioning
+### 定位
 
-Positioning props can change how the element is placed relative to the normal flow of the document. As usual, the corresponding CSS values are accepted for each property, and the [space scale steps](/themes/docs/theme/spacing) can be used for the offset values.
+定位属性可以改变元素相对于文档正常流的放置方式。与往常一样，每个属性都接受相应的 CSS 值，并且可以使用 [空间比例步骤](/themes/docs/theme/spacing) 作为偏移值。
 
 ```jsx
 <Box position="relative" />
@@ -103,9 +103,9 @@ Positioning props can change how the element is placed relative to the normal fl
 
 <ThemesPropsTable defs="positionPropDefs" />
 
-### Flex children
+### Flex 子元素
 
-Each layout component has props used to control the style when it is a child of a flex container.
+每个布局组件都有用于控制其作为 Flex 容器子元素时样式的属性。
 
 ```jsx
 <Box flexBasis="100%" />
@@ -115,9 +115,9 @@ Each layout component has props used to control the style when it is a child of 
 
 <ThemesPropsTable defs="flexChildrenPropDefs" />
 
-### Grid children
+### Grid 子元素
 
-Each layout component has props used to control the style when it is a child of a grid container.
+每个布局组件都有用于控制其作为 Grid 容器子元素时样式的属性。
 
 ```jsx
 <Box gridArea="header" />
@@ -135,11 +135,11 @@ Each layout component has props used to control the style when it is a child of 
 
 ---
 
-## Margin props
+## 外边距属性
 
-Margin props are available on most components in order to provide spacing around the elements. They are not exclusive to layout components.
+外边距属性在大多数组件上可用，以提供元素周围的间距。它们并不专属于布局组件。
 
-Margin props can access the [space scale steps](/themes/docs/theme/spacing) or accept any valid [CSS margin value](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+外边距属性可以访问 [空间比例步骤](/themes/docs/theme/spacing) 或接受任何有效的 [CSS 外边距值](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)。
 
 ```jsx
 <Button m="4" />
@@ -149,16 +149,16 @@ Margin props can access the [space scale steps](/themes/docs/theme/spacing) or a
 
 <ThemesPropsTable defs="marginPropDefs" />
 
-The margin props may be unavailable on components that don’t render a HTML node or rely on their Root part for layout.
+在不渲染 HTML 节点或依赖其 Root 部分进行布局的组件上，外边距属性可能不可用。
 
 ---
 
-## Standalone usage
+## 独立使用
 
-If needed, it’s possible to use _just_ the layout component from Radix Themes. Just make sure that JavaScript tree-shaking works on your side, and import the CSS that powers the layout styles:
+如果需要，可以仅使用 Radix Themes 的布局组件。只需确保 JavaScript 树摇动在您这边正常工作，并导入支持布局样式的 CSS：
 
 ```jsx
 import "@radix-ui/themes/layout.css";
 ```
 
-You’ll still have to wrap your app with `Theme` to provide the space scale and scaling factor settings.
+您仍然需要用 `Theme` 包裹您的应用，以提供空间比例和缩放因子的设置。

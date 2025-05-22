@@ -1,13 +1,13 @@
 ---
-metaTitle: Separator
-metaDescription: Visually or semantically separates content.
+metaTitle: 分隔符
+metaDescription: 视觉或语义上分隔内容。
 name: separator
 aria: https://www.w3.org/TR/wai-aria-1.2/#separator
 ---
 
-# Separator
+# 分隔符
 
-<Description>Visually or semantically separates content.</Description>
+<Description>视觉或语义上分隔内容。</Description>
 
 <HeroContainer>
 	<SeparatorDemo />
@@ -15,19 +15,19 @@ aria: https://www.w3.org/TR/wai-aria-1.2/#separator
 
 <HeroCodeBlock folder="Separator" />
 
-<Highlights features={["Supports horizontal and vertical orientations."]} />
+<Highlights features={["支持水平和垂直方向。"]} />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装该组件。
 
 ```bash
 npm install @radix-ui/react-separator
 ```
 
-## Anatomy
+## 解剖结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Separator } from "radix-ui";
@@ -35,11 +35,11 @@ import { Separator } from "radix-ui";
 export default () => <Separator.Root />;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根元素
 
-The separator.
+分隔符。
 
 <PropsTable
 	data={[
@@ -50,30 +50,30 @@ The separator.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多详细信息。
 				</>
 			),
 		},
 		{
 			name: "orientation",
 			type: '"horizontal" | "vertical"',
-			typeSimple: "enum",
+			typeSimple: "枚举",
 			default: '"horizontal"',
-			description: "The orientation of the separator.",
+			description: "分隔符的方向。",
 		},
 		{
 			name: "decorative",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, signifies that it is purely visual, carries no
-					semantic meaning, and ensures it is not present in the accessibility
-					tree.
+					当 <Code>true</Code> 时，表示它是纯视觉的，不具有
+					语义含义，并确保它不出现在可访问性
+					树中。
 				</span>
 			),
 		},
@@ -89,6 +89,6 @@ The separator.
 	]}
 />
 
-## Accessibility
+## 可访问性
 
-Adheres to the [`separator` role requirements](https://www.w3.org/TR/wai-aria-1.2/#separator).
+遵循 [`separator` 角色要求](https://www.w3.org/TR/wai-aria-1.2/#separator)。

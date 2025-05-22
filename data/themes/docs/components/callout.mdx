@@ -1,6 +1,6 @@
 ---
-metaTitle: Callout
-metaDescription: Short message to attract user’s attention.
+metaTitle: 提示框
+metaDescription: 吸引用户注意的简短消息。
 sourcePath: components/callout
 ---
 
@@ -10,32 +10,32 @@ sourcePath: components/callout
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		You will need admin privileges to install and access this application.
+		您需要管理员权限才能安装和访问此应用程序。
 	</Callout.Text>
 </Callout.Root>
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Groups Icon and Text parts. This component is based on the `div` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+将图标和文本部分组合在一起。此组件基于 `div` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="calloutRootPropDefs" />
 
 ### Icon
 
-Provides width and height for the icon associated with the callout. This component is based on the `div` element.
+为与提示框关联的图标提供宽度和高度。该组件基于 `div` 元素。
 
 ### Text
 
-Renders the callout text. This component is based on the `p` element.
+渲染提示框文本。该组件基于 `p` 元素。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制大小。
 
 ```jsx live=true
 <Flex direction="column" gap="3" align="start">
@@ -44,7 +44,7 @@ Use the `size` prop to control the size.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need admin privileges to install and access this application.
+			您需要管理员权限才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -53,7 +53,7 @@ Use the `size` prop to control the size.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need admin privileges to install and access this application.
+			您需要管理员权限才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -62,15 +62,15 @@ Use the `size` prop to control the size.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need admin privileges to install and access this application.
+			您需要管理员权限才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style.
+使用 `variant` 属性来控制视觉样式。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -79,8 +79,7 @@ Use the `variant` prop to control the visual style.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -89,8 +88,7 @@ Use the `variant` prop to control the visual style.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -99,16 +97,15 @@ Use the `variant` prop to control the visual style.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -117,8 +114,7 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -127,8 +123,7 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -137,16 +132,15 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			You will need <Link href="#">admin privileges</Link> to install and access
-			this application.
+			您需要 <Link href="#">管理员权限</Link> 才能安装和访问此应用程序。
 		</Callout.Text>
 	</Callout.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `HighContrast` prop to add additional contrast.
+使用 `HighContrast` 属性增加额外的对比度。
 
 ```jsx live=true line="11"
 <Flex direction="column" gap="3">
@@ -155,7 +149,7 @@ Use the `HighContrast` prop to add additional contrast.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			An update to Radix Themes is available. See what’s new in version 3.2.0.
+			Radix 主题有更新可用。查看 3.2.0 版本的新功能。
 		</Callout.Text>
 	</Callout.Root>
 
@@ -164,15 +158,15 @@ Use the `HighContrast` prop to add additional contrast.
 			<InfoCircledIcon />
 		</Callout.Icon>
 		<Callout.Text>
-			An update to Radix Themes is available. See what’s new in version 3.2.0.
+			Radix 主题有更新可用。查看 3.2.0 版本的新功能。
 		</Callout.Text>
 	</Callout.Root>
 </Flex>
 ```
 
-### As alert
+### 作为警报
 
-Add a native [WAI-ARIA `alert` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) to the callout when the user’s immediate attention is required, like when an error message appears. The screen reader will be interrupted, announcing the new content immediately.
+当用户的即时注意力需要时，例如出现错误消息时，向提示框添加本地 [WAI-ARIA `alert` 角色](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role)。屏幕阅读器将被打断，立即宣布新内容。
 
 ```jsx live=true
 <Callout.Root color="red" role="alert">
@@ -180,7 +174,7 @@ Add a native [WAI-ARIA `alert` role](https://developer.mozilla.org/en-US/docs/We
 		<ExclamationTriangleIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		Access denied. Please contact the network administrator to view this page.
+		访问被拒绝。请联系网络管理员以查看此页面。
 	</Callout.Text>
 </Callout.Root>
 ```

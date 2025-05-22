@@ -1,12 +1,12 @@
 ---
-metaTitle: Hover Card
-metaDescription: For sighted users to preview content available behind a link.
+metaTitle: 悬停卡片
+metaDescription: 供有视觉能力的用户预览链接后面的内容。
 sourcePath: components/hover-card
 ---
 
 ```jsx live=true
 <Text>
-	Follow{" "}
+	关注{" "}
 	<HoverCard.Root>
 		<HoverCard.Trigger>
 			<Link href="#" href="https://twitter.com/radix_ui" target="_blank">
@@ -29,91 +29,87 @@ sourcePath: components/hover-card
 						@radix_ui
 					</Text>
 					<Text as="div" size="2">
-						React components, icons, and colors for building high-quality,
-						accessible UI.
+						用于构建高质量、可访问的 UI 的 React 组件、图标和颜色。
 					</Text>
 				</Box>
 			</Flex>
 		</HoverCard.Content>
 	</HoverCard.Root>{" "}
-	for updates.
+	以获取更新。
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Hover Card primitive](/primitives/docs/components/hover-card).
+该组件继承了 [Hover Card 基本组件](/primitives/docs/components/hover-card) 的属性。
 
-### Root
+### 根组件
 
-Contains all the parts of the hover card.
+包含悬停卡片的所有部分。
 
-### Trigger
+### 触发器
 
-Wraps the link that will open the hover card.
+包装将打开悬停卡片的链接。
 
-### Content
+### 内容
 
-Contains the content of the open hover card. This component is based on the `div` element.
+包含已打开的悬停卡片的内容。该组件基于 `div` 元素。
 
 <ThemesPropsTable defs="hoverCardContentPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制大小。
 
 ```jsx live=true
 <Flex gap="4">
 	<HoverCard.Root>
 		<HoverCard.Trigger>
-			<Link href="#">Size 1</Link>
+			<Link href="#">大小 1</Link>
 		</HoverCard.Trigger>
 		<HoverCard.Content size="1" maxWidth="240px">
 			<Text as="div" size="1" trim="both">
-				<Strong>Typography</Strong> is the art and technique of arranging type
-				to make written language legible, readable and appealing when displayed.
+				<Strong>排版</Strong> 是组织文字以使书面语言在展示时可读、易读且吸引人的艺术与技巧。
 			</Text>
 		</HoverCard.Content>
 	</HoverCard.Root>
 
 	<HoverCard.Root>
 		<HoverCard.Trigger>
-			<Link href="#">Size 2</Link>
+			<Link href="#">大小 2</Link>
 		</HoverCard.Trigger>
 		<HoverCard.Content size="2" maxWidth="280px">
 			<Text as="div" size="2" trim="both">
-				<Strong>Typography</Strong> is the art and technique of arranging type
-				to make written language legible, readable and appealing when displayed.
+				<Strong>排版</Strong> 是组织文字以使书面语言在展示时可读、易读且吸引人的艺术与技巧。
 			</Text>
 		</HoverCard.Content>
 	</HoverCard.Root>
 
 	<HoverCard.Root>
 		<HoverCard.Trigger>
-			<Link href="#">Size 3</Link>
+			<Link href="#">大小 3</Link>
 		</HoverCard.Trigger>
 		<HoverCard.Content size="3" maxWidth="320px">
 			<Text as="div" size="3" trim="both">
-				<Strong>Typography</Strong> is the art and technique of arranging type
-				to make written language legible, readable and appealing when displayed.
+				<Strong>排版</Strong> 是组织文字以使书面语言在展示时可读、易读且吸引人的艺术与技巧。
 			</Text>
 		</HoverCard.Content>
 	</HoverCard.Root>
 </Flex>
 ```
 
-### With inset content
+### 带内嵌内容
 
-Use the [Inset](/themes/docs/components/inset) component to align content flush with the sides of the hover card.
+使用 [Inset](/themes/docs/components/inset) 组件将内容与悬停卡片的边缘对齐。
 
 ```jsx live=true
 <Text>
-	Technology revolutionized{" "}
+	技术革新了{" "}
 	<HoverCard.Root>
 		<HoverCard.Trigger>
-			<Link href="#">typography</Link>
+			<Link href="#">排版</Link>
 		</HoverCard.Trigger>
 
 		<HoverCard.Content width="450px">
@@ -122,7 +118,7 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 					<Inset side="left" pr="current">
 						<img
 							src="https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?&auto=format&fit=crop&w=300&q=90"
-							alt="Bold typography"
+							alt="粗体排版"
 							style={{
 								display: "block",
 								objectFit: "cover",
@@ -135,15 +131,11 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 				</Box>
 
 				<Text size="2" as="p">
-					<Strong>Typography</Strong> is the art and technique of arranging type
-					to make written language legible, readable and appealing when
-					displayed. The arrangement of type involves selecting typefaces, point
-					sizes, line lengths, line-spacing (leading), and letter-spacing
-					(tracking)…
+					<Strong>排版</Strong> 是组织文字以使书面语言在展示时可读、易读且吸引人的艺术与技巧。文字的排列涉及选择字型、字体大小、行长度、行距（领先）和字间距（追踪）……
 				</Text>
 			</Flex>
 		</HoverCard.Content>
 	</HoverCard.Root>{" "}
-	in the latter twentieth century.
+	在20世纪后期。
 </Text>
 ```

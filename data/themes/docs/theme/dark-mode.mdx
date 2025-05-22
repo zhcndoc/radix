@@ -1,23 +1,23 @@
 ---
-metaTitle: Dark mode
-metaDescription: Using appearance to manage and integrate dark mode.
+metaTitle: 深色模式
+metaDescription: 使用外观管理和集成深色模式。
 ---
 
-# Dark mode
+# 深色模式
 
-<Description>Using appearance to manage and integrate dark mode.</Description>
+<Description>使用外观管理和集成深色模式。</Description>
 
-## Overview
+## 概述
 
-Light and dark modes are supported out of the box, allowing you to easily switch appearance without additional design or styling.
+深色模式和浅色模式开箱即用，允许您轻松切换外观，而无需额外的设计或样式。
 
 <Box my="5">
 	<ThemesDarkModeExample />
 </Box>
 
-## Basic usage
+## 基本用法
 
-By default, the root `Theme` appearance is `light`. To set a different appearance pass it via the `appearance` prop. This will force the theme to use the specified setting.
+默认情况下，根 `Theme` 外观为 `light`。要设置不同的外观，请通过 `appearance` 属性传递。这样将强制主题使用指定的设置。
 
 ```jsx line=1
 <Theme appearance="dark">
@@ -25,17 +25,17 @@ By default, the root `Theme` appearance is `light`. To set a different appearanc
 </Theme>
 ```
 
-## Inheriting system appearance
+## 继承系统外观
 
-A common requirement is to inherit the appearance setting from a user’s system preferences.
+一个常见的需求是从用户的系统偏好中继承外观设置。
 
-This is a deceptively complex problem to solve given SSR, SSG and client side hydration considerations. To make implementation easier, we recommend integrating with a theme switching library.
+由于考虑到 SSR、SSG 和客户端水合，这个问题看似复杂。为了简化实现，我们建议与主题切换库集成。
 
-### With next-themes
+### 使用 next-themes
 
-Integration with `next-themes` is simple and straightforward because Radix Themes implements matching class names.
+与 `next-themes` 的集成简单明了，因为 Radix Themes 实现了匹配的类名。
 
-To enable dark mode, use `<ThemeProvider>` from `next-themes` with `attribute="class"`.
+要启用深色模式，请使用来自 `next-themes` 的 `<ThemeProvider>`，并设置 `attribute="class"`。
 
 ```jsx line=6
 import { Theme } from "@radix-ui/themes";
@@ -59,19 +59,18 @@ export default function () {
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		<Strong>Do not</Strong> try to set{" "}
-		<Code>{"<Theme appearance={resolvedTheme}>"}</Code>. Instead, rely just on
-		class switching that <Code>next-themes</Code> provides. This way{" "}
-		<Code>next-themes</Code> can prevent the appearance flash during initial
-		render.
+		<Strong>不要</Strong> 尝试设置{" "}
+		<Code>{"<Theme appearance={resolvedTheme}>"}</Code>。相反，请仅依赖于
+		<Code>next-themes</Code> 提供的类切换。这样可以{" "}
+		<Code>next-themes</Code> 防止初次渲染时外观闪烁。
 	</Callout.Text>
 </Callout.Root>
 
 }
 
-### With other libraries
+### 使用其他库
 
-Any library that supports class switching is compatible. You’ll just need to ensure that the appended class names match those supported by Radix Themes:
+任何支持类切换的库都兼容。您只需确保添加的类名与 Radix Themes 支持的类名匹配：
 
 - `className="light"`
 - `className="light-theme"`

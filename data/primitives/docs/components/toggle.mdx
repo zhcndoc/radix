@@ -1,13 +1,13 @@
 ---
-metaTitle: Toggle
-metaDescription: A two-state button that can be either on or off.
+metaTitle: 切换
+metaDescription: 可以是开或关的双状态按钮。
 name: toggle
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/button
 ---
 
-# Toggle
+# 切换
 
-<Description>A two-state button that can be either on or off.</Description>
+<Description>可以是开或关的双状态按钮。</Description>
 
 <HeroContainer>
 	<ToggleDemo />
@@ -16,20 +16,20 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/button
 <HeroCodeBlock folder="Toggle" />
 
 <Highlights
-	features={["Full keyboard navigation.", "Can be controlled or uncontrolled."]}
+	features={["完全支持键盘导航。", "可以是受控或非受控。"]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-toggle
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Toggle } from "radix-ui";
@@ -37,11 +37,11 @@ import { Toggle } from "radix-ui";
 export default () => <Toggle.Root />;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根节点
 
-The toggle.
+切换。
 
 <PropsTable
 	data={[
@@ -52,12 +52,10 @@ The toggle.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					改变默认渲染元素为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -65,15 +63,14 @@ The toggle.
 			name: "defaultPressed",
 			type: "boolean",
 			description:
-				"The pressed state of the toggle when it is initially rendered. Use when you do not need to control its pressed state.",
+				"切换初次渲染时的按下状态。使用它当你不需要控制其按下状态时。",
 		},
 		{
 			name: "pressed",
 			type: "boolean",
 			description: (
 				<span>
-					The controlled pressed state of the toggle. Must be used in
-					conjunction with <Code>onPressedChange</Code>.
+					切换的受控按下状态。必须与 <Code>onPressedChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -82,15 +79,14 @@ The toggle.
 			type: "(pressed: boolean) => void",
 			typeSimple: "function",
 			description:
-				"Event handler called when the pressed state of the toggle changes.",
+				"当切换的按下状态发生变化时调用的事件处理程序。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					toggle.
+					当 <Code>true</Code> 时，阻止用户与切换进行交互。
 				</span>
 			),
 		},
@@ -105,24 +101,24 @@ The toggle.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "在禁用时存在",
 		},
 	]}
 />
 
-## Accessibility
+## 可访问性
 
-### Keyboard Interactions
+### 键盘互动
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Activates/deactivates the toggle.",
+			description: "激活/停用切换。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Activates/deactivates the toggle.",
+			description: "激活/停用切换。",
 		},
 	]}
 />

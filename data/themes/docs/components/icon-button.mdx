@@ -1,6 +1,6 @@
 ---
-metaTitle: Icon Button
-metaDescription: Button designed specifically for usage with a single icon.
+metaTitle: 图标按钮
+metaDescription: 专为单个图标使用而设计的按钮。
 sourcePath: components/icon-button
 ---
 
@@ -10,17 +10,17 @@ sourcePath: components/icon-button
 </IconButton>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `button` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `button` 元素，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="iconButtonPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the button.
+使用 `size` 属性控制按钮的大小。
 
 ```jsx live=true
 <Flex align="center" gap="3">
@@ -38,9 +38,9 @@ Use the `size` prop to control the size of the button.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the button.
+使用 `variant` 属性控制按钮的视觉样式。
 
 ```jsx live=true
 <Flex gap="3">
@@ -62,9 +62,9 @@ Use the `variant` prop to control the visual style of the button.
 </Flex>
 ```
 
-#### Ghost
+#### 幽灵
 
-Use the `ghost` variant to display a button without chrome. Ghost buttons behave like text in layout, as they use a negative margin to optically align themselves against their siblings while maintaining the padding in active and hover states.
+使用 `ghost` 变体显示没有边框的按钮。幽灵按钮在布局中表现得像文本，因为它们使用负边距相对于其兄弟元素进行光学对齐，同时在活动和悬停状态下保持内边距。
 
 ```jsx live=true
 <IconButton variant="ghost">
@@ -72,9 +72,9 @@ Use the `ghost` variant to display a button without chrome. Ghost buttons behave
 </IconButton>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="3">
@@ -93,9 +93,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -136,9 +136,9 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Flex>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性指定特定的半径值。
 
 ```jsx live=true
 <Flex gap="3">
@@ -154,9 +154,9 @@ Use the `radius` prop to assign a specific radius value.
 </Flex>
 ```
 
-### Loading
+### 加载
 
-Use the `loading` prop to display a loading spinner in place of button content. The button will be disabled while loading.
+使用 `loading` 属性在按钮内容位置显示加载旋转器。按钮在加载时将被禁用。
 
 ```jsx live=true scroll=true
 <Flex gap="3">

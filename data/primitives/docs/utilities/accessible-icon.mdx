@@ -1,31 +1,31 @@
 ---
-metaTitle: Accessible Icon
-metaDescription: Makes icons accessible by adding a label.
+metaTitle: 无障碍图标
+metaDescription: 通过添加标签使图标可访问。
 name: accessible-icon
 ---
 
-# Accessible Icon
+# 无障碍图标
 
-<Description>Makes icons accessible by adding a label.</Description>
+<Description>通过添加标签使图标可访问。</Description>
 
 <Highlights
 	features={[
-		"Quickly make any icon accessible by wrapping it and providing a meaningful label.",
-		"No visual difference, but announced correctly by screen readers.",
+		"通过将任何图标包装并提供有意义的标签，快速使其可访问。",
+		"没有视觉差异，但被屏幕阅读器正确宣布。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-accessible-icon
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { AccessibleIcon } from "radix-ui";
@@ -33,11 +33,11 @@ import { AccessibleIcon } from "radix-ui";
 export default () => <AccessibleIcon.Root />;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains the icon to make accessible.
+包含要使其可访问的图标。
 
 <PropsTable
 	data={[
@@ -47,18 +47,15 @@ Contains the icon to make accessible.
 			type: "string",
 			description: (
 				<span>
-					The accessible label for the icon. This label will be visually hidden
-					but announced to screen reader users, similar to <Code>alt</Code> text
-					for <Code>img</Code>
-					tags.
+					图标的可访问标签。此标签将在视觉上隐藏，但会被屏幕阅读器用户宣布，类似于 <Code>alt</Code> 文本针对 <Code>img</Code> 标签。
 				</span>
 			),
 		},
 	]}
 />
 
-## Accessibility
+## 可访问性
 
-Most icons or icon systems come with no accessibility built-in. For example, the same visual **cross** icon may in fact mean **"close"** or **"delete"**. This component lets you give meaning to icons used throughout your app.
+大多数图标或图标系统没有内置的可访问性。例如，相同的视觉 **交叉** 图标实际上可能表示 **“关闭”** 或 **“删除”**。该组件允许您为应用程序中使用的图标赋予意义。
 
-This is built with [Visually Hidden](../utilities/visually-hidden).
+这是使用 [视觉隐藏](../utilities/visually-hidden) 构建的。

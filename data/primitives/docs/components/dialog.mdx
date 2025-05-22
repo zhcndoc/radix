@@ -1,15 +1,15 @@
 ---
-metaTitle: Dialog
-metaDescription: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+metaTitle: 对话框
+metaDescription: 叠加在主窗口或另一个对话框窗口上的窗口，使下面的内容变得无效。
 name: dialog
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
 ---
 
-# Dialog
+# 对话框
 
 <Description>
-	A window overlaid on either the primary window or another dialog window,
-	rendering the content underneath inert.
+	叠加在主窗口或另一个对话框窗口上的窗口，
+	使下面的内容变得无效。
 </Description>
 
 <HeroContainer>
@@ -20,28 +20,28 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
 
 <Highlights
 	features={[
-		"Supports modal and non-modal modes.",
-		"Focus is automatically trapped within modal.",
-		"Can be controlled or uncontrolled.",
+		"支持模态和非模态模式。",
+		"焦点会自动被限制在模态内部。",
+		"可以是受控或非受控。",
 		<span>
-			Manages screen reader announcements with <Code>Title</Code> and{" "}
-			<Code>Description</Code> components.
+			通过 <Code>Title</Code> 和{" "}
+			<Code>Description</Code> 组件管理屏幕阅读器的公告。
 		</span>,
-		"Esc closes the component automatically.",
+		"Esc 键会自动关闭组件。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-dialog
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部件并将它们组合在一起。
 
 ```jsx
 import { Dialog } from "radix-ui";
@@ -61,11 +61,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部件
 
-Contains all the parts of a dialog.
+包含对话框的所有部分。
 
 <PropsTable
 	data={[
@@ -74,8 +74,7 @@ Contains all the parts of a dialog.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the dialog when it is initially rendered. Use when
-					you do not need to control its open state.
+					对话框在最初渲染时的打开状态。当您不需要控制其打开状态时使用。
 				</span>
 			),
 		},
@@ -84,8 +83,7 @@ Contains all the parts of a dialog.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the dialog. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					对话框的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -95,7 +93,7 @@ Contains all the parts of a dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the dialog changes.
+					当对话框的打开状态改变时调用的事件处理器。
 				</span>
 			),
 		},
@@ -106,18 +104,16 @@ Contains all the parts of a dialog.
 			default: "true",
 			description: (
 				<span>
-					The modality of the dialog. When set to <Code>true</Code>, interaction
-					with outside elements will be disabled and only dialog content will be
-					visible to screen readers.
+					对话框的模态性。当设置为 <Code>true</Code> 时，与外部元素的交互将被禁用，屏幕阅读器只能看到对话框内容。
 				</span>
 			),
 		},
 	]}
 />
 
-### Trigger
+### 触发器
 
-The button that opens the dialog.
+打开对话框的按钮。
 
 <PropsTable
 	data={[
@@ -128,12 +124,10 @@ The button that opens the dialog.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
 				</>
 			),
 		},
@@ -149,9 +143,9 @@ The button that opens the dialog.
 	]}
 />
 
-### Portal
+### 门户
 
-When used, portals your overlay and content parts into the `body`.
+使用时，将您的叠加和内容部分传送到 `body` 中。
 
 <PropsTable
 	data={[
@@ -160,10 +154,8 @@ When used, portals your overlay and content parts into the `body`.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>Dialog.Overlay</Code> and{" "}
-					<Code>Dialog.Content</Code>.
+					当需要更多控制时，用于强制挂载。控制与 React 动画库的动画时特别有用。如果在此部分使用，将被继承到 <Code>Dialog.Overlay</Code> 和{" "}
+					<Code>Dialog.Content</Code>。
 				</span>
 			),
 		},
@@ -171,14 +163,14 @@ When used, portals your overlay and content parts into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定一个容器元素以传送内容。",
 		},
 	]}
 />
 
-### Overlay
+### 覆盖层
 
-A layer that covers the inert portion of the view when the dialog is open.
+当对话框打开时，覆盖视图的无效部分的层。
 
 <PropsTable
 	data={[
@@ -189,12 +181,10 @@ A layer that covers the inert portion of the view when the dialog is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
 				</>
 			),
 		},
@@ -203,9 +193,8 @@ A layer that covers the inert portion of the view when the dialog is open.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>Dialog.Portal</Code>.
+					当需要更多控制时，用于强制挂载。控制与 React 动画库的动画时特别有用。它从{" "}
+					<Code>Dialog.Portal</Code> 继承。
 				</span>
 			),
 		},
@@ -221,9 +210,9 @@ A layer that covers the inert portion of the view when the dialog is open.
 	]}
 />
 
-### Content
+### 内容
 
-Contains content to be rendered in the open dialog.
+包含在打开对话框中渲染的内容。
 
 <PropsTable
 	data={[
@@ -234,12 +223,10 @@ Contains content to be rendered in the open dialog.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
 				</>
 			),
 		},
@@ -248,9 +235,8 @@ Contains content to be rendered in the open dialog.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>Dialog.Portal</Code>.
+					当需要更多控制时，用于强制挂载。控制与 React 动画库的动画时特别有用。它从{" "}
+					<Code>Dialog.Portal</Code> 继承。
 				</span>
 			),
 		},
@@ -260,9 +246,8 @@ Contains content to be rendered in the open dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves into the component after
-					opening. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当焦点在打开后移动到组件时调用的事件处理器。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -272,8 +257,7 @@ Contains content to be rendered in the open dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves to the trigger after closing. It
-					can be prevented by calling <Code>event.preventDefault</Code>.
+					当焦点在关闭后移动到触发器时调用的事件处理器。可以通过调用 <Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -283,8 +267,7 @@ Contains content to be rendered in the open dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当按下 escape 键时调用的事件处理器。可以通过调用 <Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -294,9 +277,8 @@ Contains content to be rendered in the open dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当指针事件发生在组件的边界外部时调用的事件处理器。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -306,9 +288,7 @@ Contains content to be rendered in the open dialog.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when an interaction (pointer or focus event)
-					happens outside the bounds of the component. It can be prevented by
-					calling <Code>event.preventDefault</Code>.
+					当交互（指针或焦点事件）发生在组件的边界外部时调用的事件处理器。可以通过调用 <Code>event.preventDefault</Code> 来阻止它。
 				</span>
 			),
 		},
@@ -324,36 +304,9 @@ Contains content to be rendered in the open dialog.
 	]}
 />
 
-### Close
+### 关闭
 
-The button that closes the dialog.
-
-<PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
-/>
-
-### Title
-
-An accessible title to be announced when the dialog is opened.
-
-If you want to hide the title, wrap it inside our [Visually Hidden](../utilities/visually-hidden) utility like this `<VisuallyHidden asChild>`.
+关闭对话框的按钮。
 
 <PropsTable
 	data={[
@@ -364,23 +317,21 @@ If you want to hide the title, wrap it inside our [Visually Hidden](../utilities
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-### Description
+### 标题
 
-An optional accessible description to be announced when the dialog is opened.
+一个可访问的标题，在打开对话框时被宣布。
 
-If you want to hide the description, wrap it inside our [Visually Hidden](../utilities/visually-hidden) utility like this `<VisuallyHidden asChild>`. If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Dialog.Content`.
+如果您想隐藏标题，请将其包装在我们的 [视觉隐藏](../utilities/visually-hidden) 工具中，例如 `<VisuallyHidden asChild>`。
 
 <PropsTable
 	data={[
@@ -391,23 +342,46 @@ If you want to hide the description, wrap it inside our [Visually Hidden](../uti
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-## Examples
+### 描述
 
-### Close after asynchronous form submission
+一个可选的可访问描述，在打开对话框时被宣布。
 
-Use the controlled props to programmatically close the Dialog after an async operation has completed.
+如果您想隐藏描述，请将其包装在我们的 [视觉隐藏](../utilities/visually-hidden) 工具中，例如 `<VisuallyHidden asChild>`。如果您完全想要移除描述，请删除此部分并将 `aria-describedby={undefined}` 传递给 `Dialog.Content`。
+
+<PropsTable
+	data={[
+		{
+			name: "asChild",
+			required: false,
+			type: "boolean",
+			default: "false",
+			description: (
+				<>
+					更改为子元素传递的默认渲染元素，合并它们的属性和行为。
+					<br />
+					<br />
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以了解更多细节。
+				</>
+			),
+		},
+	]}
+/>
+
+## 示例
+
+### 在异步表单提交后关闭
+
+使用受控属性在异步操作完成后以编程方式关闭 Dialog。
 
 ```jsx line=4,7,10,15,17
 import * as React from "react";
@@ -420,7 +394,7 @@ export default () => {
 
 	return (
 		<Dialog.Root __open__={open} __onOpenChange__={setOpen}>
-			<Dialog.Trigger>Open</Dialog.Trigger>
+			<Dialog.Trigger>打开</Dialog.Trigger>
 			<Dialog.Portal>
 				<Dialog.Overlay />
 				<Dialog.Content>
@@ -430,8 +404,8 @@ export default () => {
 							event.preventDefault();
 						}}
 					>
-						{/** some inputs */}
-						<button type="submit">Submit</button>
+						{/** 一些输入 */}
+						<button type="submit">提交</button>
 					</form>
 				</Dialog.Content>
 			</Dialog.Portal>
@@ -440,9 +414,9 @@ export default () => {
 };
 ```
 
-### Scrollable overlay
+### 可滚动的覆盖层
 
-Move the content inside the overlay to render a dialog with overflow.
+将内容移动到覆盖层内以渲染一个具有溢出的对话框。
 
 ```jsx
 // index.jsx
@@ -485,9 +459,9 @@ export default () => {
 }
 ```
 
-### Custom portal container
+### 自定义门户容器
 
-Customise the element that your dialog portals into.
+自定义您的对话框传送到的元素。
 
 ```jsx line=5,10,16
 import * as React from "react";
@@ -511,63 +485,63 @@ export default () => {
 };
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Dialog WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal).
+遵循 [对话框 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Opens/closes the dialog.",
+			description: "打开/关闭对话框。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Opens/closes the dialog.",
+			description: "打开/关闭对话框。",
 		},
 		{
 			keys: ["Tab"],
-			description: "Moves focus to the next focusable element.",
+			description: "将焦点移动到下一个可聚焦元素。",
 		},
 		{
 			keys: ["Shift + Tab"],
-			description: "Moves focus to the previous focusable element.",
+			description: "将焦点移动到上一个可聚焦元素。",
 		},
 		{
 			keys: ["Esc"],
 			description: (
 				<span>
-					Closes the dialog and moves focus to <Code>Dialog.Trigger</Code>.
+					关闭对话框并将焦点移动到 <Code>Dialog.Trigger</Code>。
 				</span>
 			),
 		},
 	]}
 />
 
-## Custom APIs
+## 自定义 API
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将基本部件抽象为您自己的组件来创建您自己的 API。
 
-### Abstract the overlay and the close button
+### 抽象覆盖层和关闭按钮
 
-This example abstracts the `Dialog.Overlay` and `Dialog.Close` parts.
+此示例抽象了 `Dialog.Overlay` 和 `Dialog.Close` 部分。
 
-#### Usage
+#### 用法
 
 ```jsx
 import { Dialog, DialogTrigger, DialogContent } from "./your-dialog";
 
 export default () => (
 	<Dialog>
-		<DialogTrigger>Dialog trigger</DialogTrigger>
-		<DialogContent>Dialog Content</DialogContent>
+		<DialogTrigger>对话框触发器</DialogTrigger>
+		<DialogContent>对话框内容</DialogContent>
 	</Dialog>
 );
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-dialog.jsx
@@ -581,7 +555,7 @@ export const DialogContent = React.forwardRef(
 			<DialogPrimitive.Overlay />
 			<DialogPrimitive.Content {...props} ref={forwardedRef}>
 				{children}
-				<DialogPrimitive.Close aria-label="Close">
+				<DialogPrimitive.Close aria-label="关闭">
 					<Cross1Icon />
 				</DialogPrimitive.Close>
 			</DialogPrimitive.Content>

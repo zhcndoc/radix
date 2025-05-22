@@ -1,435 +1,420 @@
 ---
-metaTitle: Form
-metaDescription: Collect information from your users using validation rules.
+metaTitle: 表单
+metaDescription: 使用验证规则收集用户信息。
 name: form
 ---
 
-# Form
+# 表单
 
 <Description>
-	Collect information from your users using validation rules.
+    使用验证规则收集用户信息。
 </Description>
 
 <HeroContainer>
-	<FormDemo />
+    <FormDemo />
 </HeroContainer>
 
 <HeroCodeBlock folder="Form" />
 
 <Highlights
-	features={[
-		<>
-			Built on top of the native browser{" "}
-			<Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation">
-				constraint validation API.
-			</Link>
-		</>,
-		"Supports built-in validation.",
-		"Supports custom validation.",
-		"Full customization of validation messages.",
-		"Accessible validation messages.",
-		"Supports client-side and server-side scenarios.",
-		"Focus is fully managed.",
-	]}
+    features={[
+        <>
+            基于原生浏览器{" "}
+            <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation">
+                约束验证 API。
+            </Link>
+        </>,
+        "支持内置验证。",
+        "支持自定义验证。",
+        "完全自定义验证消息。",
+        "可访问的验证消息。",
+        "支持客户端和服务器端场景。",
+        "焦点完全管理。",
+    ]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-form
 ```
 
-## Anatomy
+## 解剖
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Form } from "radix-ui";
 
 export default () => (
-	<Form.Root>
-		<Form.Field>
-			<Form.Label />
-			<Form.Control />
-			<Form.Message />
-			<Form.ValidityState />
-		</Form.Field>
+    <Form.Root>
+        <Form.Field>
+            <Form.Label />
+            <Form.Control />
+            <Form.Message />
+            <Form.ValidityState />
+        </Form.Field>
 
-		<Form.Message />
-		<Form.ValidityState />
+        <Form.Message />
+        <Form.ValidityState />
 
-		<Form.Submit />
-	</Form.Root>
+        <Form.Submit />
+    </Form.Root>
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Contains all the parts of a form.
+包含表单的所有部分。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "onClearServerErrors",
-			required: false,
-			type: "() => void",
-			typeSimple: "function",
-			description:
-				"Event handler called when the form is submitted or reset and the server errors need to be cleared.",
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+        {
+            name: "onClearServerErrors",
+            required: false,
+            type: "() => void",
+            typeSimple: "function",
+            description:
+                "当表单被提交或重置且需要清除服务器错误时调用的事件处理程序。",
+        },
+    ]}
 />
 
 ### Field
 
-The wrapper for a field. It handles id/name and label accessibility automatically.
+字段的包装器。它自动处理 ID/名称和标签的可访问性。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "name",
-			required: true,
-			type: "string",
-			description:
-				"The name of the field that will be passed down to the control and used to match with validation messages.",
-		},
-		{
-			name: "serverInvalid",
-			required: false,
-			type: "boolean",
-			description: "Use this prop to mark the field as invalid on the server.",
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+        {
+            name: "name",
+            required: true,
+            type: "string",
+            description:
+                "将传递给控件并用于与验证消息匹配的字段名称。",
+        },
+        {
+            name: "serverInvalid",
+            required: false,
+            type: "boolean",
+            description: "使用此属性将字段标记为服务器端无效。",
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-invalid]",
-			values: "Present when the field is invalid",
-		},
-		{
-			attribute: "[data-valid]",
-			values: "Present when the field is valid",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-invalid]",
+            values: "字段无效时存在",
+        },
+        {
+            attribute: "[data-valid]",
+            values: "字段有效时存在",
+        },
+    ]}
 />
 
 ### Label
 
-A label element which is automatically wired when nested inside a `Field` part.
+一个标签元素，当嵌套在 `Field` 部分内时会自动连接。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-invalid]",
-			values: "Present when the field is invalid",
-		},
-		{
-			attribute: "[data-valid]",
-			values: "Present when the field is valid",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-invalid]",
+            values: "字段无效时存在",
+        },
+        {
+            attribute: "[data-valid]",
+            values: "字段有效时存在",
+        },
+    ]}
 />
 
 ### Control
 
-A control element (by default an `input`) which is automatically wired when nested inside a `Field` part.
+一个控制元素（默认是 `input`），当嵌套在 `Field` 部分内时会自动连接。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-invalid]",
-			values: "Present when the field is invalid",
-		},
-		{
-			attribute: "[data-valid]",
-			values: "Present when the field is valid",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-invalid]",
+            values: "字段无效时存在",
+        },
+        {
+            attribute: "[data-valid]",
+            values: "字段有效时存在",
+        },
+    ]}
 />
 
 ### Message
 
-A validation message which is automatically wired (functionality and accessibility) to a given control when nested inside a `Field` part. It can be used for built-in and custom client-side validation, as well as server-side validation. When used outside a `Field` you must pass a `name` prop matching a field.
+当嵌套在 `Field` 部分内时，验证消息会自动连接（功能和可访问性）到给定的控件。它可用于内置和自定义客户端验证，以及服务器端验证。当在 `Field` 外部使用时，必须传递一个与字段相匹配的 `name` 属性。
 
-`Form.Message` accepts a `match` prop which is used to determine when the message should show. It matches the native HTML validity state (`ValidityState` on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)) which validates against attributes such as `required`, `min`, `max`. The message will show if the given `match` is `true` on the control’s validity state.
+`Form.Message` 接受一个 `match` 属性，用于确定何时应显示该消息。它匹配原生 HTML 有效性状态（`ValidityState` 在 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) 上），该状态会验证 `required`、`min`、`max` 等属性。如果控件的有效性状态中的给定 `match` 为 `true`，则消息将显示。
 
-You can also pass a function to `match` to provide custom validation rules.
+您还可以将函数传递给 `match` 以提供自定义验证规则。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "match",
-			required: false,
-			type: (
-				<>
-					| 'badInput'
-					<br />
-					| 'patternMismatch'
-					<br />
-					| 'rangeOverflow'
-					<br />
-					| 'rangeUnderflow'
-					<br />
-					| 'stepMismatch'
-					<br />
-					| 'tooLong'
-					<br />
-					| 'tooShort'
-					<br />
-					| 'typeMismatch'
-					<br />
-					| 'valid'
-					<br />
-					| 'valueMissing'
-					<br />| {`((value: string, formData: FormData) => boolean)`}
-					<br />| {`((value: string, formData: FormData) => Promise<boolean>)`}
-					<br />
-				</>
-			),
-			typeSimple: "Matcher",
-			description:
-				"Used to indicate on which condition the message should be visible.",
-		},
-		{
-			name: "forceMatch",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description:
-				"Forces the message to be shown. This is useful when using server-side validation.",
-		},
-		{
-			name: "name",
-			required: false,
-			type: "string",
-			description: (
-				<>
-					Used to target a specific field by name when rendering outside of a{" "}
-					<Code>Field</Code> part.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+        {
+            name: "match",
+            required: false,
+            type: (
+                <>
+                    | 'badInput'
+                    <br />
+                    | 'patternMismatch'
+                    <br />
+                    | 'rangeOverflow'
+                    <br />
+                    | 'rangeUnderflow'
+                    <br />
+                    | 'stepMismatch'
+                    <br />
+                    | 'tooLong'
+                    <br />
+                    | 'tooShort'
+                    <br />
+                    | 'typeMismatch'
+                    <br />
+                    | 'valid'
+                    <br />
+                    | 'valueMissing'
+                    <br />| {`((value: string, formData: FormData) => boolean)`}
+                    <br />| {`((value: string, formData: FormData) => Promise<boolean>)`}
+                    <br />
+                </>
+            ),
+            typeSimple: "Matcher",
+            description:
+                "用于指示消息应可见的条件。",
+        },
+        {
+            name: "forceMatch",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description:
+                "强制显示该消息。当使用服务器端验证时，此功能非常有用。",
+        },
+        {
+            name: "name",
+            required: false,
+            type: "string",
+            description: (
+                <>
+                    在 <Code>Field</Code> 部分外部渲染时，按名称定位特定字段。
+                </>
+            ),
+        },
+    ]}
 />
 
 ### ValidityState
 
-Use this render-prop component to access a given field’s validity state in render (see `ValidityState` on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)). A field's validity is available automatically when nested inside a `Field` part, otherwise you must pass a `name` prop to associate it.
+使用此渲染属性组件访问给定字段的有效性状态（请参见 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) 上的 `ValidityState`）。在嵌套在 `Field` 部分内时，字段的有效性会自动可用，否则必须传递一个 `name` 属性以关联它。
 
 <PropsTable
-	data={[
-		{
-			name: "children",
-			required: false,
-			type: "(validity: ValidityState | undefined) => React.ReactNode",
-			typeSimple: "function",
-			description:
-				"A render function that receives the validity state of the field.",
-		},
-		{
-			name: "name",
-			required: false,
-			type: "string",
-			description: (
-				<>
-					Used to target a specific field by name when rendering outside of a{" "}
-					<Code>Field</Code> part.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "children",
+            required: false,
+            type: "(validity: ValidityState | undefined) => React.ReactNode",
+            typeSimple: "function",
+            description:
+                "一个接收字段有效性状态的渲染函数。",
+        },
+        {
+            name: "name",
+            required: false,
+            type: "string",
+            description: (
+                <>
+                    在 <Code>Field</Code> 部分外部渲染时，按名称定位特定字段。
+                </>
+            ),
+        },
+    ]}
 />
 
 ### Submit
 
-The submit button.
+提交按钮。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
+                </>
+            ),
+        },
+    ]}
 />
 
-## Examples
+## 示例
 
-### Composing with your own components
+### 与您自己的组件组合
 
-Using `asChild` you can compose the `Form` primitive parts with your own components.
+使用 `asChild`，您可以将 `Form` 原语部分与您自己的组件组合。
 
 ```jsx line=3
 <Form.Field name="name">
-	<Form.Label>Full name</Form.Label>
-	<Form.Control __asChild__>
-		<TextField.Input variant="primary" />
-	</Form.Control>
+    <Form.Label>全名</Form.Label>
+    <Form.Control __asChild__>
+        <TextField.Input variant="primary" />
+    </Form.Control>
 </Form.Field>
 ```
 
-It can also be used to compose other types of controls, such as a `select`:
+它也可以用于组合其他类型的控件，例如 `select`：
 
 ```jsx line=3
 <Form.Field name="country">
-	<Form.Label>Country</Form.Label>
-	<Form.Control __asChild__>
-		<select>
-			<option value="uk">United Kingdom</option>…
-		</select>
-	</Form.Control>
+    <Form.Label>国家</Form.Label>
+    <Form.Control __asChild__>
+        <select>
+            <option value="uk">英国</option>…
+        </select>
+    </Form.Control>
 </Form.Field>
 ```
 
-> Note: At the moment, it is not possible to compose `Form` with Radix's other form primitives such as `Checkbox`, `Select`, etc. We are working on a solution for this.
+> 注意: 目前还不可能将 `Form` 与 Radix 的其他表单原语如 `Checkbox`、`Select` 等组合。我们正在寻找解决方案。
 
-### Providing your own validation messages
+### 提供您自己的验证消息
 
-When no `children` are provided, `Form.Message` will render a default error message for the given `match`.
+当未提供 `children` 时，`Form.Message` 将为给定的 `match` 渲染默认错误消息。
 
 ```jsx
-// will yield "This value is missing"
+// 将产生 "此值缺失"
 <Form.Message match="valueMissing" />
 ```
 
-You can provide a more meaningful message by passing your own `children`. This is also useful for internationalization.
+通过传递您自己的 `children`，可以提供更有意义的消息。这对于国际化也很有用。
 
 ```jsx
-// will yield "Please provide a name"
-<Form.Message match="valueMissing">__Please provide a name__</Form.Message>
+// 将产生 "请提供一个名称"
+<Form.Message match="valueMissing">__请提供一个名称__</Form.Message>
 ```
 
-### Custom validation
+### 自定义验证
 
-On top of all the built-in client-side validation matches described above you can also provide your own custom validation whilst still making use of the platform's validation abilities. It uses the `customError` type present in the [constraint validition API](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation).
+除了上述所有内置的客户端验证匹配之外，您还可以在仍然利用平台验证能力的同时提供自己的自定义验证。它使用 [约束验证 API](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation) 中的 `customError` 类型。
 
-You can pass your own validation function into the `match` prop on `Form.Message`. Here's an example:
+可以将您自己的验证函数传递到 `Form.Message` 上的 `match` 属性。以下是一个示例：
 
 ```jsx line=4
 <Form.Field name="name">
-	<Form.Label>Full name</Form.Label>
-	<Form.Control />
-	<Form.Message __match__={(value, formData) => value !== "John"}>
-		Only John is allowed.
-	</Form.Message>
+    <Form.Label>全名</Form.Label>
+    <Form.Control />
+    <Form.Message __match__={(value, formData) => value !== "John"}>
+        只有约翰被允许。
+    </Form.Message>
 </Form.Field>
 ```
 
-> `match` will be called with the current value of the control as first argument and the entire `FormData` as second argument.
-> `match` can also be an `async` function (or return a promise) to perform async validation.
+> `match` 将以控件的当前值作为第一个参数，整个 `FormData` 作为第二个参数调用。
+> `match` 也可以是一个 `async` 函数（或返回一个 promise）以执行异步验证。
 
-### Styling based on validity
+### 基于有效性进行样式设置
 
-We add `data-valid` and `data-invalid` attributes to the relevant parts. Use it to style your components accordingly.
-Here is an example styling the `Label` part.
+我们向相关部分添加了 `data-valid` 和 `data-invalid` 属性。利用它相应地设置您的组件样式。以下是样式设置 `Label` 部分的示例。
 
 ```jsx line=8
 //index.jsx
@@ -437,140 +422,139 @@ import * as React from "react";
 import { Form } from "radix-ui";
 
 export default () => (
-	<Form.Root>
-		<Form.Field name="email">
-			<Form.Label __className__="FormLabel">Email</Form.Label>
-			<Form.Control type="email" />
-		</Form.Field>
-	</Form.Root>
+    <Form.Root>
+        <Form.Field name="email">
+            <Form.Label __className__="FormLabel">电子邮件</Form.Label>
+            <Form.Control type="email" />
+        </Form.Field>
+    </Form.Root>
 );
 ```
 
 ```css line=2,5
 /* styles.css */
 .FormLabel[__data-invalid__] {
-	color: red;
+    color: red;
 }
 .FormLabel[__data-valid__] {
-	color: green;
+    color: green;
 }
 ```
 
-### Accessing the validity state for more control
+### 访问有效性状态以获得更多控制
 
-You may need to access the raw validity state of a field in order to display your own icons, or interface with a component library via it's defined props. You can do this by using the `Form.ValidityState` part:
+您可能需要访问字段的原始有效性状态，以显示自己定义的图标，或通过其定义的属性与组件库进行交互。您可以通过使用 `Form.ValidityState` 部分来做到这一点：
 
 ```jsx line=3-4,7-8
 <Form.Field name="name">
-	<Form.Label>Full name</Form.Label>
-	<Form.ValidityState>
-		{(validity) => (
-			<Form.Control asChild>
-				<TextField.Input
-					variant="primary"
-					state={getTextFieldInputState(__validity__)}
-				/>
-			</Form.Control>
-		)}
-	</Form.ValidityState>
+    <Form.Label>全名</Form.Label>
+    <Form.ValidityState>
+        {(validity) => (
+            <Form.Control asChild>
+                <TextField.Input
+                    variant="primary"
+                    state={getTextFieldInputState(__validity__)}
+                />
+            </Form.Control>
+        )}
+    </Form.ValidityState>
 </Form.Field>
 ```
 
-### Server-side validation
+### 服务器端验证
 
-The component also supports server-side validation using the same `Form.Message` component.
-You can re-use the same messages you defined for client-side errors by passing a `forceMatch` prop which will force the message to show regardless of the client-side matching logic.
+该组件还支持使用相同的 `Form.Message` 组件进行服务器端验证。
+您可以通过传递 `forceMatch` 属性来重用为客户端错误定义的相同消息，无论客户端匹配逻辑如何，均强制显示该消息。
 
-If the message doesn't exist on the client-side, you can render a `Form.Message` without a `match` too.
-The field is marked as invalid by passing a `serverInvalid` boolean prop to the `Form.Field` part.
+如果客户端上不存在该消息，您也可以渲染没有 `match` 的 `Form.Message`。
+通过将 `serverInvalid` 布尔属性传递给 `Form.Field` 部分，可以将字段标记为无效。
 
-Here's an example with server-side error handling:
+以下是带有服务器端错误处理的示例：
 
 ```jsx line=5-8,13,23,28-30,49-54
 import * as React from "react";
 import { Form } from "radix-ui";
 
 function Page() {
-	const [serverErrors, setServerErrors] = React.useState({
-		email: false,
-		password: false,
-	});
+    const [serverErrors, setServerErrors] = React.useState({
+        email: false,
+        password: false,
+    });
 
-	return (
-		<Form.Root
-			// `onSubmit` only triggered if it passes client-side validation
-			onSubmit={(event) => {
-				const data = Object.fromEntries(new FormData(event.currentTarget));
+    return (
+        <Form.Root
+            // `onSubmit` 仅在通过客户端验证时触发
+            onSubmit={(event) => {
+                const data = Object.fromEntries(new FormData(event.currentTarget));
 
-				// Submit form data and catch errors in the response
-				submitForm(data)
-					.then(() => {})
-					/**
-					 * Map errors from your server response into a structure you'd like to work with.
-					 * In this case resulting in this object: `{ email: false, password: true }`
-					 */
-					.catch((errors) => __setServerErrors__(mapServerErrors(errors)));
+                // 提交表单数据并捕获响应中的错误
+                submitForm(data)
+                    .then(() => {})
+                    /**
+                     * 将服务器响应中的错误映射到您喜欢的结构。
+                     * 在这种情况下 resulting in this object: `{ email: false, password: true }`
+                     */
+                    .catch((errors) => __setServerErrors__(mapServerErrors(errors)));
 
-				// prevent default form submission
-				event.preventDefault();
-			}}
-			onClearServerErrors={() =>
-				__setServerErrors__({ email: false, password: false })
-			}
-		>
-			<Form.Field name="email" __serverInvalid__={serverErrors.email}>
-				<Form.Label>Email address</Form.Label>
-				<Form.Control type="email" required />
-				<Form.Message match="valueMissing">
-					Please enter your email.
-				</Form.Message>
-				<Form.Message match="typeMismatch" __forceMatch__={serverErrors.email}>
-					Please provide a valid email.
-				</Form.Message>
-			</Form.Field>
+                // 防止默认表单提交
+                event.preventDefault();
+            }}
+            onClearServerErrors={() =>
+                __setServerErrors__({ email: false, password: false })
+            }
+        >
+            <Form.Field name="email" __serverInvalid__={serverErrors.email}>
+                <Form.Label>电子邮件地址</Form.Label>
+                <Form.Control type="email" required />
+                <Form.Message match="valueMissing">
+                    请输入您的电子邮件。
+                </Form.Message>
+                <Form.Message match="typeMismatch" __forceMatch__={serverErrors.email}>
+                    请输入有效的电子邮件。
+                </Form.Message>
+            </Form.Field>
 
-			<Form.Field name="password" __serverInvalid__={serverErrors.password}>
-				<Form.Label>Password</Form.Label>
-				<Form.Control type="password" required />
-				<Form.Message match="valueMissing">
-					Please enter a password.
-				</Form.Message>
-				{serverErrors.password && (
-					<Form.Message>
-						Please provide a valid password. It should contain at least 1 number
-						and 1 special character.
-					</Form.Message>
-				)}
-			</Form.Field>
+            <Form.Field name="password" __serverInvalid__={serverErrors.password}>
+                <Form.Label>密码</Form.Label>
+                <Form.Control type="password" required />
+                <Form.Message match="valueMissing">
+                    请输入密码。
+                </Form.Message>
+                {serverErrors.password && (
+                    <Form.Message>
+                        请提供有效的密码。它应包含至少 1 个数字和 1 个特殊字符。
+                    </Form.Message>
+                )}
+            </Form.Field>
 
-			<Form.Submit>Submit</Form.Submit>
-		</Form.Root>
-	);
+            <Form.Submit>提交</Form.Submit>
+        </Form.Root>
+    );
 }
 ```
 
-You should clear the server errors using the `onClearServerErrors` callback prop on the `Form.Root` part. It will clear the server errors before the form is re-submitted, and when the form is reset.
+您应该使用 `Form.Root` 部分的 `onClearServerErrors` 回调属性清除服务器错误。在表单重新提交之前和表单重置时，它将清除服务器错误。
 
-In addition, this provides control over when to reset single server errors. For example you could reset the email server error as soon as the user edits it:
+此外，这还提供了何时重置单个服务器错误的控制。例如，您可以在用户编辑它时立即重置电子邮件服务器错误：
 
 ```jsx line=3
 <Form.Field name="email" serverInvalid={serverErrors.email}>
-	<Form.Label>Email address</Form.Label>
-	<Form.Control
-		type="email"
-		__onChange__={() => setServerErrors((prev) => ({ ...prev, email: false }))}
-	/>
-	<Form.Message match="valueMissing">Please enter your email.</Form.Message>
-	<Form.Message match="typeMismatch" forceMatch={serverErrors.email}>
-		Please provide a valid email.
-	</Form.Message>
+    <Form.Label>电子邮件地址</Form.Label>
+    <Form.Control
+        type="email"
+        __onChange__={() => setServerErrors((prev) => ({ ...prev, email: false }))}
+    />
+    <Form.Message match="valueMissing">请输入您的电子邮件。</Form.Message>
+    <Form.Message match="typeMismatch" forceMatch={serverErrors.email}>
+        请输入有效的电子邮件。
+    </Form.Message>
 </Form.Field>
 ```
 
-## Accessibility
+## 可访问性
 
-The component follows the "inline errors" pattern for validation:
+该组件遵循“内联错误”模式进行验证：
 
-- Label and control are associated using the `name` provided on `Form.Field`
-- When one or more client-side error messages display, they are automatically associated with their matching control and announced accordingly
-- Focus is moved to the first invalid control
+- 使用 `Form.Field` 中提供的 `name` 将标签和控件关联
+- 当一个或多个客户端错误消息显示时，它们会自动与其匹配控件关联，并相应地宣布
+- 焦点移到第一个无效控件

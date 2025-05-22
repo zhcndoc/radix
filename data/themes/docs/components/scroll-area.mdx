@@ -1,6 +1,6 @@
 ---
-metaTitle: Scroll Area
-metaDescription: Custom-styled scrollable area using native functionality.
+metaTitle: 滚动区域
+metaDescription: 使用原生功能的自定义样式可滚动区域。
 sourcePath: components/scroll-area
 ---
 
@@ -8,47 +8,36 @@ sourcePath: components/scroll-area
 <ScrollArea type="always" scrollbars="vertical" style={{ height: 180 }}>
 	<Box p="2" pr="8">
 		<Heading size="4" mb="2" trim="start">
-			Principles of the typographic craft
+			排版工艺的原则
 		</Heading>
 		<Flex direction="column" gap="4">
 			<Text as="p">
-				Three fundamental aspects of typography are legibility, readability, and
-				aesthetics. Although in a non-technical sense “legible” and “readable”
-				are often used synonymously, typographically they are separate but
-				related concepts.
+				排版的三个基本方面是可读性、易读性和美学。虽然在非技术意义上“可读”和“易读”通常可以互换使用，但在排版上它们是不同但相关的概念。
 			</Text>
 
 			<Text as="p">
-				Legibility describes how easily individual characters can be
-				distinguished from one another. It is described by Walter Tracy as “the
-				quality of being decipherable and recognisable”. For instance, if a “b”
-				and an “h”, or a “3” and an “8”, are difficult to distinguish at small
-				sizes, this is a problem of legibility.
+				可读性描述了个别字符之间的区分程度。Walter Tracy将其描述为“可解读和可识别的质量”。例如，如果“b”和“h”，或者“3”和“8”在小尺寸下难以区分，这就是可读性的问题。
 			</Text>
 
 			<Text as="p">
-				Typographers are concerned with legibility insofar as it is their job to
-				select the correct font to use. Brush Script is an example of a font
-				containing many characters that might be difficult to distinguish. The
-				selection of cases influences the legibility of typography because using
-				only uppercase letters (all-caps) reduces legibility.
+				排版师关注可读性，因为他们的工作是选择正确的字体。Brush Script就是一个包含许多可能难以区分的字符的字体示例。选择字母大小写会影响排版的可读性，因为仅使用大写字母（全大写）会降低可读性。
 			</Text>
 		</Flex>
 	</Box>
 </ScrollArea>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the ScrollArea primitive [Root](/primitives/docs/components/scroll-area#root) and [Viewport](/primitives/docs/components/scroll-area#viewport) parts. It supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承了来自滚动区域原语的 [Root](/primitives/docs/components/scroll-area#root) 和 [Viewport](/primitives/docs/components/scroll-area#viewport) 部分的属性。它支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="scrollAreaPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control the size of the scrollbar handles.
+使用 `size` 属性控制滚动条手柄的大小。
 
 ```jsx live=true
 <Flex direction="column" gap="2">
@@ -81,9 +70,9 @@ Use the `size` prop to control the size of the scrollbar handles.
 </Flex>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius to the handles.
+使用 `radius` 属性为手柄分配特定半径。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -107,27 +96,20 @@ Use the `radius` prop to assign a specific radius to the handles.
 </Flex>
 ```
 
-### Scrollbars
+### 滚动条
 
-Use the `scrollbars` prop to limit scrollable axes.
+使用 `scrollbars` 属性限制可滚动轴。
 
 ```jsx live=true
 <Grid columns="2" gap="2">
 	<ScrollArea type="always" scrollbars="vertical" style={{ height: 150 }}>
 		<Flex p="2" pr="8" direction="column" gap="4">
 			<Text size="2" trim="both">
-				Three fundamental aspects of typography are legibility, readability, and
-				aesthetics. Although in a non-technical sense "legible" and "readable"
-				are often used synonymously, typographically they are separate but
-				related concepts.
+				排版的三个基本方面是可读性、易读性和美学。虽然在非技术意义上“可读”和“易读”通常可以互换使用，但在排版上它们是不同但相关的概念。
 			</Text>
 
 			<Text size="2" trim="both">
-				Legibility describes how easily individual characters can be
-				distinguished from one another. It is described by Walter Tracy as "the
-				quality of being decipherable and recognisable". For instance, if a "b"
-				and an "h", or a "3" and an "8", are difficult to distinguish at small
-				sizes, this is a problem of legibility.
+				可读性描述了个别字符之间的区分程度。Walter Tracy将其描述为“可解读和可识别的质量”。例如，如果“b”和“h”，或者“3”和“8”在小尺寸下难以区分，这就是可读性的问题。
 			</Text>
 		</Flex>
 	</ScrollArea>
@@ -135,18 +117,11 @@ Use the `scrollbars` prop to limit scrollable axes.
 	<ScrollArea type="always" scrollbars="horizontal" style={{ height: 150 }}>
 		<Flex gap="4" p="2" width="700px">
 			<Text size="2" trim="both">
-				Three fundamental aspects of typography are legibility, readability, and
-				aesthetics. Although in a non-technical sense "legible" and "readable"
-				are often used synonymously, typographically they are separate but
-				related concepts.
+				排版的三个基本方面是可读性、易读性和美学。虽然在非技术意义上“可读”和“易读”通常可以互换使用，但在排版上它们是不同但相关的概念。
 			</Text>
 
 			<Text size="2" trim="both">
-				Legibility describes how easily individual characters can be
-				distinguished from one another. It is described by Walter Tracy as "the
-				quality of being decipherable and recognisable". For instance, if a "b"
-				and an "h", or a "3" and an "8", are difficult to distinguish at small
-				sizes, this is a problem of legibility.
+				可读性描述了个别字符之间的区分程度。Walter Tracy将其描述为“可解读和可识别的质量”。例如，如果“b”和“h”，或者“3”和“8”在小尺寸下难以区分，这就是可读性的问题。
 			</Text>
 		</Flex>
 	</ScrollArea>

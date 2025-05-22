@@ -1,15 +1,14 @@
 ---
-metaTitle: Toolbar
-metaDescription: A container for grouping a set of controls, such as buttons, toggle groups or dropdown menus.
+metaTitle: 工具条
+metaDescription: 用于分组一组控件的容器，例如按钮、切换组或下拉菜单。
 name: toolbar
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/toolbar
 ---
 
-# Toolbar
+# 工具条
 
 <Description>
-	A container for grouping a set of controls, such as buttons, toggle groups or
-	dropdown menus.
+	用于分组一组控件的容器，例如按钮、切换组或下拉菜单。
 </Description>
 
 <HeroContainer>
@@ -24,19 +23,19 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/toolbar
 
 <HeroCodeBlock folder="Toolbar" />
 
-<Highlights features={["Full keyboard navigation."]} />
+<Highlights features={["完整的键盘导航。"]} />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-toolbar
 ```
 
-## Anatomy
+## 解剖结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Toolbar } from "radix-ui";
@@ -53,11 +52,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains all the toolbar component parts.
+包含所有工具条组件部分。
 
 <PropsTable
 	data={[
@@ -68,12 +67,10 @@ Contains all the toolbar component parts.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -83,7 +80,7 @@ Contains all the toolbar component parts.
 			type: '"horizontal" | "vertical" | undefined',
 			typeSimple: "enum",
 			default: '"horizontal"',
-			description: "The orientation of the toolbar.",
+			description: "工具条的方向。",
 		},
 		{
 			name: "dir",
@@ -92,9 +89,7 @@ Contains all the toolbar component parts.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the toolbar. If omitted, inherits globally
-					from <Code>DirectionProvider</Code> or assumes LTR (left-to-right)
-					reading mode.
+					工具条的阅读方向。如果省略，将从 <Code>DirectionProvider</Code> 全局继承，或假定为 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
@@ -105,8 +100,7 @@ Contains all the toolbar component parts.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, keyboard navigation will loop from last tab to
-					first, and vice versa.
+					当 <Code>true</Code>，键盘导航将从最后一个选项卡循环到第一个，反之亦然。
 				</span>
 			),
 		},
@@ -122,9 +116,9 @@ Contains all the toolbar component parts.
 	]}
 />
 
-### Button
+### 按钮
 
-A button item.
+一个按钮项。
 
 <PropsTable
 	data={[
@@ -135,12 +129,10 @@ A button item.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -156,9 +148,9 @@ A button item.
 	]}
 />
 
-### Link
+### 链接
 
-A link item.
+一个链接项。
 
 <PropsTable
 	data={[
@@ -169,21 +161,19 @@ A link item.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-### ToggleGroup
+### 切换组
 
-A set of two-state buttons that can be toggled on or off.
+一组可以切换开启或关闭的二态按钮。
 
 <PropsTable
 	data={[
@@ -194,12 +184,10 @@ A set of two-state buttons that can be toggled on or off.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -210,8 +198,7 @@ A set of two-state buttons that can be toggled on or off.
 			typeSimple: "enum",
 			description: (
 				<span>
-					Determines whether a single or multiple items can be pressed at a
-					time.
+					确定是可以单个还是多个项目同时被按下。
 				</span>
 			),
 		},
@@ -221,9 +208,7 @@ A set of two-state buttons that can be toggled on or off.
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the pressed item when <Code>type</Code> is{" "}
-					<Code>"single"</Code>. Must be used in conjunction with{" "}
-					<Code>onValueChange</Code>.
+					当 <Code>type</Code> 为 <Code>"single"</Code> 时，被按下项的控制值。必须与 <Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -233,9 +218,7 @@ A set of two-state buttons that can be toggled on or off.
 			type: "string",
 			description: (
 				<span>
-					The value of the item to show as pressed when initially rendered and{" "}
-					<Code>type</Code> is <Code>"single"</Code>. Use when you do not need
-					to control the state of the items.
+					当最初渲染并且 <Code>type</Code> 为 <Code>"single"</Code> 时，显示为按下的项目值。当您不需要控制项目状态时使用。
 				</span>
 			),
 		},
@@ -246,8 +229,7 @@ A set of two-state buttons that can be toggled on or off.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the pressed state of an item changes and{" "}
-					<Code>type</Code> is <Code>"single"</Code>.
+					当项目的按下状态发生更改时调用的事件处理程序，且 <Code>type</Code> 为 <Code>"single"</Code>。
 				</span>
 			),
 		},
@@ -258,9 +240,7 @@ A set of two-state buttons that can be toggled on or off.
 			type: "string[]",
 			description: (
 				<span>
-					The controlled value of the pressed items when <Code>type</Code> is{" "}
-					<Code>"multiple"</Code>. Must be used in conjunction with{" "}
-					<Code>onValueChange</Code>.
+					当 <Code>type</Code> 为 <Code>"multiple"</Code> 时，被按下项的控制值。必须与 <Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -271,9 +251,7 @@ A set of two-state buttons that can be toggled on or off.
 			type: "string[]",
 			description: (
 				<span>
-					The values of the items to show as pressed when initially rendered and{" "}
-					<Code>type</Code> is <Code>"multiple"</Code>. Use when you do not need
-					to control the state of the items.
+					当最初渲染并且 <Code>type</Code> 为 <Code>"multiple"</Code> 时，显示为按下的项目值。当您不需要控制项目状态时使用。
 				</span>
 			),
 		},
@@ -284,8 +262,7 @@ A set of two-state buttons that can be toggled on or off.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the pressed state of an item changes and{" "}
-					<Code>type</Code> is <Code>"multiple"</Code>.
+					当项目的按下状态发生更改时调用的事件处理程序，且 <Code>type</Code> 为 <Code>"multiple"</Code>。
 				</span>
 			),
 		},
@@ -296,8 +273,7 @@ A set of two-state buttons that can be toggled on or off.
 			default: "false",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					toggle group and all its items.
+					当 <Code>true</Code> 时，阻止用户与切换组及其所有项目交互。
 				</span>
 			),
 		},
@@ -313,9 +289,9 @@ A set of two-state buttons that can be toggled on or off.
 	]}
 />
 
-### ToggleItem
+### 切换项
 
-An item in the group.
+组中的一个项目。
 
 <PropsTable
 	data={[
@@ -326,12 +302,10 @@ An item in the group.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -339,15 +313,14 @@ An item in the group.
 			name: "value",
 			required: true,
 			type: "string",
-			description: "A unique value for the item.",
+			description: "该项目的唯一值。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，阻止用户与该项目交互。
 				</span>
 			),
 		},
@@ -362,7 +335,7 @@ An item in the group.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "被禁用时存在",
 		},
 		{
 			attribute: "[data-orientation]",
@@ -371,9 +344,9 @@ An item in the group.
 	]}
 />
 
-### Separator
+### 分隔符
 
-Used to visually separate items in the toolbar.
+用于在工具条中视觉上分隔项目。
 
 <PropsTable
 	data={[
@@ -384,12 +357,10 @@ Used to visually separate items in the toolbar.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -405,24 +376,24 @@ Used to visually separate items in the toolbar.
 	]}
 />
 
-## Examples
+## 示例
 
-### Use with other primitives
+### 与其他原语一起使用
 
-All our primitives which expose a `Trigger` part, such as `Dialog`, `AlertDialog`, `Popover`, `DropdownMenu` can be composed within a toolbar by using the [`asChild` prop](/primitives/docs/guides/composition).
+所有暴露 `Trigger` 部分的原语，例如 `Dialog`、`AlertDialog`、`Popover`、`DropdownMenu` 可以通过使用 [`asChild` 属性](/primitives/docs/guides/composition) 在工具条中组合。
 
-Here is an example using our `DropdownMenu` primitive.
+以下是使用我们的 `DropdownMenu` 原语的示例。
 
 ```jsx line=8-10
 import { Toolbar, DropdownMenu } from "radix-ui";
 
 export default () => (
 	<Toolbar.Root>
-		<Toolbar.Button>Action 1</Toolbar.Button>
+		<Toolbar.Button>操作 1</Toolbar.Button>
 		<Toolbar.Separator />
 		<DropdownMenu.Root>
 			<Toolbar.Button __asChild__>
-				<DropdownMenu.Trigger>Trigger</DropdownMenu.Trigger>
+				<DropdownMenu.Trigger>触发器</DropdownMenu.Trigger>
 			</Toolbar.Button>
 			<DropdownMenu.Content>…</DropdownMenu.Content>
 		</DropdownMenu.Root>
@@ -430,31 +401,31 @@ export default () => (
 );
 ```
 
-## Accessibility
+## 可访问性
 
-Uses [roving tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/radio/radio.html) to manage focus movement among items.
+使用 [游走的 tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/radio/radio.html) 来管理项目之间的焦点移动。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Tab"],
-			description: "Moves focus to the first item in the group.",
+			description: "将焦点移动到组中的第一个项目。",
 		},
 		{
 			keys: ["Space"],
-			description: "Activates/deactivates the item.",
+			description: "激活/停用该项目。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Activates/deactivates the item.",
+			description: "激活/停用该项目。",
 		},
 		{
 			keys: ["ArrowDown"],
 			description: (
 				<span>
-					Moves focus to the next item depending on <Code>orientation</Code>.
+					根据 <Code>orientation</Code> 将焦点移动到下一个项目。
 				</span>
 			),
 		},
@@ -462,7 +433,7 @@ Uses [roving tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/rad
 			keys: ["ArrowRight"],
 			description: (
 				<span>
-					Moves focus to the next item depending on <Code>orientation</Code>.
+					根据 <Code>orientation</Code> 将焦点移动到下一个项目。
 				</span>
 			),
 		},
@@ -470,8 +441,7 @@ Uses [roving tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/rad
 			keys: ["ArrowUp"],
 			description: (
 				<span>
-					Moves focus to the previous item depending on <Code>orientation</Code>
-					.
+					根据 <Code>orientation</Code> 将焦点移动到上一个项目。
 				</span>
 			),
 		},
@@ -479,18 +449,17 @@ Uses [roving tabindex](https://www.w3.org/TR/wai-aria-practices-1.2/examples/rad
 			keys: ["ArrowLeft"],
 			description: (
 				<span>
-					Moves focus to the previous item depending on <Code>orientation</Code>
-					.
+					根据 <Code>orientation</Code> 将焦点移动到上一个项目。
 				</span>
 			),
 		},
 		{
 			keys: ["Home"],
-			description: <span>Moves focus to the first item.</span>,
+			description: <span>将焦点移动到第一个项目。</span>,
 		},
 		{
 			keys: ["End"],
-			description: <span>Moves focus to the last item.</span>,
+			description: <span>将焦点移动到最后一个项目。</span>,
 		},
 	]}
 />

@@ -1,21 +1,21 @@
 ---
-metaTitle: Radius
-metaDescription: Choosing the right radius setting in your theme.
+metaTitle: 半径
+metaDescription: 选择主题中的正确半径设置。
 ---
 
-# Radius
+# 半径
 
-<Description>Choosing the right radius setting in your theme.</Description>
+<Description>选择主题中的正确半径设置。</Description>
 
-## Theme setting
+## 主题设置
 
-Theme `radius` setting manages the radius factor applied to the components:
+主题 `radius` 设置管理应用于组件的半径因子：
 
 ```jsx line="1"
 <Theme radius="medium">
-	<TextField.Root size="3" placeholder="Reply…">
+	<TextField.Root size="3" placeholder="回复…">
 		<TextField.Slot side="right" px="1">
-			<Button size="2">Send</Button>
+			<Button size="2">发送</Button>
 		</TextField.Slot>
 	</TextField.Root>
 </Theme>
@@ -25,48 +25,48 @@ Theme `radius` setting manages the radius factor applied to the components:
 	<ThemesRadiusExample />
 </Box>
 
-The resulting `border-radius` is contextual and differs depending on the component. For example, when set to `full`, a [Button](/themes/docs/components/button) becomes pill-shaped, while a [Checkbox](/themes/docs/components/checkbox) will never become fully rounded to prevent any confusion between it and a [Radio](/themes/docs/components/radio).
+生成的 `border-radius` 是上下文相关的，并且根据组件的不同而有所不同。例如，当设置为 `full` 时，一个 [Button](/themes/docs/components/button) 会变成药丸形状，而一个 [Checkbox](/themes/docs/components/checkbox) 则不会完全变圆，以防与 [Radio](/themes/docs/components/radio) 混淆。
 
 ```jsx live=true
 <Theme radius="full">
 	<Flex align="center" gap="3">
-		<Button>Save</Button>
+		<Button>保存</Button>
 		<Switch defaultChecked />
 		<Checkbox defaultChecked />
 	</Flex>
 </Theme>
 ```
 
-## Radius overrides
+## 半径覆盖
 
-Certain components allow you to override the radius factor using their own `radius` prop.
+某些组件允许你使用它们自己的 `radius` 属性来覆盖半径因子。
 
 ```jsx live=true
 <Flex align="center" gap="3">
-	<Button radius="none">Save</Button>
-	<Button radius="small">Save</Button>
-	<Button radius="medium">Save</Button>
-	<Button radius="large">Save</Button>
-	<Button radius="full">Save</Button>
+	<Button radius="none">保存</Button>
+	<Button radius="small">保存</Button>
+	<Button radius="medium">保存</Button>
+	<Button radius="large">保存</Button>
+	<Button radius="full">保存</Button>
 </Flex>
 ```
 
-Components that render panels, like Card, Dialog, and Popover, among others, won’t have the `radius` prop, but will inherit the radius setting from the theme. The `radius` prop is also unavailable on most text-based components.
+渲染面板的组件，如卡片、对话框和弹出框等，不会拥有 `radius` 属性，但会从主题中继承半径设置。大多数基于文本的组件也没有 `radius` 属性。
 
-## Radius scale
+## 半径缩放
 
-Radius values used in the components are derived from a 6-step scale.
+组件中使用的半径值来自于一个 6 步的缩放。
 
 <Box mt="5" mb="6">
 	<ThemesRadiusScale />
 </Box>
 
-While you can’t use a specific step on a particular component directly—the `radius` prop is used to set just the radius factor—you can use the radius scale to style your own components.
+虽然你不能直接在特定组件上使用特定的步骤——`radius` 属性只是用于设置半径因子——但你可以使用半径缩放来为你自己的组件设置样式。
 
-Radius tokens are accessed using CSS variables. You can use these tokens to style your custom components, ensuring they are consistent with the rest of your theme.
+半径令牌通过 CSS 变量访问。你可以使用这些令牌为你的自定义组件设置样式，确保它们与主题的其他部分保持一致。
 
 ```css
-/* Radius values that automatically respond to the radius factor */
+/* 自动响应半径因子的半径值 */
 var(--radius-1);
 var(--radius-2);
 var(--radius-3);
@@ -74,18 +74,18 @@ var(--radius-4);
 var(--radius-5);
 var(--radius-6);
 
-/* A multiplier that controls the theme radius */
+/* 控制主题半径的乘数 */
 var(--radius-factor);
 
 /*
- * A variable used to calculate a fully rounded radius.
- * Usually used within a CSS `max()` function.
+ * 用于计算完全圆润半径的变量。
+ * 通常用于 CSS 的 `max()` 函数中。
  */
 var(--radius-full);
 
 /*
- * A variable used to calculate radius of a thumb element.
- * Usually used within a CSS `max()` function.
+ * 用于计算拇指元素半径的变量。
+ * 通常用于 CSS 的 `max()` 函数中。
  */
 var(--radius-thumb);
 ```

@@ -1,22 +1,21 @@
 ---
-metaTitle: Animation
-metaDescription: Animate Radix Primitives with CSS keyframes or the JavaScript animation library of your choice.
+metaTitle: 动画
+metaDescription: 使用 CSS 动画帧或您选择的 JavaScript 动画库为 Radix Primitives 添加动画。
 ---
 
-# Animation
+# 动画
 
 <Description>
-	Animate Radix Primitives with CSS keyframes or the JavaScript animation
-	library of your choice.
+	使用 CSS 动画帧或您选择的 JavaScript 动画库为 Radix Primitives 添加动画。
 </Description>
 
-Adding animation to Radix Primitives should feel similar to any other component, but there are some caveats noted here in regards to exiting animations with JS animation libraries.
+为 Radix Primitives 添加动画应该和其他组件类似，但需要注意在使用 JS 动画库时与退出动画相关的一些注意事项。
 
-## Animating with CSS animation
+## 使用 CSS 动画进行动画处理
 
-The simplest way to animate Primitives is with CSS.
+为 Primitives 添加动画的最简单方法是使用 CSS。
 
-You can use CSS animation to animate both mount and unmount phases. The latter is possible because the Radix Primitives will suspend unmount while your animation plays out.
+您可以使用 CSS 动画来处理挂载和卸载阶段。后者之所以可行，是因为 Radix Primitives 会在动画播放时暂停卸载。
 
 ```css
 @keyframes fadeIn {
@@ -48,11 +47,11 @@ You can use CSS animation to animate both mount and unmount phases. The latter i
 }
 ```
 
-## Delegating unmounting for JavaScript Animation
+## 为 JavaScript 动画委托卸载
 
-When many stateful Primitives are hidden from view, they are actually removed from the React Tree, and their elements removed from the DOM. JavaScript animation libraries need control of the unmounting phase, so we provide the `forceMount` prop on many components to allow consumers to delegate the mounting and unmounting of children based on the animation state determined by those libraries.
+当许多状态 Primitives 被隐藏时，它们实际上是从 React 树中移除的，它们的元素也从 DOM 中移除了。JavaScript 动画库需要控制卸载阶段，因此我们在许多组件上提供了 `forceMount` 属性，以允许消费者根据这些库确定的动画状态来委托子项的挂载和卸载。
 
-For example, if you want to use React Spring to animate a `Dialog`, you would do so by conditionally rendering the dialog `Overlay` and `Content` parts based on the animation state from one of its hooks like `useTransition`:
+例如，如果您想使用 React Spring 来为 `Dialog` 动画，您可以通过根据其钩子之一（如 `useTransition`）中动画状态有条件地渲染对话框的 `Overlay` 和 `Content` 部分：
 
 ```jsx
 import { Dialog } from "radix-ui";
@@ -68,7 +67,7 @@ function Example() {
 	});
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
-			<Dialog.Trigger>Open Dialog</Dialog.Trigger>
+			<Dialog.Trigger>打开对话框</Dialog.Trigger>
 			{transitions((styles, item) =>
 				item ? (
 					<>
@@ -81,8 +80,8 @@ function Example() {
 						</Dialog.Overlay>
 						<Dialog.Content forceMount asChild>
 							<animated.div style={styles}>
-								<h1>Hello from inside the Dialog!</h1>
-								<Dialog.Close>close</Dialog.Close>
+								<h1>来自对话框内部的问候！</h1>
+								<Dialog.Close>关闭</Dialog.Close>
 							</animated.div>
 						</Dialog.Content>
 					</>

@@ -1,36 +1,34 @@
 ---
-metaTitle: Accessibility
-metaDescription: Radix Primitives follow the WAI-ARIA authoring practices guidelines and are tested in a wide selection of modern browsers and commonly used assistive technologies.
+metaTitle: 可访问性
+metaDescription: Radix Primitives 遵循 WAI-ARIA 作者实践指南，并在广泛的现代浏览器和常用辅助技术中进行了测试。
 ---
 
-# Accessibility
+# 可访问性
 
 <Description>
-	Radix Primitives follow the WAI-ARIA authoring practices guidelines and are
-	tested in a wide selection of modern browsers and commonly used assistive
-	technologies.
+	Radix Primitives 遵循 WAI-ARIA 作者实践指南，并在广泛的现代浏览器和常用辅助技术中进行了测试。
 </Description>
 
-We take care of many of the difficult implementation details related to accessibility, including `aria` and `role` attributes, focus management, and keyboard navigation. That means that users should be able to use our components as-is in most contexts and rely on functionality to follow the expected accessibility design patterns.
+我们处理了许多与可访问性相关的复杂实现细节，包括 `aria` 和 `role` 属性、焦点管理以及键盘导航。这意味着用户在大多数情况下应该能够直接使用我们的组件，并依赖这些功能遵循预期的可访问性设计模式。
 
 ## WAI-ARIA
 
-[WAI-ARIA](https://www.w3.org/TR/wai-aria-1.2/), published and maintained by the W3C, specifies the semantics for many common UI patterns that show up in Radix Primitives. This is designed to provide meaning for controls that aren't built using elements provided by the browser. For example, if you use a `div` instead of a `button` element to create a button, there are attributes you need to add to the `div` in order to convey that it's a button for screen readers or voice recognition tools.
+[WAI-ARIA](https://www.w3.org/TR/wai-aria-1.2/) 由 W3C 发布和维护，指定了许多常见 UI 模式的语义，这些模式出现在 Radix Primitives 中。该规范旨在为那些未使用浏览器提供的元素构建的控件提供意义。例如，如果您使用 `div` 而不是 `button` 元素来创建按钮，则需要向 `div` 添加一些属性，以便让屏幕阅读器或语音识别工具理解这是一个按钮。
 
-In addition to semantics, there are behaviors that are expected from different types of components. A `button` element is going to respond to certain interactions in ways that a `div` will not, so it's up to the developer to reimplement those interactions with JavaScript. The [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/) provide additional guidance for implementing behaviors for various controls that come with Radix Primitives.
+除了语义之外，不同类型的组件还有预期的行为。`button` 元素将以 `div` 无法实现的方式响应某些交互，因此开发者需要使用 JavaScript 重新实现这些交互。 [WAI-ARIA 作者实践](https://www.w3.org/TR/wai-aria-practices-1.2/) 提供了有关实现 Radix Primitives 中各种控件行为的额外指导。
 
-## Accessible Labels
+## 可访问标签
 
-With many built-in form controls, the native HTML `label` element is designed to provide semantic meaning and context for corresponding `input` elements. For non-form control elements, or for custom controls like those provided by Radix Primitives, [WAI-ARIA provides a specification](https://www.w3.org/TR/wai-aria-1.2/#namecalculation) for how to provide accessible names and descriptions to those controls.
+对于许多内置的表单控件，本机 HTML `label` 元素旨在为相应的 `input` 元素提供语义意义和上下文。对于非表单控件元素或自定义控件（如 Radix Primitives 提供的控件），[WAI-ARIA 提供了一份规范](https://www.w3.org/TR/wai-aria-1.2/#namecalculation)，说明如何为这些控件提供可访问的名称和描述。
 
-Where possible, Radix Primitives include abstractions to make labelling our controls simple. The [`Label`](../components/label) primitive is designed to work with many of our controls. Ultimately it's up to you to provide those labels so that users have the proper context when navigating your application.
+在可能的情况下，Radix Primitives 包含抽象，以简化对控件的标签化。 [`Label`](../components/label) 原语旨在与我们许多控件配合使用。最终，您需要提供这些标签，以便用户在浏览您的应用程序时具有适当的上下文。
 
-## Keyboard Navigation
+## 键盘导航
 
-Many complex components, like [`Tabs`](../components/tabs) and [`Dialog`](../components/dialog), come with expectations from users on how to interact with their content using a keyboard or other non-mouse input modalities. Radix Primitives provide basic keyboard support in accordance with the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/).
+许多复杂的组件，如 [`Tabs`](../components/tabs) 和 [`Dialog`](../components/dialog)，用户对如何使用键盘或其他非鼠标输入方式与其内容进行交互有一定的期望。 Radix Primitives 在遵循 [WAI-ARIA 作者实践](https://www.w3.org/TR/wai-aria-practices-1.2/) 的情况下，提供了基本的键盘支持。
 
-## Focus Management
+## 焦点管理
 
-Proper keyboard navigation and good labelling often go hand-in-hand with managing focus. When a user interacts with an element and something changes as a result, it's often helpful to move focus with the interaction so that the next tab stop is logical depending on the new context of the app. And for screen reader users, moving focus often results in an announcement to convey this new context, which relies on proper labelling.
+适当的键盘导航和良好的标签通常与管理焦点密切相关。当用户与元素交互并因此发生变化时，通常将焦点与交互一起移动是有益的，以便下一个选项卡停靠点在应用程序的新上下文中是合乎逻辑的。对于屏幕阅读器用户而言，移动焦点通常会导致发布新上下文的公告，这依赖于适当的标签。
 
-In many Radix Primitives, we move focus based on the interactions a user normally takes in a given component. For example, in [`AlertDialog`](../components/alert-dialog), when the modal is opened, focus is programatically moved to a `Cancel` button element to anticipate a response to the prompt.
+在许多 Radix Primitives 中，我们根据用户在给定组件中通常进行的交互来移动焦点。例如，在 [`AlertDialog`](../components/alert-dialog) 中，当模态窗口打开时，焦点会通过程序方式移动到 `Cancel` 按钮元素，以预期对提示的响应。

@@ -1,34 +1,34 @@
 ---
-metaTitle: Heading
-metaDescription: Semantic heading element.
+metaTitle: 标题
+metaDescription: 语义标题元素。
 sourcePath: components/heading
 ---
 
 ```jsx live=true
-<Heading>The quick brown fox jumps over the lazy dog</Heading>
+<Heading>敏捷的棕色狐狸跳过了懒狗</Heading>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `h1` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `h1` 元素，支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="headingPropDefs" />
 
-## Examples
+## 示例
 
-### As another element
+### 作为另一个元素
 
-Use the `as` prop to change the heading level. This prop is purely semantic and does not change the visual appearance.
+使用 `as` 属性来改变标题级别。这个属性纯粹是语义上的，不会改变视觉外观。
 
 ```jsx live=true
-<Heading as="h1">Level 1</Heading>
-<Heading as="h2">Level 2</Heading>
-<Heading as="h3">Level 3</Heading>
+<Heading as="h1">级别 1</Heading>
+<Heading as="h2">级别 2</Heading>
+<Heading as="h3">级别 3</Heading>
 ```
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the heading. The prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+使用 `size` 属性来控制标题的大小。该属性还提供正确的行高和纠正的字母间距——随着文本大小的增加，相对的行高和字母间距会减小。
 
 {
 
@@ -37,9 +37,8 @@ Use the `size` prop to control the size of the heading. The prop also provides c
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		Heading sizes match <a href="/themes/components/text">Text</a> sizes.
-		However, the line heights are set a bit tighter as headings tend to be
-		shorter than running text.
+		标题大小与 <a href="/themes/components/text">文本</a> 大小相匹配。
+		然而，由于标题通常比普通文本短，因此行高设置得稍微紧凑一些。
 	</Callout.Text>
 </Callout.Root>
 
@@ -47,51 +46,51 @@ Use the `size` prop to control the size of the heading. The prop also provides c
 
 ```jsx live=true scroll=true
 <Flex direction="column" gap="3">
-	<Heading size="1">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="2">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="3">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="4">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="5">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="6">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="7">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="8">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading size="9">The quick brown fox jumps over the lazy dog</Heading>
+	<Heading size="1">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="2">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="3">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="4">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="5">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="6">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="7">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="8">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading size="9">敏捷的棕色狐狸跳过了懒狗</Heading>
 </Flex>
 ```
 
-### Weight
+### 字重
 
-Use the `weight` prop to set the text weight.
+使用 `weight` 属性来设置文本的字重。
 
 ```jsx live=true scroll=true
 <Heading weight="regular">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过了懒狗。
 </Heading>
 
 <Heading weight="medium">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过了懒狗。
 </Heading>
 
 <Heading weight="bold">
-  The quick brown fox jumps over the lazy dog.
+  敏捷的棕色狐狸跳过了懒狗。
 </Heading>
 ```
 
-### Align
+### 对齐
 
-Use the `align` prop to set text alignment.
+使用 `align` 属性来设置文本对齐方式。
 
 ```jsx live=true
-<Heading align="left">Left-aligned</Heading>
-<Heading align="center">Center-aligned</Heading>
-<Heading align="right">Right-aligned</Heading>
+<Heading align="left">左对齐</Heading>
+<Heading align="center">居中对齐</Heading>
+<Heading align="right">右对齐</Heading>
 ```
 
-### Trim
+### 修剪
 
-Use the `trim` prop to trim the leading space at the start, end, or both sides of the text box.
+使用 `trim` 属性来修剪文本框开始、结束或两侧的前导空间。
 
-The prop works similarly to the upcoming [half-leading control](https://www.w3.org/TR/css-inline-3/#leading-trim) spec, but uses a common [negative margin workaround](https://seek-oss.github.io/capsize/) under the hood for cross-browser support.
+该属性的工作方式类似于即将发布的 [半行距控制](https://www.w3.org/TR/css-inline-3/#leading-trim) 规范，但在底层使用了常见的 [负边距解决方案](https://seek-oss.github.io/capsize/) 以支持跨浏览器兼容性。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -103,7 +102,7 @@ The prop works similarly to the upcoming [half-leading control](https://www.w3.o
 			borderBottom: "1px dashed var(--gray-a7)",
 		}}
 	>
-		Without trim
+		未修剪
 	</Heading>
 	<Heading
 		trim="both"
@@ -113,12 +112,12 @@ The prop works similarly to the upcoming [half-leading control](https://www.w3.o
 			borderBottom: "1px dashed var(--gray-a7)",
 		}}
 	>
-		With trim
+		已修剪
 	</Heading>
 </Flex>
 ```
 
-Trimming the leading is useful when dialing in vertical spacing in cards or other “boxy” components. Otherwise, padding looks larger on top and bottom than on the sides.
+修剪前导空间在调整卡片或其他“盒状”组件的垂直间距时非常有用。否则，内边距看起来上面和下面比两侧大。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -130,12 +129,11 @@ Trimming the leading is useful when dialing in vertical spacing in cards or othe
 		p="4"
 	>
 		<Heading mb="1" size="3">
-			Without trim
+			未修剪
 		</Heading>
 		<Text>
-			The goal of typography is to relate font size, line height, and line width
-			in a proportional way that maximizes beauty and makes reading easier and
-			more pleasant.
+			排版的目标是以比例的方式使字体大小、行高和行宽相互关联，
+			从而最大化美感，使阅读更容易和愉快。
 		</Text>
 	</Box>
 
@@ -147,18 +145,17 @@ Trimming the leading is useful when dialing in vertical spacing in cards or othe
 		}}
 	>
 		<Heading mb="1" size="3" trim="start">
-			With trim
+			已修剪
 		</Heading>
 		<Text trim="end">
-			The goal of typography is to relate font size, line height, and line width
-			in a proportional way that maximizes beauty and makes reading easier and
-			more pleasant.
+			排版的目标是以比例的方式使字体大小、行高和行宽相互关联，
+			从而最大化美感，使阅读更容易和愉快。
 		</Text>
 	</Box>
 </Flex>
 ```
 
-The default trim values are configured for the system font stack that’s used by Radix Themes. If you are using custom fonts, you can [adjust](/themes/docs/theme/typography#customization) the trim values using the corresponding CSS variables.
+默认的修剪值是为 Radix 主题所使用的系统字体栈配置的。如果您使用自定义字体，您可以 [调整](/themes/docs/theme/typography#customization) 修剪值，使用相应的 CSS 变量。
 
 ```css
 .radix-themes {
@@ -169,35 +166,35 @@ The default trim values are configured for the system font stack that’s used b
 }
 ```
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性在文本溢出其容器时用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
-	<Heading truncate>The quick brown fox jumps over the lazy dog</Heading>
+	<Heading truncate>敏捷的棕色狐狸跳过了懒狗</Heading>
 </Flex>
 ```
 
-### Wrap
+### 包裹
 
-Use the `wrap` prop to control text wrapping.
-
-```jsx live=true line=2
-<Flex maxWidth="300px">
-	<Heading wrap="nowrap">The quick brown fox jumps over the lazy dog</Heading>
-</Flex>
-```
+使用 `wrap` 属性来控制文本是否换行。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
-	<Heading wrap="balance">The quick brown fox jumps over the lazy dog</Heading>
+	<Heading wrap="nowrap">敏捷的棕色狐狸跳过了懒狗</Heading>
 </Flex>
 ```
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
-	<Heading wrap="pretty">The quick brown fox jumps over the lazy dog</Heading>
+	<Heading wrap="balance">敏捷的棕色狐狸跳过了懒狗</Heading>
+</Flex>
+```
+
+```jsx live=true line=2
+<Flex maxWidth="300px">
+	<Heading wrap="pretty">敏捷的棕色狐狸跳过了懒狗</Heading>
 </Flex>
 ```
 
@@ -208,39 +205,38 @@ Use the `wrap` prop to control text wrapping.
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		<Code>text-wrap: pretty</Code> is an experimental value that is{" "}
+		<Code>text-wrap: pretty</Code> 是一个实验值，目前{" "}
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#browser_compatibility">
-			not yet supported in all browsers
+			尚未支持所有浏览器
 		</a>
-		. However, it can be treated as a progressive enhancement for browsers that
-		do support it.
+		。然而，它可以被视为支持此功能的浏览器的渐进式增强。
 	</Callout.Text>
 </Callout.Root>
 
 }
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color). The text colors are designed to achieve at least Lc 60 APCA contrast over common background colors.
+使用 `color` 属性分配一个特定的 [颜色](/themes/docs/theme/color)。文本颜色旨在实现与常见背景颜色至少 Lc 60 APCA 的对比度。
 
 ```jsx live=true scroll=true
 <Flex direction="column">
-	<Heading color="indigo">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading color="cyan">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading color="orange">The quick brown fox jumps over the lazy dog</Heading>
-	<Heading color="crimson">The quick brown fox jumps over the lazy dog</Heading>
+	<Heading color="indigo">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading color="cyan">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading color="orange">敏捷的棕色狐狸跳过了懒狗</Heading>
+	<Heading color="crimson">敏捷的棕色狐狸跳过了懒狗</Heading>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live="true"
 <Flex direction="column">
-	<Heading color="gray">The quick brown fox jumps over the lazy dog.</Heading>
+	<Heading color="gray">敏捷的棕色狐狸跳过了懒狗。</Heading>
 	<Heading color="gray" highContrast>
-		The quick brown fox jumps over the lazy dog.
+		敏捷的棕色狐狸跳过了懒狗。
 	</Heading>
 </Flex>
 ```

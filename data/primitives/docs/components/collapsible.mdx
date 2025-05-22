@@ -1,14 +1,14 @@
 ---
-metaTitle: Collapsible
-metaDescription: An interactive component which expands/collapses a panel.
+metaTitle: 可折叠组件
+metaDescription: 一个可展开/折叠面板的交互组件。
 name: collapsible
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure
 ---
 
-# Collapsible
+# 可折叠组件
 
 <Description>
-	An interactive component which expands/collapses a panel.
+	一个可展开/折叠面板的交互组件。
 </Description>
 
 <HeroContainer>
@@ -18,20 +18,20 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure
 <HeroCodeBlock folder="Collapsible" />
 
 <Highlights
-	features={["Full keyboard navigation.", "Can be controlled or uncontrolled."]}
+	features={["完全键盘导航。", "可以为受控或非受控。"]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-collapsible
 ```
 
-## Anatomy
+## 构成
 
-Import the components and piece the parts together.
+导入组件并将各个部分组合在一起。
 
 ```jsx
 import { Collapsible } from "radix-ui";
@@ -44,11 +44,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Contains all the parts of a collapsible.
+包含所有可折叠组件的部分。
 
 <PropsTable
 	data={[
@@ -59,12 +59,10 @@ Contains all the parts of a collapsible.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，同时合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -72,15 +70,14 @@ Contains all the parts of a collapsible.
 			name: "defaultOpen",
 			type: "boolean",
 			description:
-				"The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.",
+				"可折叠组件初始渲染时的打开状态。当你不需要控制其打开状态时使用。",
 		},
 		{
 			name: "open",
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the collapsible. Must be used in
-					conjunction with <Code>onOpenChange</Code>.
+					可折叠组件的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -89,15 +86,14 @@ Contains all the parts of a collapsible.
 			type: "(open: boolean) => void",
 			typeSimple: "function",
 			description:
-				"Event handler called when the open state of the collapsible changes.",
+				"当可折叠组件的打开状态发生变化时调用的事件处理程序。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					collapsible.
+					当 <Code>true</Code> 时，阻止用户与可折叠组件交互。
 				</span>
 			),
 		},
@@ -112,14 +108,14 @@ Contains all the parts of a collapsible.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "在禁用时显示",
 		},
 	]}
 />
 
 ### Trigger
 
-The button that toggles the collapsible.
+用于切换可折叠组件的按钮。
 
 <PropsTable
 	data={[
@@ -130,12 +126,10 @@ The button that toggles the collapsible.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，同时合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -150,14 +144,14 @@ The button that toggles the collapsible.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "在禁用时显示",
 		},
 	]}
 />
 
 ### Content
 
-The component that contains the collapsible content.
+包含可折叠内容的组件。
 
 <PropsTable
 	data={[
@@ -168,12 +162,10 @@ The component that contains the collapsible content.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染元素为作为子元素传入的元素，同时合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -181,7 +173,7 @@ The component that contains the collapsible content.
 			name: "forceMount",
 			type: "boolean",
 			description:
-				"Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
+				"在需要更多控制时用于强制挂载。与 React 动画库结合控制动画时非常有用。",
 		},
 	]}
 />
@@ -194,7 +186,7 @@ The component that contains the collapsible content.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "在禁用时显示",
 		},
 	]}
 />
@@ -203,20 +195,20 @@ The component that contains the collapsible content.
 	data={[
 		{
 			cssVariable: "--radix-collapsible-content-width",
-			description: "The width of the content when it opens/closes",
+			description: "内容展开/关闭时的宽度",
 		},
 		{
 			cssVariable: "--radix-collapsible-content-height",
-			description: "The height of the content when it opens/closes",
+			description: "内容展开/关闭时的高度",
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Animating content size
+### 动画内容大小
 
-Use the `--radix-collapsible-content-width` and/or `--radix-collapsible-content-height` CSS variables to animate the size of the content when it opens/closes. Here's a demo:
+使用 `--radix-collapsible-content-width` 和/或 `--radix-collapsible-content-height` CSS 变量在内容展开/关闭时对其大小进行动画处理。以下是演示：
 
 ```jsx line=8
 // index.jsx
@@ -264,21 +256,21 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Disclosure WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure).
+遵循 [Disclosure WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Opens/closes the collapsible.",
+			description: "打开/关闭可折叠组件。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Opens/closes the collapsible.",
+			description: "打开/关闭可折叠组件。",
 		},
 	]}
 />

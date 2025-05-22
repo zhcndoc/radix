@@ -1,33 +1,31 @@
 ---
-metaTitle: Strong
-metaDescription: Marks text to signify strong importance.
+metaTitle: 强调
+metaDescription: 标记文本以表示强烈的重要性。
 sourcePath: components/strong
 ---
 
 ```jsx live=true
 <Text>
-	The most important thing to remember is, <Strong>stay positive</Strong>.
+	最重要的一点是，<Strong>保持积极</Strong>。
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `strong` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `strong` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="strongPropDefs" />
 
-## Examples
+## 示例
 
-### Truncate
+### 缩略
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性在文本溢出其容器时用省略号缩略文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
 	<Strong truncate>
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是以一种比例关系，结合字体大小、行高和行宽，最大化美感，使阅读变得更容易和愉悦。
 	</Strong>
 </Flex>
 ```

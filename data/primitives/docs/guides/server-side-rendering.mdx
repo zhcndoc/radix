@@ -1,25 +1,25 @@
 ---
-metaTitle: Server-side rendering
-metaDescription: Radix Primitives can be rendered on the server. However, Primitives in React versions less than 18 rely on hydration for ids.
+metaTitle: 服务器端渲染
+metaDescription: Radix Primitives 可以在服务器上渲染。然而，低于 18 版本的 React 中的 Primitives 依赖于水合来处理 ids。
 ---
 
-# Server-side rendering
+# 服务器端渲染
 
 <Description>
-	Radix Primitives can be rendered on the server. However, Primitives in React
-	versions less than 18 rely on hydration for ids.
+	Radix Primitives 可以在服务器上渲染。然而，低于 18 版本的 React
+	中的 Primitives 依赖于水合来处理 ids。
 </Description>
 
-## Overview
+## 概述
 
-Server-side rendering or `SSR`, is a technique used to render components to HTML on the server, as opposed to rendering them only on the client.
+服务器端渲染或 `SSR` 是一种在服务器上将组件渲染为 HTML 的技术，而不是仅在客户端渲染它们。
 
-Static rendering is another similar approach. Instead it pre-renders pages to HTML at build time rather than on each request.
+静态渲染是另一种类似的方法。它在构建时将页面预渲染为 HTML，而不是在每次请求时。
 
-You should be able to use all of our primitives with both approaches, for example with [Next.js](https://nextjs.org/), [Remix](https://remix.run/), or [Gatsby](https://www.gatsbyjs.com/).
+您应该能够在这两种方法中使用我们所有的原语，例如与 [Next.js](https://nextjs.org/)、[Remix](https://remix.run/) 或 [Gatsby](https://www.gatsbyjs.com/) 一起使用。
 
-## Gotcha
+## 注意事项
 
-Primitives in React versions less than 18 rely on hydration for ids (used in aria attributes) to avoid server/client mismatch errors.
+低于 18 版本的 React 中的 Primitives 依赖于水合来处理 ids（用于 aria 属性），以避免服务器与客户端的不匹配错误。
 
-In other words, the equivalent of [Time to Interactive](https://web.dev/interactive/) for screen reader users will depend on the download speed of the JS bundle. If you'd like to generate ids server-side to improve this experience, we suggest upgrading to React 18.
+换句话说，对于屏幕阅读器用户，等效于 [交互时间](https://web.dev/interactive/) 的体验将取决于 JS 包的下载速度。如果您希望在服务器端生成 ids 以改善这一体验，我们建议您升级到 React 18。

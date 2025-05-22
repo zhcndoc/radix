@@ -1,147 +1,147 @@
 ---
-metaTitle: Tabs
-metaDescription: Set of content sections to be displayed one at a time.
+metaTitle: 标签
+metaDescription: 一组内容部分，一次显示一个。
 sourcePath: components/tabs
 ---
 
 ```jsx live=true
 <Tabs.Root defaultValue="account">
 	<Tabs.List>
-		<Tabs.Trigger value="account">Account</Tabs.Trigger>
-		<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-		<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+		<Tabs.Trigger value="account">账户</Tabs.Trigger>
+		<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+		<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 	</Tabs.List>
 
 	<Box pt="3">
 		<Tabs.Content value="account">
-			<Text size="2">Make changes to your account.</Text>
+			<Text size="2">对您的账户进行更改。</Text>
 		</Tabs.Content>
 
 		<Tabs.Content value="documents">
-			<Text size="2">Access and update your documents.</Text>
+			<Text size="2">访问并更新您的文档。</Text>
 		</Tabs.Content>
 
 		<Tabs.Content value="settings">
-			<Text size="2">Edit your profile or update contact information.</Text>
+			<Text size="2">编辑您的个人资料或更新联系信息。</Text>
 		</Tabs.Content>
 	</Box>
 </Tabs.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Tabs primitive](/primitives/docs/components/tabs) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [Tabs primitive](/primitives/docs/components/tabs) 的属性，并支持 [常用的边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根组件
 
-Contains all component parts.
+包含所有组件部分。
 
 <ThemesPropsTable defs="tabsRootPropDefs" />
 
-### List
+### 列表
 
-Contains the triggers that sit alongside the active content.
+包含与活动内容并列的触发器。
 
 <ThemesPropsTable defs="tabsListPropDefs" />
 
-### Trigger
+### 触发器
 
-The button that activates its associated content.
+激活其相关内容的按钮。
 
-### Content
+### 内容
 
-Contains the content associated with each trigger.
+包含与每个触发器关联的内容。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the tab list.
+使用 `size` 属性控制标签列表的大小。
 
 ```jsx live=true line="3,11"
 <Flex direction="column" gap="4" pb="2">
 	<Tabs.Root defaultValue="account">
 		<Tabs.List size="1">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 
 	<Tabs.Root defaultValue="account">
 		<Tabs.List size="2">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color) to the tab list.
+使用 `color` 属性为标签列表分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true line="3,11,19,27"
 <Flex direction="column" gap="4" pb="2">
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="indigo">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="cyan">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="orange">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="crimson">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live=true line="11"
 <Flex direction="column" gap="4" pb="2">
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="gray">
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 
 	<Tabs.Root defaultValue="account">
 		<Tabs.List color="gray" highContrast>
-			<Tabs.Trigger value="account">Account</Tabs.Trigger>
-			<Tabs.Trigger value="documents">Documents</Tabs.Trigger>
-			<Tabs.Trigger value="settings">Settings</Tabs.Trigger>
+			<Tabs.Trigger value="account">账户</Tabs.Trigger>
+			<Tabs.Trigger value="documents">文档</Tabs.Trigger>
+			<Tabs.Trigger value="settings">设置</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 </Flex>
 ```
 
-### Navigation
+### 导航
 
-Tabs should not be used for page navigation. Use [Tab Nav](/themes/docs/components/tab-nav) instead, which is designed for this purpose and has equivalent styles.
+标签不应用于页面导航。请使用 [Tab Nav](/themes/docs/components/tab-nav)，这是为此目的而设计的，具有等效样式。

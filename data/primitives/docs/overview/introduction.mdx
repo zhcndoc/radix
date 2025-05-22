@@ -1,57 +1,52 @@
 ---
-metaTitle: Introduction
-metaDescription: An open-source UI component library for building high-quality, accessible design systems and web apps.
+metaTitle: 引言
+metaDescription: 一个开源的 UI 组件库，用于构建高质量、可访问的设计系统和 Web 应用程序。
 ---
 
-# Introduction
+# 引言
 
 <Description>
-	An open-source UI component library for building high-quality, accessible
-	design systems and web apps.
+	一个开源的 UI 组件库，用于构建高质量、可访问的
+	设计系统和 Web 应用程序。
 </Description>
 
-Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.
+Radix Primitives 是一个低层次的 UI 组件库，专注于可访问性、定制化和开发者体验。您可以将这些组件用作设计系统的基础层，或者逐步采用它们。
 
-## Vision
+##愿景
 
-Most of us share similar definitions for common UI patterns like accordion, checkbox,
-combobox, dialog, dropdown, select, slider, and tooltip. These UI patterns are [documented by WAI-ARIA](https://www.w3.org/TR/wai-aria-practices/#aria_ex) and generally understood by the community.
+我们大多数人对常见的 UI 模式（如手风琴、复选框、组合框、对话框、下拉菜单、选择框、滑块和工具提示）有类似的定义。这些 UI 模式由 [WAI-ARIA](https://www.w3.org/TR/wai-aria-practices/#aria_ex) 进行文档记录，并被社区普遍理解。
 
-However, the implementations provided to us by the web platform are inadequate. They're
-either non-existent, lacking in functionality, or cannot be customized sufficiently.
+然而，网络平台提供给我们的实现是不够的。它们要么不存在，要么功能不全，或者无法足够定制。
 
-So, developers are forced to build custom components; an incredibly difficult task. As a
-result, most components on the web are inaccessible, non-performant, and lacking important
-features.
+因此，开发者被迫构建自定义组件，这是一项极其困难的任务。结果，网络上的大多数组件都是不可访问的、性能不佳的，并且缺乏重要功能。
 
-Our goal is to create a well-funded, open-source component library that the community can
-use to build accessible design systems.
+我们的目标是创建一个资金充足的开源组件库，供社区使用以构建可访问的设计系统。
 
-## Key Features
+## 主要特点
 
-### Accessible
+### 可访问性
 
-Components adhere to the [WAI-ARIA design patterns](https://www.w3.org/TR/wai-aria-practices-1.2) where possible. We handle many of the difficult implementation details related to accessibility, including aria and role attributes, focus management, and keyboard navigation. Learn more in our [accessibility](./accessibility) overview.
+组件在可能的情况下遵循 [WAI-ARIA 设计模式](https://www.w3.org/TR/wai-aria-practices-1.2)。我们处理许多与可访问性相关的复杂实现细节，包括 aria 和 role 属性、焦点管理和键盘导航。了解更多信息，请查看我们的 [可访问性](./accessibility) 概述。
 
-### Unstyled
+### 无样式
 
-Components ship without styles, giving you complete control over the look and feel. Components can be styled with any styling solution. Learn more in our [styling](../guides/styling) guide.
+组件出厂时没有样式，您可以完全控制外观和感觉。组件可以使用任何样式解决方案进行样式设置。了解更多信息，请查看我们的 [样式](../guides/styling) 指南。
 
-### Opened
+### 可定制
 
-Radix Primitives are designed to be customized to suit your needs. Our open component architecture provides you granular access to each component part, so you can wrap them and add your own event listeners, props, or refs.
+Radix Primitives 旨在根据您的需求进行定制。我们的开放组件架构为您提供对每个组件部分的细粒度访问，以便您可以包装它们并添加自己的事件监听器、props 或 refs。
 
-### Uncontrolled
+### 非受控
 
-Where applicable, components are uncontrolled by default but can also be controlled, alternatively. All of the behavior wiring is handled internally, so you can get up and running as smoothly as possible, without needing to create any local states.
+在适用的情况下，组件默认是非受控的，但也可以选择受控。所有的行为连接都会在内部处理，因此您可以尽可能顺利地启动，而无需创建任何本地状态。
 
-### Developer experience
+### 开发者体验
 
-One of our main goals is to provide the best possible developer experience. Radix Primitives provides a fully-typed API. All components share a similar API, creating a consistent and predictable experience. We've also implemented an `asChild` prop, giving users full control over the rendered element.
+我们主要的目标之一是提供最佳的开发者体验。Radix Primitives 提供了一个完全类型化的 API。所有组件共享类似的 API，从而创建一致且可预测的体验。我们还实现了 `asChild` 属性，使用户可以完全控制渲染的元素。
 
-### Incremental adoption
+### 渐进式采用
 
-We recommend installing the `radix-ui` package and importing the primitives you need. This is the simplest way to get started, prevent version conflicts or duplication, and makes it easy to manage updates. The package is tree-shakeable, so you should only ship the components you use.
+我们建议安装 `radix-ui` 包并导入您所需的原语。这是开始的最简单方法，可以防止版本冲突或重复，并使管理更新变得简单。该包是可树摇的，因此您只需发送所使用的组件。
 
 ```bash
 npm install radix-ui
@@ -61,7 +56,7 @@ npm install radix-ui
 import { Dialog, DropdownMenu, Tooltip } from "radix-ui";
 ```
 
-Alternatively, each primitive can be installed individually:
+另外，每个原语也可以单独安装：
 
 ```bash
 npm install @radix-ui/react-dialog
@@ -75,15 +70,15 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as Tooltip from "@radix-ui/react-tooltip";
 ```
 
-When installing separately, we recommend updating all Radix packages together to prevent duplication of shared dependencies and keep your bundle size down.
+在单独安装时，我们建议同时更新所有 Radix 包，以防止共享依赖项的重复并保持您的包大小减小。
 
-## Community
+## 社区
 
-To get involved with the Radix community, ask questions and share tips, [Join our Discord](https://discord.com/invite/7Xb99uG).
+要参与 Radix 社区，询问问题和分享技巧，[加入我们的 Discord](https://discord.com/invite/7Xb99uG)。
 
-To receive updates on new primitives, announcements, blog posts, and general Radix tips, follow along on [Bluesky](https://bsky.app/profile/radix-ui.com) or [Twitter](https://twitter.com/radix_ui).
+要接收有关新原语、公告、博客文章和一般 Radix 提示的更新，请关注 [Bluesky](https://bsky.app/profile/radix-ui.com) 或 [Twitter](https://twitter.com/radix_ui)。
 
-To file issues, request features, and contribute, check out our GitHub.
+要报告问题、请求功能和贡献，请查看我们的 GitHub。
 
-- [GitHub repo](https://github.com/radix-ui/primitives)
-- [Code of conduct](https://github.com/radix-ui/primitives/blob/main/CODE_OF_CONDUCT.md)
+- [GitHub 仓库](https://github.com/radix-ui/primitives)
+- [行为守则](https://github.com/radix-ui/primitives/blob/main/CODE_OF_CONDUCT.md)

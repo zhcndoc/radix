@@ -1,134 +1,134 @@
 ---
-metaTitle: Link
-metaDescription: Semantic element for navigation between pages.
+metaTitle: 链接
+metaDescription: 用于页面之间导航的语义元素。
 sourcePath: components/link
 ---
 
 ```jsx live=true
-<Link href="#">Sign up</Link>
+<Link href="#">注册</Link>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `a` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `a` 元素，支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="linkPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control the size of the link. The prop also provides correct line height and corrective letter spacing—as text size increases, the relative line height and letter spacing decrease.
+使用 `size` 属性来控制链接的大小。该属性还提供正确的行高和校正的字母间距—随着文本大小的增加，相对的行高和字母间距减小。
 
 ```jsx live=true scroll=true
 <Flex direction="column" gap="3">
 	<Link href="#" size="1">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="2">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="3">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="4">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="5">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="6">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="7">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="8">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" size="9">
-		Sign up
+		注册
 	</Link>
 </Flex>
 ```
 
-### Weight
+### 字重
 
-Use the `weight` prop to set the text weight.
+使用 `weight` 属性设置文本的字重。
 
 ```jsx live="true"
 <Flex direction="column">
 	<Link href="#" weight="regular">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" weight="medium">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" weight="bold">
-		Sign up
+		注册
 	</Link>
 </Flex>
 ```
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性在文本溢出其容器时用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="150px">
 	<Link href="#" truncate>
-		Sign up to the newsletter
+		注册新闻通讯
 	</Link>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true scroll=true
 <Flex direction="column">
 	<Link href="#" color="indigo">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" color="cyan">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" color="orange">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" color="crimson">
-		Sign up
+		注册
 	</Link>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live=true scroll=true
 <Flex direction="column">
 	<Link href="#" color="gray">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" color="gray" highContrast>
-		Sign up
+		注册
 	</Link>
 </Flex>
 ```
 
-### Underline
+### 下划线
 
-Use the `underline` prop to manage the visibility of the underline affordance.
+使用 `underline` 属性管理下划线的可见性。
 
 ```jsx live="true" scroll=true
 <Flex direction="column">
 	<Link href="#" underline="hover">
-		Sign up
+		注册
 	</Link>
 	<Link href="#" underline="always">
-		Sign up
+		注册
 	</Link>
 </Flex>
 ```

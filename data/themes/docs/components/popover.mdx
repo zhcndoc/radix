@@ -1,6 +1,6 @@
 ---
-metaTitle: Popover
-metaDescription: Floating element for displaying rich content, triggered by a button.
+metaTitle: 弹出框
+metaDescription: 用于显示丰富内容的浮动元素，触发方式为按钮。
 sourcePath: components/popover
 ---
 
@@ -9,7 +9,7 @@ sourcePath: components/popover
 	<Popover.Trigger>
 		<Button variant="soft">
 			<ChatBubbleIcon width="16" height="16" />
-			Comment
+			评论
 		</Button>
 	</Popover.Trigger>
 	<Popover.Content width="360px">
@@ -21,17 +21,17 @@ sourcePath: components/popover
 				radius="full"
 			/>
 			<Box flexGrow="1">
-				<TextArea placeholder="Write a comment…" style={{ height: 80 }} />
+				<TextArea placeholder="写评论…" style={{ height: 80 }} />
 				<Flex gap="3" mt="3" justify="between">
 					<Flex align="center" gap="2" asChild>
 						<Text as="label" size="2">
 							<Checkbox />
-							<Text>Send to group</Text>
+							<Text>发给群组</Text>
 						</Text>
 					</Flex>
 
 					<Popover.Close>
-						<Button size="1">Comment</Button>
+						<Button size="1">评论</Button>
 					</Popover.Close>
 				</Flex>
 			</Box>
@@ -40,93 +40,93 @@ sourcePath: components/popover
 </Popover.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Popover primitive](/primitives/docs/components/popover).
+该组件继承自 [Popover 基本组件](/primitives/docs/components/popover) 的属性。
 
-### Root
+### 根组件
 
-Contains all the parts of a popover.
+包含弹出框的所有部分。
 
-### Trigger
+### 触发器
 
-Wraps the control that will open the popover.
+包裹将打开弹出框的控件。
 
-### Content
+### 内容
 
-Contains content to be rendered in the open popover. This component is based on the `div` element.
+包含在打开的弹出框中渲染的内容。该组件基于 `div` 元素。
 
 <ThemesPropsTable defs="popoverContentPropDefs" />
 
-### Close
+### 关闭
 
-Wraps the control that will close the popover.
+包裹将关闭弹出框的控件。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control size of the popover. It will affect the `padding` and `border-radius` of the Content.
-Use it in conjunction with the `width`/`minWidth`/`maxWidth` and `height`/`minHeight`/`maxHeight` props to control the size of the popover.
+使用 `size` 属性控制弹出框的大小。它会影响内容的 `padding` 和 `border-radius`。
+将其与 `width`/`minWidth`/`maxWidth` 和 `height`/`minHeight`/`maxHeight` 属性结合使用以控制弹出框的大小。
 
 ```jsx live=true line=6,17,28,39
 <Flex gap="4" align="center">
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button variant="soft">Size 1</Button>
+			<Button variant="soft">尺寸 1</Button>
 		</Popover.Trigger>
 		<Popover.Content __size__="1" maxWidth="300px">
 			<Text as="p" trim="both" size="1">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</Popover.Content>
 	</Popover.Root>
 
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button variant="soft">Size 2</Button>
+			<Button variant="soft">尺寸 2</Button>
 		</Popover.Trigger>
 		<Popover.Content __size__="2" maxWidth="400px">
 			<Text as="p" trim="both" size="2">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</Popover.Content>
 	</Popover.Root>
 
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button variant="soft">Size 3</Button>
+			<Button variant="soft">尺寸 3</Button>
 		</Popover.Trigger>
 		<Popover.Content __size__="3" maxWidth="500px">
 			<Text as="p" trim="both" size="3">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</Popover.Content>
 	</Popover.Root>
 
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button variant="soft">Size 4</Button>
+			<Button variant="soft">尺寸 4</Button>
 		</Popover.Trigger>
 		<Popover.Content __size__="4">
 			<Text as="p" trim="both" size="4">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</Popover.Content>
 	</Popover.Root>
 </Flex>
 ```
 
-### With inset content
+### 带内嵌内容
 
-Use the [Inset](/themes/docs/components/inset) component to align content flush with the sides of the popover.
+使用 [Inset](/themes/docs/components/inset) 组件使内容与弹出框的边缘对齐。
 
 ```jsx live=true
 <Popover.Root>
 	<Popover.Trigger>
 		<Button variant="soft">
 			<Share2Icon width="16" height="16" />
-			Share image
+			分享图片
 		</Button>
 	</Popover.Trigger>
 	<Popover.Content width="360px">
@@ -140,17 +140,17 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 
 			<div>
 				<Heading size="2" mb="1">
-					Share this image
+					分享这张图片
 				</Heading>
 				<Text as="p" size="2" mb="4" color="gray">
-					Minimalistic 3D rendering wallpaper.
+					极简主义的 3D 渲染壁纸。
 				</Text>
 
 				<Flex direction="column" align="stretch">
 					<Popover.Close>
 						<Button size="1" variant="soft">
 							<Link1Icon width="16" height="16" />
-							Copy link
+							复制链接
 						</Button>
 					</Popover.Close>
 				</Flex>

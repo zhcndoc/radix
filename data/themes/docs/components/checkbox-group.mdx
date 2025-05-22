@@ -1,36 +1,36 @@
 ---
-metaTitle: Checkbox Group
-metaDescription: Set of interactive buttons where multiple options can be selected at a time.
+metaTitle: 复选框组
+metaDescription: 一组交互式按钮，可以同时选择多个选项。
 sourcePath: components/checkbox-group
 ---
 
 ```jsx live=true
 <CheckboxGroup.Root defaultValue={["1"]} name="example">
-	<CheckboxGroup.Item value="1">Fun</CheckboxGroup.Item>
-	<CheckboxGroup.Item value="2">Serious</CheckboxGroup.Item>
-	<CheckboxGroup.Item value="3">Smart</CheckboxGroup.Item>
+	<CheckboxGroup.Item value="1">有趣</CheckboxGroup.Item>
+	<CheckboxGroup.Item value="2">严肃</CheckboxGroup.Item>
+	<CheckboxGroup.Item value="3">聪明</CheckboxGroup.Item>
 </CheckboxGroup.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `div` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `div` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 ### Root
 
-Contains all the parts of a checkbox group.
+包含复选框组的所有部分。
 
 <ThemesPropsTable defs="checkboxGroupRootPropDefs" />
 
 ### Item
 
-An item in the group that can be checked.
+组中的一个可被选中的项。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the checkbox size.
+使用 `size` 属性来控制复选框的大小。
 
 ```jsx live=true
 <Flex align="center" gap="2">
@@ -48,9 +48,9 @@ Use the `size` prop to control the checkbox size.
 </Flex>
 ```
 
-### Variant
+### 样式
 
-Use the `variant` prop to control the visual style of the checkboxes.
+使用 `variant` 属性来控制复选框的视觉样式。
 
 ```jsx live=true
 <Flex gap="2">
@@ -77,9 +77,9 @@ Use the `variant` prop to control the visual style of the checkboxes.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="2">
@@ -101,9 +101,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的对比度。
 
 ```jsx live=true
 <Grid rows="2" gap="2" display="inline-grid" flow="column">
@@ -149,22 +149,22 @@ Use the `highContrast` prop to increase color contrast with the background.
 </Grid>
 ```
 
-### Alignment
+### 对齐
 
-Composing `CheckboxGroup.Item` within `Text` automatically centers it with the first line of text.
+将 `CheckboxGroup.Item` 组合在 `Text` 中可以自动与第一行文本居中对齐。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
 	<CheckboxGroup.Root size="1" defaultValue="1">
 		<Text as="label" size="2">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="1" /> Default
+				<CheckboxGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="2">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="2" /> Compact
+				<CheckboxGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</CheckboxGroup.Root>
@@ -172,13 +172,13 @@ Composing `CheckboxGroup.Item` within `Text` automatically centers it with the f
 	<CheckboxGroup.Root size="2" defaultValue="1">
 		<Text as="label" size="3">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="1" /> Default
+				<CheckboxGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="3">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="2" /> Compact
+				<CheckboxGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</CheckboxGroup.Root>
@@ -186,38 +186,38 @@ Composing `CheckboxGroup.Item` within `Text` automatically centers it with the f
 	<CheckboxGroup.Root size="3" defaultValue="1">
 		<Text as="label" size="4">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="1" /> Default
+				<CheckboxGroup.Item value="1" /> 默认
 			</Flex>
 		</Text>
 
 		<Text as="label" size="4">
 			<Flex gap="2">
-				<CheckboxGroup.Item value="2" /> Compact
+				<CheckboxGroup.Item value="2" /> 紧凑
 			</Flex>
 		</Text>
 	</CheckboxGroup.Root>
 </Flex>
 ```
 
-It is automatically well-aligned with multi-line text too.
+它也会与多行文本自动对齐。
 
-### Disabled
+### 禁用
 
-Use the native `disabled` attribute to create a disabled checkbox.
+使用原生 `disabled` 属性创建一个禁用的复选框。
 
 ```jsx live="true"
 <Flex direction="column" gap="2">
 	<CheckboxGroup.Root defaultValue="2">
-		<CheckboxGroup.Item value="1">Off</CheckboxGroup.Item>
-		<CheckboxGroup.Item value="2">On</CheckboxGroup.Item>
+		<CheckboxGroup.Item value="1">关闭</CheckboxGroup.Item>
+		<CheckboxGroup.Item value="2">开启</CheckboxGroup.Item>
 	</CheckboxGroup.Root>
 
 	<CheckboxGroup.Root defaultValue="2">
 		<CheckboxGroup.Item value="1" disabled>
-			Off
+			关闭
 		</CheckboxGroup.Item>
 		<CheckboxGroup.Item value="2" disabled>
-			On
+			开启
 		</CheckboxGroup.Item>
 	</CheckboxGroup.Root>
 </Flex>

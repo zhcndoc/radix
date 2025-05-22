@@ -1,34 +1,34 @@
 ---
-metaTitle: Shadows
-metaDescription: Understanding the shadow styles used in your theme.
+metaTitle: 阴影
+metaDescription: 理解您主题中使用的阴影样式。
 ---
 
-# Shadows
+# 阴影
 
-<Description>Understanding the shadow styles used in your theme.</Description>
+<Description>理解您主题中使用的阴影样式。</Description>
 
-Shadows used in the components are derived from a 6-step scale. Refer to the [source code](https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/shadow.css) for the actual values used to achieve these shadows.
+组件中使用的阴影来源于一个六级尺度。有关实现这些阴影的实际值，请参考 [源代码](https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/shadow.css)。
 
 <Box mt="5" mb="6">
 	<ThemesShadowScale />
 </Box>
 
-#### Shadow tokens
+#### 阴影代币
 
-Shadow tokens can be accessed using CSS variables. You can use these tokens to style your custom components, ensuring they are consistent with the rest of your theme.
+阴影代币可以通过 CSS 变量访问。您可以使用这些代币来样式化您的自定义组件，确保它们与您主题的其余部分保持一致。
 
 ```css
-/* Inset shadow */
+/* 内嵌阴影 */
 var(--shadow-1);
 
-/* Shadows for variant="classic" panels, like Card */
+/* 用于 variant="classic" 面板的阴影，如 Card */
 var(--shadow-2);
 var(--shadow-3);
 
-/* Shadows for smaller overlay panels, like Hover Card and Popover */
+/* 用于较小的浮层面板的阴影，如 Hover Card 和 Popover */
 var(--shadow-4);
 var(--shadow-5);
 
-/* Shadows for larger overlay panels, like Dialog */
+/* 用于较大浮层面板的阴影，如 Dialog */
 var(--shadow-6);
 ```

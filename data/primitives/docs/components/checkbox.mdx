@@ -1,14 +1,14 @@
 ---
-metaTitle: Checkbox
-metaDescription: A control that allows the user to toggle between checked and not checked.
+metaTitle: 复选框
+metaDescription: 一种允许用户在选中和未选中之间切换的控件。
 name: checkbox
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox
 ---
 
-# Checkbox
+# 复选框
 
 <Description>
-	A control that allows the user to toggle between checked and not checked.
+	一种允许用户在选中和未选中之间切换的控件。
 </Description>
 
 <HeroContainer>
@@ -19,23 +19,23 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox
 
 <Highlights
 	features={[
-		"Supports indeterminate state.",
-		"Full keyboard navigation.",
-		"Can be controlled or uncontrolled.",
+		"支持不确定状态。",
+		"完全的键盘导航。",
+		"可以是受控或非受控的。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-checkbox
 ```
 
-## Anatomy
+## 解剖结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Checkbox } from "radix-ui";
@@ -47,11 +47,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Contains all the parts of a checkbox. An `input` will also render when used within a `form` to ensure events propagate correctly.
+包含复选框的所有部分。当在 `form` 中使用时，将渲染一个 `input` 以确保事件正确传播。
 
 <PropsTable
 	data={[
@@ -62,12 +62,10 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染的元素为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -75,15 +73,14 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			name: "defaultChecked",
 			type: `boolean | 'indeterminate'`,
 			description:
-				"The checked state of the checkbox when it is initially rendered. Use when you do not need to control its checked state.",
+				"复选框在初次渲染时的选中状态。当您不需要控制其选中状态时使用。",
 		},
 		{
 			name: "checked",
 			type: `boolean | 'indeterminate'`,
 			description: (
 				<span>
-					The controlled checked state of the checkbox. Must be used in
-					conjunction with <Code>onCheckedChange</Code>.
+					复选框的受控选中状态。必须与 <Code>onCheckedChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -92,15 +89,14 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			type: `(checked: boolean | 'indeterminate') => void`,
 			typeSimple: "function",
 			description:
-				"Event handler called when the checked state of the checkbox changes.",
+				"当复选框的选中状态发生变化时调用的事件处理程序。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					checkbox.
+					当 <Code>true</Code> 时，阻止用户与复选框交互。
 				</span>
 			),
 		},
@@ -109,8 +105,7 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, indicates that the user must check the
-					checkbox before the owning form can be submitted.
+					当 <Code>true</Code> 时，表示用户必须在提交拥有的表单之前选中复选框。
 				</span>
 			),
 		},
@@ -118,7 +113,7 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			name: "name",
 			type: "string",
 			description:
-				"The name of the checkbox. Submitted with its owning form as part of a name/value pair.",
+				"复选框的名称。作为名称/值对的一部分与其拥有的表单一起提交。",
 		},
 		{
 			name: "value",
@@ -126,7 +121,7 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 			default: "on",
 			description: (
 				<span>
-					The value given as data when submitted with a <Code>name</Code>.
+					作为数据提交时连接的值与 <Code>name</Code> 一起使用。
 				</span>
 			),
 		},
@@ -141,14 +136,14 @@ Contains all the parts of a checkbox. An `input` will also render when used with
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 	]}
 />
 
 ### Indicator
 
-Renders when the checkbox is in a checked or indeterminate state. You can style this element directly, or you can use it as a wrapper to put an icon into, or both.
+在复选框处于选中或不确定状态时渲染。您可以直接为此元素设置样式，或者可以将其作为包装器放入图标，或者两者都可以。
 
 <PropsTable
 	data={[
@@ -159,12 +154,10 @@ Renders when the checkbox is in a checked or indeterminate state. You can style 
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					更改默认渲染的元素为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -172,7 +165,7 @@ Renders when the checkbox is in a checked or indeterminate state. You can style 
 			name: "forceMount",
 			type: "boolean",
 			description:
-				"Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
+				"用于在需要更多控制时强制挂载。控制与 React 动画库的动画时非常有用。",
 		},
 	]}
 />
@@ -185,16 +178,16 @@ Renders when the checkbox is in a checked or indeterminate state. You can style 
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Indeterminate
+### 不确定状态
 
-You can set the checkbox to `indeterminate` by taking control of its state.
+您可以通过控制其状态将复选框设置为 `indeterminate`。
 
 ```jsx line=5,9-14,16
 import { DividerHorizontalIcon, CheckIcon } from "@radix-ui/react-icons";
@@ -220,24 +213,24 @@ export default () => {
 					)
 				}
 			>
-				Toggle indeterminate
+				切换不确定状态
 			</button>
 		</>
 	);
 };
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [tri-state Checkbox WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox).
+遵循 [三态复选框 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Checks/unchecks the checkbox.",
+			description: "选中/取消选中复选框。",
 		},
 	]}
 />

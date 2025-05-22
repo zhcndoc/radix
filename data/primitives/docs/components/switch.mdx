@@ -1,14 +1,14 @@
 ---
-metaTitle: Switch
-metaDescription: A control that allows the user to toggle between checked and not checked.
+metaTitle: 开关
+metaDescription: 允许用户在选中和未选中之间切换的控件。
 name: switch
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/switch
 ---
 
-# Switch
+# 开关
 
 <Description>
-	A control that allows the user to toggle between checked and not checked.
+	允许用户在选中和未选中之间切换的控件。
 </Description>
 
 <HeroContainer>
@@ -18,20 +18,20 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/switch
 <HeroCodeBlock folder="Switch" />
 
 <Highlights
-	features={["Full keyboard navigation.", "Can be controlled or uncontrolled."]}
+	features={["完整的键盘导航。", "可以是受控或非受控。"]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-switch
 ```
 
-## Anatomy
+## 解剖
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Switch } from "radix-ui";
@@ -43,11 +43,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains all the parts of a switch. An `input` will also render when used within a `form` to ensure events propagate correctly.
+包含开关的所有部分。使用在`form`内时也会渲染一个`input`，以确保事件正确传播。
 
 <PropsTable
 	data={[
@@ -58,12 +58,12 @@ Contains all the parts of a switch. An `input` will also render when used within
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					改变默认渲染的元素为作为子元素传入的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多详细信息。
 				</>
 			),
 		},
@@ -71,15 +71,15 @@ Contains all the parts of a switch. An `input` will also render when used within
 			name: "defaultChecked",
 			type: "boolean",
 			description:
-				"The state of the switch when it is initially rendered. Use when you do not need to control its state.",
+				"开关在初始渲染时的状态。当您不需要控制其状态时使用。",
 		},
 		{
 			name: "checked",
 			type: "boolean",
 			description: (
 				<span>
-					The controlled state of the switch. Must be used in conjunction with{" "}
-					<Code>onCheckedChange</Code>.
+					开关的受控状态。必须与{" "}
+					<Code>onCheckedChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -87,15 +87,14 @@ Contains all the parts of a switch. An `input` will also render when used within
 			name: "onCheckedChange",
 			type: "(checked: boolean) => void",
 			typeSimple: "function",
-			description: "Event handler called when the state of the switch changes.",
+			description: "开关状态变化时调用的事件处理程序。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					switch.
+					当 <Code>true</Code> 时，阻止用户与开关交互。
 				</span>
 			),
 		},
@@ -104,8 +103,7 @@ Contains all the parts of a switch. An `input` will also render when used within
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, indicates that the user must check the switch
-					before the owning form can be submitted.
+					当 <Code>true</Code> 时，表示用户必须在提交拥有的表单之前检查开关。
 				</span>
 			),
 		},
@@ -113,7 +111,7 @@ Contains all the parts of a switch. An `input` will also render when used within
 			name: "name",
 			type: "string",
 			description:
-				"The name of the switch. Submitted with its owning form as part of a name/value pair.",
+				"开关的名称。作为名称/值对的一部分与其拥有的表单一起提交。",
 		},
 		{
 			name: "value",
@@ -121,7 +119,7 @@ Contains all the parts of a switch. An `input` will also render when used within
 			default: "on",
 			description: (
 				<span>
-					The value given as data when submitted with a <Code>name</Code>.
+					作为数据提交时提供的值与 <Code>name</Code> 一起。
 				</span>
 			),
 		},
@@ -136,14 +134,14 @@ Contains all the parts of a switch. An `input` will also render when used within
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时出现",
 		},
 	]}
 />
 
-### Thumb
+### 拇指
 
-The thumb that is used to visually indicate whether the switch is on or off.
+用于直观指示开关是开还是关的部分。
 
 <PropsTable
 	data={[
@@ -154,12 +152,12 @@ The thumb that is used to visually indicate whether the switch is on or off.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					改变默认渲染的元素为作为子元素传入的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+					更多详细信息。
 				</>
 			),
 		},
@@ -174,26 +172,26 @@ The thumb that is used to visually indicate whether the switch is on or off.
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时出现",
 		},
 	]}
 />
 
-## Accessibility
+## 可及性
 
-Adheres to the [`switch` role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/switch).
+符合[`switch`角色要求](https://www.w3.org/WAI/ARIA/apg/patterns/switch)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Toggles the component's state.",
+			description: "切换组件的状态。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Toggles the component's state.",
+			description: "切换组件的状态。",
 		},
 	]}
 />

@@ -1,33 +1,33 @@
 ---
-metaTitle: Portal
-metaDescription: Renders a React subtree in a different part of the DOM.
+metaTitle: 传送门
+metaDescription: 在 DOM 的不同部分渲染一个 React 子树。
 name: portal
 ---
 
-# Portal
+# 传送门
 
 <Description>
-	Renders a React subtree in a different part of the DOM.
+	在 DOM 的不同部分渲染一个 React 子树。
 </Description>
 
 <Highlights
 	features={[
-		"Render any React subtree outside of your App.",
-		"Appends to `document.body` by default but can be customized to use a different container.",
+		"在应用程序外渲染任何 React 子树。",
+		"默认情况下附加到 `document.body`，但可以自定义为使用不同的容器。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-portal
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Portal } from "radix-ui";
@@ -35,21 +35,21 @@ import { Portal } from "radix-ui";
 export default () => <Portal.Root />;
 ```
 
-## Basic example
+## 基本示例
 
-Use the portal primitive.
+使用传送门原语。
 
 ```jsx
 import { Portal } from "radix-ui";
 
-export default () => <Portal.Root>Content</Portal.Root>;
+export default () => <Portal.Root>内容</Portal.Root>;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根节点
 
-Anything you put inside this component will be rendered in a separate `<div>` element. By default, this element will be appended to `document.body` but you can choose a different container by using the `container` prop.
+放在此组件中的任何内容都会被渲染在一个单独的 `<div>` 元素中。默认情况下，该元素将附加到 `document.body`，但您可以通过使用 `container` 属性选择不同的容器。
 
 <PropsTable
 	data={[
@@ -60,12 +60,10 @@ Anything you put inside this component will be rendered in a separate `<div>` el
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -73,7 +71,7 @@ Anything you put inside this component will be rendered in a separate `<div>` el
 			name: "container",
 			type: "HTMLElement",
 			description:
-				"A optional different container where the portaled content should be appended.",
+				"一个可选的不同容器，传送的内容将被附加到该容器中。",
 		},
 	]}
 />

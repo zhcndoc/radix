@@ -1,14 +1,14 @@
 ---
-metaTitle: Select
-metaDescription: Displays a list of options for the user to pick from—triggered by a button.
+metaTitle: 选择
+metaDescription: 显示一个选项列表供用户选择——由一个按钮触发。
 name: select
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/listbox
 ---
 
-# Select
+# 选择
 
 <Description>
-	Displays a list of options for the user to pick from—triggered by a button.
+	显示一个选项列表供用户选择——由一个按钮触发。
 </Description>
 
 <HeroContainer>
@@ -19,28 +19,28 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/listbox
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Offers 2 positioning modes.",
-		"Supports items, labels, groups of items.",
-		"Focus is fully managed.",
-		"Full keyboard navigation.",
-		"Supports custom placeholder.",
-		"Typeahead support.",
-		"Supports Right to Left direction.",
+		"可以是受控或非受控。",
+		"提供2种定位模式。",
+		"支持项目、标签和项目组。",
+		"焦点完全管理。",
+		"完整的键盘导航。",
+		"支持自定义占位符。",
+		"支持类型预测。",
+		"支持从右到左的方向。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-select
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部分并组合它们。
 
 ```jsx
 import { Select } from "radix-ui";
@@ -79,11 +79,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根元素
 
-Contains all the parts of a select.
+包含选择的所有部分。
 
 <PropsTable
 	data={[
@@ -92,7 +92,7 @@ Contains all the parts of a select.
 			required: false,
 			type: "string",
 			description:
-				"The value of the select when initially rendered. Use when you do not need to control the state of the select.",
+				"选择在首次呈现时的值。仅在不需要控制选择的状态时使用。",
 		},
 		{
 			name: "value",
@@ -100,8 +100,8 @@ Contains all the parts of a select.
 			type: "string",
 			description: (
 				<span>
-					The controlled value of the select. Should be used in conjunction with{" "}
-					<Code>onValueChange</Code>.
+					选择的受控值。应与{" "}
+					<Code>onValueChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -110,21 +110,20 @@ Contains all the parts of a select.
 			required: false,
 			type: "(value: string) => void",
 			typeSimple: "function",
-			description: "Event handler called when the value changes.",
+			description: "值更改时调用的事件处理程序。",
 		},
 		{
 			name: "defaultOpen",
 			type: "boolean",
 			description:
-				"The open state of the select when it is initially rendered. Use when you do not need to control its open state.",
+				"选择在首次呈现时的打开状态。仅在不需要控制其打开状态时使用。",
 		},
 		{
 			name: "open",
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the select. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					选择的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -134,7 +133,7 @@ Contains all the parts of a select.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the select changes.
+					打开状态更改时调用的事件处理程序。
 				</span>
 			),
 		},
@@ -145,9 +144,7 @@ Contains all the parts of a select.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the select when applicable. If omitted,
-					inherits globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
+					选择的阅读方向（如适用）。如果省略，则从 <Code>DirectionProvider</Code> 全局继承，或假定为 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
@@ -155,15 +152,14 @@ Contains all the parts of a select.
 			name: "name",
 			type: "string",
 			description:
-				"The name of the select. Submitted with its owning form as part of a name/value pair.",
+				"选择的名称。作为名称/值对的一部分与其所属表单一起提交。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with
-					select.
+					当 <Code>true</Code> 时，防止用户与选择交互。
 				</span>
 			),
 		},
@@ -172,17 +168,16 @@ Contains all the parts of a select.
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, indicates that the user must select a value
-					before the owning form can be submitted.
+					当 <Code>true</Code> 时，表示用户必须选择一个值，才能提交其所属表单。
 				</span>
 			),
 		},
 	]}
 />
 
-### Trigger
+### 触发器
 
-The button that toggles the select. The `Select.Content` will position itself by aligning over the trigger.
+切换选择的按钮。`Select.Content` 将通过与触发器对齐来定位自己。
 
 <PropsTable
 	data={[
@@ -193,12 +188,10 @@ The button that toggles the select. The `Select.Content` will position itself by
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -209,22 +202,22 @@ The button that toggles the select. The `Select.Content` will position itself by
 	data={[
 		{
 			attribute: "[data-state]",
-			values: ["open", "closed"],
+			values: ["打开", "关闭"],
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 		{
 			attribute: "[data-placeholder]",
-			values: "Present when has placeholder",
+			values: "有占位符时存在",
 		},
 	]}
 />
 
-### Value
+### 值
 
-The part that reflects the selected value. By default the selected item's text will be rendered. if you require more control, you can instead control the select and pass your own `children`. It should not be styled to ensure correct positioning. An optional `placeholder` prop is also available for when the select has no value.
+反映所选值的部分。默认情况下，将渲染所选项目的文本。如果您需要更多控制，可以控制选择并传递自己的 `children`。它不应被样式化以确保正确定位。也可以提供一个可选的 `placeholder` 属性，以便选择没有值时使用。
 
 <PropsTable
 	data={[
@@ -235,12 +228,10 @@ The part that reflects the selected value. By default the selected item's text w
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					读取我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -250,17 +241,16 @@ The part that reflects the selected value. By default the selected item's text w
 			type: "ReactNode",
 			description: (
 				<>
-					The content that will be rendered inside the <Code>Select.Value</Code>{" "}
-					when no <Code>value</Code> or <Code>defaultValue</Code> is set.
+					选择中的内容，当没有设置 <Code>value</Code> 或 <Code>defaultValue</Code> 时，将渲染在 <Code>Select.Value</Code> 中。
 				</>
 			),
 		},
 	]}
 />
 
-### Icon
+### 图标
 
-A small icon often displayed next to the value as a visual affordance for the fact it can be open. By default renders ▼ but you can use your own icon via `asChild` or use `children`.
+通常显示在值旁边的小图标，为其可打开的事实提供视觉提示。默认渲染为 ▼，但您可以通过 `asChild` 使用您自己的图标，或使用 `children`。
 
 <PropsTable
 	data={[
@@ -271,21 +261,19 @@ A small icon often displayed next to the value as a visual affordance for the fa
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Portal
+### 门户
 
-When used, portals the content part into the `body`.
+使用时，将内容部分传送到 `body`。
 
 <PropsTable
 	data={[
@@ -293,14 +281,14 @@ When used, portals the content part into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定一个容器元素以传送内容。",
 		},
 	]}
 />
 
-### Content
+### 内容
 
-The component that pops out when the select is open.
+选择打开时弹出的组件。
 
 <PropsTable
 	data={[
@@ -311,12 +299,10 @@ The component that pops out when the select is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -326,8 +312,7 @@ The component that pops out when the select is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves to the trigger after closing. It
-					can be prevented by calling <Code>event.preventDefault</Code>.
+					关闭后，当焦点移动到触发器上时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止此操作。
 				</span>
 			),
 		},
@@ -337,8 +322,7 @@ The component that pops out when the select is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当按下 Esc 键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止此操作。
 				</span>
 			),
 		},
@@ -348,9 +332,7 @@ The component that pops out when the select is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当一个指针事件发生在组件边界之外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止此操作。
 				</span>
 			),
 		},
@@ -361,11 +343,7 @@ The component that pops out when the select is open.
 			default: '"item-aligned"',
 			description: (
 				<span>
-					The positioning mode to use, <Code>item-aligned</Code> is the default
-					and behaves similarly to a native MacOS menu by positioning content
-					relative to the active item. <Code>popper</Code> positions content in
-					the same way as our other primitives, for example <Code>Popover</Code>{" "}
-					or <Code>DropdownMenu</Code>.
+					要使用的定位模式，<Code>item-aligned</Code> 是默认行为，类似于原生 MacOS 菜单，通过相对于活动项目定位内容。<Code>popper</Code> 以与我们的其他原语相同的方式定位内容，例如 <Code>Popover</Code> 或 <Code>DropdownMenu</Code>。
 				</span>
 			),
 		},
@@ -376,10 +354,7 @@ The component that pops out when the select is open.
 			default: '"bottom"',
 			description: (
 				<span>
-					The preferred side of the anchor to render against when open. Will be
-					reversed when collisions occur and <Code>avoidCollisions</Code> is
-					enabled. Only available when <Code>position</Code> is set to{" "}
-					<Code>popper</Code>.
+					打开时与锚点渲染的首选侧边。在发生碰撞时会反转，当启用 <Code>avoidCollisions</Code> 时。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -389,8 +364,7 @@ The component that pops out when the select is open.
 			default: "0",
 			description: (
 				<span>
-					The distance in pixels from the anchor. Only available when{" "}
-					<Code>position</Code> is set to <Code>popper</Code>.
+					与锚点的像素距离。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -401,9 +375,7 @@ The component that pops out when the select is open.
 			default: '"start"',
 			description: (
 				<span>
-					The preferred alignment against the anchor. May change when collisions
-					occur. Only available when <Code>position</Code> is set to{" "}
-					<Code>popper</Code>.
+					与锚点的首选对齐方式。发生碰撞时可能会更改。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -413,9 +385,7 @@ The component that pops out when the select is open.
 			default: "0",
 			description: (
 				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options. Only available when{" "}
-					<Code>position</Code> is set to <Code>popper</Code>.
+					与 <Code>"start"</Code> 或 <Code>"end"</Code> 对齐选项偏移的像素值。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -425,10 +395,7 @@ The component that pops out when the select is open.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges. Only available when <Code>position</Code> is set to{" "}
-					<Code>popper</Code>.
+					当 <Code>true</Code> 时，重写 <Code>side</Code> 和 <Code>align</Code> 偏好以防止与边界的碰撞。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -439,10 +406,7 @@ The component that pops out when the select is open.
 			default: "[]",
 			description: (
 				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check. Only available when <Code>position</Code> is set to{" "}
-					<Code>popper</Code>.
+					作为碰撞边界的元素。默认情况下这是视口，您可以提供其他元素以包含在此检查中。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -453,11 +417,8 @@ The component that pops out when the select is open.
 			default: "10",
 			description: (
 				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>. Only available when{" "}
-					<Code>position</Code> is set to <Code>popper</Code>.
+					边界边缘的像素距离，以进行碰撞检测。接受一个数字（所有边相同）或部分填充对象，例如：{" "}
+					<Code>{`{ top: 20, left: 20 }`}</Code>。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -467,10 +428,7 @@ The component that pops out when the select is open.
 			default: "0",
 			description: (
 				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners. Only available when <Code>position</Code> is
-					set to <Code>popper</Code>.
+					箭头与内容边缘之间的填充。如果您的内容具有 <Code>border-radius</Code>，这将防止其溢出角落。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -481,11 +439,7 @@ The component that pops out when the select is open.
 			default: '"partial"',
 			description: (
 				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless. Only available when{" "}
-					<Code>position</Code> is set to <Code>popper</Code>.
+					对齐轴上的粘性行为。 <Code>"partial"</Code> 将在触发器至少部分处于边界内时保持内容在边界内，而 <Code>"always"</Code> 将一直保持内容在边界内。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -495,9 +449,7 @@ The component that pops out when the select is open.
 			default: "false",
 			description: (
 				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
-					Only available when <Code>position</Code> is set to{" "}
-					<Code>popper</Code>.
+					当触发器被完全遮挡时，是否隐藏内容。仅在 <Code>position</Code> 设置为 <Code>popper</Code> 时可用。
 				</span>
 			),
 		},
@@ -508,11 +460,11 @@ The component that pops out when the select is open.
 	data={[
 		{
 			attribute: "[data-state]",
-			values: ["open", "closed"],
+			values: ["打开", "关闭"],
 		},
 		{
 			attribute: "[data-side]",
-			values: ["left", "right", "bottom", "top"],
+			values: ["左", "右", "底部", "顶部"],
 		},
 		{
 			attribute: "[data-align]",
@@ -527,8 +479,7 @@ The component that pops out when the select is open.
 			cssVariable: "--radix-select-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets. Only present when <Code>position="popper"</Code>.
+					根据内容和箭头的位置/偏移计算出的 <Code>transform-origin</Code>。仅在 <Code>position="popper"</Code> 时存在。
 				</>
 			),
 		},
@@ -536,8 +487,7 @@ The component that pops out when the select is open.
 			cssVariable: "--radix-select-content-available-width",
 			description: (
 				<>
-					The remaining width between the trigger and the boundary edge. Only
-					present when <Code>position="popper"</Code>.
+					触发器和边界边缘之间的剩余宽度。仅在 <Code>position="popper"</Code> 时存在。
 				</>
 			),
 		},
@@ -545,8 +495,7 @@ The component that pops out when the select is open.
 			cssVariable: "--radix-select-content-available-height",
 			description: (
 				<>
-					The remaining height between the trigger and the boundary edge. Only
-					present when <Code>position="popper"</Code>.
+					触发器和边界边缘之间的剩余高度。仅在 <Code>position="popper"</Code> 时存在。
 				</>
 			),
 		},
@@ -554,8 +503,7 @@ The component that pops out when the select is open.
 			cssVariable: "--radix-select-trigger-width",
 			description: (
 				<>
-					The width of the trigger. Only present when{" "}
-					<Code>position="popper"</Code>.
+					触发器的宽度。仅在 <Code>position="popper"</Code> 时存在。
 				</>
 			),
 		},
@@ -563,17 +511,16 @@ The component that pops out when the select is open.
 			cssVariable: "--radix-select-trigger-height",
 			description: (
 				<>
-					The height of the trigger. Only present when{" "}
-					<Code>position="popper"</Code>.
+					触发器的高度。仅在 <Code>position="popper"</Code> 时存在。
 				</>
 			),
 		},
 	]}
 />
 
-### Viewport
+### 视口
 
-The scrolling viewport that contains all of the items.
+包含所有项目的滚动视口。
 
 <PropsTable
 	data={[
@@ -584,21 +531,19 @@ The scrolling viewport that contains all of the items.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Item
+### 项目
 
-The component that contains the select items.
+包含选择项目的组件。
 
 <PropsTable
 	data={[
@@ -609,12 +554,10 @@ The component that contains the select items.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -624,7 +567,7 @@ The component that contains the select items.
 			type: "string",
 			description: (
 				<span>
-					The value given as data when submitted with a <Code>name</Code>.
+					以数据形式提供的值，当与 <Code>name</Code> 一起提交时。
 				</span>
 			),
 		},
@@ -633,8 +576,7 @@ The component that contains the select items.
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，防止用户与该项目交互。
 				</span>
 			),
 		},
@@ -643,10 +585,8 @@ The component that contains the select items.
 			type: "string",
 			description: (
 				<span>
-					Optional text used for typeahead purposes. By default the typeahead
-					behavior will use the <Code>.textContent</Code> of the{" "}
-					<Code>Select.ItemText</Code> part. Use this when the content is
-					complex, or you have non-textual content inside.
+					用于类型预测的可选文本。默认情况下，类型预测行为将使用 <Code>.textContent</Code>
+					来自 <Code>Select.ItemText</Code> 部分。当内容复杂或包含非文本内容时使用此选项。
 				</span>
 			),
 		},
@@ -661,18 +601,18 @@ The component that contains the select items.
 		},
 		{
 			attribute: "[data-highlighted]",
-			values: "Present when highlighted",
+			values: "突出显示时存在",
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "禁用时存在",
 		},
 	]}
 />
 
-### ItemText
+### 项目文本
 
-The textual part of the item. It should only contain the text you want to see in the trigger when that item is selected. It should not be styled to ensure correct positioning.
+项目的文本部分。它应只包含您希望在选择该项目时显示在触发器中的文本。它不应被样式化以确保正确定位。
 
 <PropsTable
 	data={[
@@ -683,21 +623,19 @@ The textual part of the item. It should only contain the text you want to see in
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### ItemIndicator
+### 项目指示器
 
-Renders when the item is selected. You can style this element directly, or you can use it as a wrapper to put an icon into, or both.
+在选择该项目时渲染。您可以直接对该元素进行样式设置，或者将其用作放置图标的包装器，或两者皆有。
 
 <PropsTable
 	data={[
@@ -708,21 +646,19 @@ Renders when the item is selected. You can style this element directly, or you c
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### ScrollUpButton
+### 向上滚动按钮
 
-An optional button used as an affordance to show the viewport overflow as well as functionaly enable scrolling upwards.
+可选按钮，用作视觉提示，显示视口溢出并功能性地启用向上滚动。
 
 <PropsTable
 	data={[
@@ -733,21 +669,19 @@ An optional button used as an affordance to show the viewport overflow as well a
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### ScrollDownButton
+### 向下滚动按钮
 
-An optional button used as an affordance to show the viewport overflow as well as functionaly enable scrolling downwards.
+可选按钮，用作视觉提示，显示视口溢出并功能性地启用向下滚动。
 
 <PropsTable
 	data={[
@@ -758,21 +692,19 @@ An optional button used as an affordance to show the viewport overflow as well a
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Group
+### 组
 
-Used to group multiple items. use in conjunction with `Select.Label` to ensure good accessibility via automatic labelling.
+用于对多个项目进行分组。与 `Select.Label` 一起使用，以确保通过自动标签提供良好的可访问性。
 
 <PropsTable
 	data={[
@@ -783,21 +715,19 @@ Used to group multiple items. use in conjunction with `Select.Label` to ensure g
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Label
+### 标签
 
-Used to render the label of a group. It won't be focusable using arrow keys.
+用于渲染组的标签。使用箭头键无法获取焦点。
 
 <PropsTable
 	data={[
@@ -808,21 +738,19 @@ Used to render the label of a group. It won't be focusable using arrow keys.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Separator
+### 分隔符
 
-Used to visually separate items in the select.
+用于在选择中视觉上分隔项目。
 
 <PropsTable
 	data={[
@@ -833,21 +761,19 @@ Used to visually separate items in the select.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
 	]}
 />
 
-### Arrow
+### 箭头
 
-An optional arrow element to render alongside the content. This can be used to help visually link the trigger with the `Select.Content`. Must be rendered inside `Select.Content`. Only available when `position` is set to `popper`.
+可选的箭头元素，渲染在内容旁边。这可以用来帮助视觉上将触发器与 `Select.Content` 连接。必须在 `Select.Content` 中渲染。仅在 `position` 设置为 `popper` 时可用。
 
 <PropsTable
 	data={[
@@ -858,12 +784,10 @@ An optional arrow element to render alongside the content. This can be used to h
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认呈现的元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -871,22 +795,22 @@ An optional arrow element to render alongside the content. This can be used to h
 			name: "width",
 			type: "number",
 			default: 10,
-			description: <span>The width of the arrow in pixels.</span>,
+			description: <span>箭头的宽度（以像素为单位）。</span>,
 		},
 		{
 			name: "height",
 			type: "number",
 			default: 5,
-			description: <span>The height of the arrow in pixels.</span>,
+			description: <span>箭头的高度（以像素为单位）。</span>,
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Change the positioning mode
+### 更改定位模式
 
-By default, `Select` will behave similarly to a native MacOS menu by positioning `Select.Content` relative to the active item. If you would prefer an alternative positioning approach similar to `Popover` or `DropdownMenu` then you can set `position` to `popper` and make use of additional alignment options such as `side`, `sideOffset` and more.
+默认情况下，`Select` 的行为类似于原生 MacOS 菜单，通过相对于活动项目来定位 `Select.Content`。如果您更喜欢类似于 `Popover` 或 `DropdownMenu` 的替代定位方法，那么您可以将 `position` 设置为 `popper`，并使用其他对齐选项，例如 `side`、`sideOffset` 等。
 
 ```jsx line=8
 // index.jsx
@@ -904,11 +828,11 @@ export default () => (
 );
 ```
 
-### Constrain the content size
+### 限制内容大小
 
-When using `position="popper"` on `Select.Content`, you may want to constrain the width of the content so that it matches the trigger width. You may also want to constrain its height to not exceed the viewport.
+在 `Select.Content` 上使用 `position="popper"` 时，您可能希望限制内容的宽度，以便与触发器的宽度匹配。您也可能想限制它的高度，以免超过视口。
 
-We expose several CSS custom properties such as `--radix-select-trigger-width` and `--radix-select-content-available-height` to support this. Use them to constrain the content dimensions.
+我们暴露了几个 CSS 自定义属性，例如 `--radix-select-trigger-width` 和 `--radix-select-content-available-height` 以支持此操作。使用它们来限制内容的维度。
 
 ```jsx line=9
 // index.jsx
@@ -939,9 +863,9 @@ export default () => (
 }
 ```
 
-### With disabled items
+### 带有禁用项目
 
-You can add special styles to disabled items via the `data-disabled` attribute.
+您可以通过 `data-disabled` 属性为禁用的项目添加特殊样式。
 
 ```jsx line=11
 // index.jsx
@@ -973,9 +897,9 @@ export default () => (
 }
 ```
 
-### With a placeholder
+### 带有占位符
 
-You can use the `placeholder` prop on `Value` for when the select has no value. There's also a `data-placeholder` attribute on `Trigger` to help with styling.
+您可以在 `Value` 上使用 `placeholder` 属性，以便在选择没有值时使用。`Trigger` 上也有一个 `data-placeholder` 属性，以帮助进行样式设置。
 
 ```jsx line=7,8
 // index.jsx
@@ -985,7 +909,7 @@ import "./styles.css";
 export default () => (
 	<Select.Root>
 		<Select.Trigger __className__="SelectTrigger">
-			<Select.Value __placeholder__="Pick an option" />
+			<Select.Value __placeholder__="选择一个选项" />
 			<Select.Icon />
 		</Select.Trigger>
 		<Select.Portal>
@@ -1002,9 +926,9 @@ export default () => (
 }
 ```
 
-### With separators
+### 带分隔符
 
-Use the `Separator` part to add a separator between items.
+使用 `Separator` 部分在项目之间添加分隔符。
 
 ```jsx line=9
 <Select.Root>
@@ -1024,9 +948,9 @@ Use the `Separator` part to add a separator between items.
 </Select.Root>
 ```
 
-### With grouped items
+### 带有分组项目
 
-Use the `Group` and `Label` parts to group items in a section.
+使用 `Group` 和 `Label` 部分在一个部分中对项目进行分组。
 
 ```jsx line=6-7,11
 <Select.Root>
@@ -1035,7 +959,7 @@ Use the `Group` and `Label` parts to group items in a section.
 		<Select.Content>
 			<Select.Viewport>
 				<Select.Group>
-					<Select.Label>Label</Select.Label>
+					<Select.Label>标签</Select.Label>
 					<Select.Item>…</Select.Item>
 					<Select.Item>…</Select.Item>
 					<Select.Item>…</Select.Item>
@@ -1046,9 +970,9 @@ Use the `Group` and `Label` parts to group items in a section.
 </Select.Root>
 ```
 
-### With complex items
+### 带有复杂项目
 
-You can use custom content in your items.
+您可以在项目中使用自定义内容。
 
 ```jsx line=11
 import { Select } from "radix-ui";
@@ -1062,7 +986,7 @@ export default () => (
 					<Select.Item>
 						<Select.ItemText>
 							<img src="…" />
-							Adolfo Hess
+							阿道夫·赫斯
 						</Select.ItemText>
 						<Select.ItemIndicator>…</Select.ItemIndicator>
 					</Select.Item>
@@ -1075,11 +999,11 @@ export default () => (
 );
 ```
 
-### Controlling the value displayed in the trigger
+### 控制触发器中显示的值
 
-By default the trigger will automatically display the selected item `ItemText`'s content. You can control what appears by chosing to put things inside/outside the `ItemText` part.
+默认情况下，触发器将自动显示所选项目 `ItemText` 的内容。您可以通过选择将内容放入/放出 `ItemText` 部分来控制显示的内容。
 
-If you need more flexibility, you can control the component using `value`/`onValueChange` props and passing `children` to `SelectValue`. Remember to make sure what you put in there is accessible.
+如果您需要更多灵活性，可以使用 `value`/`onValueChange` 属性控制组件，并将 `children` 传递给 `SelectValue`。请确保您放入的内容是可访问的。
 
 ```jsx line=1,4,6
 const countries = { france: "🇫🇷", "united-kingdom": "🇬🇧", spain: "🇪🇸" };
@@ -1098,15 +1022,15 @@ export default () => {
 			<Select.Content>
 				<Select.Viewport>
 					<Select.Item value="france">
-						<Select.ItemText>France</Select.ItemText>
+						<Select.ItemText>法国</Select.ItemText>
 						<Select.ItemIndicator>…</Select.ItemIndicator>
 					</Select.Item>
 					<Select.Item value="united-kingdom">
-						<Select.ItemText>United Kingdom</Select.ItemText>
+						<Select.ItemText>英国</Select.ItemText>
 						<Select.ItemIndicator>…</Select.ItemIndicator>
 					</Select.Item>
 					<Select.Item value="spain">
-						<Select.ItemText>Spain</Select.ItemText>
+						<Select.ItemText>西班牙</Select.ItemText>
 						<Select.ItemIndicator>…</Select.ItemIndicator>
 					</Select.Item>
 				</Select.Viewport>
@@ -1117,9 +1041,9 @@ export default () => {
 };
 ```
 
-### With custom scrollbar
+### 带有自定义滚动条
 
-The native scrollbar is hidden by default as we recommend using the `ScrollUpButton` and `ScrollDownButton` parts for the best UX. If you do not want to use these parts, compose your select with our [Scroll Area](scroll-area) primitive.
+默认情况下，原生滚动条是隐藏的，因为我们推荐使用 `ScrollUpButton` 和 `ScrollDownButton` 部分以获得最佳用户体验。如果您不想使用这些部分，请将选择与我们的 [滚动区域](scroll-area) 原语组合使用。
 
 ```jsx line=10,12,18-20
 // index.jsx
@@ -1175,55 +1099,53 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [ListBox WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/listbox).
+遵循 [ListBox WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/listbox)。
 
-See the W3C [Select-Only Combobox](https://www.w3.org/TR/wai-aria-practices/examples/combobox/combobox-select-only.html) example for more information.
+查看 W3C [选择仅组合框](https://www.w3.org/TR/wai-aria-practices/examples/combobox/combobox-select-only.html) 示例以获取更多信息。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
-			keys: ["Space"],
+			keys: ["空格"],
 			description: (
 				<span>
-					When focus is on <Code>Select.Trigger</Code>, opens the select and
-					focuses the selected item.
+					当焦点在 <Code>Select.Trigger</Code> 上时，打开选择并聚焦所选项目。
 					<br />
-					When focus is on an item, selects the focused item.
+					当焦点在项目上时，选择该项目。
 				</span>
 			),
 		},
 		{
-			keys: ["Enter"],
+			keys: ["回车"],
 			description: (
 				<span>
-					When focus is on <Code>Select.Trigger</Code>, opens the select and
-					focuses the first item.
+					当焦点在 <Code>Select.Trigger</Code> 上时，打开选择并聚焦第一个项目。
 					<br />
-					When focus is on an item, selects the focused item.
+					当焦点在项目上时，选择该项目。
 				</span>
 			),
 		},
 		{
-			keys: ["ArrowDown"],
+			keys: ["箭头向下"],
 			description: (
 				<span>
-					When focus is on <Code>Select.Trigger</Code>, opens the select.
+					当焦点在 <Code>Select.Trigger</Code> 上时，打开选择。
 					<br />
-					When focus is on an item, moves focus to the next item.
+					当焦点在项目上时，将焦点移动到下一个项目。
 				</span>
 			),
 		},
 		{
-			keys: ["ArrowUp"],
+			keys: ["箭头向上"],
 			description: (
 				<span>
-					When focus is on <Code>Select.Trigger</Code>, opens the select.
+					当焦点在 <Code>Select.Trigger</Code> 上时，打开选择。
 					<br />
-					When focus is on an item, moves focus to the previous item.
+					当焦点在项目上时，将焦点移动到上一个项目。
 				</span>
 			),
 		},
@@ -1231,16 +1153,16 @@ See the W3C [Select-Only Combobox](https://www.w3.org/TR/wai-aria-practices/exam
 			keys: ["Esc"],
 			description: (
 				<span>
-					Closes the select and moves focus to <Code>Select.Trigger</Code>.
+					关闭选择并将焦点移到 <Code>Select.Trigger</Code>。
 				</span>
 			),
 		},
 	]}
 />
 
-### Labelling
+### 标签
 
-Use our [Label](label) component in order to offer a visual and accessible label for the select.
+使用我们的 [标签](label) 组件为选择提供视觉和可访问的标签。
 
 ```jsx line=5,8,12
 import { Select, Label } from "radix-ui";
@@ -1248,13 +1170,13 @@ import { Select, Label } from "radix-ui";
 export default () => (
 	<>
 		<Label>
-			Country
+			国家
 			<Select.Root>…</Select.Root>
 		</Label>
 
-		{/* or */}
+		{/* 或 */}
 
-		<Label htmlFor="country">Country</Label>
+		<Label htmlFor="country">国家</Label>
 		<Select.Root>
 			<Select.Trigger __id__="country">…</Select.Trigger>
 			<Select.Portal>
@@ -1265,29 +1187,29 @@ export default () => (
 );
 ```
 
-## Custom APIs
+## 自定义 API
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将原语部分抽象到自己的组件中创建自己的 API。
 
-### Abstract down to `Select` and `SelectItem`
+### 抽象到 `Select` 和 `SelectItem`
 
-This example abstracts most of the parts.
+此示例抽象了大部分部分。
 
-#### Usage
+#### 用法
 
 ```jsx
 import { Select, SelectItem } from "./your-select";
 
 export default () => (
 	<Select defaultValue="2">
-		<SelectItem value="1">Item 1</SelectItem>
-		<SelectItem value="2">Item 2</SelectItem>
-		<SelectItem value="3">Item 3</SelectItem>
+		<SelectItem value="1">项目 1</SelectItem>
+		<SelectItem value="2">项目 2</SelectItem>
+		<SelectItem value="3">项目 3</SelectItem>
 	</Select>
 );
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-select.jsx

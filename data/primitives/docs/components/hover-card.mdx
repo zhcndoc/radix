@@ -1,13 +1,13 @@
 ---
-metaTitle: Hover Card
-metaDescription: For sighted users to preview content available behind a link.
+metaTitle: 悬停卡片
+metaDescription: 供可视用户预览链接后面可用的内容。
 name: hover-card
 ---
 
-# Hover Card
+# 悬停卡片
 
 <Description>
-	For sighted users to preview content available behind a link.
+	供可视用户预览链接后面可用的内容。
 </Description>
 
 <HeroContainer>
@@ -18,25 +18,25 @@ name: hover-card
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Customize side, alignment, offsets, collision handling.",
-		"Optionally render a pointing arrow.",
-		"Supports custom open and close delays.",
-		"Ignored by screen readers.",
+		"可以是受控或非受控的。",
+		"自定义侧面、对齐、偏移量、碰撞处理。",
+		"可选渲染指向箭头。",
+		"支持自定义打开和关闭延迟。",
+		"屏幕阅读器忽略。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-hover-card
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { HoverCard } from "radix-ui";
@@ -53,11 +53,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains all the parts of a hover card.
+包含悬停卡片的所有部分。
 
 <PropsTable
 	data={[
@@ -66,8 +66,8 @@ Contains all the parts of a hover card.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the hover card when it is initially rendered. Use
-					when you do not need to control its open state.
+					悬停卡片在初始渲染时的打开状态。使用
+					当您不需要控制其打开状态时。
 				</span>
 			),
 		},
@@ -76,8 +76,8 @@ Contains all the parts of a hover card.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the hover card. Must be used in
-					conjunction with <Code>onOpenChange</Code>.
+					悬停卡片的受控打开状态。必须与 <Code>onOpenChange</Code>
+					一起使用。
 				</span>
 			),
 		},
@@ -87,7 +87,7 @@ Contains all the parts of a hover card.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the hover card changes.
+					当悬停卡片的打开状态变化时调用的事件处理程序。
 				</span>
 			),
 		},
@@ -96,21 +96,21 @@ Contains all the parts of a hover card.
 			type: "number",
 			default: 700,
 			description:
-				"The duration from when the mouse enters the trigger until the hover card opens.",
+				"鼠标进入触发器到悬停卡片打开的持续时间。",
 		},
 		{
 			name: "closeDelay",
 			type: "number",
 			default: 300,
 			description:
-				"The duration from when the mouse leaves the trigger or content until the hover card closes.",
+				"鼠标离开触发器或内容到悬停卡片关闭的持续时间。",
 		},
 	]}
 />
 
-### Trigger
+### 触发器
 
-The link that opens the hover card when hovered.
+在悬停时打开悬停卡片的链接。
 
 <PropsTable
 	data={[
@@ -121,12 +121,10 @@ The link that opens the hover card when hovered.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -142,9 +140,9 @@ The link that opens the hover card when hovered.
 	]}
 />
 
-### Portal
+### 门户
 
-When used, portals the content part into the `body`.
+使用时，会将内容部分传送到 `body`。
 
 <PropsTable
 	data={[
@@ -153,9 +151,7 @@ When used, portals the content part into the `body`.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>HoverCard.Content</Code>.
+					用于在需要更多控制时强制挂载。与 React 动画库一起控制动画时非常有用。如果在此部分上使用，将由 <Code>HoverCard.Content</Code> 继承。
 				</span>
 			),
 		},
@@ -163,14 +159,14 @@ When used, portals the content part into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定一个容器元素来传送内容。",
 		},
 	]}
 />
 
-### Content
+### 内容
 
-The component that pops out when the hover card is open.
+悬停卡片打开时弹出的组件。
 
 <PropsTable
 	data={[
@@ -181,12 +177,10 @@ The component that pops out when the hover card is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -195,9 +189,7 @@ The component that pops out when the hover card is open.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>HoverCard.Portal</Code>.
+					用于在需要更多控制时强制挂载。与 React 动画库一起控制动画时非常有用。它从 <Code>HoverCard.Portal</Code> 继承。
 				</span>
 			),
 		},
@@ -208,9 +200,7 @@ The component that pops out when the hover card is open.
 			default: '"bottom"',
 			description: (
 				<span>
-					The preferred side of the trigger to render against when open. Will be
-					reversed when collisions occur and <Code>avoidCollisions</Code> is
-					enabled.
+					打开时渲染的触发器偏好的侧面。如果发生碰撞且 <Code>avoidCollisions</Code> 启用，则会反转。
 				</span>
 			),
 		},
@@ -220,7 +210,7 @@ The component that pops out when the hover card is open.
 			default: "0",
 			description: (
 				<span>
-					<span>The distance in pixels from the trigger.</span>
+					<span>距离触发器的像素数。</span>
 				</span>
 			),
 		},
@@ -231,8 +221,7 @@ The component that pops out when the hover card is open.
 			default: '"center"',
 			description: (
 				<span>
-					The preferred alignment against the trigger. May change when
-					collisions occur.
+					对触发器的对齐偏好的位置。当发生碰撞时可能会更改。
 				</span>
 			),
 		},
@@ -242,8 +231,7 @@ The component that pops out when the hover card is open.
 			default: "0",
 			description: (
 				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options.
+					从 <Code>"start"</Code> 或 <Code>"end"</Code> 对齐选项的偏移量（以像素为单位）。
 				</span>
 			),
 		},
@@ -253,9 +241,7 @@ The component that pops out when the hover card is open.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges.
+					当 <Code>true</Code> 时，覆盖 <Code>side</Code> 和 <Code>align</Code> 偏好以防止与边界的碰撞。
 				</span>
 			),
 		},
@@ -266,9 +252,7 @@ The component that pops out when the hover card is open.
 			default: "[]",
 			description: (
 				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check.
+					作为碰撞边界的元素。默认情况下，这是视口，您可以提供要包含在此检查中的附加元素。
 				</span>
 			),
 		},
@@ -279,10 +263,8 @@ The component that pops out when the hover card is open.
 			default: "0",
 			description: (
 				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>.
+					与边界边缘的像素距离，应该进行碰撞检测。接受一个数字（所有边相同），或部分填充对象，例如:{" "}
+					<Code>{`{ top: 20, left: 20 }`}</Code>。
 				</span>
 			),
 		},
@@ -292,9 +274,7 @@ The component that pops out when the hover card is open.
 			default: "0",
 			description: (
 				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners.
+					箭头与内容边缘之间的填充。如果您的内容有 <Code>border-radius</Code>，这将防止它溢出角落。
 				</span>
 			),
 		},
@@ -305,10 +285,7 @@ The component that pops out when the hover card is open.
 			default: '"partial"',
 			description: (
 				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless.
+					对齐轴上的粘性行为。 <Code>"partial"</Code> 将保持内容在边界内，只要触发器至少部分在边界内，而 <Code>"always"</Code> 将保持内容在边界内。
 				</span>
 			),
 		},
@@ -318,7 +295,7 @@ The component that pops out when the hover card is open.
 			default: "false",
 			description: (
 				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
+					当触发器完全被遮挡时，是否隐藏内容。
 				</span>
 			),
 		},
@@ -348,37 +325,36 @@ The component that pops out when the hover card is open.
 			cssVariable: "--radix-hover-card-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets
+					从内容和箭头位置/偏移计算出的 <Code>transform-origin</Code>
 				</>
 			),
 		},
 		{
 			cssVariable: "--radix-hover-card-content-available-width",
 			description: (
-				<>The remaining width between the trigger and the boundary edge</>
+				<>触发器与边界边缘之间的剩余宽度</>
 			),
 		},
 		{
 			cssVariable: "--radix-hover-card-content-available-height",
 			description: (
-				<>The remaining height between the trigger and the boundary edge</>
+				<>触发器与边界边缘之间的剩余高度</>
 			),
 		},
 		{
 			cssVariable: "--radix-hover-card-trigger-width",
-			description: <>The width of the trigger</>,
+			description: <>触发器的宽度</>,
 		},
 		{
 			cssVariable: "--radix-hover-card-trigger-height",
-			description: <>The height of the trigger</>,
+			description: <>触发器的高度</>,
 		},
 	]}
 />
 
-### Arrow
+### 箭头
 
-An optional arrow element to render alongside the hover card. This can be used to help visually link the trigger with the `HoverCard.Content`. Must be rendered inside `HoverCard.Content`.
+可选的箭头元素，与悬停卡片一起渲染。可以用来帮助视觉上将触发器与 `HoverCard.Content` 连接。必须在 `HoverCard.Content` 内渲染。
 
 <PropsTable
 	data={[
@@ -389,12 +365,10 @@ An optional arrow element to render alongside the hover card. This can be used t
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -402,22 +376,22 @@ An optional arrow element to render alongside the hover card. This can be used t
 			name: "width",
 			type: "number",
 			default: 10,
-			description: <span>The width of the arrow in pixels.</span>,
+			description: <span>箭头的宽度（以像素为单位）。</span>,
 		},
 		{
 			name: "height",
 			type: "number",
 			default: 5,
-			description: <span>The height of the arrow in pixels.</span>,
+			description: <span>箭头的高度（以像素为单位）。</span>,
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Show instantly
+### 立即显示
 
-Use the `openDelay` prop to control the time it takes for the hover card to open.
+使用 `openDelay` 属性控制悬停卡片打开的时间。
 
 ```jsx line=4
 import { HoverCard } from "radix-ui";
@@ -430,11 +404,11 @@ export default () => (
 );
 ```
 
-### Constrain the content size
+### 限制内容大小
 
-You may want to constrain the width of the content so that it matches the trigger width. You may also want to constrain its height to not exceed the viewport.
+您可能希望限制内容的宽度，以使其与触发器宽度匹配。您可能还希望限制其高度，以使其不超过视口。
 
-We expose several CSS custom properties such as `--radix-hover-card-trigger-width` and `--radix-hover-card-content-available-height` to support this. Use them to constrain the content dimensions.
+我们公开了几个 CSS 自定义属性，如 `--radix-hover-card-trigger-width` 和 `--radix-hover-card-content-available-height` 来支持这一点。使用它们来限制内容的尺寸。
 
 ```jsx line=9
 // index.jsx
@@ -461,9 +435,9 @@ export default () => (
 }
 ```
 
-### Origin-aware animations
+### 以原点为中心的动画
 
-We expose a CSS custom property `--radix-hover-card-content-transform-origin`. Use it to animate the content from its computed origin based on `side`, `sideOffset`, `align`, `alignOffset` and any collisions.
+我们公开了一个 CSS 自定义属性 `--radix-hover-card-content-transform-origin`。使用它从基于 `side`、`sideOffset`、`align`、`alignOffset` 和任何碰撞的计算原点动画内容。
 
 ```jsx line=8
 // index.jsx
@@ -497,9 +471,9 @@ export default () => (
 }
 ```
 
-### Collision-aware animations
+### 碰撞感知动画
 
-We expose `data-side` and `data-align` attributes. Their values will change at runtime to reflect collisions. Use them to create collision and direction-aware animations.
+我们公开了 `data-side` 和 `data-align` 属性。它们的值将在运行时更改以反映碰撞。使用它们来创建碰撞和方向感知的动画。
 
 ```jsx line=8
 // index.jsx
@@ -550,21 +524,21 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 无障碍性
 
-The hover card is intended for sighted users only, the content will be inaccessible to keyboard users.
+悬停卡片仅用于可视用户，内容对键盘用户不可访问。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Tab"],
-			description: "Opens/closes the hover card.",
+			description: "打开/关闭悬停卡片。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Opens the hover card link",
+			description: "打开悬停卡片链接",
 		},
 	]}
 />

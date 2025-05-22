@@ -1,22 +1,21 @@
 ---
-metaTitle: Composition
-metaDescription: Use the `asChild` prop to compose Radix's functionality onto alternative element types or your own React components.
+metaTitle: 组合
+metaDescription: 使用 `asChild` 属性将 Radix 的功能组合到替代元素类型或您自己的 React 组件中。
 ---
 
-# Composition
+# 组合
 
 <Description>
-	Use the `asChild` prop to compose Radix's functionality onto alternative
-	element types or your own React components.
+	使用 `asChild` 属性将 Radix 的功能组合到替代元素类型或您自己的 React 组件中。
 </Description>
 
-All Radix primitive parts that render a DOM element accept an `asChild` prop. When `asChild` is set to `true`, Radix will not render a default DOM element, instead cloning the part's child and passing it the props and behavior required to make it functional.
+所有渲染 DOM 元素的 Radix 原始部分都接受 `asChild` 属性。当 `asChild` 设置为 `true` 时，Radix 将不会渲染默认的 DOM 元素，而是克隆该部分的子元素，并将所需的 props 和行为传递给它以使其功能正常。
 
-## Changing the element type
+## 更改元素类型
 
-In the majority of cases you shouldn’t need to modify the element type as Radix has been designed to provide the most appropriate defaults. However, there are cases where it is helpful to do so.
+在大多数情况下，您无需修改元素类型，因为 Radix 的设计目标是提供最合适的默认值。但是，有些情况下这样做是有帮助的。
 
-A good example is with `Tooltip.Trigger`. By default this part is rendered as a `button`, though you may want to add a tooltip to a link (`a` tag) as well. Let's see how you can achieve this using `asChild`:
+一个很好的例子是 `Tooltip.Trigger`。默认情况下，此部分渲染为一个 `button`，但您可能还想将提示添加到链接（`a` 标签）。让我们看看如何使用 `asChild` 来实现这一点：
 
 ```jsx line=7
 import * as React from "react";
@@ -32,55 +31,54 @@ export default () => (
 );
 ```
 
-> If you do decide to change the underlying element type, it is your responsibility to ensure it remains accessible and functional. In the case of `Tooltip.Trigger` for example, it must be a focusable element that can respond to pointer and keyboard events. If you were to switch it to a `div`, it would no longer be accessible.
+> 如果您决定更改底层元素类型，确保它保持可访问和功能正常是您的责任。以 `Tooltip.Trigger` 为例，它必须是一个可获取焦点的元素，可以响应指针和键盘事件。如果您将其切换为 `div`，则将不再可访问。
 
-In reality, you will rarely modify the underlying DOM element like we've seen above. Instead it's more common to use your own React components. This is especially true for most `Trigger` parts, as you usually want to compose the functionality with the custom buttons and links in your design system.
+实际上，您很少会像上面那样修改底层 DOM 元素。相反，使用您自己的 React 组件更为常见。对于大多数 `Trigger` 部分尤其如此，因为您通常希望将功能与设计系统中的自定义按钮和链接组合在一起。
 
-## Composing with your own React components
+## 使用您自己的 React 组件组合
 
-This works exactly the same as above, you pass `asChild` to the part and then wrap your own component with it.
-However, there are a few gotchas to be aware of.
+这与上述内容完全相同，您只需将 `asChild` 传递给部分，然后用您自己的组件将其包装起来。不过，有一些需要注意的事项。
 
-### Your component must spread props
+### 您的组件必须传播 props
 
-When Radix clones your component, it will pass its own props and event handlers to make it functional and accessible. If your component doesn't support those props, it will break.
+当 Radix 克隆您的组件时，它将传递自己的 props 和事件处理程序以使其功能和可访问。如果您的组件不支持这些 props，它将会失败。
 
-This is done by spreading all of the props onto the underlying DOM node.
+这一操作是通过将所有 props 展开到底层 DOM 节点上来完成的。
 
 ```jsx line=5
-// before
+// 之前
 const MyButton = () => <button />;
 
-// after
+// 之后
 const MyButton = (props) => <button {...__props__} />;
 ```
 
-We recommend always doing this so that you are not concerned with implementation details (ie. which props/events to accept). We find this is good practice for "leaf" components in general.
+我们建议始终这样做，以免担心实现细节（例如，接受哪些 props/事件）。我们发现这对于“叶子”组件而言是良好的实践。
 
-> Similarly to when changing the element type directly, it is your responsibility to ensure the element type rendered by your custom component remains accessible and functional.
+> 与直接更改元素类型类似，确保由您的自定义组件渲染的元素类型保持可访问和功能正常也是您的责任。
 
-### Your component must forward ref
+### 您的组件必须转发 ref
 
-Additionally, Radix will sometimes need to attach a `ref` to your component (for example to measure its size). If your component doesn't accept a `ref`, then it will break.
+此外，Radix 有时需要将一个 `ref` 附加到您的组件（例如，用于测量其大小）。如果您的组件不接受 `ref`，那么它将会失败。
 
-This is done using `React.forwardRef` (read more on [react.dev](https://react.dev/reference/react/forwardRef)).
+这可以使用 `React.forwardRef` 来完成（详细了解请访问 [react.dev](https://react.dev/reference/react/forwardRef)）。
 
 ```jsx line=5-7
-// before
+// 之前
 const MyButton = (props) => <button {...props} />;
 
-// after
+// 之后
 const MyButton = __React.forwardRef__((props, __forwardedRef__) => (
 	<button {...props} __ref__={__forwardedRef__} />
 ));
 ```
 
-Whilst this isn't necessary for **all** parts, we recommend always doing it so that you are not concerned with implementation details. This is also generally good practice anyway for leaf components.
+虽然这并非对 **所有** 部分都是必要的，但我们建议始终这样做，以免担心实现细节。这通常也是良好的实践，尤其是对于叶子组件。
 
-## Composing multiple primitives
+## 组合多个原始组件
 
-`asChild` can be used as deeply as you need to. This means it is a great way to compose multiple primitive's behavior together.
-Here is an example of how you can compose `Tooltip.Trigger` and `Dialog.Trigger` together with your own button:
+`asChild` 可以被用作您需要的深度。这意味着它是组合多个原始组件行为的绝佳方式。
+以下是如何将 `Tooltip.Trigger` 和 `Dialog.Trigger` 与您自己的按钮组合在一起的示例：
 
 ```jsx line=12-16
 import * as React from "react";
@@ -96,7 +94,7 @@ export default () => {
 			<Tooltip.Root>
 				<Tooltip.Trigger __asChild__>
 					<Dialog.Trigger __asChild__>
-						<MyButton>Open dialog</MyButton>
+						<MyButton>打开对话框</MyButton>
 					</Dialog.Trigger>
 				</Tooltip.Trigger>
 				<Tooltip.Portal>…</Tooltip.Portal>

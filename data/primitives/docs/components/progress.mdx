@@ -1,15 +1,14 @@
 ---
-metaTitle: Progress
-metaDescription: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+metaTitle: 进度
+metaDescription: 显示一个指示器，显示任务的完成进度，通常以进度条的形式显示。
 name: progress
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/meter
 ---
 
-# Progress
+# 进度
 
 <Description>
-	Displays an indicator showing the completion progress of a task, typically
-	displayed as a progress bar.
+	显示一个指示器，显示任务的完成进度，通常以进度条的形式显示。
 </Description>
 
 <HeroContainer>
@@ -20,21 +19,21 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/meter
 
 <Highlights
 	features={[
-		"Provides context for assistive technology to read the progress of a task.",
+		"为辅助技术提供上下文，以读取任务的进度。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装该组件。
 
 ```bash
 npm install @radix-ui/react-progress
 ```
 
-### Anatomy
+### 结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { Progress } from "radix-ui";
@@ -46,15 +45,15 @@ export default () => (
 );
 ```
 
-## Accessibility
+## 可及性
 
-Adheres to the [`progressbar` role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/meter).
+遵循 [`progressbar` 角色的要求](https://www.w3.org/WAI/ARIA/apg/patterns/meter)。
 
-## API Reference
+## API 参考
 
-### Root
+### 根部
 
-Contains all of the progress parts.
+包含所有进度部分。
 
 <PropsTable
 	data={[
@@ -65,31 +64,29 @@ Contains all of the progress parts.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
 		{
 			name: "value",
 			type: "number | null",
-			description: "The progress value.",
+			description: "进度值。",
 		},
 		{
 			name: "max",
 			type: "number",
-			description: "The maximum progress value.",
+			description: "最大进度值。",
 		},
 		{
 			name: "getValueLabel",
 			type: "(value: number, max: number) => string",
 			typeSimple: "function",
 			description:
-				"A function to get the accessible label text representing the current value in a human-readable format. If not provided, the value label will be read as the numeric value as a percentage of the max value.",
+				"获取可访问的标签文本以人类可读的格式表示当前值的函数。如果未提供，值标签将被读作数字值与最大值的百分比。",
 		},
 	]}
 />
@@ -102,18 +99,18 @@ Contains all of the progress parts.
 		},
 		{
 			attribute: "[data-value]",
-			values: "The current value",
+			values: "当前值",
 		},
 		{
 			attribute: "[data-max]",
-			values: "The max value",
+			values: "最大值",
 		},
 	]}
 />
 
-### Indicator
+### 指示器
 
-Used to show the progress visually. It also makes progress accessible to assistive technologies.
+用于视觉上显示进度。这也使得进度对于辅助技术可访问。
 
 <PropsTable
 	data={[
@@ -124,12 +121,10 @@ Used to show the progress visually. It also makes progress accessible to assisti
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为作为子元素传入的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -144,11 +139,11 @@ Used to show the progress visually. It also makes progress accessible to assisti
 		},
 		{
 			attribute: "[data-value]",
-			values: "The current value",
+			values: "当前值",
 		},
 		{
 			attribute: "[data-max]",
-			values: "The max value",
+			values: "最大值",
 		},
 	]}
 />

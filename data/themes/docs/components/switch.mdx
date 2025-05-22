@@ -1,6 +1,6 @@
 ---
-metaTitle: Switch
-metaDescription: Toggle switch alternative to the checkbox.
+metaTitle: 开关
+metaDescription: 切换开关，替代复选框。
 sourcePath: components/switch
 ---
 
@@ -8,17 +8,17 @@ sourcePath: components/switch
 <Switch defaultChecked />
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Switch primitive](/primitives/docs/components/switch) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件继承自 [Switch 原语](/primitives/docs/components/switch) 的属性，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="switchPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the switch.
+使用 `size` 属性来控制开关的大小。
 
 ```jsx live=true
 <Flex align="center" gap="2">
@@ -28,9 +28,9 @@ Use the `size` prop to control the size of the switch.
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the switch.
+使用 `variant` 属性来控制开关的视觉风格。
 
 ```jsx live=true scroll=true
 <Flex gap="2">
@@ -48,9 +48,9 @@ Use the `variant` prop to control the visual style of the switch.
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性来指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex gap="2">
@@ -61,9 +61,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast in light mode.
+使用 `highContrast` 属性在亮模式下增加颜色对比度。
 
 ```jsx live=true
 <Grid rows="2" gapX="2" gapY="3" display="inline-grid" flow="column">
@@ -80,9 +80,9 @@ Use the `highContrast` prop to increase color contrast in light mode.
 </Grid>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性来指定特定的半径值。
 
 ```jsx live=true
 <Flex gap="3">
@@ -92,65 +92,65 @@ Use the `radius` prop to assign a specific radius value.
 </Flex>
 ```
 
-### Alignment
+### 对齐
 
-Composing `Switch` within `Text` automatically centers it with the first line of text.
+将 `Switch` 组合在 `Text` 中自动与第一行文本居中对齐。
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
 	<Text as="label" size="2">
 		<Flex gap="2">
-			<Switch size="1" defaultChecked /> Sync settings
+			<Switch size="1" defaultChecked /> 同步设置
 		</Flex>
 	</Text>
 
 	<Text as="label" size="3">
 		<Flex gap="2">
-			<Switch size="2" defaultChecked /> Sync settings
+			<Switch size="2" defaultChecked /> 同步设置
 		</Flex>
 	</Text>
 
 	<Text as="label" size="4">
 		<Flex gap="2">
-			<Switch size="3" defaultChecked /> Sync settings
+			<Switch size="3" defaultChecked /> 同步设置
 		</Flex>
 	</Text>
 </Flex>
 ```
 
-It is automatically well-aligned with multi-line text too.
+它也自动与多行文本良好对齐。
 
-### Disabled
+### 禁用
 
-Use the native `disabled` attribute to create a disabled switch.
+使用原生 `disabled` 属性来创建一个禁用的开关。
 
 ```jsx live="true"
 <Flex direction="column" gap="2">
 	<Text as="label" size="2">
 		<Flex gap="2">
 			<Switch size="1" />
-			Off
+			关闭
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2">
 		<Flex gap="2">
 			<Switch size="1" defaultChecked />
-			On
+			开启
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2" color="gray">
 		<Flex gap="2">
 			<Switch size="1" disabled />
-			On
+			开启
 		</Flex>
 	</Text>
 
 	<Text as="label" size="2" color="gray">
 		<Flex gap="2">
 			<Switch size="1" disabled defaultChecked />
-			Off
+			关闭
 		</Flex>
 	</Text>
 </Flex>

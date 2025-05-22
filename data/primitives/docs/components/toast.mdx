@@ -1,13 +1,13 @@
 ---
-metaTitle: Toast
-metaDescription: A succinct message that is displayed temporarily.
+metaTitle: 提示
+metaDescription: 一个临时显示的简洁消息。
 name: toast
 aria: https://www.w3.org/TR/wai-aria/#aria-live
 ---
 
-# Toast
+# 提示
 
-<Description>A succinct message that is displayed temporarily.</Description>
+<Description>一个临时显示的简洁消息。</Description>
 
 <HeroContainer>
 	<ToastDemo />
@@ -17,26 +17,26 @@ aria: https://www.w3.org/TR/wai-aria/#aria-live
 
 <Highlights
 	features={[
-		"Automatically closes.",
-		"Pauses closing on hover, focus and window blur.",
-		"Supports hotkey to jump to toast viewport.",
-		"Supports closing via swipe gesture.",
-		"Exposes CSS variables for swipe gesture animations.",
-		"Can be controlled or uncontrolled.",
+		"自动关闭。",
+		"在鼠标悬停、聚焦和窗口失焦时暂停关闭。",
+		"支持热键跳转到提示视口。",
+		"支持通过滑动手势关闭。",
+		"暴露滑动手势动画的 CSS 变量。",
+		"可以是受控或不受控的。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-toast
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Toast } from "radix-ui";
@@ -55,11 +55,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Provider
 
-The provider that wraps your toasts and toast viewport. It usually wraps the application.
+包裹你的提示和提示视口的提供者。通常包裹整个应用程序。
 
 <PropsTable
 	data={[
@@ -68,7 +68,7 @@ The provider that wraps your toasts and toast viewport. It usually wraps the app
 			type: "number",
 			default: 5000,
 			description:
-				"The time in milliseconds that should elapse before automatically closing each toast.",
+				"在自动关闭每个提示之前应经过的时间（毫秒）。",
 		},
 		{
 			name: "label",
@@ -76,7 +76,7 @@ The provider that wraps your toasts and toast viewport. It usually wraps the app
 			type: "string",
 			default: '"Notification"',
 			description:
-				"An author-localized label for each toast. Used to help screen reader users associate the interruption with a toast.",
+				"每个提示的作者本地化标签。用于帮助屏幕阅读器用户将中断与提示相关联。",
 		},
 		{
 			name: "swipeDirection",
@@ -84,21 +84,21 @@ The provider that wraps your toasts and toast viewport. It usually wraps the app
 			typeSimple: "enum",
 			default: '"right"',
 			description:
-				"The direction of the pointer swipe that should close the toast.",
+				"应关闭提示的指针滑动方向。",
 		},
 		{
 			name: "swipeThreshold",
 			type: "number",
 			default: 50,
 			description:
-				"The distance in pixels that the swipe gesture must travel before a close is triggered.",
+				"滑动手势必须移动的距离（像素），才会触发关闭。",
 		},
 	]}
 />
 
 ### Viewport
 
-The fixed area where toasts appear. Users can jump to the viewport by pressing a hotkey. It is up to you to ensure the discoverability of the hotkey for keyboard users.
+提示出现的固定区域。用户可以通过按下热键跳转到视口。确保热键对于键盘用户的可发现性是你的责任。
 
 <PropsTable
 	data={[
@@ -109,12 +109,10 @@ The fixed area where toasts appear. Users can jump to the viewport by pressing a
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -124,13 +122,12 @@ The fixed area where toasts appear. Users can jump to the viewport by pressing a
 			default: '["F8"]',
 			description: (
 				<span>
-					The keys to use as the keyboard shortcut that will move focus to the
-					toast viewport. Use <Code>event.code</Code> value for each key from{" "}
+					用作键盘快捷键的按键，将焦点移到提示视口。对于每个键使用 <Code>event.code</Code> 值来自{" "}
 					<Link href="https://keycode.info/" variant="blue" target="_blank">
 						keycode.info
 					</Link>
-					. For meta keys, use <Code>ctrlKey</Code>, <Code>shiftKey</Code>,{" "}
-					<Code>altKey</Code> and/or <Code>metaKey</Code>.
+					。对于元键，使用 <Code>ctrlKey</Code>、<Code>shiftKey</Code>、{" "}
+					<Code>altKey</Code> 和/或 <Code>metaKey</Code>。
 				</span>
 			),
 		},
@@ -139,14 +136,14 @@ The fixed area where toasts appear. Users can jump to the viewport by pressing a
 			type: "string",
 			default: '"Notifications ({hotkey})"',
 			description:
-				"An author-localized label for the toast region to provide context for screen reader users when navigating page landmarks. The available `{hotkey}` placeholder will be replaced for you.",
+				"提示区域的作者本地化标签，以为屏幕阅读器用户提供在导航页面地标时的背景信息。可用的 `{hotkey}` 占位符将为你替换。",
 		},
 	]}
 />
 
 ### Root
 
-The toast that automatically closes. It should not be held open to [acquire a user response](/primitives/docs/components/toast#action).
+自动关闭的提示。应避免被保持开启以[获取用户响应](/primitives/docs/components/toast#action)。
 
 <PropsTable
 	data={[
@@ -157,12 +154,10 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -173,16 +168,14 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			default: '"foreground"',
 			description: (
 				<span>
-					Control the{" "}
+					控制{" "}
 					<Link
 						href="/primitives/docs/components/toast#sensitivity"
 						variant="blue"
 					>
-						sensitivity
+						灵敏度
 					</Link>{" "}
-					of the toast for accessibility purposes. For toasts that are the
-					result of a user action, choose <Code>foreground</Code>. Toasts
-					generated from background tasks should use <Code>background</Code>.
+					以满足可访问性目的。对于用户操作生成的提示，选择 <Code>foreground</Code>。由后台任务生成的提示应使用 <Code>background</Code>。
 				</span>
 			),
 		},
@@ -190,22 +183,21 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			name: "duration",
 			type: "number",
 			description:
-				"The time in milliseconds that should elapse before automatically closing the toast. This will override the value supplied to the provider.",
+				"在自动关闭提示之前应经过的时间（毫秒）。这将覆盖提供给提供者的值。",
 		},
 		{
 			name: "defaultOpen",
 			type: "boolean",
 			default: "true",
 			description:
-				"The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.",
+				"当对话框首次渲染时的打开状态。用于当你不需要控制其打开状态时。",
 		},
 		{
 			name: "open",
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the dialog. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					对话框的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -214,7 +206,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			type: "(open: boolean) => void",
 			typeSimple: "function",
 			description:
-				"Event handler called when the open state of the dialog changes.",
+				"当对话框的打开状态发生变化时调用的事件处理程序。",
 		},
 		{
 			name: "onEscapeKeyDown",
@@ -222,8 +214,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当按下 Esc 键时调用的事件处理程序。通过调用 <Code>event.preventDefault</Code> 可以阻止该事件。
 				</span>
 			),
 		},
@@ -232,14 +223,14 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			type: "() => void",
 			typeSimple: "function",
 			description:
-				"Event handler called when the dismiss timer is paused. This occurs when the pointer is moved over the viewport, the viewport is focused or when the window is blurred.",
+				"当取消计时器暂停时调用的事件处理程序。这在指针移至视口、视口获得焦点或窗口失去焦点时发生。",
 		},
 		{
 			name: "onResume",
 			type: "() => void",
 			typeSimple: "function",
 			description:
-				"Event handler called when the dismiss timer is resumed. This occurs when the pointer is moved away from the viewport, the viewport is blurred or when the window is focused.",
+				"当取消计时器恢复时调用的事件处理程序。这在指针移离视口、视口失去焦点或窗口获得焦点时发生。",
 		},
 		{
 			name: "onSwipeStart",
@@ -247,8 +238,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when starting a swipe interaction. It can be
-					prevented by calling <Code>event.preventDefault</Code>.
+					当开始滑动交互时调用的事件处理程序。通过调用 <Code>event.preventDefault</Code> 可以阻止该事件。
 				</span>
 			),
 		},
@@ -258,8 +248,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called during a swipe interaction. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					在滑动交互过程中调用的事件处理程序。通过调用 <Code>event.preventDefault</Code> 可以阻止该事件。
 				</span>
 			),
 		},
@@ -269,8 +258,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called at the end of a swipe interaction. It can be
-					prevented by calling <Code>event.preventDefault</Code>.
+					在滑动交互结束时调用的事件处理程序。通过调用 <Code>event.preventDefault</Code> 可以阻止该事件。
 				</span>
 			),
 		},
@@ -280,8 +268,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a swipe interaction is cancelled. It can be
-					prevented by calling <Code>event.preventDefault</Code>.
+					当滑动交互被取消时调用的事件处理程序。通过调用 <Code>event.preventDefault</Code> 可以阻止该事件。
 				</span>
 			),
 		},
@@ -289,7 +276,7 @@ The toast that automatically closes. It should not be held open to [acquire a us
 			name: "forceMount",
 			type: "boolean",
 			description:
-				"Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
+				"在需要更多控制时用于强制挂载。对使用 React 动画库控制动画时很有用。",
 		},
 	]}
 />
@@ -315,28 +302,28 @@ The toast that automatically closes. It should not be held open to [acquire a us
 	data={[
 		{
 			cssVariable: "--radix-toast-swipe-move-x",
-			description: "The offset position of the toast when horizontally swiping",
+			description: "水平滑动时提示的偏移位置",
 		},
 		{
 			cssVariable: "--radix-toast-swipe-move-y",
-			description: "The offset position of the toast when vertically swiping",
+			description: "垂直滑动时提示的偏移位置",
 		},
 		{
 			cssVariable: "--radix-toast-swipe-end-x",
 			description:
-				"The offset end position of the toast after horizontally swiping",
+				"水平滑动后提示的偏移结束位置",
 		},
 		{
 			cssVariable: "--radix-toast-swipe-end-y",
 			description:
-				"The offset end position of the toast after vertically swiping",
+				"垂直滑动后提示的偏移结束位置",
 		},
 	]}
 />
 
 ### Title
 
-An optional title for the toast.
+提示的可选标题。
 
 <PropsTable
 	data={[
@@ -347,12 +334,10 @@ An optional title for the toast.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -361,7 +346,7 @@ An optional title for the toast.
 
 ### Description
 
-The toast message.
+提示消息。
 
 <PropsTable
 	data={[
@@ -372,12 +357,10 @@ The toast message.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -386,9 +369,9 @@ The toast message.
 
 ### Action
 
-An action that is safe to ignore to ensure users are not expected to complete tasks with unexpected side effects as a result of a [time limit](https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html).
+一个安全可以忽略的操作，以确保用户不需要在[时间限制](https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html)的情况下完成任务。
 
-When obtaining a user response is necessary, portal an [`AlertDialog`](/primitives/docs/components/alert-dialog) styled as a toast into the viewport instead.
+当获取用户响应是必要的时，应该将一个 [`AlertDialog`](/primitives/docs/components/alert-dialog) 风格化为提示并插入到视口中。
 
 <PropsTable
 	data={[
@@ -399,12 +382,10 @@ When obtaining a user response is necessary, portal an [`AlertDialog`](/primitiv
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -414,11 +395,11 @@ When obtaining a user response is necessary, portal an [`AlertDialog`](/primitiv
 			type: "string",
 			description: (
 				<>
-					Describe an{" "}
+					为屏幕阅读器用户描述{" "}
 					<Link variant="subtle" href="./toast#alternative-action">
-						alternative way to achieve the action
-					</Link>{" "}
-					for screen reader users who cannot access the toast easily.
+						采取替代行动的方法
+					</Link>
+					，帮助那些不能轻松访问提示的用户。
 				</>
 			),
 		},
@@ -427,7 +408,7 @@ When obtaining a user response is necessary, portal an [`AlertDialog`](/primitiv
 
 ### Close
 
-A button that allows users to dismiss the toast before its duration has elapsed.
+一个允许用户在其持续时间未结束之前关闭提示的按钮。
 
 <PropsTable
 	data={[
@@ -438,23 +419,21 @@ A button that allows users to dismiss the toast before its duration has elapsed.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染元素更改为传递的子元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Custom hotkey
+### 自定义热键
 
-Override the default hotkey using the `event.code` value for each key from [keycode.info](https://keycode.info/).
+使用热键重写默认热键，使用来自 [keycode.info](https://keycode.info/) 的每个键的 `event.code` 值。
 
 ```jsx line=3
 <Toast.Provider>
@@ -463,19 +442,19 @@ Override the default hotkey using the `event.code` value for each key from [keyc
 </Toast.Provider>
 ```
 
-### Custom duration
+### 自定义持续时间
 
-Customise the duration of a toast to override the provider value.
+自定义提示的持续时间以覆盖提供者的值。
 
 ```jsx line=1
 <Toast.Root __duration__={3000}>
-	<Toast.Description>Saved!</Toast.Description>
+	<Toast.Description>已保存!</Toast.Description>
 </Toast.Root>
 ```
 
-### Duplicate toasts
+### 重复提示
 
-When a toast must appear every time a user clicks a button, use state to render multiple instances of the same toast (see below). Alternatively, you can abstract the parts to create your own [imperative API](/primitives/docs/components/toast#imperative-api).
+当每次用户点击按钮时提示必须出现时，使用状态渲染多个相同提示的实例（见下文）。或者，你可以抽象部分以创建自己的[命令式 API](/primitives/docs/components/toast#imperative-api)。
 
 ```jsx line=6,11-15
 export default () => {
@@ -485,12 +464,12 @@ export default () => {
 		<div>
 			<form onSubmit={() => setSavedCount((count) => count + 1)}>
 				{/* ... */}
-				<button>save</button>
+				<button>保存</button>
 			</form>
 
 			{Array.from({ length: savedCount }).map((_, index) => (
 				<Toast.Root key={index}>
-					<Toast.Description>Saved!</Toast.Description>
+					<Toast.Description>已保存!</Toast.Description>
 				</Toast.Root>
 			))}
 		</div>
@@ -498,9 +477,9 @@ export default () => {
 };
 ```
 
-### Animating swipe gesture
+### 动画滑动手势
 
-Combine `--radix-toast-swipe-move-[x|y]` and `--radix-toast-swipe-end-[x|y]` CSS variables with `data-swipe="[start|move|cancel|end]"` attributes to animate a swipe to close gesture. Here's an example:
+结合 `--radix-toast-swipe-move-[x|y]` 和 `--radix-toast-swipe-end-[x|y]` CSS 变量与 `data-swipe="[start|move|cancel|end]"` 属性来动画滑动关闭手势。以下是一个示例：
 
 ```jsx line=6,7
 // index.jsx
@@ -538,96 +517,96 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [`aria-live` requirements](https://www.w3.org/TR/wai-aria/#aria-live).
+遵循 [`aria-live` 要求](https://www.w3.org/TR/wai-aria/#aria-live)。
 
-### Sensitivity
+### 灵敏度
 
-Control the sensitivity of the toast for screen readers using the `type` prop.
+使用 `type` 属性控制提示的灵敏度以满足屏幕阅读器的要求。
 
-For toasts that are the result of a user action, choose `foreground`. Toasts generated from background tasks should use `background`.
+对于用户操作生成的提示，选择 `foreground`。由后台任务生成的提示应使用 `background`。
 
-#### Foreground
+#### 前景
 
-Foreground toasts are announced immediately. Assistive technologies may choose to clear previously queued messages when a foreground toast appears. Try to avoid stacking distinct foreground toasts at the same time.
+前景提示会立即宣布。当前景提示出现时，辅助技术可能选择清除之前排队的消息。尝试避免在同一时间堆积不同的前景提示。
 
-#### Background
+#### 背景
 
-Background toasts are announced at the next graceful opportunity, for example, when the screen reader has finished reading its current sentence. They do not clear queued messages so overusing them can be perceived as a laggy user experience for screen reader users when used in response to a user interaction.
+背景提示会在下一个机会优雅地宣布，例如，当屏幕阅读器结束阅读当前句子时。它们不会清除排队的消息，因此过度使用可能会被屏幕阅读器用户感知为延迟的用户体验，因为它们在响应用户交互时被使用。
 
 ```jsx line=1,6
 <Toast.Root type="foreground">
-	<Toast.Description>File removed successfully.</Toast.Description>
-	<Toast.Close>Dismiss</Toast.Close>
+	<Toast.Description>文件成功移除。</Toast.Description>
+	<Toast.Close>关闭</Toast.Close>
 </Toast.Root>
 
 <Toast.Root type="background">
-	<Toast.Description>We've just released Radix 1.0.</Toast.Description>
-	<Toast.Close>Dismiss</Toast.Close>
+	<Toast.Description>我们刚刚发布了 Radix 1.0。</Toast.Description>
+	<Toast.Close>关闭</Toast.Close>
 </Toast.Root>
 ```
 
-### Alternative action
+### 替代动作
 
-Use the `altText` prop on the `Action` to instruct an alternative way of actioning the toast to screen reader users.
+在 `Action` 上使用 `altText` 属性告诉屏幕阅读器用户采取提示的替代方式。
 
-You can direct the user to a permanent place in your application where they can action it or implement your own custom hotkey logic. If implementing the latter, use `foreground` type to announce immediately and increase the duration to give the user ample time.
+你可以指引用户前往应用程序中的永久位置，以便他们可以进行操作，或者实现自己的自定义热键逻辑。如果实现后者，请使用 `foreground` 类型以立即宣布并增加持续时间，以给予用户充足的时间。
 
 ```jsx line=4,10,12
 <Toast.Root type="background">
-	<Toast.Title>Upgrade Available!</Toast.Title>
-	<Toast.Description>We've just released Radix 1.0.</Toast.Description>
-	<Toast.Action altText="Goto account settings to upgrade">
-		Upgrade
+	<Toast.Title>可用升级！</Toast.Title>
+	<Toast.Description>我们刚刚发布了 Radix 1.0。</Toast.Description>
+	<Toast.Action altText="前往账户设置以进行升级">
+		升级
 	</Toast.Action>
-	<Toast.Close>Dismiss</Toast.Close>
+	<Toast.Close>关闭</Toast.Close>
 </Toast.Root>
 
 <Toast.Root __type__="foreground" __duration__={10000}>
-	<Toast.Description>File removed successfully.</Toast.Description>
-	<Toast.Action altText="Undo (Alt+U)">
-		Undo <kbd>Alt</kbd>+<kbd>U</kbd>
+	<Toast.Description>文件成功移除。</Toast.Description>
+	<Toast.Action altText="撤销 (Alt+U)">
+		撤销 <kbd>Alt</kbd>+<kbd>U</kbd>
 	</Toast.Action>
-	<Toast.Close>Dismiss</Toast.Close>
+	<Toast.Close>关闭</Toast.Close>
 </Toast.Root>
 ```
 
-### Close icon button
+### 关闭图标按钮
 
-When providing an icon (or font icon), remember to label it correctly for screen reader users.
+当提供一个图标（或字体图标）时，请记得为屏幕阅读器用户正确标记它。
 
 ```jsx line=3-4
 <Toast.Root type="foreground">
-	<Toast.Description>Saved!</Toast.Description>
-	<Toast.Close aria-label="Close">
+	<Toast.Description>已保存!</Toast.Description>
+	<Toast.Close aria-label="关闭">
 		<span aria-hidden>×</span>
 	</Toast.Close>
 </Toast.Root>
 ```
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["F8"],
-			description: "Focuses toasts viewport.",
+			description: "聚焦于提示视口。",
 		},
 		{
 			keys: ["Tab"],
-			description: "Moves focus to the next focusable element.",
+			description: "将焦点移动到下一个可聚焦元素。",
 		},
 		{
 			keys: ["Shift + Tab"],
-			description: "Moves focus to the previous focusable element.",
+			description: "将焦点移动到上一个可聚焦元素。",
 		},
 		{
 			keys: ["Space"],
 			description: (
 				<span>
-					When focus is on a <Code>Toast.Action</Code> or{" "}
-					<Code>Toast.Close</Code>, closes the toast.
+					当焦点在 <Code>Toast.Action</Code> 或{" "}
+					<Code>Toast.Close</Code> 上时，关闭提示。
 				</span>
 			),
 		},
@@ -635,8 +614,8 @@ When providing an icon (or font icon), remember to label it correctly for screen
 			keys: ["Enter"],
 			description: (
 				<span>
-					When focus is on a <Code>Toast.Action</Code> or{" "}
-					<Code>Toast.Close</Code>, closes the toast.
+					当焦点在 <Code>Toast.Action</Code> 或{" "}
+					<Code>Toast.Close</Code> 上时，关闭提示。
 				</span>
 			),
 		},
@@ -644,32 +623,32 @@ When providing an icon (or font icon), remember to label it correctly for screen
 			keys: ["Esc"],
 			description: (
 				<span>
-					When focus is on a <Code>Toast</Code>, closes the toast.
+					当焦点在 <Code>Toast</Code> 上时，关闭提示。
 				</span>
 			),
 		},
 	]}
 />
 
-## Custom APIs
+## 自定义 API
 
-### Abstract parts
+### 抽象部分
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将原始部分抽象到自己的组件中，创建你自己的 API。
 
-#### Usage
+#### 用法
 
 ```jsx
 import { Toast } from "./your-toast";
 
 export default () => (
-	<Toast title="Upgrade available" content="We've just released Radix 3.0!">
-		<button onClick={handleUpgrade}>Upgrade</button>
+	<Toast title="可用升级" content="我们刚刚发布了 Radix 3.0!">
+		<button onClick={handleUpgrade}>升级</button>
 	</Toast>
 );
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-toast.jsx
@@ -683,7 +662,7 @@ export const Toast = ({ title, content, children, ...props }) => {
 			{children && (
 				<ToastPrimitive.Action asChild>{children}</ToastPrimitive.Action>
 			)}
-			<ToastPrimitive.Close aria-label="Close">
+			<ToastPrimitive.Close aria-label="关闭">
 				<span aria-hidden>×</span>
 			</ToastPrimitive.Close>
 		</ToastPrimitive.Root>
@@ -691,11 +670,11 @@ export const Toast = ({ title, content, children, ...props }) => {
 };
 ```
 
-### Imperative API
+### 命令式 API
 
-Create your own imperative API to allow [toast duplication](/primitives/docs/components/toast#duplicate-toasts) if preferred.
+创建你自己的命令式 API，以允许[提示复制](/primitives/docs/components/toast#duplicate-toasts)（如果需要）。
 
-#### Usage
+#### 用法
 
 ```jsx
 import { Toast } from "./your-toast";
@@ -706,15 +685,15 @@ export default () => {
 		<div>
 			<form onSubmit={() => savedRef.current.publish()}>
 				{/* ... */}
-				<button>Save</button>
+				<button>保存</button>
 			</form>
-			<Toast ref={savedRef}>Saved successfully!</Toast>
+			<Toast ref={savedRef}>成功保存!</Toast>
 		</div>
 	);
 };
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-toast.jsx
@@ -734,7 +713,7 @@ export const Toast = React.forwardRef((props, forwardedRef) => {
 			{Array.from({ length: count }).map((_, index) => (
 				<ToastPrimitive.Root key={index} {...toastProps}>
 					<ToastPrimitive.Description>{children}</ToastPrimitive.Description>
-					<ToastPrimitive.Close>Dismiss</ToastPrimitive.Close>
+					<ToastPrimitive.Close>关闭</ToastPrimitive.Close>
 				</ToastPrimitive.Root>
 			))}
 		</>

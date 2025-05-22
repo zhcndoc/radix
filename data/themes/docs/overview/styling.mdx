@@ -1,25 +1,25 @@
 ---
-metaTitle: Styling
-metaDescription: How to approach styling with Radix Themes.
+metaTitle: 样式
+metaDescription: 如何使用 Radix Themes 进行样式处理。
 ---
 
-# Styling
+# 样式
 
-<Description>How to approach styling with Radix Themes.</Description>
+<Description>如何使用 Radix Themes 进行样式处理。</Description>
 
-## Introduction
+## 介绍
 
-Radix Themes does not come with a built-in styling system. There’s no `css` or `sx` prop, and it does not use any styling libraries internally. Under the hood, it’s built with vanilla CSS.
+Radix Themes 不带有内置的样式系统。没有 `css` 或 `sx` 属性，也不在内部使用任何样式库。从底层来看，它是用原生 CSS 构建的。
 
-There’s no overhead when it comes to picking a styling technology for your app.
+在为您的应用选择样式技术时，没有额外负担。
 
-## What you get
+## 您能得到什么
 
-The components in Radix Themes are relatively closed—they come with a set of styles that aren’t always easily overridden. They are customizable within what’s allowed by their props and the theme configuration.
+Radix Themes 中的组件相对封闭——它们配有一套样式，这些样式不总是容易覆盖。它们可以在其属性和主题配置允许的范围内进行自定义。
 
-However, you also get access to the same CSS variables that power the Radix Themes components. You can use these tokens to create custom components that naturally feel at home in the original theme. Changes to the token system are treated as breaking.
+不过，您还可以访问驱动 Radix Themes 组件的 CSS 变量。您可以使用这些令牌创建自定义组件，使其在原主题中感觉自然而舒服。对令牌系统的更改会被视为破坏性更改。
 
-For more information on specific tokens, refer to the corresponding guides in the [Theme section](/themes/docs/theme/overview).
+有关特定令牌的更多信息，请参阅 [主题部分](/themes/docs/theme/overview) 中的相应指南。
 
 <Flex direction="column" gap="7" my="6">
 	<ThemesAllColors />
@@ -27,85 +27,85 @@ For more information on specific tokens, refer to the corresponding guides in th
 	<ThemesPanelComposition />
 </Flex>
 
-## Overriding styles
+## 覆盖样式
 
-Beyond simple style overrides, we recommend using the components as-is, or create your own versions using the same building blocks.
+除了简单的样式覆盖，我们建议您按原样使用组件，或者使用相同的构建块创建自己的版本。
 
-Most components do have `className` and `style` props, but if you find yourself needing to override a lot of styles, it’s a good sign that you should either:
+大多数组件都有 `className` 和 `style` 属性，但如果您发现自己需要覆盖很多样式，这很可能是一个信号，表明您应当：
 
-- Try to achieve what you need with the existing props and theme configuration.
-- See whether you can achieve your design by tweaking the underlying token system.
-- Create your own component using lower-level building blocks, such [Primitives](/primitives) and [Colors](/colors).
-- Reconsider whether Radix Themes is the right fit for your project.
+- 尝试使用现有属性和主题配置实现所需效果。
+- 查看您是否可以通过调整底层令牌系统来实现您的设计。
+- 使用低级构建块创建自己的组件，比如 [Primitives](/primitives) 和 [Colors](/colors)。
+- 考虑 Radix Themes 是否适合您的项目。
 
 ### Tailwind
 
-Tailwind is _great_. Yet, if you plan to use Radix Themes with Tailwind, keep in mind how its ergonomics may encourage you to create complex styles on the fly, sometimes reaching into the component internals without friction.
+Tailwind 非常出色。然而，如果您计划将 Radix Themes 与 Tailwind 一起使用，请注意其使用便利性可能会鼓励您即时创建复杂样式，有时无缝进入组件内部。
 
-Tailwind is a different styling paradigm, which may not mix well with the idea of a closed component system where customization is achieved through props, tokens, and creating new components on top of a shared set of building blocks.
+Tailwind 是一种不同的样式范式，可能与使用属性、令牌和在共享构建块之上创建新组件来实现自定义的封闭组件系统的理念不太兼容。
 
-## Custom components
+## 自定义组件
 
-If you need to create a custom component, use the same building blocks that Radix Themes uses:
+如果您需要创建一个自定义组件，请使用 Radix Themes 使用的相同构建块：
 
-- [Theme](/themes/docs/theme/overview) tokens that power the components
-- [Radix Primitives](/primitives), a library of accessible, unstyled components
-- [Radix Colors](/colors), a color system for building beautiful websites and apps
+- 支持组件的 [主题](/themes/docs/theme/overview) 令牌
+- [Radix Primitives](/primitives)，一个可访问的无样式组件库
+- [Radix Colors](/colors)，一个用于构建精美网站和应用的色彩系统
 
-Feel free to explore the [source code](https://github.com/radix-ui/themes/tree/main/packages/radix-ui-themes) of Radix Themes to see how it is built.
+随时探索 [源代码](https://github.com/radix-ui/themes/tree/main/packages/radix-ui-themes) 以了解 Radix Themes 是如何构建的。
 
-## Common issues
+## 常见问题
 
-### z-index conflicts
+### z-index 冲突
 
-Out of the box, portalled Radix Themes components can be nested and stacked in any order without conflicts. For example, you can open a popover that opens a dialog, which in turn opens another popover. They all stack on top of each other in the order they were opened:
+开箱即用的 Radix Themes 组件可以嵌套并以任意顺序堆叠而不会发生冲突。例如，您可以打开一个弹出框，该弹出框又打开一个对话框，而这个对话框又打开另一个弹出框。它们会按打开的顺序堆叠在一起：
 
 <ThemesZIndexExample />
 
-When building your own components, use the following rules to avoid z-index conflicts:
+在构建自己的组件时，使用以下规则以避免 z-index 冲突：
 
-- Don’t use `z-index` values other than `auto`, `0`, or `-1` in rare cases.
-- Render the elements that should stack on top of each other in portals.
+- 不要在极少数情况下使用 `z-index` 值以外的 `auto`，`0` 或 `-1`。
+- 将应该堆叠在一起的元素呈现在 portal 中。
 
-Your main content and portalled content are separated by the stacking context that the styles of the root `<Theme>` component create. This allows you to stack portalled content on top of the main content without worrying about z-indices.
+您的主内容和门户内容由于根 `<Theme>` 组件创建的堆叠上下文而分隔开。这使您能够在不担心 z-index 的情况下将门户内容堆叠在主内容之上。
 
-### Next.js import order
+### Next.js 导入顺序
 
-As of Next.js 13.0 to 14.1, the import order of CSS files in `app/**/layout.tsx` is not guaranteed, so Radix Themes may overwrite your own styles even when written correctly:
+在 Next.js 13.0 到 14.1 版本之间，`app/**/layout.tsx` 中 CSS 文件的导入顺序并不保证，因此 Radix Themes 可能会覆盖您自己的样式，即使它们已正确编写：
 
 ```js
 import "@radix-ui/themes/styles.css";
 import "./my-styles.css";
 ```
 
-This Next.js issue may come and go sporadically, or happen only in development or production.
+这个 Next.js 问题可能时隐时现，或者仅在开发或生产中发生。
 
-As a workaround, you can merge all the CSS into a single file first via [postcss-import](https://github.com/postcss/postcss-import) and import just that into your layout. Alternatively, importing the styles directly in `page.tsx` files also works.
+作为解决方法，您可以首先通过 [postcss-import](https://github.com/postcss/postcss-import) 将所有 CSS 合并到一个文件中，然后仅将该文件导入到布局中。或者，也可以直接在 `page.tsx` 文件中导入样式。
 
-### Tailwind base styles
+### Tailwind 基础样式
 
-As of Tailwind v3, styles produced by the `@tailwind` directive are usually appended after any imported CSS, no matter the original import order. In particular, Tailwind’s [button reset](https://github.com/tailwindlabs/tailwindcss/blob/7361468f77500105b0559e879e121f34306e8da2/src/css/preflight.css#L197-L204) style may interfere with Radix Themes buttons, rendering certain buttons without a background color.
+在 Tailwind v3 版本中，通过 `@tailwind` 指令生成的样式通常会在任何导入的 CSS 后面追加，无论原始的导入顺序如何。特别是，Tailwind 的 [按钮重置](https://github.com/tailwindlabs/tailwindcss/blob/7361468f77500105b0559e879e121f34306e8da2/src/css/preflight.css#L197-L204) 样式可能会干扰 Radix Themes 按钮，使某些按钮没有背景颜色。
 
-Workarounds:
+解决方法：
 
-- Don’t use `@tailwind base`
-- Set up separate CSS [layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) for Tailwind and Radix Themes
-- Set up [postcss-import](https://github.com/postcss/postcss-import) and manually import Tailwind base styles via `@import tailwindcss/base` before Radix Themes styles. [Example setup](https://github.com/radix-ui/themes/issues/109#issuecomment-1747345743)
+- 不要使用 `@tailwind base`
+- 为 Tailwind 和 Radix Themes 设置单独的 CSS [层](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)
+- 设置 [postcss-import](https://github.com/postcss/postcss-import) 并在 Radix Themes 样式之前手动导入 Tailwind 基础样式，使用 `@import tailwindcss/base`。 [示例设置](https://github.com/radix-ui/themes/issues/109#issuecomment-1747345743)
 
-### Missing styles in portals
+### 门户中缺失的样式
 
-When you render a custom portal in a Radix Themes project, it will naturally appear outside of the root `<Theme>` component, which means it won’t have access to most of the theme tokens and styles. To fix that, wrap the portal content with another `<Theme>`:
+当您在 Radix Themes 项目中呈现自定义门户时，它自然会出现在根 `<Theme>` 组件之外，这意味着它无法访问大多数主题令牌和样式。要修复此问题，请用另一个 `<Theme>` 包裹门户内容：
 
 ```jsx line=11,18
-// Implementation example of a custom dialog using the low-level Dialog primitive
-// Refer to https://www.radix-ui.com/primitives/docs/components/dialog
+// 低级 Dialog 原语使用的自定义对话框的实现示例
+// 参考 https://www.radix-ui.com/primitives/docs/components/dialog
 import { Dialog } from "radix-ui";
 import { Theme } from "@radix-ui/themes";
 
 function MyCustomDialog() {
 	return (
 		<Dialog.Root>
-			<Dialog.Trigger>Open</Dialog.Trigger>
+			<Dialog.Trigger>打开</Dialog.Trigger>
 			<Dialog.Portal>
 				<Theme>
 					<Dialog.Overlay />
@@ -121,13 +121,13 @@ function MyCustomDialog() {
 }
 ```
 
-Components like Dialog and Popover in Radix Themes already handle this for you, so this is only necessary when creating your own portalled components.
+Radix Themes 中的 Dialog 和 Popover 等组件已经为您处理了这件事，因此在创建自己的门户组件时，这仅是必要的。
 
-### Complex CSS precedence
+### 复杂的 CSS 优先级
 
-Usually, you’d want your custom CSS to override Radix Themes styles. However, there are cases when it is natural to expect the opposite.
+通常，您希望自定义 CSS 覆盖 Radix Themes 样式。然而，有些情况下，您可能会自然地期望出现相反的情况。
 
-Consider a simple paragraph style that just resets the browser’s default margin:
+考虑一个简单的段落样式，该样式只是重置浏览器的默认边距：
 
 ```css
 .my-paragraph {
@@ -135,7 +135,7 @@ Consider a simple paragraph style that just resets the browser’s default margi
 }
 ```
 
-You might apply the margin prop from a `Box` onto your custom paragraph via `asChild`:
+您可能通过 `asChild` 从 `Box` 应用边距属性到自定义段落：
 
 ```jsx line="7,9"
 import "@radix-ui/themes/styles.css";
@@ -145,14 +145,14 @@ function MyApp() {
 	return (
 		<Theme>
 			<Box asChild m="5">
-				<p className="my-paragraph">My custom paragraph</p>
+				<p className="my-paragraph">我的自定义段落</p>
 			</Box>
 		</Theme>
 	);
 }
 ```
 
-Yet, this won’t work intuitively. The custom styles are imported after Radix Themes styles, so they will override the margin prop. As a workaround, Radix Themes provides separate `tokens.css`, `components.css`, and `utilities.css` files that the original `styles.css` is built upon:
+然而，这样并不会直观地工作。自定义样式在 Radix Themes 样式之后导入，因此它们将覆盖边距属性。作为解决方法，Radix Themes 提供了单独的 `tokens.css`、`components.css` 和 `utilities.css` 文件，这些文件是原始 `styles.css` 构建的基础：
 
 ```jsx
 import "@radix-ui/themes/tokens.css";
@@ -160,9 +160,9 @@ import "@radix-ui/themes/components.css";
 import "@radix-ui/themes/utilities.css";
 ```
 
-You can import `utilities.css` after your custom styles to ensure that the layout props work as expected with your custom styles. However, if you use Next.js, keep in mind the [import order issue](#nextjs-import-order) that’s mentioned above.
+您可以在自定义样式之后导入 `utilities.css`，以确保布局属性与自定义样式按预期工作。然而，如果您使用 Next.js，请记住上面提到的 [导入顺序问题](#nextjs-import-order)。
 
-If you use [standalone layout components](/themes/docs/overview/layout#standalone-usage), split CSS files are also available for them:
+如果您使用 [独立布局组件](/themes/docs/overview/layout#standalone-usage)，也可以为它们提供分开的 CSS 文件：
 
 ```jsx
 import "@radix-ui/themes/layout/tokens.css";

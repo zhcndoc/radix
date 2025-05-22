@@ -1,6 +1,6 @@
 ---
-metaTitle: Select
-metaDescription: Displays a list of options for the user to pick from—triggered by a button.
+metaTitle: 选择
+metaDescription: 提供给用户选择的选项列表 - 通过一个按钮触发。
 sourcePath: components/select
 ---
 
@@ -9,317 +9,317 @@ sourcePath: components/select
 	<Select.Trigger />
 	<Select.Content>
 		<Select.Group>
-			<Select.Label>Fruits</Select.Label>
-			<Select.Item value="orange">Orange</Select.Item>
-			<Select.Item value="apple">Apple</Select.Item>
+			<Select.Label>水果</Select.Label>
+			<Select.Item value="orange">橘子</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
 			<Select.Item value="grape" disabled>
-				Grape
+				葡萄
 			</Select.Item>
 		</Select.Group>
 		<Select.Separator />
 		<Select.Group>
-			<Select.Label>Vegetables</Select.Label>
-			<Select.Item value="carrot">Carrot</Select.Item>
-			<Select.Item value="potato">Potato</Select.Item>
+			<Select.Label>蔬菜</Select.Label>
+			<Select.Item value="carrot">胡萝卜</Select.Item>
+			<Select.Item value="potato">土豆</Select.Item>
 		</Select.Group>
 	</Select.Content>
 </Select.Root>
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Contains all the parts of a select. It inherits props from the Select primitive [Root](/primitives/docs/components/select#root) part.
+包含选择器的所有部分。它从选择基础部分 [Root](/primitives/docs/components/select#root) 继承属性。
 
 <ThemesPropsTable defs="selectRootPropDefs" />
 
 ### Trigger
 
-The button that toggles the select. This component inherits props from the Select primitive [Trigger](/primitives/docs/components/select#trigger) and [Value](/primitives/docs/components/select#value) parts. It supports [common margin props](/themes/docs/overview/layout#margin-props).
+用于切换选择器的按钮。该组件从选择基础部分 [Trigger](/primitives/docs/components/select#trigger) 和 [Value](/primitives/docs/components/select#value) 继承属性。它支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="selectTriggerPropDefs" />
 
 ### Content
 
-The component that pops out when the select is open. It inherits props from the [Select.Portal primitive](/primitives/docs/components/select#portal) and [Select.Content primitive](/primitives/docs/components/select#content) parts.
+当选择器打开时弹出的组件。它从 [Select.Portal primitive](/primitives/docs/components/select#portal) 和 [Select.Content primitive](/primitives/docs/components/select#content) 继承属性。
 
 <ThemesPropsTable defs="selectContentPropDefs" />
 
 ### Item
 
-The component that contains the select items. It inherits props from the [Select.Item primitive](/primitives/docs/components/select#item) part.
+包含选择项的组件。它从 [Select.Item primitive](/primitives/docs/components/select#item) 部分继承属性。
 
 ### Group
 
-Used to group multiple items. It inherits props from the [Select.Group primitive](/primitives/docs/components/select#group) part. Use in conjunction with `Select.Label` to ensure good accessibility via automatic labelling.
+用于分组多个项。它从 [Select.Group primitive](/primitives/docs/components/select#group) 部分继承属性。与 `Select.Label` 一起使用，以确保通过自动标签实现良好的可访问性。
 
 ### Label
 
-Used to render the label of a group, it isn't focusable using arrow keys. It inherits props from the [Select.Label primitive](/primitives/docs/components/select#label) part.
+用于渲染组的标签，无法通过方向键聚焦。它从 [Select.Label primitive](/primitives/docs/components/select#label) 部分继承属性。
 
 ### Separator
 
-Used to visually separate items in the Select. It inherits props from the [Select.Separator primitive](/primitives/docs/components/select#separator) part.
+用于在选择器中视觉上分隔项。它从 [Select.Separator primitive](/primitives/docs/components/select#separator) 部分继承属性。
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size.
+使用 `size` 属性来控制大小。
 
 ```jsx live=true
 <Flex gap="3" align="center">
 	<Select.Root size="1" defaultValue="apple">
 		<Select.Trigger />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root size="2" defaultValue="apple">
 		<Select.Trigger />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root size="3" defaultValue="apple">
 		<Select.Trigger />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop on `Trigger` and `Content` to customize the visual style.
+在 `Trigger` 和 `Content` 上使用 `variant` 属性以自定义视觉样式。
 
 ```jsx live=true
 <Flex gap="3" align="center">
 	<Select.Root defaultValue="apple">
 		<Select.Trigger variant="surface" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger variant="classic" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger variant="soft" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-#### Ghost
+#### 幽灵
 
-Use the `ghost` trigger variant to render the trigger without a visually containing element. Ghost triggers behave differently in layout as they use a negative margin to optically align themselves against their siblings while maintaining their padded active and hover states.
+使用 `ghost` 触发器变体可以在没有视觉包含元素的情况下渲染触发器。幽灵触发器在布局中表现不同，因为它们使用负边距与其兄弟元素在视觉上对齐，同时保持其填充的活动和悬停状态。
 
 ```jsx live=true line=11
 <Flex gap="3" align="center">
 	<Select.Root defaultValue="apple">
 		<Select.Trigger variant="surface" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger variant="ghost" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop on `Trigger` and `Content` to assign a specific color value.
+在 `Trigger` 和 `Content` 上使用 `color` 属性指定特定的颜色值。
 
 ```jsx live=true
 <Flex gap="3">
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="indigo" variant="soft" />
 		<Select.Content color="indigo">
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="cyan" variant="soft" />
 		<Select.Content color="cyan">
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="orange" variant="soft" />
 		<Select.Content color="orange">
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="crimson" variant="soft" />
 		<Select.Content color="crimson">
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比
 
-Use the `highContrast` prop on `Content` to increase item contrast.
+在 `Content` 上使用 `highContrast` 属性以增加项的对比度。
 
 ```jsx live=true line=12
 <Flex gap="3">
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="gray" />
 		<Select.Content color="gray" variant="solid">
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger color="gray" />
 		<Select.Content color="gray" variant="solid" highContrast>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-### Radius
+### 半径
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性来赋予特定的半径值。
 
 ```jsx live=true
 <Flex gap="3">
 	<Select.Root defaultValue="apple">
 		<Select.Trigger radius="none" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger radius="large" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 
 	<Select.Root defaultValue="apple">
 		<Select.Trigger radius="full" />
 		<Select.Content>
-			<Select.Item value="apple">Apple</Select.Item>
-			<Select.Item value="orange">Orange</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
+			<Select.Item value="orange">橘子</Select.Item>
 		</Select.Content>
 	</Select.Root>
 </Flex>
 ```
 
-### Placeholder
+### 占位符
 
-Use the `placeholder` prop to create a `Trigger` that doesn’t need an initial value.
+使用 `placeholder` 属性创建一个不需要初始值的 `Trigger`。
 
 ```jsx live="true"
 <Select.Root>
-	<Select.Trigger placeholder="Pick a fruit" />
+	<Select.Trigger placeholder="选择一个水果" />
 	<Select.Content>
 		<Select.Group>
-			<Select.Label>Fruits</Select.Label>
-			<Select.Item value="orange">Orange</Select.Item>
-			<Select.Item value="apple">Apple</Select.Item>
+			<Select.Label>水果</Select.Label>
+			<Select.Item value="orange">橘子</Select.Item>
+			<Select.Item value="apple">苹果</Select.Item>
 			<Select.Item value="grape" disabled>
-				Grape
+				葡萄
 			</Select.Item>
 		</Select.Group>
 		<Select.Separator />
 		<Select.Group>
-			<Select.Label>Vegetables</Select.Label>
-			<Select.Item value="carrot">Carrot</Select.Item>
-			<Select.Item value="potato">Potato</Select.Item>
+			<Select.Label>蔬菜</Select.Label>
+			<Select.Item value="carrot">胡萝卜</Select.Item>
+			<Select.Item value="potato">土豆</Select.Item>
 		</Select.Group>
 	</Select.Content>
 </Select.Root>
 ```
 
-### Position
+### 位置
 
-Set `position="popper"` prop to position the select menu below the trigger.
+设置 `position="popper"` 属性使选择菜单位于触发器下方。
 
 ```jsx live=true
 <Select.Root defaultValue="apple">
 	<Select.Trigger />
 	<Select.Content position="popper">
-		<Select.Item value="apple">Apple</Select.Item>
-		<Select.Item value="orange">Orange</Select.Item>
+		<Select.Item value="apple">苹果</Select.Item>
+		<Select.Item value="orange">橘子</Select.Item>
 	</Select.Content>
 </Select.Root>
 ```
 
-### With SSR
+### 与服务端渲染一起使用
 
-When using server-side rendering, you might notice a layout shift after hydration. This is because Trigger executes client-side code to display the selected item’s text. To avoid that layout shift, you can render it manually by mapping values.
+在使用服务器端渲染时，您可能会注意到在水合后布局发生移动。这是因为触发器执行客户端代码以显示所选项的文本。为了避免这种布局移动，您可以通过映射值手动渲染它。
 
 ```jsx live=true
 () => {
 	const data = {
-		apple: "Apple",
-		orange: "Orange",
+		apple: "苹果",
+		orange: "橘子",
 	};
 	const [value, setValue] = React.useState("apple");
 	return (
 		<Select.Root value={value} onValueChange={setValue}>
 			<Select.Trigger>{data[value]}</Select.Trigger>
 			<Select.Content>
-				<Select.Item value="apple">Apple</Select.Item>
-				<Select.Item value="orange">Orange</Select.Item>
+				<Select.Item value="apple">苹果</Select.Item>
+				<Select.Item value="orange">橘子</Select.Item>
 			</Select.Content>
 		</Select.Root>
 	);
 };
 ```
 
-### With an icon
+### 带图标
 
-You can customise how Trigger renders the value by controlling its children manually. For example, you can render an icon next to the selected item’s text.
+您可以通过手动控制子元素来自定义触发器如何渲染值。例如，您可以在所选项的文本旁边渲染一个图标。
 
 ```jsx live=true
 () => {
 	const data = {
-		light: { label: "Light", icon: <SunIcon /> },
-		dark: { label: "Dark", icon: <MoonIcon /> },
+		light: { label: "光明", icon: <SunIcon /> },
+		dark: { label: "黑暗", icon: <MoonIcon /> },
 	};
 	const [value, setValue] = React.useState("light");
 	return (
@@ -332,8 +332,8 @@ You can customise how Trigger renders the value by controlling its children manu
 					</Flex>
 				</Select.Trigger>
 				<Select.Content position="popper">
-					<Select.Item value="light">Light</Select.Item>
-					<Select.Item value="dark">Dark</Select.Item>
+					<Select.Item value="light">光明</Select.Item>
+					<Select.Item value="dark">黑暗</Select.Item>
 				</Select.Content>
 			</Select.Root>
 		</Flex>

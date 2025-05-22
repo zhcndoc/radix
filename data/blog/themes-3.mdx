@@ -1,35 +1,35 @@
 ---
-metaTitle: Radix Themes 3.0
-metaDescription: New layout engine, new components, custom color palette generator, and zero config setup with Astro and Remix.
-publishedAt: March 23, 2024
+metaTitle: Radix 主题 3.0
+metaDescription: 新的布局引擎、新组件、自定义调色板生成器，以及与 Astro 和 Remix 的零配置设置。
+publishedAt: 2024年3月23日
 metaImage: https://workos.imgix.net/images/ac05ebb6-4a7e-49e3-8395-8b148b27dede.png?auto=format&fit=clip&q=90
 ---
 
-# Radix Themes 3.0
+# Radix 主题 3.0
 
 <Description>
-	New layout engine, new components, and custom color palette generator.
+	新的布局引擎、新组件和自定义调色板生成器。
 </Description>
 
-## Introduction
+## 介绍
 
-Radix Themes 3.0 just landed. This release is a big leap towards making Radix Themes the best component library for building modern apps. We’ll present the main highlights in this post.
+Radix 主题 3.0 刚刚发布。此次更新是 Radix 主题朝着成为构建现代应用最佳组件库的一大飞跃。我们将在这篇文章中介绍主要亮点。
 
-For the comprehensive changelog and a migration guide, see the [release notes](/themes/docs/overview/releases#300).
+有关完整的更新日志和迁移指南，请查看 [发布说明](/themes/docs/overview/releases#300)。
 
 ---
 
-## Custom color palettes
+## 自定义调色板
 
-Radix Themes comes with almost 30 color scales, each with their own light, dark and alpha variants. Under the hood, the color system is powered by [Radix Colors](/colors).
+Radix 主题提供近 30 种颜色比例，每种颜色都有自己的浅色、深色和透明变体。在后台，颜色系统由 [Radix Colors](/colors) 提供支持。
 
 <Box mt="6" mb="7">
 	<ThemesAccentSwatches />
 </Box>
 
-Every scale has been tuned to provide fully accessible contrast ratios, each with steps that correspond to backgrounds, interactive components, borders and text. Offering the most beautiful and intuitive color system you’ve ever used.
+每个颜色比例都经过调优，以提供完全可访问的对比度比率，每个比例的步骤对应背景、交互组件、边框和文本。提供您所使用过的最美丽和直观的颜色系统。
 
-Today, we are introducing a new tool which allows you to create your own brand palette for Radix Themes. It’s a simple interface that lets you specify a primary color, a gray color, and your page background, generating a color configuration to copy-paste into your theme styles.
+今天，我们推出一个新工具，让您为 Radix 主题创建自己的品牌调色板。这是一个简单的界面，可以让您指定主要颜色、灰色和页面背景，从而生成可复制粘贴到主题样式中的颜色配置。
 
 <Text as="div" align="center" my="6">
 	<Box asChild mb="2">
@@ -46,110 +46,110 @@ Today, we are introducing a new tool which allows you to create your own brand p
 			</NextLink>
 		</Link>
 	</Box>
-	{<a href="/colors/custom">Create a custom palette →</a>}
+	{<a href="/colors/custom">创建自定义调色板 →</a>}
 </Text>
 
 ---
 
-## New components
+## 新组件
 
-Radix Themes 3.0 introduces a number of new components for building dashboards and data-heavy interfaces. They are built and designed with the level of rigor and care that you’ve come to expect from Radix, and as usual, they are accessible to keyboard and screen reader users. Here’s a quick overview of the main highlights.
+Radix 主题 3.0 引入了多个新组件，用于构建仪表板和数据密集型界面。它们的构建和设计水平符合您对 Radix 的期待，通常也是为键盘和屏幕阅读器用户提供可访问性的。以下是主要亮点的快速概述。
 
-### Spinner
+### 旋转器
 
-Spinner is a simple animated loading indicator:
+旋转器是一个简单的动画加载指示器：
 
 ```jsx live=true
 <Spinner />
 ```
 
-It comes with an intuitive API to conditionally render its children when they are done loading. Consider the following example:
+它具有直观的 API，可以在子元素加载完成时有条件地渲染它们。请考虑以下示例：
 
 <ThemesBlogPostExampleSpinner />
 
 ```jsx
-// Inside the button:
+// 在按钮内：
 <Spinner loading={loading}>
 	<CubeIcon />
 </Spinner>
 ```
 
-The implementation looks effortless—the way it should be. Spinner preserves child dimensions while the data is being fetched, so there is no layout shift between the states. This is an ergonomic way to handle loading states in your app because it minimizes the amount of code branching needed in common situations.
+实现看起来毫不费力——这就是应有的样子。旋转器在数据获取时保持子元素的尺寸，因此状态之间没有布局偏移。这是一种符合人体工程学的处理应用程序加载状态的方法，因为它最小化了在常见情况下所需的代码分支数量。
 
-### Skeleton
+### 骨架
 
-Skeleton is another loading component in this release:
+骨架是此版本中的另一个加载组件：
 
 ```jsx live=true
 <Skeleton>
-	<Button radius="full">Button</Button>
+	<Button radius="full">按钮</Button>
 </Skeleton>
 ```
 
-Skeleton has a similar API to Spinner, but it also fully adopts the shape and size of child components, so you can build the skeleton interface using exactly the same layout that you’d use in the real one:
+骨架的 API 与旋转器类似，但它还完全采用子组件的形状和大小，因此您可以使用与真实布局完全相同的布局来构建骨架界面：
 
 <ThemesBlogPostExampleSkeleton />
 
-### Segmented Control
+### 分段控制
 
-Segmented Control carries a familiar design for toggle buttons that switch between values:
+分段控制采用了熟悉的设计，用于在值之间切换的切换按钮：
 
 <ThemesBlogPostExampleSegmentedControl />
 
-Segmented Control packs many details that were crafted to be invisible. For example, a bolder font weight is used on the active item, yet there is no layout shift, and the animation is dialed in so that even the font weight change transitions smoothly. Here’s the same demo slowed down:
+分段控制包含许多被设计为不可见的细节。例如，活动项使用了更粗的字体权重，但没有布局偏移，动画的设定让字体权重的变化也能平滑过渡。这里是同样的演示，速度放慢：
 
 <ThemesBlogPostExampleSegmentedControlAnimated />
 
-### Data List
+### 数据列表
 
-[Data List](/themes/docs/components/data-list) is a component for displaying a list of key-value pairs:
+[数据列表](/themes/docs/components/data-list) 是一个用于显示键值对列表的组件：
 
 <ThemesBlogPostExampleDataList />
 
-What’s special about Data List? It is a common pattern that is deceptively tricky to get right. We had to put together a [secret page](https://themes-playground-modulz.vercel.app/test-data-list) with all the different layout combinations as we designed for:
+数据列表有什么特别之处？这是一个常见的模式，实际上处理起来非常复杂。我们不得不组合一个[秘密页面](https://themes-playground-modulz.vercel.app/test-data-list)，以展示我们设计时考虑的所有不同布局组合：
 
-- Values of varied length
-- Consistent rhythm between mixed height items
-- Configurable alignment of the label and value
-- Common layout compositions within
-- Leading trim
+- 不同长度的值
+- 混合高度项目之间的一致节奏
+- 标签和数值的可配置对齐
+- 内部常见布局组合
+- 前导修剪
 
-### Reset
+### 重置
 
-Unlike others, [Reset](/themes/docs/components/reset) is an invisible component:
+与其他组件不同， [重置](/themes/docs/components/reset) 是一个不可见的组件：
 
 ```jsx live=true
 <Reset>
-	<button>Button</button>
+	<button>按钮</button>
 </Reset>
 ```
 
-Reset removes default browser styles from any HTML tag and sets idiomatic layout defaults so that you can build your custom components on top of it.
+重置移除了任何 HTML 标签的默认浏览器样式，并设置符合习惯的布局默认值，使您可以在其之上构建自定义组件。
 
-In most interfaces, these styles are global and affect the entire app, so that tends to be a compromise between removing as much as possible and retaining common defaults. Reset puts a new spin on the ergonomics of the normalization styles that almost any website needs.
+在大多数界面中，这些样式是全局的，影响整个应用，因此通常在尽可能移除和保留常见默认值之间存在权衡。重置为几乎任何网站所需的样式规范化带来了新的人体工程学思路。
 
-### Radio Cards
+### 单选卡片
 
-[Radio Cards](/themes/docs/components/radio-cards) is a common pattern for picking a single value out of multiple. They are used for visually engaging forms where each options gets more weight compared to a regular radio button:
+[单选卡片](/themes/docs/components/radio-cards) 是从多个选项中选择单个值的常见模式。它们用于视觉上引人入胜的表单，其中每个选项与常规单选按钮相比更具权重：
 
 <ThemesBlogPostExampleArea>
 	<Box width="100%" maxWidth="600px">
 		<RadioCards.Root defaultValue="1" columns={{ initial: "1", sm: "3" }}>
 			<RadioCards.Item value="1">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">8-core CPU</Text>
+					<Text weight="bold">8 核 CPU</Text>
 					<Text>32 GB RAM</Text>
 				</Flex>
 			</RadioCards.Item>
 			<RadioCards.Item value="2">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">6-core CPU</Text>
+					<Text weight="bold">6 核 CPU</Text>
 					<Text>24 GB RAM</Text>
 				</Flex>
 			</RadioCards.Item>
 			<RadioCards.Item value="3">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">4-core CPU</Text>
+					<Text weight="bold">4 核 CPU</Text>
 					<Text>16 GB RAM</Text>
 				</Flex>
 			</RadioCards.Item>
@@ -157,9 +157,9 @@ In most interfaces, these styles are global and affect the entire app, so that t
 	</Box>
 </ThemesBlogPostExampleArea>
 
-### Checkbox Cards
+### 复选框卡片
 
-[Checkbox Cards](/themes/docs/components/checkbox-cards) are similar to Radio Cards, but are used for picking multiple values:
+[复选框卡片](/themes/docs/components/checkbox-cards) 类似于单选卡片，但用于选择多个值：
 
 <ThemesBlogPostExampleArea>
 	<Box width="100%" maxWidth="600px">
@@ -169,77 +169,77 @@ In most interfaces, these styles are global and affect the entire app, so that t
 		>
 			<CheckboxCards.Item value="1">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">A1 Keyboard</Text>
-					<Text>US Layout</Text>
+					<Text weight="bold">A1 键盘</Text>
+					<Text>美国布局</Text>
 				</Flex>
 			</CheckboxCards.Item>
 			<CheckboxCards.Item value="2">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">Pro Mouse</Text>
-					<Text>Zero-lag wireless</Text>
+					<Text weight="bold">专业鼠标</Text>
+					<Text>零延迟无线</Text>
 				</Flex>
 			</CheckboxCards.Item>
 			<CheckboxCards.Item value="3">
 				<Flex direction="column" width="100%">
-					<Text weight="bold">Lightning Mat</Text>
-					<Text>Next-gen charging</Text>
+					<Text weight="bold">闪电垫</Text>
+					<Text>下一代充电</Text>
 				</Flex>
 			</CheckboxCards.Item>
 		</CheckboxCards.Root>
 	</Box>
 </ThemesBlogPostExampleArea>
 
-### Progress
+### 进度
 
-[Progress](/themes/docs/components/progress) is yet another loading component. It can be used to indicate the progress of a task, or use an ambiguous animation to indicate indeterminate progress:
+[进度](/themes/docs/components/progress) 是另一个加载组件。它可以用于指示任务的进度，或使用模糊动画指示不确定的进度：
 
 <ThemesBlogPostExampleProgress />
 
-### Tab Nav
+### 标签导航
 
-[Tab Nav](/themes/docs/components/tab-nav) is a component for navigating to a different view. It complements its lookalike [Tabs](/themes/docs/components/tabs) sibling, but it is built on top of the Navigation Menu primitive which provides screen reader accessibility and keyboard navigation tailored to links.
+[标签导航](/themes/docs/components/tab-nav) 是一个用于导航到不同视图的组件。它补充了相似的 [选项卡](/themes/docs/components/tabs) 组件，但基于导航菜单原语构建，它提供了针对链接的屏幕阅读器可访问性和键盘导航。
 
 <ThemesBlogPostExampleTabNav baseUrl="/themes/docs/overview/3.0" />
 
 ---
 
-## New layout engine
+## 新布局引擎
 
-A new engine makes layout components and their props more powerful and easier to use.
+新的引擎使布局组件及其属性更强大、更易于使用。
 
-Layout components are a cornerstone feature of Radix Themes. There are just five of them—[Box](/themes/docs/components/box), [Flex](/themes/docs/components/flex), [Grid](/themes/docs/components/grid), [Section](/themes/docs/components/section), and [Container](/themes/docs/components/container). These components are used to separate layout responsibilities from content and interactivity. When you separate layout concerns from content and interactivity, the compositions you create are more maintainable and easy to reason about.
+布局组件是 Radix 主题的基石功能。它们仅有五个——[Box](/themes/docs/components/box)、[Flex](/themes/docs/components/flex)、[Grid](/themes/docs/components/grid)、[Section](/themes/docs/components/section) 和 [Container](/themes/docs/components/container)。这些组件用于将布局职责与内容和交互性分开。当您将布局 concerns 从内容和交互性中分离时，您创建的组合将更加可维护和易于理解。
 
-These components allow you to quickly add structure to views, pages and other interactive elements within your application.
+这些组件允许您快速为视图、页面和应用程序中其他交互元素添加结构。
 
-You can learn more about layout components and their props in the [Layout guide](/themes/docs/overview/layout).
+您可以在[布局指南](/themes/docs/overview/layout)中了解有关布局组件及其属性的更多信息。
 
-### Better layout props
+### 更好的布局属性
 
-In this release, layout components have received a number of new props and the values they accept have been significantly reworked:
+在此版本中，布局组件获得了一些新属性，并且它们接受的值也进行了显著修改：
 
-- 9 new props for working with flex and grid layouts
-- 4 new props for controlling the dimensions of layout components
-- In addition to [space scale values](/themes/docs/theme/spacing), all layout props now accept valid CSS values, including when used with the responsive object syntax.
+- 9 个新属性，用于处理灵活和网格布局
+- 4 个新属性，用于控制布局组件的尺寸
+- 除了 [空间比例值](/themes/docs/theme/spacing) 外，所有布局属性现在还接受有效的 CSS 值，包括与响应对象语法一起使用时。
 
-### Responsive object syntax
+### 响应对象语法
 
-In Radix Themes, _responsive object syntax_ is how you build a responsive layout at different breakpoints without leaving the React code where you compose your app itself.
+在 Radix 主题中，_响应对象语法_ 是在不同断点上构建响应布局的方式，而无需离开组合您应用程序本身的 React 代码。
 
-Consider the following piece of code:
+考虑以下代码：
 
 ```jsx
 <Flex width="500px" />
 ```
 
-This would create a flexbox layout that’s `500px` wide. But what if you wanted to use a different width on mobile? This is possible using the responsive object syntax, where you can specify the value to use at a particular breakpoint:
+这将创建一个宽度为 `500px` 的 flexbox 布局。但是，如果您想在手机上使用不同的宽度呢？这可以使用响应对象语法来完成，您可以指定在特定断点上使用的值：
 
 ```jsx
 <Flex width={{ initial: "100%", sm: "300px", md: "500px" }} />
 ```
 
-Now, in addition to [space scale values](/themes/docs/theme/spacing), layout props will support valid CSS values. For example, `100px`, `50vw`, or even expressions like `calc(100vw - 200px)` can be used at specific breakpoints.
+现在，除了 [空间比例值](/themes/docs/theme/spacing) 外，布局属性将支持有效的 CSS 值。例如，可以在特定断点上使用 `100px`、`50vw`，或甚至像 `calc(100vw - 200px)` 这样的表达式。
 
-However, does it perform well? Does it work with server components? Well, here’s how the above `<Flex>` element gets actually rendered into the DOM:
+然而，它的性能如何？它与服务器组件一起使用效果如何？那么，这就是上述 `<Flex>` 元素实际渲染到 DOM 的方式：
 
 ```jsx
 <div
@@ -248,19 +248,19 @@ However, does it perform well? Does it work with server components? Well, here�
 />
 ```
 
-You can see how that the `<Flex>` element was compiled into a combination of utility classes and CSS custom properties. There is no runtime evaluation of the breakpoints, which means the performance is just like vanilla CSS and the component can be rendered on the server.
+您可以看到 `<Flex>` 元素被编译为一组实用程序类和 CSS 自定义属性。没有对断点的运行时评估，这意味着性能就像普通的 CSS 并且该组件可以在服务器上渲染。
 
-### The best of both worlds
+### 两全其美
 
-Altogether, there are 5 layout components with almost 40 props each. Together they form a system that is easy to learn, quick to master, and sets an _incredibly_ high ceiling of what you can achieve without switching between files and losing momentum.
+总体而言，有 5 个布局组件，每个组件几乎有 40 个属性。它们共同形成一个系统，易于学习，快速掌握，并为您提供了一个_惊人_的上限，您可以在不切换文件和失去动力的情况下实现。
 
-If you have never used such a system, we’d suggest you give it try. It is a great alternative to Tailwind, which is an incredibly powerful tool originally built for the same purpose—layout. However, today it has evolved into an entire styling paradigm that does not discourage you from creating complex styles on the fly, which can violate the separation of concerns mentioned earlier.
+如果您从未使用过这样的系统，我们建议您试一试。这是 Tailwind 的一个极好替代方案，Tailwind 是一个功能强大的工具，最初是为相同的目的——布局而构建的。然而，今天它已经演变为一个完整的样式范式，不会阻碍您随意创建复杂的样式，这可能会违反先前提到的关注点分离。
 
-Radix Themes layout comes with the full power that utility class frameworks may provide for layout, but it’s also type-safe and guides the developer in maintaining a clear boundary with the other pieces of the interface that they are building.
+Radix 主题布局提供了实用类框架可能为布局提供的所有强大功能，同时还保持类型安全，并指导开发人员维护与他们正在构建的接口其他部分之间的明确边界。
 
-### Standalone layout components
+### 独立布局组件
 
-If you want to use _just_ the layout component from Radix Themes, that’s also possible. Just make sure that JavaScript tree-shaking works on your side, and import the layout essentials CSS:
+如果您想仅使用 Radix 主题中的布局组件，这也是可能的。只需确保 JavaScript 树摇动在您的环境中正常工作，并导入布局必要的 CSS：
 
 ```jsx
 import "@radix-ui/themes/layout.css";
@@ -268,16 +268,16 @@ import "@radix-ui/themes/layout.css";
 
 ---
 
-## Zero config setup with Astro and Remix
+## 与 Astro 和 Remix 的零配置设置
 
-Radix Themes is now much easier to set up with Remix and Astro. In 3.0, we have revisited the way the library is built to ensure support for ESM environments out of the box.
+Radix 主题现在与 Remix 和 Astro 的设置变得更加容易。在 3.0 版本中，我们重新审视了库的构建方式，以确保原生支持 ESM 环境。
 
-The distribution is now a hybrid ESM/CommonJS package. Depending on your setup, your import resolver will now pick the right version automatically.
+分发现在是一个混合的 ESM/CommonJS 包。根据您的设置，您的导入解析器现在会自动选择正确的版本。
 
 ---
 
-## Contributors
+## 贡献者
 
-Radix Themes 3.0 is the result of the hard work of many contributors. We’d like to thank everyone who has contributed to this release, whether through code, documentation, design, or community support.
+Radix 主题 3.0 是许多贡献者辛勤工作的结果。我们要感谢所有为此版本做出贡献的人，无论是通过代码、文档、设计或社区支持。
 
-Special thanks to <Link target="_blank" href="https://github.com/penx">Alasdair McLeay</Link>, <Link target="_blank" href="https://github.com/itsMapleLeaf">itsMapleLeaf</Link>, and <Link target="_blank" href="https://github.com/smorimoto">Sora Morimoto</Link>.
+特别感谢 <Link target="_blank" href="https://github.com/penx">Alasdair McLeay</Link>、<Link target="_blank" href="https://github.com/itsMapleLeaf">itsMapleLeaf</Link> 和 <Link target="_blank" href="https://github.com/smorimoto">Sora Morimoto</Link>。

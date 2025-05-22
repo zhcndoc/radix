@@ -1,194 +1,194 @@
 ---
-metaTitle: Button
-metaDescription: Trigger an action or event, such as submitting a form or displaying a dialog.
+metaTitle: 按钮
+metaDescription: 触发一个动作或事件，例如提交表单或显示对话框。
 sourcePath: components/button
 ---
 
 ```jsx live=true
 <Button>
-	<BookmarkIcon /> Bookmark
+	<BookmarkIcon /> 收藏
 </Button>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `button` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `button` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="buttonPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the button.
+使用 `size` 属性来控制按钮的大小。
 
 ```jsx live=true
 <Flex gap="3" align="center">
 	<Button size="1" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button size="2" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button size="3" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 </Flex>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to control the visual style of the button.
+使用 `variant` 属性来控制按钮的视觉样式。
 
 ```jsx live=true scroll=true
 <Flex align="center" gap="3">
-	<Button variant="classic">Edit profile</Button>
-	<Button variant="solid">Edit profile</Button>
-	<Button variant="soft">Edit profile</Button>
-	<Button variant="surface">Edit profile</Button>
-	<Button variant="outline">Edit profile</Button>
+	<Button variant="classic">编辑个人资料</Button>
+	<Button variant="solid">编辑个人资料</Button>
+	<Button variant="soft">编辑个人资料</Button>
+	<Button variant="surface">编辑个人资料</Button>
+	<Button variant="outline">编辑个人资料</Button>
 </Flex>
 ```
 
-#### Ghost
+#### 幽灵按钮
 
-Use the `ghost` variant to display a button without chrome. Ghost buttons behave like text in layout, as they use a negative margin to optically align themselves against their siblings while maintaining the padding in active and hover states.
+使用 `ghost` 变体来展示一个没有边框的按钮。幽灵按钮在布局中表现得像文本，因为它们使用负边距以光学方式与其兄弟元素对齐，同时在活动和悬停状态下保持填充。
 
 ```jsx live=true
-<Button variant="ghost">Edit profile</Button>
+<Button variant="ghost">编辑个人资料</Button>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性为按钮分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true scroll=true
 <Flex gap="3">
 	<Button color="indigo" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button color="cyan" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button color="orange" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button color="crimson" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比。
 
 ```jsx live=true scroll=true
 <Flex direction="column" gap="3">
 	<Flex gap="3">
 		<Button color="gray" variant="classic">
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="solid">
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="soft">
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="surface">
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="outline">
-			Edit profile
+			编辑个人资料
 		</Button>
 	</Flex>
 	<Flex gap="3">
 		<Button color="gray" variant="classic" highContrast>
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="solid" highContrast>
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="soft" highContrast>
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="surface" highContrast>
-			Edit profile
+			编辑个人资料
 		</Button>
 		<Button color="gray" variant="outline" highContrast>
-			Edit profile
+			编辑个人资料
 		</Button>
 	</Flex>
 </Flex>
 ```
 
-### Radius
+### 圆角
 
-Use the `radius` prop to assign a specific radius value.
+使用 `radius` 属性为按钮指定一个特定的圆角值。
 
 ```jsx live=true scroll=true
 <Flex gap="3">
 	<Button radius="none" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button radius="large" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 	<Button radius="full" variant="soft">
-		Edit profile
+		编辑个人资料
 	</Button>
 </Flex>
 ```
 
-### With icons
+### 带图标
 
-You can nest icons directly inside the button. An appropriate gap is provided automatically.
+您可以直接在按钮内嵌套图标。自动提供适当的间距。
 
 ```jsx live=true scroll=true
 <Flex gap="3">
 	<Button variant="classic">
-		<BookmarkIcon /> Bookmark
+		<BookmarkIcon /> 收藏
 	</Button>
 	<Button variant="solid">
-		<BookmarkIcon /> Bookmark
+		<BookmarkIcon /> 收藏
 	</Button>
 	<Button variant="soft">
-		<BookmarkIcon /> Bookmark
+		<BookmarkIcon /> 收藏
 	</Button>
 	<Button variant="surface">
-		<BookmarkIcon /> Bookmark
+		<BookmarkIcon /> 收藏
 	</Button>
 	<Button variant="outline">
-		<BookmarkIcon /> Bookmark
+		<BookmarkIcon /> 收藏
 	</Button>
 </Flex>
 ```
 
-### Loading
+### 加载中
 
-Use the `loading` prop to display a loading spinner in place of button content, preserving the original size of the button in its normal state. The button will be disabled while loading.
+使用 `loading` 属性在按钮内容位置显示加载指示器，同时保持按钮在正常状态下的原始大小。按钮在加载时将被禁用。
 
 ```jsx live=true scroll=true
 <Flex gap="3">
 	<Button loading variant="classic">
-		Bookmark
+		收藏
 	</Button>
 	<Button loading variant="solid">
-		Bookmark
+		收藏
 	</Button>
 	<Button loading variant="soft">
-		Bookmark
+		收藏
 	</Button>
 	<Button loading variant="surface">
-		Bookmark
+		收藏
 	</Button>
 	<Button loading variant="outline">
-		Bookmark
+		收藏
 	</Button>
 </Flex>
 ```
 
-If you have an icon inside the button, you can use the button’s `disabled` state and wrap the icon in a standalone [Spinner](/themes/docs/components/spinner) to achieve a more sophisticated design.
+如果您在按钮内有一个图标，可以使用按钮的 `disabled` 状态，并将图标包裹在一个独立的 [Spinner](/themes/docs/components/spinner) 中，以实现更复杂的设计。
 
 ```jsx live=true scroll=true
 <Flex gap="3">
@@ -196,31 +196,31 @@ If you have an icon inside the button, you can use the button’s `disabled` sta
 		<Spinner loading>
 			<BookmarkIcon />
 		</Spinner>
-		Bookmark
+		收藏
 	</Button>
 	<Button disabled variant="solid">
 		<Spinner loading>
 			<BookmarkIcon />
 		</Spinner>
-		Bookmark
+		收藏
 	</Button>
 	<Button disabled variant="soft">
 		<Spinner loading>
 			<BookmarkIcon />
 		</Spinner>
-		Bookmark
+		收藏
 	</Button>
 	<Button disabled variant="surface">
 		<Spinner loading>
 			<BookmarkIcon />
 		</Spinner>
-		Bookmark
+		收藏
 	</Button>
 	<Button disabled variant="outline">
 		<Spinner loading>
 			<BookmarkIcon />
 		</Spinner>
-		Bookmark
+		收藏
 	</Button>
 </Flex>
 ```

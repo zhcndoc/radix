@@ -1,15 +1,14 @@
 ---
-metaTitle: Dropdown Menu
-metaDescription: Displays a menu to the user—such as a set of actions or functions—triggered by a button.
+metaTitle: 下拉菜单
+metaDescription: 向用户展示菜单——例如一组操作或功能——由按钮触发。
 name: dropdown-menu
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
 ---
 
-# Dropdown Menu
+# 下拉菜单
 
 <Description>
-	Displays a menu to the user—such as a set of actions or functions—triggered by
-	a button.
+	向用户展示菜单——例如一组操作或功能——由按钮触发。
 </Description>
 
 <HeroContainer>
@@ -20,31 +19,31 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Supports submenus with configurable reading direction.",
-		"Supports items, labels, groups of items.",
-		"Supports checkable items (single or multiple) with optional indeterminate state.",
-		"Supports modal and non-modal modes.",
-		"Customize side, alignment, offsets, collision handling.",
-		"Optionally render a pointing arrow.",
-		"Focus is fully managed.",
-		"Full keyboard navigation.",
-		"Typeahead support.",
-		"Dismissing and layering behavior is highly customizable.",
+		"可以是可控的或不可控的。",
+		"支持可配置阅读方向的子菜单。",
+		"支持项、标签、项组。",
+		"支持可选的单选或多选可勾选项，具有可选的不确定状态。",
+		"支持模态和非模态模式。",
+		"自定义侧边、对齐、偏移、碰撞处理。",
+		"可选渲染指向箭头。",
+		"焦点完全管理。",
+		"完整的键盘导航。",
+		"支持前置输入。",
+		"关闭和层叠行为高度可定制。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-dropdown-menu
 ```
 
-## Anatomy
+## 解剖
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { DropdownMenu } from "radix-ui";
@@ -87,11 +86,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根
 
-Contains all the parts of a dropdown menu.
+包含下拉菜单的所有部分。
 
 <PropsTable
 	data={[
@@ -100,8 +99,7 @@ Contains all the parts of a dropdown menu.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the dropdown menu when it is initially rendered. Use
-					when you do not need to control its open state.
+					下拉菜单在初始渲染时的打开状态。用于不需要控制其打开状态时。
 				</span>
 			),
 		},
@@ -110,8 +108,7 @@ Contains all the parts of a dropdown menu.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the dropdown menu. Must be used in
-					conjunction with <Code>onOpenChange</Code>.
+					下拉菜单的控制打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -121,7 +118,7 @@ Contains all the parts of a dropdown menu.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the dropdown menu changes.
+					当下拉菜单的打开状态变化时调用的事件处理程序。
 				</span>
 			),
 		},
@@ -132,9 +129,7 @@ Contains all the parts of a dropdown menu.
 			default: "true",
 			description: (
 				<span>
-					The modality of the dropdown menu. When set to <Code>true</Code>,
-					interaction with outside elements will be disabled and only menu
-					content will be visible to screen readers.
+					下拉菜单的模态性。当设置为 <Code>true</Code> 时，将禁用与外部元素的交互，且仅菜单内容对屏幕阅读器可见。
 				</span>
 			),
 		},
@@ -145,18 +140,16 @@ Contains all the parts of a dropdown menu.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of submenus when applicable. If omitted,
-					inherits globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
+					适用时子菜单的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承或假定 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
 	]}
 />
 
-### Trigger
+### 触发器
 
-The button that toggles the dropdown menu. By default, the `DropdownMenu.Content` will position itself against the trigger.
+切换下拉菜单的按钮。默认情况下，`DropdownMenu.Content` 将相对于触发器定位。
 
 <PropsTable
 	data={[
@@ -167,12 +160,10 @@ The button that toggles the dropdown menu. By default, the `DropdownMenu.Content
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -187,14 +178,14 @@ The button that toggles the dropdown menu. By default, the `DropdownMenu.Content
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时存在",
 		},
 	]}
 />
 
-### Portal
+### 门户
 
-When used, portals the content part into the `body`.
+使用时，将内容部分传送到 `body`。
 
 <PropsTable
 	data={[
@@ -203,10 +194,7 @@ When used, portals the content part into the `body`.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>DropdownMenu.Content</Code> and{" "}
-					<Code>DropdownMenu.SubContent</Code> respectively.
+					当需要更多控制时用于强制挂载。对于与 React 动画库控制动画时很有用。如果在此部分中使用，它将被 <Code>DropdownMenu.Content</Code> 和 <Code>DropdownMenu.SubContent</Code> 分别继承。
 				</span>
 			),
 		},
@@ -214,14 +202,14 @@ When used, portals the content part into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定容器元素以传送内容。",
 		},
 	]}
 />
 
-### Content
+### 内容
 
-The component that pops out when the dropdown menu is open.
+下拉菜单打开时弹出的组件。
 
 <PropsTable
 	data={[
@@ -232,12 +220,10 @@ The component that pops out when the dropdown menu is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -248,8 +234,7 @@ The component that pops out when the dropdown menu is open.
 			default: "false",
 			description: (
 				<span>
-					When <Code>true</Code>, keyboard navigation will loop from last item
-					to first, and vice versa.
+					当 <Code>true</Code> 时，键盘导航将从最后一项循环到第一项，反之亦然。
 				</span>
 			),
 		},
@@ -259,8 +244,7 @@ The component that pops out when the dropdown menu is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves to the trigger after closing. It
-					can be prevented by calling <Code>event.preventDefault</Code>.
+					当焦点移动到触发器时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止。
 				</span>
 			),
 		},
@@ -270,8 +254,7 @@ The component that pops out when the dropdown menu is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>
+					按下 Escape 键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止。
 				</span>
 			),
 		},
@@ -281,9 +264,7 @@ The component that pops out when the dropdown menu is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当指针事件发生在组件边界外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止。
 				</span>
 			),
 		},
@@ -293,9 +274,7 @@ The component that pops out when the dropdown menu is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves outside the bounds of the
-					component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当焦点移动到组件边界外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止。
 				</span>
 			),
 		},
@@ -305,9 +284,7 @@ The component that pops out when the dropdown menu is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when an interaction (pointer or focus event)
-					happens outside the bounds of the component. It can be prevented by
-					calling <Code>event.preventDefault</Code>.
+					当交互（指针或焦点事件）发生在组件边界外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来防止。
 				</span>
 			),
 		},
@@ -316,9 +293,7 @@ The component that pops out when the dropdown menu is open.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>DropdownMenu.Portal</Code>.
+					当需要更多控制时用于强制挂载。对于与 React 动画库控制动画时很有用。它从 <Code>DropdownMenu.Portal</Code> 继承。
 				</span>
 			),
 		},
@@ -329,9 +304,7 @@ The component that pops out when the dropdown menu is open.
 			default: '"bottom"',
 			description: (
 				<span>
-					The preferred side of the trigger to render against when open. Will be
-					reversed when collisions occur and <Code>avoidCollisions</Code> is
-					enabled.
+					打开时相对于触发器渲染的首选边。发生碰撞时将反转，并且开启 <Code>avoidCollisions</Code> 时。
 				</span>
 			),
 		},
@@ -339,7 +312,7 @@ The component that pops out when the dropdown menu is open.
 			name: "sideOffset",
 			type: "number",
 			default: "0",
-			description: <span>The distance in pixels from the trigger.</span>,
+			description: <span>距离触发器的像素距离。</span>,
 		},
 		{
 			name: "align",
@@ -348,8 +321,7 @@ The component that pops out when the dropdown menu is open.
 			default: '"center"',
 			description: (
 				<span>
-					The preferred alignment against the trigger. May change when
-					collisions occur.
+					相对于触发器的首选对齐。发生碰撞时可能会更改。
 				</span>
 			),
 		},
@@ -359,8 +331,7 @@ The component that pops out when the dropdown menu is open.
 			default: "0",
 			description: (
 				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options.
+					从 <Code>"start"</Code> 或 <Code>"end"</Code> 对齐选项的偏移量（以像素为单位）。
 				</span>
 			),
 		},
@@ -370,9 +341,7 @@ The component that pops out when the dropdown menu is open.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges.
+					当 <Code>true</Code> 时，覆盖 <Code>side</Code> 和 <Code>align</Code> 首选项以防止与边界边缘发生碰撞。
 				</span>
 			),
 		},
@@ -383,9 +352,7 @@ The component that pops out when the dropdown menu is open.
 			default: "[]",
 			description: (
 				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check.
+					用作碰撞边界的元素。默认情况下是视口，但您可以提供额外的元素以包含在此检查中。
 				</span>
 			),
 		},
@@ -396,10 +363,7 @@ The component that pops out when the dropdown menu is open.
 			default: "0",
 			description: (
 				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>.
+					距离边界边缘的像素距离，检测到碰撞的地方。接受一个数字（所有边相同），或部分填充对象，例如： <Code>{`{ top: 20, left: 20 }`}</Code>。
 				</span>
 			),
 		},
@@ -409,9 +373,7 @@ The component that pops out when the dropdown menu is open.
 			default: "0",
 			description: (
 				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners.
+					箭头与内容边缘之间的填充。如果您的内容具有 <Code>border-radius</Code>，它将防止其溢出角落。
 				</span>
 			),
 		},
@@ -422,10 +384,7 @@ The component that pops out when the dropdown menu is open.
 			default: '"partial"',
 			description: (
 				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless.
+					对齐轴上的粘性行为。 <Code>"partial"</Code> 会保持内容在边界内，只要触发器至少部分在边界内，而 <Code>"always"</Code> 会无论如何保持内容在边界内。
 				</span>
 			),
 		},
@@ -435,7 +394,7 @@ The component that pops out when the dropdown menu is open.
 			default: "false",
 			description: (
 				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
+					当触发器完全被遮挡时是否隐藏内容。
 				</span>
 			),
 		},
@@ -469,37 +428,36 @@ The component that pops out when the dropdown menu is open.
 			cssVariable: "--radix-dropdown-menu-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets
+					从内容和箭头位置/偏移量计算的 <Code>transform-origin</Code>
 				</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-content-available-width",
 			description: (
-				<>The remaining width between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余宽度</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-content-available-height",
 			description: (
-				<>The remaining height between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余高度</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-trigger-width",
-			description: <>The width of the trigger</>,
+			description: <>触发器的宽度</>,
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-trigger-height",
-			description: <>The height of the trigger</>,
+			description: <>触发器的高度</>,
 		},
 	]}
 />
 
-### Arrow
+### 箭头
 
-An optional arrow element to render alongside the dropdown menu. This can be used to help visually link the trigger with the `DropdownMenu.Content`. Must be rendered inside `DropdownMenu.Content`.
+一个可选的箭头元素，用于渲染在下拉菜单旁边。可以用来帮助视觉链接触发器与 `DropdownMenu.Content`。必须在 `DropdownMenu.Content` 内部渲染。
 
 <PropsTable
 	data={[
@@ -510,12 +468,10 @@ An optional arrow element to render alongside the dropdown menu. This can be use
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -523,20 +479,20 @@ An optional arrow element to render alongside the dropdown menu. This can be use
 			name: "width",
 			type: "number",
 			default: 10,
-			description: <span>The width of the arrow in pixels.</span>,
+			description: <span>箭头的宽度（以像素为单位）。</span>,
 		},
 		{
 			name: "height",
 			type: "number",
 			default: 5,
-			description: <span>The height of the arrow in pixels.</span>,
+			description: <span>箭头的高度（以像素为单位）。</span>,
 		},
 	]}
 />
 
-### Item
+### 项
 
-The component that contains the dropdown menu items.
+包含下拉菜单项的组件。
 
 <PropsTable
 	data={[
@@ -547,12 +503,10 @@ The component that contains the dropdown menu items.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -561,8 +515,7 @@ The component that contains the dropdown menu items.
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，阻止用户与该项交互。
 				</span>
 			),
 		},
@@ -572,9 +525,7 @@ The component that contains the dropdown menu items.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the user selects an item (via mouse or
-					keyboard). Calling <Code>event.preventDefault</Code> in this handler
-					will prevent the dropdown menu from closing when selecting that item.
+					当用户选择项（通过鼠标或键盘）时调用的事件处理程序。在此处理程序中调用 <Code>event.preventDefault</Code> 将防止在选择该项时下拉菜单关闭。
 				</span>
 			),
 		},
@@ -583,9 +534,7 @@ The component that contains the dropdown menu items.
 			type: "string",
 			description: (
 				<span>
-					Optional text used for typeahead purposes. By default the typeahead
-					behavior will use the <Code>.textContent</Code> of the item. Use this
-					when the content is complex, or you have non-textual content inside.
+					用于前置输入的可选文本。默认情况下，前置输入行为将使用该项的 <Code>.textContent</Code>。当内容复杂或内部有非文本内容时使用此项。
 				</span>
 			),
 		},
@@ -600,18 +549,18 @@ The component that contains the dropdown menu items.
 		},
 		{
 			attribute: "[data-highlighted]",
-			values: "Present when highlighted",
+			values: "当选中时存在",
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时存在",
 		},
 	]}
 />
 
-### Group
+### 组
 
-Used to group multiple `DropdownMenu.Item`s.
+用于对多个 `DropdownMenu.Item` 进行分组。
 
 <PropsTable
 	data={[
@@ -622,21 +571,19 @@ Used to group multiple `DropdownMenu.Item`s.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
 	]}
 />
 
-### Label
+### 标签
 
-Used to render a label. It won't be focusable using arrow keys.
+用于渲染标签。不能通过箭头键聚焦。
 
 <PropsTable
 	data={[
@@ -647,12 +594,10 @@ Used to render a label. It won't be focusable using arrow keys.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -661,7 +606,7 @@ Used to render a label. It won't be focusable using arrow keys.
 
 ### CheckboxItem
 
-An item that can be controlled and rendered like a checkbox.
+可以像复选框一样控制和渲染的项。
 
 <PropsTable
 	data={[
@@ -672,12 +617,10 @@ An item that can be controlled and rendered like a checkbox.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -686,8 +629,7 @@ An item that can be controlled and rendered like a checkbox.
 			type: `boolean | 'indeterminate'`,
 			description: (
 				<span>
-					The controlled checked state of the item. Must be used in conjunction
-					with <Code>onCheckedChange</Code>.
+					该项的控制选中状态。必须与 <Code>onCheckedChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -696,7 +638,7 @@ An item that can be controlled and rendered like a checkbox.
 			type: `(checked: boolean) => void`,
 			typeSimple: "function",
 			description: (
-				<span>Event handler called when the checked state changes.</span>
+				<span>选中状态改变时调用的事件处理程序。</span>
 			),
 		},
 		{
@@ -704,8 +646,7 @@ An item that can be controlled and rendered like a checkbox.
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，阻止用户与该项交互。
 				</span>
 			),
 		},
@@ -715,9 +656,7 @@ An item that can be controlled and rendered like a checkbox.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the user selects an item (via mouse or
-					keyboard). Calling <Code>event.preventDefault</Code> in this handler
-					will prevent the dropdown menu from closing when selecting that item.
+					当用户选择项（通过鼠标或键盘）时调用的事件处理程序。在此处理程序中调用 <Code>event.preventDefault</Code> 将防止在选择该项时下拉菜单关闭。
 				</span>
 			),
 		},
@@ -726,9 +665,7 @@ An item that can be controlled and rendered like a checkbox.
 			type: "string",
 			description: (
 				<span>
-					Optional text used for typeahead purposes. By default the typeahead
-					behavior will use the <Code>.textContent</Code> of the item. Use this
-					when the content is complex, or you have non-textual content inside.
+					用于前置输入的可选文本。默认情况下，前置输入行为将使用该项的 <Code>.textContent</Code>。当内容复杂或内部有非文本内容时使用此项。
 				</span>
 			),
 		},
@@ -743,18 +680,18 @@ An item that can be controlled and rendered like a checkbox.
 		},
 		{
 			attribute: "[data-highlighted]",
-			values: "Present when highlighted",
+			values: "当选中时存在",
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时存在",
 		},
 	]}
 />
 
 ### RadioGroup
 
-Used to group multiple `DropdownMenu.RadioItem`s.
+用于对多个 `DropdownMenu.RadioItem` 进行分组。
 
 <PropsTable
 	data={[
@@ -765,32 +702,30 @@ Used to group multiple `DropdownMenu.RadioItem`s.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
 		{
 			name: "value",
 			type: "string",
-			description: "The value of the selected item in the group.",
+			description: "组中选中项的值。",
 		},
 		{
 			name: "onValueChange",
 			type: "(value: string) => void",
 			typeSimple: "function",
-			description: "Event handler called when the value changes.",
+			description: "值变化时调用的事件处理程序。",
 		},
 	]}
 />
 
 ### RadioItem
 
-An item that can be controlled and rendered like a radio.
+一个可以控制和渲染为单选框的项。
 
 <PropsTable
 	data={[
@@ -801,12 +736,10 @@ An item that can be controlled and rendered like a radio.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -814,15 +747,14 @@ An item that can be controlled and rendered like a radio.
 			name: "value",
 			type: "string",
 			required: true,
-			description: "The unique value of the item.",
+			description: "该项的唯一值。",
 		},
 		{
 			name: "disabled",
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，阻止用户与该项交互。
 				</span>
 			),
 		},
@@ -832,9 +764,7 @@ An item that can be controlled and rendered like a radio.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the user selects an item (via mouse or
-					keyboard). Calling <Code>event.preventDefault</Code> in this handler
-					will prevent the dropdown menu from closing when selecting that item.
+					当用户选择项（通过鼠标或键盘）时调用的事件处理程序。在此处理程序中调用 <Code>event.preventDefault</Code> 将防止在选择该项时下拉菜单关闭。
 				</span>
 			),
 		},
@@ -843,9 +773,7 @@ An item that can be controlled and rendered like a radio.
 			type: "string",
 			description: (
 				<span>
-					Optional text used for typeahead purposes. By default the typeahead
-					behavior will use the <Code>.textContent</Code> of the item. Use this
-					when the content is complex, or you have non-textual content inside.
+					用于前置输入的可选文本。默认情况下，前置输入行为将使用该项的 <Code>.textContent</Code>。当内容复杂或内部有非文本内容时使用此项。
 				</span>
 			),
 		},
@@ -860,18 +788,18 @@ An item that can be controlled and rendered like a radio.
 		},
 		{
 			attribute: "[data-highlighted]",
-			values: "Present when highlighted",
+			values: "当选中时存在",
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时存在",
 		},
 	]}
 />
 
-### ItemIndicator
+### 项指示器
 
-Renders when the parent `DropdownMenu.CheckboxItem` or `DropdownMenu.RadioItem` is checked. You can style this element directly, or you can use it as a wrapper to put an icon into, or both.
+当父 `DropdownMenu.CheckboxItem` 或 `DropdownMenu.RadioItem` 被选中时渲染。您可以直接样式此元素，或者可以将其用作放置图标的包装器，或两者兼而有之。
 
 <PropsTable
 	data={[
@@ -882,12 +810,10 @@ Renders when the parent `DropdownMenu.CheckboxItem` or `DropdownMenu.RadioItem` 
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -896,8 +822,7 @@ Renders when the parent `DropdownMenu.CheckboxItem` or `DropdownMenu.RadioItem` 
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					当需要更多控制时用于强制挂载。对于与 React 动画库控制动画时很有用。
 				</span>
 			),
 		},
@@ -913,9 +838,9 @@ Renders when the parent `DropdownMenu.CheckboxItem` or `DropdownMenu.RadioItem` 
 	]}
 />
 
-### Separator
+### 分隔符
 
-Used to visually separate items in the dropdown menu.
+用于在下拉菜单中视觉上分隔项。
 
 <PropsTable
 	data={[
@@ -926,21 +851,19 @@ Used to visually separate items in the dropdown menu.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
 	]}
 />
 
-### Sub
+### 子菜单
 
-Contains all the parts of a submenu.
+包含所有子菜单的部分。
 
 <PropsTable
 	data={[
@@ -949,8 +872,7 @@ Contains all the parts of a submenu.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the submenu when it is initially rendered. Use when
-					you do not need to control its open state.
+					子菜单在初始渲染时的打开状态。用于不需要控制其打开状态时。
 				</span>
 			),
 		},
@@ -959,8 +881,7 @@ Contains all the parts of a submenu.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the submenu. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					子菜单的控制打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -970,16 +891,16 @@ Contains all the parts of a submenu.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the submenu changes.
+					当子菜单的打开状态变化时调用的事件处理程序。
 				</span>
 			),
 		},
 	]}
 />
 
-### SubTrigger
+### 子触发器
 
-An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
+打开子菜单的项。必须在 `DropdownMenu.Sub` 内部渲染。
 
 <PropsTable
 	data={[
@@ -990,12 +911,10 @@ An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将渲染的默认元素更改为作为子元素传递的元素，合并其属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获得更多详细信息。
 				</>
 			),
 		},
@@ -1004,8 +923,7 @@ An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
 			type: "boolean",
 			description: (
 				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					item.
+					当 <Code>true</Code> 时，阻止用户与该项交互。
 				</span>
 			),
 		},
@@ -1014,9 +932,7 @@ An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
 			type: "string",
 			description: (
 				<span>
-					Optional text used for typeahead purposes. By default the typeahead
-					behavior will use the <Code>.textContent</Code> of the item. Use this
-					when the content is complex, or you have non-textual content inside.
+					用于前置输入的可选文本。默认情况下，前置输入行为将使用该项的 <Code>.textContent</Code>。当内容复杂或内部有非文本内容时使用此项。
 				</span>
 			),
 		},
@@ -1031,11 +947,11 @@ An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
 		},
 		{
 			attribute: "[data-highlighted]",
-			values: "Present when highlighted",
+			values: "当选中时存在",
 		},
 		{
 			attribute: "[data-disabled]",
-			values: "Present when disabled",
+			values: "当禁用时存在",
 		},
 	]}
 />
@@ -1046,247 +962,38 @@ An item that opens a submenu. Must be rendered inside `DropdownMenu.Sub`.
 			cssVariable: "--radix-dropdown-menu-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets
+					从内容和箭头位置/偏移量计算的 <Code>transform-origin</Code>
 				</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-content-available-width",
 			description: (
-				<>The remaining width between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余宽度</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-content-available-height",
 			description: (
-				<>The remaining height between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余高度</>
 			),
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-trigger-width",
-			description: <>The width of the trigger</>,
+			description: <>触发器的宽度</>,
 		},
 		{
 			cssVariable: "--radix-dropdown-menu-trigger-height",
-			description: <>The height of the trigger</>,
+			description: <>触发器的高度</>,
 		},
 	]}
 />
 
-### SubContent
+## 示例
 
-The component that pops out when a submenu is open. Must be rendered inside `DropdownMenu.Sub`.
+### 带子菜单的示例
 
-<PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "loop",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<span>
-					When <Code>true</Code>, keyboard navigation will loop from last item
-					to first, and vice versa.
-				</span>
-			),
-		},
-		{
-			name: "onEscapeKeyDown",
-			type: "(event: KeyboardEvent) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>
-				</span>
-			),
-		},
-		{
-			name: "onPointerDownOutside",
-			type: "(event: PointerDownOutsideEvent) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onFocusOutside",
-			type: "(event: FocusOutsideEvent) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when focus moves outside the bounds of the
-					component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onInteractOutside",
-			type: "(event: PointerDownOutsideEvent | FocusOutsideEvent) => void",
-			typeSimple: "function",
-			description: (
-				<span>
-					Event handler called when an interaction (pointer or focus event)
-					happens outside the bounds of the component. It can be prevented by
-					calling <Code>event.preventDefault</Code>.
-				</span>
-			),
-		},
-		{
-			name: "forceMount",
-			type: "boolean",
-			description: (
-				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>DropdownMenu.Portal</Code>.
-				</span>
-			),
-		},
-		{
-			name: "sideOffset",
-			type: "number",
-			default: "0",
-			description: <span>The distance in pixels from the trigger.</span>,
-		},
-		{
-			name: "alignOffset",
-			type: "number",
-			default: "0",
-			description: (
-				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options.
-				</span>
-			),
-		},
-		{
-			name: "avoidCollisions",
-			type: "boolean",
-			default: "true",
-			description: (
-				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges.
-				</span>
-			),
-		},
-		{
-			name: "collisionBoundary",
-			type: "Element | null | Array<Element | null>",
-			typeSimple: "Boundary",
-			default: "[]",
-			description: (
-				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check.
-				</span>
-			),
-		},
-		{
-			name: "collisionPadding",
-			type: "number | Partial<Record<Side, number>>",
-			typeSimple: "number | Padding",
-			default: "0",
-			description: (
-				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>.
-				</span>
-			),
-		},
-		{
-			name: "arrowPadding",
-			type: "number",
-			default: "0",
-			description: (
-				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners.
-				</span>
-			),
-		},
-		{
-			name: "sticky",
-			type: '"partial" | "always"',
-			typeSimple: "enum",
-			default: '"partial"',
-			description: (
-				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless.
-				</span>
-			),
-		},
-		{
-			name: "hideWhenDetached",
-			type: "boolean",
-			default: "false",
-			description: (
-				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
-				</span>
-			),
-		},
-	]}
-/>
-
-<DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["open", "closed"],
-		},
-		{
-			attribute: "[data-side]",
-			values: ["left", "right", "bottom", "top"],
-		},
-		{
-			attribute: "[data-align]",
-			values: ["start", "end", "center"],
-		},
-		{
-			attribute: "[data-orientation]",
-			values: ["vertical", "horizontal"],
-		},
-	]}
-/>
-
-## Examples
-
-### With submenus
-
-You can create submenus by using `DropdownMenu.Sub` in combination with its parts.
+您可以通过组合使用 `DropdownMenu.Sub` 以及其部分来创建子菜单。
 
 ```jsx line=8-17
 <DropdownMenu.Root>
@@ -1297,11 +1004,11 @@ You can create submenus by using `DropdownMenu.Sub` in combination with its part
 			<DropdownMenu.Item>…</DropdownMenu.Item>
 			<DropdownMenu.Separator />
 			<DropdownMenu.Sub>
-				<DropdownMenu.SubTrigger>Sub menu →</DropdownMenu.SubTrigger>
+				<DropdownMenu.SubTrigger>子菜单 →</DropdownMenu.SubTrigger>
 				<DropdownMenu.Portal>
 					<DropdownMenu.SubContent>
-						<DropdownMenu.Item>Sub menu item</DropdownMenu.Item>
-						<DropdownMenu.Item>Sub menu item</DropdownMenu.Item>
+						<DropdownMenu.Item>子菜单项</DropdownMenu.Item>
+						<DropdownMenu.Item>子菜单项</DropdownMenu.Item>
 						<DropdownMenu.Arrow />
 					</DropdownMenu.SubContent>
 				</DropdownMenu.Portal>
@@ -1313,9 +1020,9 @@ You can create submenus by using `DropdownMenu.Sub` in combination with its part
 </DropdownMenu.Root>
 ```
 
-### With disabled items
+### 带禁用项的示例
 
-You can add special styles to disabled items via the `data-disabled` attribute.
+您可以通过 `data-disabled` 属性为禁用的项添加特殊样式。
 
 ```jsx line=10
 // index.jsx
@@ -1344,9 +1051,9 @@ export default () => (
 }
 ```
 
-### With separators
+### 带分隔符的示例
 
-Use the `Separator` part to add a separator between items.
+使用 `Separator` 部件在项之间添加分隔符。
 
 ```jsx line=6,8
 <DropdownMenu.Root>
@@ -1363,16 +1070,16 @@ Use the `Separator` part to add a separator between items.
 </DropdownMenu.Root>
 ```
 
-### With labels
+### 带标签的示例
 
-Use the `Label` part to help label a section.
+使用 `Label` 部件帮助标记一个部分。
 
 ```jsx line=5
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger>…</DropdownMenu.Trigger>
 	<DropdownMenu.Portal>
 		<DropdownMenu.Content>
-			<DropdownMenu.Label>Label</DropdownMenu.Label>
+			<DropdownMenu.Label>标签</DropdownMenu.Label>
 			<DropdownMenu.Item>…</DropdownMenu.Item>
 			<DropdownMenu.Item>…</DropdownMenu.Item>
 			<DropdownMenu.Item>…</DropdownMenu.Item>
@@ -1381,9 +1088,9 @@ Use the `Label` part to help label a section.
 </DropdownMenu.Root>
 ```
 
-### With checkbox items
+### 带复选框项的示例
 
-Use the `CheckboxItem` part to add an item that can be checked.
+使用 `CheckboxItem` 部件添加一个可以被选中的项。
 
 ```jsx line=6,16-21
 import * as React from "react";
@@ -1408,7 +1115,7 @@ export default () => {
 						<DropdownMenu.ItemIndicator>
 							<CheckIcon />
 						</DropdownMenu.ItemIndicator>
-						Checkbox item
+						复选框项
 					</DropdownMenu.CheckboxItem>
 				</DropdownMenu.Content>
 			</DropdownMenu.Portal>
@@ -1417,9 +1124,9 @@ export default () => {
 };
 ```
 
-### With radio items
+### 带单选项的示例
 
-Use the `RadioGroup` and `RadioItem` parts to add an item that can be checked amongst others.
+使用 `RadioGroup` 和 `RadioItem` 部件，添加一个可以在其他选项中选择的项。
 
 ```jsx line=6,13-32
 import * as React from "react";
@@ -1439,19 +1146,19 @@ export default () => {
 							<DropdownMenu.ItemIndicator>
 								<CheckIcon />
 							</DropdownMenu.ItemIndicator>
-							Red
+							红色
 						</DropdownMenu.RadioItem>
 						<DropdownMenu.RadioItem value="blue">
 							<DropdownMenu.ItemIndicator>
 								<CheckIcon />
 							</DropdownMenu.ItemIndicator>
-							Blue
+							蓝色
 						</DropdownMenu.RadioItem>
 						<DropdownMenu.RadioItem value="green">
 							<DropdownMenu.ItemIndicator>
 								<CheckIcon />
 							</DropdownMenu.ItemIndicator>
-							Green
+							绿色
 						</DropdownMenu.RadioItem>
 					</DropdownMenu.RadioGroup>
 				</DropdownMenu.Content>
@@ -1461,9 +1168,9 @@ export default () => {
 };
 ```
 
-### With complex items
+### 带复杂项的示例
 
-You can add extra decorative elements in the `Item` parts, such as images.
+您可以在 `Item` 部件中添加额外的装饰元素，例如图像。
 
 ```jsx line=9,13
 import { DropdownMenu } from "radix-ui";
@@ -1487,11 +1194,11 @@ export default () => (
 );
 ```
 
-### Constrain the content/sub-content size
+### 限制内容/子内容的大小
 
-You may want to constrain the width of the content (or sub-content) so that it matches the trigger (or sub-trigger) width. You may also want to constrain its height to not exceed the viewport.
+您可能想限制内容（或子内容）的宽度，以使其与触发器（或子触发器）的宽度匹配。您可能还希望限制其高度，以免超过视口。
 
-We expose several CSS custom properties such as `--radix-dropdown-menu-trigger-width` and `--radix-dropdown-menu-content-available-height` to support this. Use them to constrain the content dimensions.
+我们公开了多个 CSS 自定义属性，如 `--radix-dropdown-menu-trigger-width` 和 `--radix-dropdown-menu-content-available-height` 来支持此功能。使用它们来限制内容尺寸。
 
 ```jsx line=9
 // index.jsx
@@ -1518,9 +1225,9 @@ export default () => (
 }
 ```
 
-### Origin-aware animations
+### 基于原点的动画
 
-We expose a CSS custom property `--radix-dropdown-menu-content-transform-origin`. Use it to animate the content from its computed origin based on `side`, `sideOffset`, `align`, `alignOffset` and any collisions.
+我们公开了 CSS 自定义属性 `--radix-dropdown-menu-content-transform-origin`。使用它从其计算的原点为内容动画，基于 `side`、`sideOffset`、`align`、`alignOffset` 和任何碰撞。
 
 ```jsx line=9
 // index.jsx
@@ -1558,9 +1265,9 @@ export default () => (
 }
 ```
 
-### Collision-aware animations
+### 基于碰撞的动画
 
-We expose `data-side` and `data-align` attributes. Their values will change at runtime to reflect collisions. Use them to create collision and direction-aware animations.
+我们公开了 `data-side` 和 `data-align` 属性。它们的值将在运行时更改以反映碰撞。使用它们来创建具有碰撞和方向意识的动画。
 
 ```jsx line=9
 // index.jsx
@@ -1615,11 +1322,11 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/) and uses [roving tabindex](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_roving_tabindex) to manage focus movement among menu items.
+遵循 [菜单按钮 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/) 并使用 [游走 tabindex](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_roving_tabindex) 来管理菜单项间的焦点移动。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
@@ -1627,10 +1334,9 @@ Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA
 			keys: ["Space"],
 			description: (
 				<span>
-					When focus is on <Code>DropdownMenu.Trigger</Code>, opens the dropdown
-					menu and focuses the first item.
+					当焦点在 <Code>DropdownMenu.Trigger</Code> 上时，打开下拉菜单并将焦点设置在第一个项上。
 					<br />
-					When focus is on an item, activates the focused item.
+					当焦点在某项上时，激活该项。
 				</span>
 			),
 		},
@@ -1638,10 +1344,9 @@ Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA
 			keys: ["Enter"],
 			description: (
 				<span>
-					When focus is on <Code>DropdownMenu.Trigger</Code>, opens the dropdown
-					menu and focuses the first item.
+					当焦点在 <Code>DropdownMenu.Trigger</Code> 上时，打开下拉菜单并将焦点设置在第一个项上。
 					<br />
-					When focus is on an item, activates the focused item.
+					当焦点在某项上时，激活该项。
 				</span>
 			),
 		},
@@ -1649,25 +1354,23 @@ Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA
 			keys: ["ArrowDown"],
 			description: (
 				<span>
-					When focus is on <Code>DropdownMenu.Trigger</Code>, opens the dropdown
-					menu.
+					当焦点在 <Code>DropdownMenu.Trigger</Code> 上时，打开下拉菜单。
 					<br />
-					When focus is on an item, moves focus to the next item.
+					当焦点在某项上时，焦点移动到下一项。
 				</span>
 			),
 		},
 		{
 			keys: ["ArrowUp"],
 			description: (
-				<span>When focus is on an item, moves focus to the previous item.</span>
+				<span>当焦点在某项上时，焦点移动到上一项。</span>
 			),
 		},
 		{
 			keys: ["ArrowRight", "ArrowLeft"],
 			description: (
 				<span>
-					When focus is on <Code>DropdownMenu.SubTrigger</Code>, opens or closes
-					the submenu depending on reading direction.
+					当焦点在 <Code>DropdownMenu.SubTrigger</Code> 上时，根据阅读方向打开或关闭子菜单。
 				</span>
 			),
 		},
@@ -1675,23 +1378,22 @@ Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA
 			keys: ["Esc"],
 			description: (
 				<span>
-					Closes the dropdown menu and moves focus to{" "}
-					<Code>DropdownMenu.Trigger</Code>.
+					关闭下拉菜单并将焦点移到 <Code>DropdownMenu.Trigger</Code> 上。
 				</span>
 			),
 		},
 	]}
 />
 
-## Custom APIs
+## 自定义 API
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将原始部件抽象为您自己的组件来创建自己的 API。
 
-### Abstract the arrow and item indicators
+### 抽象箭头和项指示器
 
-This example abstracts the `DropdownMenu.Arrow` and `DropdownMenu.ItemIndicator` parts. It also wraps implementation details for `CheckboxItem` and `RadioItem`.
+此示例抽象了 `DropdownMenu.Arrow` 和 `DropdownMenu.ItemIndicator` 部件。它还封装了 `CheckboxItem` 和 `RadioItem` 的实现细节。
 
-#### Usage
+#### 用法
 
 ```jsx
 import {
@@ -1709,23 +1411,23 @@ import {
 
 export default () => (
 	<DropdownMenu>
-		<DropdownMenuTrigger>DropdownMenu trigger</DropdownMenuTrigger>
+		<DropdownMenuTrigger>下拉菜单触发器</DropdownMenuTrigger>
 		<DropdownMenuContent>
-			<DropdownMenuItem>Item</DropdownMenuItem>
-			<DropdownMenuLabel>Label</DropdownMenuLabel>
-			<DropdownMenuGroup>Group</DropdownMenuGroup>
-			<DropdownMenuCheckboxItem>CheckboxItem</DropdownMenuCheckboxItem>
-			<DropdownMenuSeparator>Separator</DropdownMenuSeparator>
+			<DropdownMenuItem>项</DropdownMenuItem>
+			<DropdownMenuLabel>标签</DropdownMenuLabel>
+			<DropdownMenuGroup>组</DropdownMenuGroup>
+			<DropdownMenuCheckboxItem>复选框项</DropdownMenuCheckboxItem>
+			<DropdownMenuSeparator>分隔符</DropdownMenuSeparator>
 			<DropdownMenuRadioGroup>
-				<DropdownMenuRadioItem>RadioItem</DropdownMenuRadioItem>
-				<DropdownMenuRadioItem>RadioItem</DropdownMenuRadioItem>
+				<DropdownMenuRadioItem>单选项</DropdownMenuRadioItem>
+				<DropdownMenuRadioItem>单选项</DropdownMenuRadioItem>
 			</DropdownMenuRadioGroup>
 		</DropdownMenuContent>
 	</DropdownMenu>
 );
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-dropdown-menu.jsx

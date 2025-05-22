@@ -1,15 +1,15 @@
 ---
-metaTitle: Spacing
-metaDescription: Overview of the space scale and scaling options.
+metaTitle: 间距
+metaDescription: 间距比例和缩放选项概述。
 ---
 
-# Spacing
+# 间距
 
-<Description>Overview of the space scale and scaling options.</Description>
+<Description>间距比例和缩放选项概述。</Description>
 
-## Space scale
+## 间距比例
 
-Spacing values are derived from a 9-step scale, which is used for props such as margin and padding. These props accept numeric strings from `"1"` to `"9"`, which correspond to the steps in the scale below.
+间距值来源于 9 步比例，这些比例用于 margin 和 padding 等属性。这些属性接受从 `"1"` 到 `"9"` 的数字字符串，分别对应下面的比例步骤。
 
 <Box my="7">
 	<ThemesSpacingScale />
@@ -17,12 +17,12 @@ Spacing values are derived from a 9-step scale, which is used for props such as 
 
 <ThemesSpacingTable />
 
-#### Space scale tokens
+#### 间距比例标记
 
-Space scale tokens can be also accessed using CSS variables. You can use these tokens to style your custom components, ensuring they are consistent with the rest of your theme.
+间距比例标记也可以通过 CSS 变量访问。您可以使用这些标记来样式化您的自定义组件，确保它们与您主题的其他部分一致。
 
 ```css
-/* Space scale */
+/* 间距比例 */
 var(--space-1);
 var(--space-2);
 var(--space-3);
@@ -34,9 +34,9 @@ var(--space-8);
 var(--space-9);
 ```
 
-## Scaling
+## 缩放
 
-Values which affect layout (spacing, font size, line height) scale relatively to each other based on the `scaling` value defined in your Theme. This setting allows you to scale the UI density uniformly across your entire application.
+影响布局的值（间距、字体大小、行高度）相对依据在您的主题中定义的 `scaling` 值进行缩放。此设置允许您在整个应用程序中均匀缩放 UI 密度。
 
 ```jsx line="1"
 <Theme scaling="100%">
@@ -48,7 +48,7 @@ Values which affect layout (spacing, font size, line height) scale relatively to
 					{person.name}
 				</Text>
 				<Text as="div" size="2" color="gray">
-					Approved invoice <Link>#3461</Link>
+					已批准发票 <Link>#3461</Link>
 				</Text>
 			</Box>
 		</Flex>
@@ -60,9 +60,9 @@ Values which affect layout (spacing, font size, line height) scale relatively to
 	<ThemesScalingExample />
 </Box>
 
-#### Scaling factor
+#### 缩放因子
 
-The scaling factor token can be accessed using the `--scaling` CSS variable. If you need to use different scaling factors in your app, you can use this token in your custom styles, ensuring they are consistent with the rest of your theme.
+缩放因子标记可以通过 `--scaling` CSS 变量访问。如果您在应用中需要使用不同的缩放因子，可以在自定义样式中使用此标记，确保它们与您主题的其他部分一致。
 
 ```css
 .MyCustomComponent {

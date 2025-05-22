@@ -1,14 +1,14 @@
 ---
-metaTitle: Popover
-metaDescription: Displays rich content in a portal, triggered by a button.
-name: popover
+metaTitle: 弹出框
+metaDescription: 通过按钮触发，在一个门户中显示丰富的内容。
+name: 弹出框
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
 ---
 
-# Popover
+# 弹出框
 
 <Description>
-	Displays rich content in a portal, triggered by a button.
+	在一个门户中通过按钮触发显示丰富的内容。
 </Description>
 
 <HeroContainer>
@@ -19,26 +19,26 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
 
 <Highlights
 	features={[
-		"Can be controlled or uncontrolled.",
-		"Customize side, alignment, offsets, collision handling.",
-		"Optionally render a pointing arrow.",
-		"Focus is fully managed and customizable.",
-		"Supports modal and non-modal modes.",
-		"Dismissing and layering behavior is highly customizable.",
+		"可以是可控或不可控的。",
+		"自定义侧边、对齐、偏移、碰撞处理。",
+		"可选择性地渲染指向箭头。",
+		"完全管理和自定义焦点。",
+		"支持模态和非模态模式。",
+		"自定义处理关闭和层叠行为。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+通过命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-popover
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部分并组合在一起。
 
 ```jsx
 import { Popover } from "radix-ui";
@@ -57,11 +57,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根
 
-Contains all the parts of a popover.
+包含弹出框的所有部分。
 
 <PropsTable
 	data={[
@@ -70,8 +70,7 @@ Contains all the parts of a popover.
 			type: "boolean",
 			description: (
 				<span>
-					The open state of the popover when it is initially rendered. Use when
-					you do not need to control its open state.
+					弹出框初次渲染时的打开状态。当你不需要控制其打开状态时使用。
 				</span>
 			),
 		},
@@ -80,8 +79,7 @@ Contains all the parts of a popover.
 			type: "boolean",
 			description: (
 				<span>
-					The controlled open state of the popover. Must be used in conjunction
-					with <Code>onOpenChange</Code>.
+					弹出框的可控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。
 				</span>
 			),
 		},
@@ -91,7 +89,7 @@ Contains all the parts of a popover.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the open state of the popover changes.
+					当弹出框的打开状态发生变化时调用的事件处理程序。
 				</span>
 			),
 		},
@@ -102,18 +100,16 @@ Contains all the parts of a popover.
 			default: "false",
 			description: (
 				<span>
-					The modality of the popover. When set to <Code>true</Code>,
-					interaction with outside elements will be disabled and only popover
-					content will be visible to screen readers.
+					弹出框的模态性。当设置为 <Code>true</Code> 时，外部元素的交互将被禁用，屏幕阅读器仅能看到弹出框内容。
 				</span>
 			),
 		},
 	]}
 />
 
-### Trigger
+### 触发器
 
-The button that toggles the popover. By default, the `Popover.Content` will position itself against the trigger.
+切换弹出框的按钮。默认情况下，`Popover.Content` 将相对于触发器定位。
 
 <PropsTable
 	data={[
@@ -124,12 +120,10 @@ The button that toggles the popover. By default, the `Popover.Content` will posi
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查阅我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -145,9 +139,9 @@ The button that toggles the popover. By default, the `Popover.Content` will posi
 	]}
 />
 
-### Anchor
+### 锚
 
-An optional element to position the `Popover.Content` against. If this part is not used, the content will position alongside the <Code>Popover.Trigger</Code>.
+可选元素，用于将`Popover.Content` 定位。如果未使用此部分，内容将相对于 <Code>Popover.Trigger</Code> 定位。
 
 <PropsTable
 	data={[
@@ -158,21 +152,19 @@ An optional element to position the `Popover.Content` against. If this part is n
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查阅我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-### Portal
+### 门户
 
-When used, portals the content part into the `body`.
+使用时，将内容部分门户到 `body`。
 
 <PropsTable
 	data={[
@@ -181,9 +173,7 @@ When used, portals the content part into the `body`.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. If used on this
-					part, it will be inherited by <Code>Popover.Content</Code>.
+					在需要更多控制时强制挂载。对于使用 React 动画库控制动画非常有用。如果在此部分中使用，它将被 <Code>Popover.Content</Code> 继承。
 				</span>
 			),
 		},
@@ -191,14 +181,14 @@ When used, portals the content part into the `body`.
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
-			description: "Specify a container element to portal the content into.",
+			description: "指定一个容器元素以门户内容。",
 		},
 	]}
 />
 
-### Content
+### 内容
 
-The component that pops out when the popover is open.
+在弹出框打开时弹出的组件。
 
 <PropsTable
 	data={[
@@ -209,12 +199,10 @@ The component that pops out when the popover is open.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查阅我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -224,9 +212,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves into the component after
-					opening. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当焦点在打开后移入组件时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -236,8 +222,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves to the trigger after closing. It
-					can be prevented by calling <Code>event.preventDefault</Code>.
+					当焦点在关闭后移至触发器时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -247,8 +232,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when the escape key is down. It can be prevented
-					by calling <Code>event.preventDefault</Code>.
+					当按下逃逸键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -258,9 +242,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when a pointer event occurs outside the bounds of
-					the component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当指针事件发生在组件外部时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -270,9 +252,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when focus moves outside the bounds of the
-					component. It can be prevented by calling{" "}
-					<Code>event.preventDefault</Code>.
+					当焦点从组件边界外移时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -282,9 +262,7 @@ The component that pops out when the popover is open.
 			typeSimple: "function",
 			description: (
 				<span>
-					Event handler called when an interaction (pointer or focus event)
-					happens outside the bounds of the component. It can be prevented by
-					calling <Code>event.preventDefault</Code>.
+					当在组件的边界外发生交互（指针或焦点事件）时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 进行阻止。
 				</span>
 			),
 		},
@@ -293,9 +271,7 @@ The component that pops out when the popover is open.
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries. It inherits from{" "}
-					<Code>Popover.Portal</Code>.
+					在需要更多控制时强制挂载。对于使用 React 动画库控制动画非常有用。它继承自 <Code>Popover.Portal</Code>。
 				</span>
 			),
 		},
@@ -306,9 +282,7 @@ The component that pops out when the popover is open.
 			default: '"bottom"',
 			description: (
 				<span>
-					The preferred side of the anchor to render against when open. Will be
-					reversed when collisions occur and <Code>avoidCollisions</Code> is
-					enabled.
+					打开时希望渲染的锚的首选侧面。在发生碰撞并且启用了 <Code>avoidCollisions</Code> 时将反转。
 				</span>
 			),
 		},
@@ -316,7 +290,7 @@ The component that pops out when the popover is open.
 			name: "sideOffset",
 			type: "number",
 			default: "0",
-			description: <span>The distance in pixels from the anchor.</span>,
+			description: <span>与锚的距离（以像素为单位）。</span>,
 		},
 		{
 			name: "align",
@@ -325,8 +299,7 @@ The component that pops out when the popover is open.
 			default: '"center"',
 			description: (
 				<span>
-					The preferred alignment against the anchor. May change when collisions
-					occur.
+					与锚的首选对齐方式。当发生碰撞时可能会发生变化。
 				</span>
 			),
 		},
@@ -336,8 +309,7 @@ The component that pops out when the popover is open.
 			default: "0",
 			description: (
 				<span>
-					An offset in pixels from the <Code>"start"</Code> or{" "}
-					<Code>"end"</Code> alignment options.
+					从 <Code>"start"</Code> 或 <Code>"end"</Code> 对齐选项的偏移量（以像素为单位）。
 				</span>
 			),
 		},
@@ -347,9 +319,7 @@ The component that pops out when the popover is open.
 			default: "true",
 			description: (
 				<span>
-					When <Code>true</Code>, overrides the <Code>side</Code> and
-					<Code>align</Code> preferences to prevent collisions with boundary
-					edges.
+					当 <Code>true</Code> 时，覆盖 <Code>side</Code> 和 <Code>align</Code> 偏好以防止与边界边缘发生碰撞。
 				</span>
 			),
 		},
@@ -360,9 +330,7 @@ The component that pops out when the popover is open.
 			default: "[]",
 			description: (
 				<span>
-					The element used as the collision boundary. By default this is the
-					viewport, though you can provide additional element(s) to be included
-					in this check.
+					用于作为碰撞边界的元素。默认情况下这是视口，但您可以提供额外的元素以包含在此检查中。
 				</span>
 			),
 		},
@@ -373,10 +341,8 @@ The component that pops out when the popover is open.
 			default: "0",
 			description: (
 				<span>
-					The distance in pixels from the boundary edges where collision
-					detection should occur. Accepts a number (same for all sides), or a
-					partial padding object, for example:{" "}
-					<Code>{`{ top: 20, left: 20 }`}</Code>.
+					边界边缘到发生碰撞检测的距离（以像素为单位）。接受一个数字（所有边相同），或一个部分填充对象，例如：{" "}
+					<Code>{`{ top: 20, left: 20 }`}</Code>。
 				</span>
 			),
 		},
@@ -386,9 +352,7 @@ The component that pops out when the popover is open.
 			default: "0",
 			description: (
 				<span>
-					The padding between the arrow and the edges of the content. If your
-					content has <Code>border-radius</Code>, this will prevent it from
-					overflowing the corners.
+					箭头与内容边缘之间的填充。如果您的内容具有 <Code>border-radius</Code>，这将防止其溢出角落。
 				</span>
 			),
 		},
@@ -399,10 +363,7 @@ The component that pops out when the popover is open.
 			default: '"partial"',
 			description: (
 				<span>
-					The sticky behavior on the align axis. <Code>"partial"</Code> will
-					keep the content in the boundary as long as the trigger is at least
-					partially in the boundary whilst <Code>"always"</Code> will keep the
-					content in the boundary regardless.
+					反向轴上的粘性行为。<Code>"partial"</Code> 将在触发器部分位于边界内时保持内容在边界内，而 <Code>"always"</Code> 将使内容无论如何都保持在边界内。
 				</span>
 			),
 		},
@@ -412,7 +373,7 @@ The component that pops out when the popover is open.
 			default: "false",
 			description: (
 				<span>
-					Whether to hide the content when the trigger becomes fully occluded.
+					当触发器完全被遮挡时，是否隐藏内容。
 				</span>
 			),
 		},
@@ -442,37 +403,36 @@ The component that pops out when the popover is open.
 			cssVariable: "--radix-popover-content-transform-origin",
 			description: (
 				<>
-					The <Code>transform-origin</Code> computed from the content and arrow
-					positions/offsets
+					从内容和箭头位置/偏移量计算的 <Code>transform-origin</Code>
 				</>
 			),
 		},
 		{
 			cssVariable: "--radix-popover-content-available-width",
 			description: (
-				<>The remaining width between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余宽度</>
 			),
 		},
 		{
 			cssVariable: "--radix-popover-content-available-height",
 			description: (
-				<>The remaining height between the trigger and the boundary edge</>
+				<>触发器和边界边缘之间的剩余高度</>
 			),
 		},
 		{
 			cssVariable: "--radix-popover-trigger-width",
-			description: <>The width of the trigger</>,
+			description: <>触发器的宽度</>,
 		},
 		{
 			cssVariable: "--radix-popover-trigger-height",
-			description: <>The height of the trigger</>,
+			description: <>触发器的高度</>,
 		},
 	]}
 />
 
-### Arrow
+### 箭头
 
-An optional arrow element to render alongside the popover. This can be used to help visually link the anchor with the `Popover.Content`. Must be rendered inside `Popover.Content`.
+可选的箭头元素，与弹出框一起渲染。这可以用来帮助视觉上将锚与 `Popover.Content` 进行连接。必须在 `Popover.Content` 内部渲染。
 
 <PropsTable
 	data={[
@@ -483,12 +443,10 @@ An optional arrow element to render alongside the popover. This can be used to h
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查阅我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
@@ -496,20 +454,20 @@ An optional arrow element to render alongside the popover. This can be used to h
 			name: "width",
 			type: "number",
 			default: 10,
-			description: <span>The width of the arrow in pixels.</span>,
+			description: <span>箭头的宽度（以像素为单位）。</span>,
 		},
 		{
 			name: "height",
 			type: "number",
 			default: 5,
-			description: <span>The height of the arrow in pixels.</span>,
+			description: <span>箭头的高度（以像素为单位）。</span>,
 		},
 	]}
 />
 
-### Close
+### 关闭
 
-The button that closes an open popover.
+关闭打开的弹出框的按钮。
 
 <PropsTable
 	data={[
@@ -520,25 +478,23 @@ The button that closes an open popover.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					查阅我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
 	]}
 />
 
-## Examples
+## 示例
 
-### Constrain the content size
+### 限制内容大小
 
-You may want to constrain the width of the content so that it matches the trigger width. You may also want to constrain its height to not exceed the viewport.
+您可能想要限制内容的宽度以匹配触发器的宽度。您还可能想要限制其高度以不超过视口。
 
-We expose several CSS custom properties such as `--radix-popover-trigger-width` and `--radix-popover-content-available-height` to support this. Use them to constrain the content dimensions.
+我们提供了多个 CSS 自定义属性，如 `--radix-popover-trigger-width` 和 `--radix-popover-content-available-height` 来支持此功能。使用它们来限制内容的尺寸。
 
 ```jsx line=9
 // index.jsx
@@ -565,9 +521,9 @@ export default () => (
 }
 ```
 
-### Origin-aware animations
+### 基于原点的动画
 
-We expose a CSS custom property `--radix-popover-content-transform-origin`. Use it to animate the content from its computed origin based on `side`, `sideOffset`, `align`, `alignOffset` and any collisions.
+我们提供了一个 CSS 自定义属性 `--radix-popover-content-transform-origin`。使用它可以根据 `side`、`sideOffset`、`align`、`alignOffset` 以及任何碰撞动画内容。
 
 ```jsx line=9
 // index.jsx
@@ -603,9 +559,9 @@ export default () => (
 }
 ```
 
-### Collision-aware animations
+### 基于碰撞的动画
 
-We expose `data-side` and `data-align` attributes. Their values will change at runtime to reflect collisions. Use them to create collision and direction-aware animations.
+我们提供了 `data-side` 和 `data-align` 属性。它们的值会在运行时更改以反映碰撞。使用它们可以创建与碰撞和方向相关的动画。
 
 ```jsx line=9
 // index.jsx
@@ -658,9 +614,9 @@ export default () => (
 }
 ```
 
-### With custom anchor
+### 使用自定义锚
 
-You can anchor the content to another element if you do not want to use the trigger as the anchor.
+如果您不想使用触发器作为锚，可以将内容锚定到另一个元素。
 
 ```jsx line=7-11
 // index.jsx
@@ -671,7 +627,7 @@ export default () => (
 	<Popover.Root>
 		<Popover.Anchor __asChild__>
 			<div className="Row">
-				Row as anchor <Popover.Trigger>Trigger</Popover.Trigger>
+				行作为锚 <Popover.Trigger>触发器</Popover.Trigger>
 			</div>
 		</Popover.Anchor>
 
@@ -690,63 +646,63 @@ export default () => (
 }
 ```
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Dialog WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal).
+遵循 [对话框 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal)。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
 	data={[
 		{
 			keys: ["Space"],
-			description: "Opens/closes the popover.",
+			description: "打开/关闭弹出框。",
 		},
 		{
 			keys: ["Enter"],
-			description: "Opens/closes the popover.",
+			description: "打开/关闭弹出框。",
 		},
 		{
 			keys: ["Tab"],
-			description: "Moves focus to the next focusable element",
+			description: "将焦点移动到下一个可聚焦元素",
 		},
 		{
 			keys: ["Shift + Tab"],
-			description: "Moves focus to the previous focusable element",
+			description: "将焦点移动到上一个可聚焦元素",
 		},
 		{
 			keys: ["Esc"],
 			description: (
 				<span>
-					Closes the popover and moves focus to <Code>Popover.Trigger</Code>.
+					关闭弹出框并将焦点移到 <Code>Popover.Trigger</Code>。
 				</span>
 			),
 		},
 	]}
 />
 
-## Custom APIs
+## 自定义 API
 
-Create your own API by abstracting the primitive parts into your own component.
+通过将原始部分抽象为您自己的组件来创建自己的 API。
 
-#### Abstract the arrow and set default configuration
+#### 抽象箭头并设置默认配置
 
-This example abstracts the `Popover.Arrow` part and sets a default `sideOffset` configuration.
+此示例将 `Popover.Arrow` 部分抽象出来，并设置默认的 `sideOffset` 配置。
 
-#### Usage
+#### 使用
 
 ```jsx
 import { Popover, PopoverTrigger, PopoverContent } from "./your-popover";
 
 export default () => (
 	<Popover>
-		<PopoverTrigger>Popover trigger</PopoverTrigger>
-		<PopoverContent>Popover content</PopoverContent>
+		<PopoverTrigger>弹出框触发器</PopoverTrigger>
+		<PopoverContent>弹出框内容</PopoverContent>
 	</Popover>
 );
 ```
 
-#### Implementation
+#### 实现
 
 ```jsx
 // your-popover.jsx

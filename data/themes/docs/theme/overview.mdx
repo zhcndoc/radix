@@ -1,108 +1,108 @@
 ---
-metaTitle: Theme overview
-metaDescription: Use the Theme component to change the look and feel of your UI.
+metaTitle: 主题概述
+metaDescription: 使用主题组件来改变您的用户界面的外观和感觉。
 ---
 
-# Theme overview
+# 主题概述
 
 <Description>
-	Use the Theme component to change the look and feel of your UI.
+    使用主题组件来改变您的用户界面的外观和感觉。
 </Description>
 
-## Anatomy
+## 解剖结构
 
-The [Theme component](/themes/docs/components/theme) defines the overall visual look of your application. It can be customized by passing a minimal set of configuration options.
+[主题组件](/themes/docs/components/theme) 定义了您的应用程序的整体视觉外观。通过传递一组最小的配置选项，它可以进行自定义。
 
 ```jsx live=true
 <Theme
-	accentColor="mint"
-	grayColor="gray"
-	panelBackground="solid"
-	scaling="100%"
-	radius="full"
+    accentColor="mint"
+    grayColor="gray"
+    panelBackground="solid"
+    scaling="100%"
+    radius="full"
 >
-	<ThemesVolumeControlExample />
+    <ThemesVolumeControlExample />
 </Theme>
 ```
 
-A well tuned set of defaults is provided to get you started, but don’t be afraid to play with all of the available options to find the right visual style for your application. Check out the [Playground](/themes/playground) to see what effect each option has.
+提供了一组良好的默认设置以帮助您入门，但不要害怕尝试所有可用选项，以找到适合您应用程序的正确视觉风格。查看 [Playground](/themes/playground) 以了解每个选项的效果。
 
-## Variants
+## 变体
 
-Variants are visual variations of a component which are used to create visual hierarchies and communicate relative importance.
+变体是组件的视觉变化，用于创建视觉层次结构并传达相对重要性。
 
-Each component offers a different set of variants, though all are designed to be consistent and complimentary with each other.
+每个组件提供一组不同的变体，尽管所有变体都旨在保持一致和互补。
 
 ```jsx live=true
 <Flex gap="3" align="center">
-	<Button variant="classic">
-		Get started <ArrowRightIcon />
-	</Button>
-	<Button variant="solid">
-		Get started <ArrowRightIcon />
-	</Button>
-	<Button variant="soft">
-		Get started <ArrowRightIcon />
-	</Button>
+    <Button variant="classic">
+        开始 <ArrowRightIcon />
+    </Button>
+    <Button variant="solid">
+        开始 <ArrowRightIcon />
+    </Button>
+    <Button variant="soft">
+        开始 <ArrowRightIcon />
+    </Button>
 </Flex>
 ```
 
-## Examples
+## 示例
 
-Using a combination of component variants alongside customized theme settings allows you to create a multitude of unique-looking interfaces.
+结合组件变体和自定义主题设置，可以创建多种独特的界面。
 
-For example you could create:
+例如，您可以创建：
 
-- [Music applications](/themes/example-music-app)
-- [Ecommerce product elements](/themes/example-ecommerce)
-- [SaaS dashboards](/themes/example-dashboard)
+- [音乐应用程序](/themes/example-music-app)
+- [电子商务产品元素](/themes/example-ecommerce)
+- [SaaS 仪表板](/themes/example-dashboard)
 
-Or any number of differing treatments and styles.
+或者任何数量的不同处理和样式。
 
 <ThemesVariantsExample />
 
-## Tokens
+## 令牌
 
-Tokens provide direct access to theme values and give you flexibility to build and customize your own themed components.
+令牌提供了对主题值的直接访问，并赋予您灵活性以构建和自定义自己的主题组件。
 
-For all available theme tokens see the [source code](https://github.com/radix-ui/themes/tree/main/packages/radix-ui-themes/src/styles/tokens), or read more about each type of token in the relevant theme pages.
+有关所有可用主题令牌的信息，请查看 [源代码](https://github.com/radix-ui/themes/tree/main/packages/radix-ui-themes/src/styles/tokens)，或在相关主题页面中阅读每种类型的令牌的更多信息。
 
 {
 
   <Grid columns={{ initial: '1', xs: '2' }} my="6" gap="4">
       <ThemesLinkCard
-        title="Color"
-        desc="Understand the color system and its application in your theme."
+        title="颜色"
+        desc="了解颜色系统及其在主题中的应用。"
         href="/themes/docs/theme/color"
       />
 
       <ThemesLinkCard
-        title="Typography"
-        desc="Learn how to use and customize the typographic elements of your theme."
+        title="排版"
+        desc="学习如何使用和自定义主题的排版元素。"
         href="/themes/docs/theme/typography"
       />
 
       <ThemesLinkCard
-        title="Spacing"
-        desc="Explore the spacing scale and the available scaling options."
+        title="间距"
+        desc="探索间距比例和可用的缩放选项。"
         href="/themes/docs/theme/spacing"
       />
 
       <ThemesLinkCard
-        title="Radius"
-        desc="Choose the radius setting in your theme that fits your style."
+        title="半径"
+        desc="选择适合您风格的主题半径设置。"
         href="/themes/docs/theme/radius"
       />
 
       <ThemesLinkCard
-        title="Shadows"
-        desc="Use elevation, depth and shadows effectively and customize their properties."
+        title="阴影"
+        desc="有效使用高度、深度和阴影并自定义它们的属性。"
         href="/themes/docs/theme/shadows"
       />
 
       <ThemesLinkCard
-        title="Cursors"
-        desc="Customizing cursors used for interactive elements."
+        title="光标"
+        desc="自定义用于交互元素的光标。"
         href="/themes/docs/theme/cursors"
       />
 

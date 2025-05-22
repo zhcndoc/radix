@@ -1,30 +1,29 @@
 ---
-metaTitle: Alert Dialog
-metaDescription: Modal confirmation dialog that interrupts the user and expects a response.
+metaTitle: 警告对话框
+metaDescription: 中断用户并期望其作出响应的模态确认对话框。
 sourcePath: components/alert-dialog
 ---
 
 ```jsx live=true
 <AlertDialog.Root>
 	<AlertDialog.Trigger>
-		<Button color="red">Revoke access</Button>
+		<Button color="red">撤销访问</Button>
 	</AlertDialog.Trigger>
 	<AlertDialog.Content maxWidth="450px">
-		<AlertDialog.Title>Revoke access</AlertDialog.Title>
+		<AlertDialog.Title>撤销访问</AlertDialog.Title>
 		<AlertDialog.Description size="2">
-			Are you sure? This application will no longer be accessible and any
-			existing sessions will be expired.
+			您确定吗？该应用将不再可访问，所有现有会话将失效。
 		</AlertDialog.Description>
 
 		<Flex gap="3" mt="4" justify="end">
 			<AlertDialog.Cancel>
 				<Button variant="soft" color="gray">
-					Cancel
+					取消
 				</Button>
 			</AlertDialog.Cancel>
 			<AlertDialog.Action>
 				<Button variant="solid" color="red">
-					Revoke access
+					撤销访问
 				</Button>
 			</AlertDialog.Action>
 		</Flex>
@@ -32,120 +31,119 @@ sourcePath: components/alert-dialog
 </AlertDialog.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits parts and props from the [Alert Dialog primitive](/primitives/docs/components/alert-dialog) and is visually identical to [Dialog](/themes/docs/components/dialog), though with differing semantics and behavior.
+该组件继承自 [Alert Dialog primitive](/primitives/docs/components/alert-dialog) 的部分和属性，并且在视觉上与 [Dialog](/themes/docs/components/dialog) 完全相同，但语义和行为不同。
 
-### Root
+### 根元素
 
-Contains all the parts of the dialog.
+包含对话框的所有部分。
 
-### Trigger
+### 触发器
 
-Wraps the control that will open the dialog.
+包裹将打开对话框的控件。
 
-### Content
+### 内容
 
-Contains the content of the dialog. This component is based on the `div` element.
+包含对话框的内容。该组件基于 `div` 元素。
 
 <ThemesPropsTable defs="alertDialogContentPropDefs" />
 
-### Title
+### 标题
 
-An accessible title that is announced when the dialog is opened. This part is based on the [Heading](/themes/docs/components/heading) component with a pre-defined font size and leading trim on top.
+一个可访问的标题，在对话框打开时进行宣布。该部分基于 [Heading](/themes/docs/components/heading) 组件，具有预定义的字体大小和顶部修剪。
 
-### Description
+### 描述
 
-An optional accessible description that is announced when the dialog is opened. This part is based on the [Text](/themes/docs/components/text) component with a pre-defined font size.
+一个可选的可访问描述，在对话框打开时进行宣布。该部分基于 [Text](/themes/docs/components/text) 组件，具有预定义的字体大小。
 
-If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Content`.
+如果您想完全移除描述，请删除该部分并将 `aria-describedby={undefined}` 传递给 `Content`。
 
-### Action
+### 操作
 
-Wraps the control that will close the dialog. This should be distinguished visually from the `Cancel` control.
+包裹将关闭对话框的控件。此控件在视觉上应与 `取消` 控件区分开。
 
-### Cancel
+### 取消
 
-Wraps the control that will close the dialog. This should be distinguished visually from the `Action` control.
+包裹将关闭对话框的控件。此控件在视觉上应与 `操作` 控件区分开。
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control size of the dialog. It will affect the `padding` and `border-radius` of the Content.
-Use it in conjunction with the `width`, `minWidth` and `maxWidth` props to control the width of the dialog.
+使用 `size` 属性控制对话框的大小。它将影响内容的 `padding` 和 `border-radius`。
+结合 `width`、`minWidth` 和 `maxWidth` 属性使用，以控制对话框的宽度。
 
 ```jsx live=true line=6,17,28,39
 <Flex gap="4" align="center">
 	<AlertDialog.Root>
 		<AlertDialog.Trigger>
-			<Button variant="soft">Size 1</Button>
+			<Button variant="soft">大小 1</Button>
 		</AlertDialog.Trigger>
 		<AlertDialog.Content __size__="1" maxWidth="300px">
 			<Text as="p" trim="both" size="1">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</AlertDialog.Content>
 	</AlertDialog.Root>
 
 	<AlertDialog.Root>
 		<AlertDialog.Trigger>
-			<Button variant="soft">Size 2</Button>
+			<Button variant="soft">大小 2</Button>
 		</AlertDialog.Trigger>
 		<AlertDialog.Content __size__="2" maxWidth="400px">
 			<Text as="p" trim="both" size="2">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</AlertDialog.Content>
 	</AlertDialog.Root>
 
 	<AlertDialog.Root>
 		<AlertDialog.Trigger>
-			<Button variant="soft">Size 3</Button>
+			<Button variant="soft">大小 3</Button>
 		</AlertDialog.Trigger>
 		<AlertDialog.Content __size__="3" maxWidth="500px">
 			<Text as="p" trim="both" size="3">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</AlertDialog.Content>
 	</AlertDialog.Root>
 
 	<AlertDialog.Root>
 		<AlertDialog.Trigger>
-			<Button variant="soft">Size 4</Button>
+			<Button variant="soft">大小 4</Button>
 		</AlertDialog.Trigger>
 		<AlertDialog.Content __size__="4">
 			<Text as="p" trim="both" size="4">
-				The quick brown fox jumps over the lazy dog.
+				快速的棕色狐狸跳过懒狗。
 			</Text>
 		</AlertDialog.Content>
 	</AlertDialog.Root>
 </Flex>
 ```
 
-### With inset content
+### 带内嵌内容
 
-Use the [Inset](/themes/docs/components/inset) component to align content flush with the sides of the dialog.
+使用 [Inset](/themes/docs/components/inset) 组件将内容与对话框的边缘对齐。
 
 ```jsx live=true
 <AlertDialog.Root>
 	<AlertDialog.Trigger>
-		<Button color="red">Delete users</Button>
+		<Button color="red">删除用户</Button>
 	</AlertDialog.Trigger>
 	<AlertDialog.Content maxWidth="500px">
-		<AlertDialog.Title>Delete Users</AlertDialog.Title>
+		<AlertDialog.Title>删除用户</AlertDialog.Title>
 		<AlertDialog.Description size="2">
-			Are you sure you want to delete these users? This action is permanent and
-			cannot be undone.
+			您确定要删除这些用户吗？此操作是永久的，无法撤销。
 		</AlertDialog.Description>
 
 		<Inset side="x" my="5">
 			<Table.Root>
 				<Table.Header>
 					<Table.Row>
-						<Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-						<Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-						<Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>全名</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>电子邮件</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>组别</Table.ColumnHeaderCell>
 					</Table.Row>
 				</Table.Header>
 
@@ -153,13 +151,13 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 					<Table.Row>
 						<Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
 						<Table.Cell>danilo@example.com</Table.Cell>
-						<Table.Cell>Developer</Table.Cell>
+						<Table.Cell>开发者</Table.Cell>
 					</Table.Row>
 
 					<Table.Row>
 						<Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
 						<Table.Cell>zahra@example.com</Table.Cell>
-						<Table.Cell>Admin</Table.Cell>
+						<Table.Cell>管理员</Table.Cell>
 					</Table.Row>
 				</Table.Body>
 			</Table.Root>
@@ -168,11 +166,11 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 		<Flex gap="3" justify="end">
 			<AlertDialog.Cancel>
 				<Button variant="soft" color="gray">
-					Cancel
+					取消
 				</Button>
 			</AlertDialog.Cancel>
 			<AlertDialog.Action>
-				<Button color="red">Delete users</Button>
+				<Button color="red">删除用户</Button>
 			</AlertDialog.Action>
 		</Flex>
 	</AlertDialog.Content>

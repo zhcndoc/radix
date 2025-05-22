@@ -1,36 +1,36 @@
 ---
-metaTitle: Separator
-metaDescription: Visually or semantically separates content.
+metaTitle: 分隔线
+metaDescription: 视觉或语义上分隔内容。
 sourcePath: components/separator
 ---
 
 ```jsx live=true
 <Text size="2">
-	Tools for building high-quality, accessible UI.
+	构建高质量、可访问的用户界面的工具。
 	<Separator my="3" size="4" />
 	<Flex gap="3" align="center">
-		Themes
+		主题
 		<Separator orientation="vertical" />
-		Primitives
+		原语
 		<Separator orientation="vertical" />
-		Icons
+		图标
 		<Separator orientation="vertical" />
-		Colors
+		颜色
 	</Flex>
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Separator primitive](/primitives/docs/components/separator) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件继承自 [Separator primitive](/primitives/docs/components/separator) 的属性，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="separatorPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control the size of the separator. The largest step takes full width or height of the container.
+使用 `size` 属性来控制分隔线的大小。最大步长会占满容器的宽度或高度。
 
 ```jsx live="true"
 <Flex direction="column" gap="4">
@@ -50,9 +50,9 @@ Use the `size` prop to control the size of the separator. The largest step takes
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
+使用 `color` 属性为分隔线分配特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true
 <Flex direction="column" gap="3">
@@ -63,9 +63,9 @@ Use the `color` prop to assign a specific [color](/themes/docs/theme/color).
 </Flex>
 ```
 
-### Orientation
+### 方向
 
-Use the `orientation` prop to control whether the separator is horizontal or vertical.
+使用 `orientation` 属性来控制分隔线是水平还是垂直。
 
 ```jsx live="true"
 <Flex align="center" gap="4">

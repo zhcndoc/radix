@@ -1,30 +1,30 @@
 ---
-metaTitle: Visually Hidden
-metaDescription: Hides content from the screen in an accessible way.
+metaTitle: 视觉隐藏
+metaDescription: 以可访问的方式从屏幕隐藏内容。
 name: visually-hidden
 ---
 
-# Visually Hidden
+# 视觉隐藏
 
-<Description>Hides content from the screen in an accessible way.</Description>
+<Description>以可访问的方式从屏幕隐藏内容。</Description>
 
 <Highlights
 	features={[
-		"Visually hides content while preserving it for assistive technology.",
+		"在保留对辅助技术可访问性的前提下，视觉上隐藏内容。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-visually-hidden
 ```
 
-## Anatomy
+## 结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { VisuallyHidden } from "radix-ui";
@@ -32,9 +32,9 @@ import { VisuallyHidden } from "radix-ui";
 export default () => <VisuallyHidden.Root />;
 ```
 
-## Basic example
+## 基本示例
 
-Use the visually hidden primitive.
+使用视觉隐藏的原语。
 
 ```jsx
 import { VisuallyHidden } from "radix-ui";
@@ -43,16 +43,16 @@ import { GearIcon } from "@radix-ui/react-icons";
 export default () => (
 	<button>
 		<GearIcon />
-		<VisuallyHidden.Root>Settings</VisuallyHidden.Root>
+		<VisuallyHidden.Root>设置</VisuallyHidden.Root>
 	</button>
 );
 ```
 
-## API Reference
+## API 参考
 
 ### Root
 
-Anything you put inside this component will be hidden from the screen but will be announced by screen readers.
+您放置在此组件内的任何内容将被从屏幕隐藏，但将被屏幕阅读器宣告。
 
 <PropsTable
 	data={[
@@ -63,18 +63,17 @@ Anything you put inside this component will be hidden from the screen but will b
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请阅读我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
 	]}
 />
 
-## Accessibility
+## 可访问性
 
-This is useful in certain scenarios as an alternative to traditional labelling with `aria-label` or `aria-labelledby`.
+在某些场景下，这是用 `aria-label` 或 `aria-labelledby` 传统标记的替代方案。

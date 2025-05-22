@@ -1,38 +1,38 @@
 ---
-metaTitle: Dialog
-metaDescription: Modal dialog window displayed above the page.
+metaTitle: 对话框
+metaDescription: 显示在页面上的模态对话框窗口。
 sourcePath: components/dialog
 ---
 
 ```jsx live=true
 <Dialog.Root>
 	<Dialog.Trigger>
-		<Button>Edit profile</Button>
+		<Button>编辑个人资料</Button>
 	</Dialog.Trigger>
 
 	<Dialog.Content maxWidth="450px">
-		<Dialog.Title>Edit profile</Dialog.Title>
+		<Dialog.Title>编辑个人资料</Dialog.Title>
 		<Dialog.Description size="2" mb="4">
-			Make changes to your profile.
+			修改您的个人资料。
 		</Dialog.Description>
 
 		<Flex direction="column" gap="3">
 			<label>
 				<Text as="div" size="2" mb="1" weight="bold">
-					Name
+					姓名
 				</Text>
 				<TextField.Root
 					defaultValue="Freja Johnsen"
-					placeholder="Enter your full name"
+					placeholder="请输入您的全名"
 				/>
 			</label>
 			<label>
 				<Text as="div" size="2" mb="1" weight="bold">
-					Email
+					电子邮件
 				</Text>
 				<TextField.Root
 					defaultValue="freja@example.com"
-					placeholder="Enter your email"
+					placeholder="请输入您的电子邮件"
 				/>
 			</label>
 		</Flex>
@@ -40,20 +40,20 @@ sourcePath: components/dialog
 		<Flex gap="3" mt="4" justify="end">
 			<Dialog.Close>
 				<Button variant="soft" color="gray">
-					Cancel
+					取消
 				</Button>
 			</Dialog.Close>
 			<Dialog.Close>
-				<Button>Save</Button>
+				<Button>保存</Button>
 			</Dialog.Close>
 		</Flex>
 	</Dialog.Content>
 </Dialog.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Dialog primitive](/primitives/docs/components/dialog).
+该组件继承自 [Dialog primitive](/primitives/docs/components/dialog) 的属性。
 
 {
 
@@ -62,118 +62,116 @@ This component inherits props from the [Dialog primitive](/primitives/docs/compo
 		<InfoCircledIcon />
 	</Callout.Icon>
 	<Callout.Text>
-		Note that this dialog is designed around the modal pattern, so the{" "}
-		<Code>modal</Code> prop is unavailable.
+		请注意，此对话框是围绕模态模式设计的，因此 <Code>modal</Code> 属性不可用。
 	</Callout.Text>
 </Callout.Root>
 
 }
 
-### Root
+### 根元素
 
-Contains all the parts of a dialog.
+包含对话框的所有部分。
 
-### Trigger
+### 触发器
 
-Wraps the control that will open the dialog.
+包裹将打开对话框的控件。
 
-### Content
+### 内容
 
-Contains the content of the dialog. This component is based on the `div` element.
+包含对话框的内容。该组件基于 `div` 元素。
 
 <ThemesPropsTable defs="dialogContentPropDefs" />
 
-### Title
+### 标题
 
-An accessible title that is announced when the dialog is opened. This part is based on the [Heading](/themes/docs/components/heading) component with a pre-defined font size and leading trim on top.
+一个可访问的标题，在对话框打开时会被宣布。该部分基于 [Heading](/themes/docs/components/heading) 组件，具有预定义的字体大小和上方的行高修剪。
 
-### Description
+### 描述
 
-An optional accessible description that is announced when the dialog is opened. This part is based on the [Text](/themes/docs/components/text) component with a pre-defined font size.
+一个可选的可访问描述，在对话框打开时会被宣布。该部分基于 [Text](/themes/docs/components/text) 组件，具有预定义的字体大小。
 
-If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Content`.
+如果您希望完全删除描述，请删除此部分并将 `aria-describedby={undefined}` 传递给 `Content`。
 
-### Close
+### 关闭
 
-Wraps the control that will close the dialog.
+包裹将关闭对话框的控件。
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control size of the dialog. It will affect the `padding` and `border-radius` of the Content.
-Use it in conjunction with the `width`, `minWidth` and `maxWidth` props to control the width of the dialog.
+使用 `size` 属性来控制对话框的大小。它会影响内容的 `padding` 和 `border-radius`。与 `width`、`minWidth` 和 `maxWidth` 属性结合使用可以控制对话框的宽度。
 
 ```jsx live=true line=6,17,28,39
 <Flex gap="4" align="center">
 	<Dialog.Root>
 		<Dialog.Trigger>
-			<Button variant="soft">Size 1</Button>
+			<Button variant="soft">大小 1</Button>
 		</Dialog.Trigger>
 		<Dialog.Content __size__="1" maxWidth="300px">
 			<Text as="p" trim="both" size="1">
-				The quick brown fox jumps over the lazy dog.
+				敏捷的棕色狐狸跳过懒狗。
 			</Text>
 		</Dialog.Content>
 	</Dialog.Root>
 
 	<Dialog.Root>
 		<Dialog.Trigger>
-			<Button variant="soft">Size 2</Button>
+			<Button variant="soft">大小 2</Button>
 		</Dialog.Trigger>
 		<Dialog.Content __size__="2" maxWidth="400px">
 			<Text as="p" trim="both" size="2">
-				The quick brown fox jumps over the lazy dog.
+				敏捷的棕色狐狸跳过懒狗。
 			</Text>
 		</Dialog.Content>
 	</Dialog.Root>
 
 	<Dialog.Root>
 		<Dialog.Trigger>
-			<Button variant="soft">Size 3</Button>
+			<Button variant="soft">大小 3</Button>
 		</Dialog.Trigger>
 		<Dialog.Content __size__="3" maxWidth="500px">
 			<Text as="p" trim="both" size="3">
-				The quick brown fox jumps over the lazy dog.
+				敏捷的棕色狐狸跳过懒狗。
 			</Text>
 		</Dialog.Content>
 	</Dialog.Root>
 
 	<Dialog.Root>
 		<Dialog.Trigger>
-			<Button variant="soft">Size 4</Button>
+			<Button variant="soft">大小 4</Button>
 		</Dialog.Trigger>
 		<Dialog.Content __size__="4">
 			<Text as="p" trim="both" size="4">
-				The quick brown fox jumps over the lazy dog.
+				敏捷的棕色狐狸跳过懒狗。
 			</Text>
 		</Dialog.Content>
 	</Dialog.Root>
 </Flex>
 ```
 
-### With inset content
+### 带有插入内容
 
-Use the [Inset](/themes/docs/components/inset) component to align content flush with the sides of the dialog.
+使用 [Inset](/themes/docs/components/inset) 组件将内容与对话框的边缘对齐。
 
 ```jsx live=true
 <Dialog.Root>
 	<Dialog.Trigger>
-		<Button>View users</Button>
+		<Button>查看用户</Button>
 	</Dialog.Trigger>
 	<Dialog.Content>
-		<Dialog.Title>Users</Dialog.Title>
+		<Dialog.Title>用户</Dialog.Title>
 		<Dialog.Description>
-			The following users have access to this project.
+			以下用户可以访问该项目。
 		</Dialog.Description>
 
 		<Inset side="x" my="5">
 			<Table.Root>
 				<Table.Header>
 					<Table.Row>
-						<Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-						<Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-						<Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>全名</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>电子邮件</Table.ColumnHeaderCell>
+						<Table.ColumnHeaderCell>组</Table.ColumnHeaderCell>
 					</Table.Row>
 				</Table.Header>
 
@@ -181,13 +179,13 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 					<Table.Row>
 						<Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
 						<Table.Cell>danilo@example.com</Table.Cell>
-						<Table.Cell>Developer</Table.Cell>
+						<Table.Cell>开发者</Table.Cell>
 					</Table.Row>
 
 					<Table.Row>
 						<Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
 						<Table.Cell>zahra@example.com</Table.Cell>
-						<Table.Cell>Admin</Table.Cell>
+						<Table.Cell>管理员</Table.Cell>
 					</Table.Row>
 				</Table.Body>
 			</Table.Root>
@@ -196,7 +194,7 @@ Use the [Inset](/themes/docs/components/inset) component to align content flush 
 		<Flex gap="3" justify="end">
 			<Dialog.Close>
 				<Button variant="soft" color="gray">
-					Close
+					关闭
 				</Button>
 			</Dialog.Close>
 		</Flex>

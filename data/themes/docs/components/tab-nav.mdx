@@ -1,139 +1,139 @@
 ---
-metaTitle: Tab Nav
-metaDescription: Navigation menu with links styled as tabs.
+metaTitle: 标签导航
+metaDescription: 样式化为标签的导航菜单链接。
 sourcePath: components/tab-nav
 ---
 
 ```jsx live=true
 <TabNav.Root>
 	<TabNav.Link href="#" active>
-		Account
+		账户
 	</TabNav.Link>
-	<TabNav.Link href="#">Documents</TabNav.Link>
-	<TabNav.Link href="#">Settings</TabNav.Link>
+	<TabNav.Link href="#">文档</TabNav.Link>
+	<TabNav.Link href="#">设置</TabNav.Link>
 </TabNav.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the [Navigation Menu primitive](/primitives/docs/components/navigation-menu) and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 [导航菜单原语](/primitives/docs/components/navigation-menu)，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
-### Root
+### 根节点
 
-Contains the navigation menu links.
+包含导航菜单链接。
 
 <ThemesPropsTable defs="tabNavRootPropDefs" />
 
-### Link
+### 链接
 
-An individual navigation menu link.
+单个导航菜单链接。
 
 <ThemesPropsTable defs="tabNavLinkPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the `size` prop to control the size of the tabs.
+使用 `size` 属性控制标签的尺寸。
 
 ```jsx live=true line="2,10"
 <Flex direction="column" gap="4" pb="2">
 	<TabNav.Root size="1">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 
 	<TabNav.Root size="2">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 </Flex>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color) to the tab list.
+使用 `color` 属性为标签列表指定特定的 [颜色](/themes/docs/theme/color)。
 
 ```jsx live=true line="2,10,18,26"
 <Flex direction="column" gap="4" pb="2">
 	<TabNav.Root color="indigo">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 
 	<TabNav.Root color="cyan">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 
 	<TabNav.Root color="orange">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 
 	<TabNav.Root color="crimson">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 </Flex>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增强与背景的颜色对比。
 
 ```jsx live=true line="10"
 <Flex direction="column" gap="4" pb="2">
 	<TabNav.Root color="gray">
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 
 	<TabNav.Root color="gray" highContrast>
 		<TabNav.Link href="#" active>
-			Account
+			账户
 		</TabNav.Link>
-		<TabNav.Link href="#">Documents</TabNav.Link>
-		<TabNav.Link href="#">Settings</TabNav.Link>
+		<TabNav.Link href="#">文档</TabNav.Link>
+		<TabNav.Link href="#">设置</TabNav.Link>
 	</TabNav.Root>
 </Flex>
 ```
 
-### With router links
+### 使用路由链接
 
-Use the `asChild` prop to compose `TabNav.Link` with your app’s router link component.
+使用 `asChild` 属性将 `TabNav.Link` 与您应用的路由链接组件组合。
 
 ```jsx
 <TabNav.Root>
 	<TabNav.Link asChild active={pathname === "/account"}>
-		<NextLink href="/account">Account</NextLink>
+		<NextLink href="/account">账户</NextLink>
 	</TabNav.Link>
 	<TabNav.Link asChild active={pathname === "/documents"}>
-		<NextLink href="/documents">Documents</NextLink>
+		<NextLink href="/documents">文档</NextLink>
 	</TabNav.Link>
 	<TabNav.Link asChild active={pathname === "/settings"}>
-		<NextLink href="/settings">Settings</NextLink>
+		<NextLink href="/settings">设置</NextLink>
 	</TabNav.Link>
 </TabNav.Root>
 ```

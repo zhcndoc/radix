@@ -1,35 +1,33 @@
 ---
-metaTitle: Quote
-metaDescription: Short inline quotation.
+metaTitle: 引用
+metaDescription: 简短的行内引用。
 sourcePath: components/quote
 ---
 
 ```jsx live=true
 <Text>
-	His famous quote,{" "}
-	<Quote>Styles come and go. Good design is a language, not a style</Quote>,
-	elegantly summs up Massimo’s philosophy of design.
+	他著名的引用，{" "}
+	<Quote>风格来来去去。优秀的设计是一种语言，而不是一种风格</Quote>,
+	优雅地概括了马西莫的设计哲学。
 </Text>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `q` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+此组件基于 `q` 元素，并支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="quotePropDefs" />
 
-## Examples
+## 示例
 
-### Truncate
+### 截断
 
-Use the `truncate` prop to truncate text with an ellipsis when it overflows its container.
+使用 `truncate` 属性，当文本超出其容器时，用省略号截断文本。
 
 ```jsx live=true line=2
 <Flex maxWidth="300px">
 	<Quote truncate>
-		The goal of typography is to relate font size, line height, and line width
-		in a proportional way that maximizes beauty and makes reading easier and
-		more pleasant.
+		排版的目标是以一种比例的方式关联字体大小、行高和行宽，以最大化美感并使阅读更加轻松和愉悦。
 	</Quote>
 </Flex>
 ```

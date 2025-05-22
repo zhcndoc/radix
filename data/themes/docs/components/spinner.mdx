@@ -1,6 +1,6 @@
 ---
-metaTitle: Spinner
-metaDescription: Displays an animated loading indicator.
+metaTitle: 加载指示器
+metaDescription: 显示动画加载指示器。
 sourcePath: components/spinner
 ---
 
@@ -8,17 +8,17 @@ sourcePath: components/spinner
 <Spinner />
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `span` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `span` 元素，支持 [常见的边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="spinnerPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control the size of the spinner.
+使用 `size` 属性控制加载指示器的大小。
 
 ```jsx live="true"
 <Flex align="center" gap="4">
@@ -28,9 +28,9 @@ Use the `size` prop to control the size of the spinner.
 </Flex>
 ```
 
-### With children
+### 带子元素
 
-Use the `loading` prop to control whether the spinner or its children are displayed. Spinner preserves the dimensions of children when they are hidden and disables interactive elements.
+使用 `loading` 属性控制加载指示器或其子元素是否显示。当子元素被隐藏时，加载指示器会保留子元素的尺寸并禁用交互元素。
 
 ```jsx live="true"
 <Flex gap="4">
@@ -44,21 +44,21 @@ Use the `loading` prop to control whether the spinner or its children are displa
 </Flex>
 ```
 
-### With buttons
+### 带按钮
 
-[Buttons](/themes/docs/components/button) have their own `loading` prop that automatically composes a spinner.
+[按钮](/themes/docs/components/button) 有自己的 `loading` 属性，可以自动组合加载指示器。
 
 ```jsx live=true scroll=true
-<Button loading>Bookmark</Button>
+<Button loading>收藏</Button>
 ```
 
-If you have an icon inside the button, you can use the button’s `disabled` state and wrap the icon in a standalone `<Spinner>` to achieve a more sophisticated design.
+如果按钮内部有图标，可以使用按钮的 `disabled` 状态并将图标包装在独立的 `<Spinner>` 中，以实现更复杂的设计。
 
 ```jsx live=true scroll=true
 <Button disabled>
 	<Spinner loading>
 		<BookmarkIcon />
 	</Spinner>
-	Bookmark
+	收藏
 </Button>
 ```

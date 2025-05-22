@@ -1,32 +1,32 @@
 ---
-metaTitle: Skeleton
-metaDescription: Replaces content with same shape placeholder that indicates a loading state.
+metaTitle: 骨架
+metaDescription: 用相同形状的占位符替换内容，以指示加载状态。
 sourcePath: components/skeleton
 ---
 
 ```jsx live="true"
-<Skeleton>Loading</Skeleton>
+<Skeleton>加载中</Skeleton>
 ```
 
-## API Reference
+## API 参考
 
-This component is based on the `span` element and supports [common margin props](/themes/docs/overview/layout#margin-props).
+该组件基于 `span` 元素，并支持 [常见边距属性](/themes/docs/overview/layout#margin-props)。
 
 <ThemesPropsTable defs="skeletonPropDefs" />
 
-## Examples
+## 示例
 
-### Size
+### 尺寸
 
-Use the width and height props to manually control the size of the skeleton.
+使用宽度和高度属性手动控制骨架的大小。
 
 ```jsx live="true"
 <Skeleton width="48px" height="48px" />
 ```
 
-### With children
+### 带子元素
 
-Use the `loading` prop to control whether the skeleton or its children are displayed. Skeleton preserves the dimensions of children when they are hidden and disables interactive elements.
+使用 `loading` 属性控制是显示骨架还是其子元素。骨架在隐藏时保留子元素的尺寸，并禁用交互元素。
 
 ```jsx live="true"
 <Flex gap="4">
@@ -40,42 +40,38 @@ Use the `loading` prop to control whether the skeleton or its children are displ
 </Flex>
 ```
 
-### With text
+### 带文本
 
-When using Skeleton with text, you’d usually wrap the text node itself rather than the parent element. This ensures that the text is replaced with a placeholder of the same size:
+在与文本一起使用骨架时，通常应该将文本节点本身包裹起来，而不是其父元素。这样确保文本被相同大小的占位符替换：
 
 ```jsx live="true" line="4,7,9"
 <Container size="1">
 	<Flex direction="column" gap="2">
 		<Text>
-			<Skeleton>Lorem ipsum dolor sit amet.</Skeleton>
+			<Skeleton>罗马字母假文。</Skeleton>
 		</Text>
 
 		<Skeleton>
-			<Text>Lorem ipsum dolor sit amet</Text>
+			<Text>罗马字母假文</Text>
 		</Skeleton>
 	</Flex>
 </Container>
 ```
 
-The difference is especially noticeable when wrapping longer paragraphs:
+当包裹更长的段落时，差异会更加明显：
 
 ```jsx live="true" line="4,8,11,17"
 <Container size="1">
 	<Flex direction="column" gap="3">
 		<Text>
 			<Skeleton>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-				felis tellus, efficitur id convallis a, viverra eget libero. Nam magna
-				erat, fringilla sed commodo sed, aliquet nec magna.
+				罗马字母假文，主题是关于优雅。牠有美丽的吸引力，发展出更广泛的生活方式。
 			</Skeleton>
 		</Text>
 
 		<Skeleton>
 			<Text>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-				felis tellus, efficitur id convallis a, viverra eget libero. Nam magna
-				erat, fringilla sed commodo sed, aliquet nec magna.
+				罗马字母假文，主题是关于优雅。牠有美丽的吸引力，发展出更广泛的生活方式。
 			</Text>
 		</Skeleton>
 	</Flex>

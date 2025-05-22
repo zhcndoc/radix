@@ -1,6 +1,6 @@
 ---
-metaTitle: Context Menu
-metaDescription: Menu representing a set of actions, displayed at the point of right click or long press.
+metaTitle: 上下文菜单
+metaDescription: 表示一组操作的菜单，在右键点击或长按时显示。
 sourcePath: components/context-menu
 ---
 
@@ -10,281 +10,281 @@ sourcePath: components/context-menu
 		<RightClickZone style={{ height: 150 }} />
 	</ContextMenu.Trigger>
 	<ContextMenu.Content>
-		<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-		<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+		<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+		<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 		<ContextMenu.Separator />
-		<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+		<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 		<ContextMenu.Sub>
-			<ContextMenu.SubTrigger>More</ContextMenu.SubTrigger>
+			<ContextMenu.SubTrigger>更多</ContextMenu.SubTrigger>
 			<ContextMenu.SubContent>
-				<ContextMenu.Item>Move to project…</ContextMenu.Item>
-				<ContextMenu.Item>Move to folder…</ContextMenu.Item>
+				<ContextMenu.Item>移动到项目…</ContextMenu.Item>
+				<ContextMenu.Item>移动到文件夹…</ContextMenu.Item>
 				<ContextMenu.Separator />
-				<ContextMenu.Item>Advanced options…</ContextMenu.Item>
+				<ContextMenu.Item>高级选项…</ContextMenu.Item>
 			</ContextMenu.SubContent>
 		</ContextMenu.Sub>
 
 		<ContextMenu.Separator />
-		<ContextMenu.Item>Share</ContextMenu.Item>
-		<ContextMenu.Item>Add to favorites</ContextMenu.Item>
+		<ContextMenu.Item>分享</ContextMenu.Item>
+		<ContextMenu.Item>添加到收藏夹</ContextMenu.Item>
 		<ContextMenu.Separator />
 		<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-			Delete
+			删除
 		</ContextMenu.Item>
 	</ContextMenu.Content>
 </ContextMenu.Root>
 ```
 
-## API Reference
+## API 参考
 
-This component inherits props from the [Context Menu primitive](/primitives/docs/components/context-menu).
+该组件继承自 [上下文菜单原语](/primitives/docs/components/context-menu)。
 
 ### Root
 
-Contains all the parts of a context menu.
+包含上下文菜单的所有部分。
 
 ### Trigger
 
-Wraps the element that will open the context menu.
+包裹将打开上下文菜单的元素。
 
 ### Content
 
-The component that pops out when the context menu is open.
+当上下文菜单打开时弹出的组件。
 
 <ThemesPropsTable defs="contextMenuContentPropDefs" />
 
 ### Label
 
-Used to render a label. It won't be focusable using arrow keys.
+用于渲染标签。不能使用箭头键聚焦。
 
 ### Item
 
-The component that contains the context menu items.
+包含上下文菜单项的组件。
 
 <ThemesPropsTable defs="contextMenuItemPropDefs" />
 
 ### Group
 
-Used to group multiple `Item` parts.
+用于将多个 `Item` 部分分组。
 
 ### RadioGroup
 
-Used to group multiple `RadioItem` parts.
+用于将多个 `RadioItem` 部分分组。
 
 ### RadioItem
 
-An item that can be controlled and rendered like a radio.
+一个可以像单选按钮一样控制和渲染的项。
 
 <ThemesPropsTable defs="contextMenuRadioItemPropDefs" />
 
 ### CheckboxItem
 
-An item that can be controlled and rendered like a checkbox.
+一个可以像复选框一样控制和渲染的项。
 
 <ThemesPropsTable defs="contextMenuCheckboxItemPropDefs" />
 
 ### Sub
 
-Contains all the parts of a submenu.
+包含子菜单的所有部分。
 
 ### SubTrigger
 
-An item that opens a submenu. Must be rendered inside `ContextMenu.Sub`.
+打开子菜单的项。必须在 `ContextMenu.Sub` 内渲染。
 
 ### SubContent
 
-The component that pops out when a submenu is open. Must be rendered inside `ContextMenu.Sub`.
+当子菜单打开时弹出的组件。必须在 `ContextMenu.Sub` 内渲染。
 
-## Examples
+## 示例
 
-### Size
+### 大小
 
-Use the `size` prop to control the size.
+使用 `size` 属性控制大小。
 
 ```jsx live=true
 <Grid columns="2" gap="3">
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Size one" />
+			<RightClickZone title="大小一" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content size="1">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Size two" />
+			<RightClickZone title="大小二" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content size="2">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 </Grid>
 ```
 
-### Variant
+### 变体
 
-Use the `variant` prop to customize the visual style of the context menu.
+使用 `variant` 属性自定义上下文菜单的视觉风格。
 
 ```jsx live=true
 <Grid columns="2" gap="3">
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Solid" />
+			<RightClickZone title="实心" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content variant="solid">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Soft" />
+			<RightClickZone title="柔和" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content variant="soft">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 </Grid>
 ```
 
-### Color
+### 颜色
 
-Use the `color` prop to assign a specific [color](/themes/docs/theme/color). You can also pass `color` to a specific item to override for semantic reasons (i.e. a destructive action).
+使用 `color` 属性分配特定的 [颜色](/themes/docs/theme/color)。您还可以将 `color` 传递给特定项以出于语义原因覆盖（即破坏性操作）。
 
 ```jsx live=true
 <Grid columns="2" gap="3">
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Indigo" />
+			<RightClickZone title="靛蓝" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="indigo">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Cyan" />
+			<RightClickZone title="青色" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="cyan">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Orange" />
+			<RightClickZone title="橙色" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="orange">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Crimson" />
+			<RightClickZone title="深红" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="crimson">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 
 			<ContextMenu.Separator />
 			<ContextMenu.Item shortcut="⌘ ⌫" color="red">
-				Delete
+				删除
 			</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 </Grid>
 ```
 
-### High-contrast
+### 高对比度
 
-Use the `highContrast` prop to increase color contrast with the background.
+使用 `highContrast` 属性增加与背景的颜色对比度。
 
 ```jsx live=true line="18"
 <Grid columns="2" gap="3">
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="Standard" />
+			<RightClickZone title="标准" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="gray">
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 
 	<ContextMenu.Root>
 		<ContextMenu.Trigger>
-			<RightClickZone title="High-contrast" />
+			<RightClickZone title="高对比度" />
 		</ContextMenu.Trigger>
 		<ContextMenu.Content color="gray" highContrast>
-			<ContextMenu.Item shortcut="⌘ E">Edit</ContextMenu.Item>
-			<ContextMenu.Item shortcut="⌘ D">Duplicate</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ E">编辑</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ D">复制</ContextMenu.Item>
 			<ContextMenu.Separator />
-			<ContextMenu.Item shortcut="⌘ N">Archive</ContextMenu.Item>
+			<ContextMenu.Item shortcut="⌘ N">归档</ContextMenu.Item>
 		</ContextMenu.Content>
 	</ContextMenu.Root>
 </Grid>

@@ -1,315 +1,307 @@
 ---
-metaTitle: Radio Group
-metaDescription: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+metaTitle: 单选按钮组
+metaDescription: 一组可以选择的按钮——称为单选按钮——在任何时候最多只能选择一个按钮。
 name: radio-group
 aria: https://www.w3.org/WAI/ARIA/apg/patterns/radio
 ---
 
-# Radio Group
+# 单选按钮组
 
 <Description>
-	A set of checkable buttons—known as radio buttons—where no more than one of
-	the buttons can be checked at a time.
+    一组可以选择的按钮——称为单选按钮——在任何时候最多只能选择一个按钮。
 </Description>
 
 <HeroContainer>
-	<RadioGroupDemo />
+    <RadioGroupDemo />
 </HeroContainer>
 
 <HeroCodeBlock folder="RadioGroup" />
 
 <Highlights
-	features={[
-		"Full keyboard navigation.",
-		"Supports horizontal/vertical orientation.",
-		"Can be controlled or uncontrolled.",
-	]}
+    features={[
+        "完整的键盘导航。",
+        "支持水平/垂直方向。",
+        "可以是受控或非受控模式。",
+    ]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-radio-group
 ```
 
-## Anatomy
+## 结构
 
-Import all parts and piece them together.
+导入所有部分并将它们组合在一起。
 
 ```jsx
 import { RadioGroup } from "radix-ui";
 
 export default () => (
-	<RadioGroup.Root>
-		<RadioGroup.Item>
-			<RadioGroup.Indicator />
-		</RadioGroup.Item>
-	</RadioGroup.Root>
+    <RadioGroup.Root>
+        <RadioGroup.Item>
+            <RadioGroup.Indicator />
+        </RadioGroup.Item>
+    </RadioGroup.Root>
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根元素
 
-Contains all the parts of a radio group.
+包含单选按钮组的所有部分。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "defaultValue",
-			type: "string",
-			description:
-				"The value of the radio item that should be checked when initially rendered. Use when you do not need to control the state of the radio items.",
-		},
-		{
-			name: "value",
-			type: "string",
-			description: (
-				<span>
-					The controlled value of the radio item to check. Should be used in
-					conjunction with <Code>onValueChange</Code>.
-				</span>
-			),
-		},
-		{
-			name: "onValueChange",
-			type: "(value: string) => void",
-			typeSimple: "function",
-			description: "Event handler called when the value changes.",
-		},
-		{
-			name: "disabled",
-			type: "boolean",
-			description: (
-				<span>
-					When <Code>true</Code>, prevents the user from interacting with radio
-					items.
-				</span>
-			),
-		},
-		{
-			name: "name",
-			type: "string",
-			description:
-				"The name of the group. Submitted with its owning form as part of a name/value pair.",
-		},
-		{
-			name: "required",
-			type: "boolean",
-			description: (
-				<span>
-					When <Code>true</Code>, indicates that the user must check a radio
-					item before the owning form can be submitted.
-				</span>
-			),
-		},
-		{
-			name: "orientation",
-			required: false,
-			type: '"horizontal" | "vertical" | undefined',
-			typeSimple: "enum",
-			default: "undefined",
-			description: "The orientation of the component.",
-		},
-		{
-			name: "dir",
-			required: false,
-			type: '"ltr" | "rtl"',
-			typeSimple: "enum",
-			description: (
-				<span>
-					The reading direction of the radio group. If omitted, inherits
-					globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
-				</span>
-			),
-		},
-		{
-			name: "loop",
-			required: false,
-			type: "boolean",
-			default: "true",
-			description: (
-				<span>
-					When <Code>true</Code>, keyboard navigation will loop from last item
-					to first, and vice versa.
-				</span>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    更改默认渲染的元素为作为子元素传递的元素，
+                    合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+                    更多细节。
+                </>
+            ),
+        },
+        {
+            name: "defaultValue",
+            type: "string",
+            description:
+                "在初始渲染时应选中的单选按钮项的值。当您不需要控制单选按钮项的状态时使用。",
+        },
+        {
+            name: "value",
+            type: "string",
+            description: (
+                <span>
+                    要选中的单选按钮项的受控值。应与 <Code>onValueChange</Code> 一起使用。
+                </span>
+            ),
+        },
+        {
+            name: "onValueChange",
+            type: "(value: string) => void",
+            typeSimple: "function",
+            description: "值更改时调用的事件处理程序。",
+        },
+        {
+            name: "disabled",
+            type: "boolean",
+            description: (
+                <span>
+                    当 <Code>true</Code> 时，阻止用户与单选按钮项交互。
+                </span>
+            ),
+        },
+        {
+            name: "name",
+            type: "string",
+            description:
+                "组的名称。与其拥有的表单一起作为名称/值对提交。",
+        },
+        {
+            name: "required",
+            type: "boolean",
+            description: (
+                <span>
+                    当 <Code>true</Code> 时，指示用户必须在拥有的表单可以提交之前检查一个单选按钮项。
+                </span>
+            ),
+        },
+        {
+            name: "orientation",
+            required: false,
+            type: '"horizontal" | "vertical" | undefined',
+            typeSimple: "enum",
+            default: "undefined",
+            description: "组件的方向。",
+        },
+        {
+            name: "dir",
+            required: false,
+            type: '"ltr" | "rtl"',
+            typeSimple: "enum",
+            description: (
+                <span>
+                    单选按钮组的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承，或者假设是 LTR
+                    (从左到右) 阅读模式。
+                </span>
+            ),
+        },
+        {
+            name: "loop",
+            required: false,
+            type: "boolean",
+            default: "true",
+            description: (
+                <span>
+                    当 <Code>true</Code> 时，键盘导航会从最后一个项目循环到第一个项目，反之亦然。
+                </span>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-disabled]",
-			values: "Present when disabled",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-disabled]",
+            values: "禁用时存在",
+        },
+    ]}
 />
 
-### Item
+### 项目
 
-An item in the group that can be checked. An `input` will also render when used within a `form` to ensure events propagate correctly.
+组中的一个可被选中的项目。当在 `form` 中使用时，它将渲染一个 `input` 以确保事件正确传播。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "value",
-			type: "string",
-			description: (
-				<span>
-					The value given as data when submitted with a <Code>name</Code>.
-				</span>
-			),
-		},
-		{
-			name: "disabled",
-			type: "boolean",
-			description: (
-				<span>
-					When <Code>true</Code>, prevents the user from interacting with the
-					radio item.
-				</span>
-			),
-		},
-		{
-			name: "required",
-			type: "boolean",
-			description: (
-				<span>
-					When <Code>true</Code>, indicates that the user must check the radio
-					item before the owning form can be submitted.
-				</span>
-			),
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    更改默认渲染的元素为作为子元素传递的元素，
+                    合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+                    更多细节。
+                </>
+            ),
+        },
+        {
+            name: "value",
+            type: "string",
+            description: (
+                <span>
+                    提交时与 <Code>name</Code> 一起提供的数据值。
+                </span>
+            ),
+        },
+        {
+            name: "disabled",
+            type: "boolean",
+            description: (
+                <span>
+                    当 <Code>true</Code> 时，阻止用户与单选按钮项交互。
+                </span>
+            ),
+        },
+        {
+            name: "required",
+            type: "boolean",
+            description: (
+                <span>
+                    当 <Code>true</Code> 时，指示用户必须在拥有的表单可以提交之前检查单选按钮项。
+                </span>
+            ),
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["checked", "unchecked"],
-		},
-		{
-			attribute: "[data-disabled]",
-			values: "Present when disabled",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-state]",
+            values: ["checked", "unchecked"],
+        },
+        {
+            attribute: "[data-disabled]",
+            values: "禁用时存在",
+        },
+    ]}
 />
 
-### Indicator
+### 指示器
 
-Renders when the radio item is in a checked state. You can style this element directly, or you can use it as a wrapper to put an icon into, or both.
+当单选按钮项处于选中状态时渲染。您可以直接样式化该元素，也可以将其用作放置图标的包装器，或二者兼有。
 
 <PropsTable
-	data={[
-		{
-			name: "asChild",
-			required: false,
-			type: "boolean",
-			default: "false",
-			description: (
-				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
-					<br />
-					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
-				</>
-			),
-		},
-		{
-			name: "forceMount",
-			type: "boolean",
-			description:
-				"Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
-		},
-	]}
+    data={[
+        {
+            name: "asChild",
+            required: false,
+            type: "boolean",
+            default: "false",
+            description: (
+                <>
+                    更改默认渲染的元素为作为子元素传递的元素，
+                    合并它们的属性和行为。
+                    <br />
+                    <br />
+                    阅读我们的 <a href="../guides/composition">组合</a> 指南以获取
+                    更多细节。
+                </>
+            ),
+        },
+        {
+            name: "forceMount",
+            type: "boolean",
+            description:
+                "用于在需要更多控制时强制挂载。在使用 React 动画库控制动画时非常有用。",
+        },
+    ]}
 />
 
 <DataAttributesTable
-	data={[
-		{
-			attribute: "[data-state]",
-			values: ["checked", "unchecked"],
-		},
-		{
-			attribute: "[data-disabled]",
-			values: "Present when disabled",
-		},
-	]}
+    data={[
+        {
+            attribute: "[data-state]",
+            values: ["checked", "unchecked"],
+        },
+        {
+            attribute: "[data-disabled]",
+            values: "禁用时存在",
+        },
+    ]}
 />
 
-## Accessibility
+## 可访问性
 
-Adheres to the [Radio Group WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio) and uses [roving tabindex](https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio) to manage focus movement among radio items.
+遵循 [单选按钮组 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/radio) 并使用 [移动 tabindex](https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio) 来管理单选按钮项之间的焦点移动。
 
-### Keyboard Interactions
+### 键盘交互
 
 <KeyboardTable
-	data={[
-		{
-			keys: ["Tab"],
-			description:
-				"Moves focus to either the checked radio item or the first radio item in the group.",
-		},
-		{
-			keys: ["Space"],
-			description: "When focus is on an unchecked radio item, checks it.",
-		},
-		{
-			keys: ["ArrowDown"],
-			description: "Moves focus and checks the next radio item in the group.",
-		},
-		{
-			keys: ["ArrowRight"],
-			description: "Moves focus and checks the next radio item in the group.",
-		},
-		{
-			keys: ["ArrowUp"],
-			description: "Moves focus to the previous radio item in the group.",
-		},
-		{
-			keys: ["ArrowLeft"],
-			description: "Moves focus to the previous radio item in the group.",
-		},
-	]}
+    data={[
+        {
+            keys: ["Tab"],
+            description:
+                "将焦点移动到已选中的单选按钮项或组中的第一个单选按钮项。",
+        },
+        {
+            keys: ["Space"],
+            description: "当焦点位于未选中的单选按钮项时，选中它。",
+        },
+        {
+            keys: ["ArrowDown"],
+            description: "移动焦点并选中组中的下一个单选按钮项。",
+        },
+        {
+            keys: ["ArrowRight"],
+            description: "移动焦点并选中组中的下一个单选按钮项。",
+        },
+        {
+            keys: ["ArrowUp"],
+            description: "将焦点移动到组中的上一个单选按钮项。",
+        },
+        {
+            keys: ["ArrowLeft"],
+            description: "将焦点移动到组中的上一个单选按钮项。",
+        },
+    ]}
 />

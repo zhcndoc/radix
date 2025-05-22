@@ -1,20 +1,20 @@
 ---
-metaTitle: Theme
-metaDescription: Wraps all or part of a React tree to provide theme configuration.
+metaTitle: 主题
+metaDescription: 包裹整个或部分 React 树以提供主题配置。
 sourcePath: components/theme
 ---
 
-## API Reference
+## API 参考
 
-For an overview of theming see the [overview page](/themes/docs/theme/overview).
+有关主题的概述，请参见 [概述页面](/themes/docs/theme/overview)。
 
 <ThemesPropsTable defs="themePropDefs" />
 
-## Examples
+## 示例
 
-### Basic configuration
+### 基本配置
 
-Wrap a component tree in the `Theme` component to provide or modify configuration for all children.
+将组件树包裹在 `Theme` 组件中，以提供或修改所有子组件的配置。
 
 ```jsx live=true
 <Box maxWidth="400px">
@@ -22,45 +22,45 @@ Wrap a component tree in the `Theme` component to provide or modify configuratio
 		<Flex direction="column" gap="3">
 			<Grid gap="1">
 				<Text as="div" weight="bold" size="2" mb="1">
-					Feedback
+					反馈
 				</Text>
-				<TextArea placeholder="Write your feedback…" />
+				<TextArea placeholder="写下您的反馈…" />
 			</Grid>
 			<Flex asChild justify="between">
 				<label>
 					<Text color="gray" size="2">
-						Attach screenshot?
+						附加屏幕截图?
 					</Text>
 					<Switch size="1" defaultChecked />
 				</label>
 			</Flex>
 			<Grid columns="2" gap="2">
-				<Button variant="surface">Back</Button>
-				<Button>Send</Button>
+				<Button variant="surface">返回</Button>
+				<Button>发送</Button>
 			</Grid>
 		</Flex>
 	</Card>
 </Box>
 ```
 
-### Nesting
+### 嵌套
 
-Nest another theme to modify configuration for a specific subtree. Configuration is inherited from the parent.
+嵌套另一个主题以修改特定子树的配置。配置会从父级继承。
 
 ```jsx live=true scroll=true line=16,32
 <Card size="2">
 	<Flex gap="6">
 		<Flex direction="column" gap="3">
 			<Heading as="h5" size="2">
-				Global
+				全局
 			</Heading>
 			<Grid gap="1">
 				<Text as="div" weight="bold" size="2" mb="1">
-					Feedback
+					反馈
 				</Text>
-				<TextArea placeholder="Write your feedback…" />
+				<TextArea placeholder="写下您的反馈…" />
 			</Grid>
-			<Button>Send</Button>
+			<Button>发送</Button>
 		</Flex>
 
 		<Theme __accentColor__="cyan" __radius__="full">
@@ -68,30 +68,30 @@ Nest another theme to modify configuration for a specific subtree. Configuration
 				<Flex gap="6">
 					<Flex direction="column" gap="3">
 						<Heading as="h5" size="2">
-							Child
+							子组件
 						</Heading>
 						<Grid gap="1">
 							<Text as="div" weight="bold" size="2" mb="1">
-								Feedback
+								反馈
 							</Text>
-							<TextArea placeholder="Write your feedback…" />
+							<TextArea placeholder="写下您的反馈…" />
 						</Grid>
-						<Button>Send</Button>
+						<Button>发送</Button>
 					</Flex>
 
 					<Theme __accentColor__="orange">
 						<Card size="2">
 							<Flex direction="column" gap="3">
 								<Heading as="h5" size="2">
-									Grandchild
+									孙组件
 								</Heading>
 								<Grid gap="1">
 									<Text as="div" weight="bold" size="2" mb="1">
-										Feedback
+										反馈
 									</Text>
-									<TextArea placeholder="Write your feedback…" />
+									<TextArea placeholder="写下您的反馈…" />
 								</Grid>
-								<Button>Send</Button>
+								<Button>发送</Button>
 							</Flex>
 						</Card>
 					</Theme>
@@ -102,9 +102,9 @@ Nest another theme to modify configuration for a specific subtree. Configuration
 </Card>
 ```
 
-### Component overrides
+### 组件覆盖
 
-Override configuration per component by passing any supported prop directly to that component.
+通过将任何支持的属性直接传递给该组件来覆盖每个组件的配置。
 
 ```jsx live=true line=15,20
 <Box maxWidth="400px">
@@ -112,14 +112,14 @@ Override configuration per component by passing any supported prop directly to t
 		<Flex direction="column" gap="3">
 			<Grid gap="1">
 				<Text as="div" weight="bold" size="2" mb="1">
-					Feedback
+					反馈
 				</Text>
-				<TextArea placeholder="Write your feedback…" />
+				<TextArea placeholder="写下您的反馈…" />
 			</Grid>
 			<Flex asChild justify="between">
 				<label>
 					<Text color="gray" size="2">
-						Attach screenshot?
+						附加屏幕截图?
 					</Text>
 					<Switch
 						size="1"
@@ -130,9 +130,9 @@ Override configuration per component by passing any supported prop directly to t
 				</label>
 			</Flex>
 			<Grid columns="2" gap="2">
-				<Button variant="surface">Back</Button>
+				<Button variant="surface">返回</Button>
 				<Button __color__="cyan" __radius__="full">
-					Send
+					发送
 				</Button>
 			</Grid>
 		</Flex>

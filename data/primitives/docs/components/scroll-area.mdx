@@ -1,13 +1,13 @@
 ---
-metaTitle: Scroll Area
-metaDescription: Augments native scroll functionality for custom, cross-browser styling.
+metaTitle: 滚动区域
+metaDescription: 增强自定义跨浏览器样式的本地滚动功能。
 name: scroll-area
 ---
 
-# Scroll Area
+# 滚动区域
 
 <Description>
-	Augments native scroll functionality for custom, cross-browser styling.
+	增强自定义跨浏览器样式的本地滚动功能。
 </Description>
 
 <HeroContainer>
@@ -18,24 +18,24 @@ name: scroll-area
 
 <Highlights
 	features={[
-		"Scrollbar sits on top of the scrollable content, taking up no space.",
-		"Scrolling is native; no underlying position movements via CSS transformations.",
-		"Shims pointer behaviors only when interacting with the controls, so keyboard controls are unaffected.",
-		"Supports Right to Left direction.",
+		"滚动条位于可滚动内容之上，不占用空间。",
+		"滚动是原生的；没有通过 CSS 变换导致的底层位置移动。",
+		"仅在与控件交互时调整指针行为，因此键盘控制不受影响。",
+		"支持从右到左的方向。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-scroll-area
 ```
 
-## Anatomy
+## 解剖结构
 
-Import all parts and piece them together.
+导入所有部分并组装在一起。
 
 ```jsx
 import { ScrollArea } from "radix-ui";
@@ -54,11 +54,11 @@ export default () => (
 );
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根
 
-Contains all the parts of a scroll area.
+包含滚动区域的所有部分。
 
 <PropsTable
 	data={[
@@ -69,12 +69,10 @@ Contains all the parts of a scroll area.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请查看我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
@@ -85,23 +83,16 @@ Contains all the parts of a scroll area.
 			default: '"hover"',
 			description: (
 				<span>
-					Describes the nature of scrollbar visibility, similar to how the
-					scrollbar preferences in MacOS control visibility of native
-					scrollbars.
+					描述滚动条可见性的性质，类似于 MacOS 中的滚动条偏好设置如何控制原生滚动条的可见性。
 					<br />
 					<br />
-					<Code>"auto"</Code> means that scrollbars are visible when content is
-					overflowing on the corresponding orientation.
+					<Code>"auto"</Code> 意味着当内容在相应方向上溢出时，滚动条可见。
 					<br />
-					<Code>"always"</Code> means that scrollbars are always visible
-					regardless of whether the content is overflowing.
+					<Code>"always"</Code> 意味着滚动条始终可见，无论内容是否溢出。
 					<br />
-					<Code>"scroll"</Code> means that scrollbars are visible when the user
-					is scrolling along its corresponding orientation.
+					<Code>"scroll"</Code> 意味着当用户在相应方向上滚动时，滚动条可见。
 					<br />
-					<Code>"hover"</Code> when the user is scrolling along its
-					corresponding orientation and when the user is hovering over the
-					scroll area.
+					<Code>"hover"</Code> 意味着当用户在相应方向上滚动并且当用户悬停在滚动区域上时。
 				</span>
 			),
 		},
@@ -111,10 +102,8 @@ Contains all the parts of a scroll area.
 			default: "600",
 			description: (
 				<span>
-					If <Code>type</Code> is set to either <Code>"scroll"</Code> or{" "}
-					<Code>"hover"</Code>, this prop determines the length of time, in
-					milliseconds, before the scrollbars are hidden after the user stops
-					interacting with scrollbars.
+					如果 <Code>type</Code> 设置为 <Code>"scroll"</Code> 或{" "}
+					<Code>"hover"</Code>，则此属性确定用户停止与滚动条交互后，滚动条隐藏的时间长度（以毫秒为单位）。
 				</span>
 			),
 		},
@@ -125,9 +114,7 @@ Contains all the parts of a scroll area.
 			typeSimple: "enum",
 			description: (
 				<span>
-					The reading direction of the scroll area. If omitted, inherits
-					globally from <Code>DirectionProvider</Code> or assumes LTR
-					(left-to-right) reading mode.
+					滚动区域的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承，或假定为从左到右的阅读模式。
 				</span>
 			),
 		},
@@ -137,18 +124,16 @@ Contains all the parts of a scroll area.
 			type: "string",
 			description: (
 				<span>
-					An optional nonce attribute that is passed to the inline styles for
-					use in CSP-enabled environments that use strict rules to enhance
-					security.
+					一个可选的 nonce 属性，传递给内联样式，用于使用严格规则增强安全性的 CSP 启用环境。
 				</span>
 			),
 		},
 	]}
 />
 
-### Viewport
+### 视口
 
-The viewport area of the scroll area.
+滚动区域的视口区域。
 
 <PropsTable
 	data={[
@@ -159,21 +144,19 @@ The viewport area of the scroll area.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请查看我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
 	]}
 />
 
-### Scrollbar
+### 滚动条
 
-The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to enable horizontal scrolling.
+垂直滚动条。添加第二个 `Scrollbar` 并设置 `orientation` 属性以启用水平滚动。
 
 <PropsTable
 	data={[
@@ -184,12 +167,10 @@ The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to e
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请查看我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
@@ -198,8 +179,7 @@ The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to e
 			type: "boolean",
 			description: (
 				<span>
-					Used to force mounting when more control is needed. Useful when
-					controlling animation with React animation libraries.
+					当需要更多控制时，强制挂载。用于与 React 动画库控制动画时。
 				</span>
 			),
 		},
@@ -209,7 +189,7 @@ The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to e
 			type: '"horizontal" | "vertical"',
 			typeSimple: "enum",
 			default: "vertical",
-			description: "The orientation of the scrollbar",
+			description: "滚动条的方向",
 		},
 	]}
 />
@@ -227,9 +207,9 @@ The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to e
 	]}
 />
 
-### Thumb
+### 拇指
 
-The thumb to be used in `ScrollArea.Scrollbar`.
+在 `ScrollArea.Scrollbar` 中使用的拇指。
 
 <PropsTable
 	data={[
@@ -240,12 +220,10 @@ The thumb to be used in `ScrollArea.Scrollbar`.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请查看我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
@@ -261,9 +239,9 @@ The thumb to be used in `ScrollArea.Scrollbar`.
 	]}
 />
 
-### Corner
+### 角落
 
-The corner where both vertical and horizontal scrollbars meet.
+垂直和水平滚动条交汇的角落。
 
 <PropsTable
 	data={[
@@ -274,22 +252,20 @@ The corner where both vertical and horizontal scrollbars meet.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					有关更多详细信息，请查看我们的 <a href="../guides/composition">组合</a> 指南。
 				</>
 			),
 		},
 	]}
 />
 
-## Accessibility
+## 可访问性
 
-In most cases, it's best to rely on native scrolling and work with the customization options available in CSS. When that isn't enough, `ScrollArea` provides additional customizability while maintaining the browser's native scroll behavior (as well as accessibility features, like keyboard scrolling).
+在大多数情况下，最好依靠原生滚动并使用 CSS 中的自定义选项。当这些不足够时，`ScrollArea` 提供了额外的可定制性，同时保持浏览器的原生滚动行为（以及可访问性功能，如键盘滚动）。
 
-### Keyboard Interactions
+### 键盘交互
 
-Scrolling via keyboard is supported by default because the component relies on native scrolling. Specific keyboard interactions may differ between platforms, so we do not specify them here or add specific event listeners to handle scrolling via key events.
+通过键盘滚动默认受到支持，因为该组件依赖于原生滚动。特定的键盘交互可能因平台而异，因此我们在这里不具体说明它们或添加特定的事件监听器来处理键盘事件的滚动。

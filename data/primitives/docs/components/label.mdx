@@ -1,12 +1,12 @@
 ---
-metaTitle: Label
-metaDescription: Renders an accessible label associated with controls.
+metaTitle: 标签
+metaDescription: 渲染与控件关联的可访问标签。
 name: label
 ---
 
-# Label
+# 标签
 
-<Description>Renders an accessible label associated with controls.</Description>
+<Description>渲染与控件关联的可访问标签。</Description>
 
 <HeroContainer>
 	<LabelDemo />
@@ -16,22 +16,22 @@ name: label
 
 <Highlights
 	features={[
-		"Text selection is prevented when double clicking label.",
-		"Supports nested controls.",
+		"双击标签时防止文本选择。",
+		"支持嵌套控件。",
 	]}
 />
 
-## Installation
+## 安装
 
-Install the component from your command line.
+从命令行安装组件。
 
 ```bash
 npm install @radix-ui/react-label
 ```
 
-## Anatomy
+## 解剖结构
 
-Import the component.
+导入组件。
 
 ```jsx
 import { Label } from "radix-ui";
@@ -39,11 +39,11 @@ import { Label } from "radix-ui";
 export default () => <Label.Root />;
 ```
 
-## API Reference
+## API 参考
 
-### Root
+### 根节点
 
-Contains the content for the label.
+包含标签的内容。
 
 <PropsTable
 	data={[
@@ -54,23 +54,22 @@ Contains the content for the label.
 			default: "false",
 			description: (
 				<>
-					Change the default rendered element for the one passed as a child,
-					merging their props and behavior.
+					将默认渲染的元素更改为作为子元素传入的元素，
+					合并它们的属性和行为。
 					<br />
 					<br />
-					Read our <a href="../guides/composition">Composition</a> guide for
-					more details.
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多细节。
 				</>
 			),
 		},
 		{
 			name: "htmlFor",
 			type: "string",
-			description: "The id of the element the label is associated with.",
+			description: "与标签关联的元素的 id。",
 		},
 	]}
 />
 
-## Accessibility
+## 可及性
 
-This component is based on the native `label` element, it will automatically apply the correct labelling when wrapping controls or using the `htmlFor` attribute. For your own custom controls to work correctly, ensure they use native elements such as `button` or `input` as a base.
+此组件基于原生 `label` 元素，当包装控件或使用 `htmlFor` 属性时，它将自动应用正确的标记。为了确保自定义控件正常工作，请确保它们使用原生元素，如 `button` 或 `input` 作为基础。

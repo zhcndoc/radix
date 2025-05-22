@@ -1,78 +1,76 @@
 ---
-metaTitle: Composing a color palette
-metaDescription: A guide to composing a color palette with Radix Colors.
+metaTitle: 组成颜色调色板
+metaDescription: 使用 Radix Colors 组成颜色调色板的指南。
 ---
 
-# Composing a color palette
+# 组成颜色调色板
 
 <Description>
-	A guide to composing a color palette with Radix Colors.
+	使用 Radix Colors 组成颜色调色板的指南。
 </Description>
 
-## Choosing a brand scale
+## 选择品牌色阶
 
-Radix provides a number of scales you could use for your brand or accent color.
+Radix 提供了多个色阶供您选择作为品牌色或强调色。
 
-Scales designed for white foreground text:
+为白色前景文本设计的色阶：
 
 <ColorGrayPairsComplementary />
 
-### Custom brand colors
+### 自定义品牌颜色
 
-Radix Colors are not intended to be customised. They’re designed to be accessible, well-balanced, and harmonious. Any customisation would likely break these features.
+Radix Colors 并不打算进行自定义。它们旨在具有可访问性、平衡性和和谐性。任何自定义都可能破坏这些特性。
 
-If you need custom brand colors, we recommend adding custom scales alongside Radix scales.
+如果您需要自定义品牌颜色，我们建议在 Radix 色阶旁边添加自定义色阶。
 
-For example, you could use Radix Colors for your gray scale and your semantic scales, then add custom brand/accent colors.
+例如，您可以使用 Radix Colors 作为灰色调和语义色阶，然后添加自定义品牌/强调颜色。
 
-## Choosing a gray scale
+## 选择灰色调
 
-Radix Colors provides a pure gray and a few tinted gray scales.
+Radix Colors 提供了一种纯灰色和几种带色灰色调。
 
 <ColorGrays />
 
-- `gray` is pure gray
-- `mauve` is based on a purple hue
-- `slate` is based on a blue hue
-- `sage` is based on a green hue
-- `olive` is based on a lime hue
-- `sand` is based on a yellow hue
+- `gray` 是纯灰色
+- `mauve` 基于紫色调
+- `slate` 基于蓝色调
+- `sage` 基于绿色调
+- `olive` 基于青柠色调
+- `sand` 基于黄色调
 
-### Neutral pairing
+### 中性搭配
 
-If you want a neutral vibe, or you want to keep things simple, `gray` will work well with any hue or palette.
+如果您想要中性的感觉，或者想保持简单，`gray` 可以与任何色调或调色板很好地搭配。
 
-### Natural pairing
+### 自然搭配
 
-Alternatively, choose the gray scale which is saturated with the hue closest to your accent hue. The difference is subtle, but this will create a more colorful and harmonius vibe.
+或者，选择与您强调色最接近的色调饱和的灰色调。两者之间的差异微妙，但这将创造更丰富和和谐的氛围。
 
 <ColorGrayPairs />
 
 <Note>
-	Note: If your project uses a lot of colorful UI components like Badge, be
-	careful when using saturated grays for your app background, especially in dark
-	mode. Colorful UI components may clash with your saturated gray background
-	color.
+	注意：如果您的项目使用了很多多彩的 UI 组件，例如徽章，请在
+	应用程序背景中谨慎使用饱和的灰色，特别是在深色模式下。多彩的 UI 组件可能与您的饱和灰色背景色相冲突。
 </Note>
 
-## Choosing semantic scales
+## 选择语义色阶
 
-For most projects, you will need colors to communicate semantic meaning. Here are some common pairings that work well in Western culture.
+对于大多数项目，您需要颜色来传达语义含义。以下是在西方文化中常见的有效搭配。
 
-- **Error**: `red`, `ruby`, `tomato`, `crimson`
-- **Success**: `green`, `teal`, `jade`, `grass`, `mint`
-- **Warning**: `yellow`, `amber`, `orange`
-- **Info**: `blue`, `indigo`, `sky`, `cyan`
+- **错误**：`red`，`ruby`，`tomato`，`crimson`
+- **成功**：`green`，`teal`，`jade`，`grass`，`mint`
+- **警告**：`yellow`，`amber`，`orange`
+- **信息**：`blue`，`indigo`，`sky`，`cyan`
 
-In many cases, you might eventually need most of the scales, for one reason or another. Your app may support multiplayer mode, where you assign a color to each user. Your app may have a labelling feature, where your users assign a color to a task. Your app may use badges to communicate “pending” or “rejected” states.
+在许多情况下，您可能最终需要大多数色阶，无论出于何种原因。您的应用可能支持多人模式，您为每个用户分配一个颜色。您的应用可能有标记功能，用户为任务分配颜色。您的应用可能使用徽章来传达“待处理”或“已拒绝”的状态。
 
-Radix Colors are well-balanced, and designed to work in harmony. So for product communication, most color pairings will work.
+Radix Colors 是经过良好平衡的，并旨在和谐工作。因此，出于产品沟通，大多数颜色搭配都能正常使用。
 
-## Choosing text scales
+## 选择文本色阶
 
-Steps 11 and 12 are designed for low-contrast text and high-contrast text respectively. Depending on the vibe you want, you can use your accent scale or your gray scale.
+步骤 11 和 12 分别针对低对比度文本和高对比度文本。根据您想要的氛围，您可以使用强调色阶或灰色调。
 
-Using your accent scale will result in a more colorful vibe.
+使用强调色阶将产生更丰富的氛围。
 
 {
 
@@ -84,13 +82,13 @@ Using your accent scale will result in a more colorful vibe.
 		weight="bold"
 		style={{ color: "var(--blue-12)" }}
 	>
-		This text is Blue 12
+		这段文本是蓝色 12
 	</Text>
 </Box>
 
 }
 
-Using your gray scale will result in a more functional vibe.
+使用灰色调将产生更实用的氛围。
 
 {
 
@@ -102,12 +100,12 @@ Using your gray scale will result in a more functional vibe.
 		weight="bold"
 		style={{ color: "var(--slate-12)" }}
 	>
-		This text is Slate 12
+		这段文本是青石色 12
 	</Text>
 </Box>
 
 }
 
-The difference may seem subtle, but it can make a huge difference with a whole page of text.
+两者之间的差异可能看似微妙，但在整页文本中可能产生巨大差异。
 
-You may want to experiment with using your accent scale for text in your marketing sites, and your gray scale for text in your apps.
+您可能想在营销网站中尝试使用强调色阶作为文本，在应用程序中尝试使用灰色调作为文本。
