@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import NextLink from "next/link";
 import { Box, Text, Link, Flex, Container, Heading } from "@radix-ui/themes";
@@ -300,31 +301,28 @@ export const PrimitivesHero = () => {
 							无样式、可访问的开源 React 原语，适用于高质量的 web 应用和设计系统。
 						</Text>
 					</Box>
-					<NextLink href="/primitives/docs" passHref legacyBehavior>
-						<Button
-							asChild
-							size={{ initial: "3", xs: "4" }}
-							color="gray"
-							highContrast
-						>
-							<a>
-								开始使用
-								<svg
-									width="14"
-									height="14"
-									viewBox="0 0 12 12"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="currentcolor"
-									style={{ opacity: 1, marginRight: -3 }}
-								>
-									<path d="M6.39205 11.6023L5.36932 10.5909L8.92045 7.03977H0V5.5625H8.92045L5.36932 2.01705L6.39205 1L11.6932 6.30114L6.39205 11.6023Z" />
-								</svg>
-							</a>
-						</Button>
-					</NextLink>
+					<Button
+						asChild
+						size={{ initial: "3", xs: "4" }}
+						color="gray"
+						highContrast
+					>
+						<NextLink href="/primitives/docs/overview/introduction">
+							开始使用
+							<svg
+								width="14"
+								height="14"
+								viewBox="0 0 12 12"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="currentcolor"
+								style={{ opacity: 1, marginRight: -3 }}
+							>
+								<path d="M6.39205 11.6023L5.36932 10.5909L8.92045 7.03977H0V5.5625H8.92045L5.36932 2.01705L6.39205 1L11.6932 6.30114L6.39205 11.6023Z" />
+							</svg>
+						</NextLink>
+					</Button>
 				</Box>
 			</Container>
-
 			<Box position="relative">
 				<Carousel>
 					<Box asChild ml={{ initial: "5", xs: "6", sm: "7", md: "9" }}>
@@ -457,7 +455,7 @@ export const PrimitivesHero = () => {
 											</Heading>
 											<Text as="p" size="2" color="gray">
 												Supports custom cross-browser styling while maintaining
-												the browser's native scroll behavior.
+												the browser&apos;s native scroll behavior.
 											</Text>
 										</GrabBox>
 									</CarouselSlide>
@@ -589,25 +587,19 @@ export const PrimitivesHero = () => {
 													<Text size="2" color="gray">
 														See more components in the docs
 													</Text>
-													<NextLink
-														href="/primitives/docs/overview/getting-started"
-														passHref
-														legacyBehavior
+													<Flex
+														asChild
+														display="inline-flex"
+														align="center"
+														gap="1"
 													>
-														<Link
-															size="3"
-															highContrast
-															color="gray"
-															style={{
-																display: "inline-flex",
-																alignItems: "center",
-																gap: "var(--space-1)",
-															}}
-														>
-															View docs
-															<ArrowRightIcon />
+														<Link asChild size="3" highContrast color="gray">
+															<NextLink href="/primitives/docs/overview/getting-started">
+																View docs
+																<ArrowRightIcon />
+															</NextLink>
 														</Link>
-													</NextLink>
+													</Flex>
 												</Flex>
 											</DemoContainer>
 										</FocusArea>

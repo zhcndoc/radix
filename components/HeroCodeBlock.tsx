@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import {
 	Box,
@@ -10,9 +11,12 @@ import {
 	Theme,
 	Grid,
 } from "@radix-ui/themes";
-import { Collapsible } from "radix-ui";
-import { getParameters } from "codesandbox/lib/api/define";
-import { CodeSandboxLogoIcon, CopyIcon } from "@radix-ui/react-icons";
+import sdk from "@stackblitz/sdk";
+import { LightningBoltIcon } from "@radix-ui/react-icons";
+import { flushSync } from "react-dom";
+import camelCase from "lodash.camelcase";
+import kebabCase from "lodash.kebabcase";
+import upperFirst from "lodash.upperfirst";
 import { isValidCssLib, useCssLibPreference } from "./CssLibPreference";
 import { FrontmatterContext } from "./MDXComponents";
 import { CSS_LIB_NAMES, DEFAULT_CSS_LIB } from "@utils/constants";
@@ -47,6 +51,7 @@ export const HeroCodeBlock = ({
 		})
 		.filter((v): v is NonNullable<typeof v> => !!v);
 
+	const contentRef = React.useRef<HTMLDivElement>(null);
 	const availableCssLibs = snippets
 		.map(({ cssLib }) => cssLib)
 		.filter(onlyUnique);
@@ -71,166 +76,164 @@ export const HeroCodeBlock = ({
 	return (
 		<Box
 			className={styles.DemoContainer}
-			data-algolia-exclude
+			data-search-exclude
 			position="relative"
 		>
-			<Collapsible.Root open={isCodeExpanded} onOpenChange={setIsCodeExpanded}>
-				<Flex
-					display="inline-flex"
-					position="absolute"
-					align="center"
-					justify="end"
-					gap="1"
-					top="0"
-					right="0"
-					mt="-7"
-					mr="2"
+			<Flex
+				display="inline-flex"
+				position="absolute"
+				align="center"
+				justify="end"
+				gap="1"
+				top="0"
+				right="0"
+				mt="-7"
+				mr="2"
+			>
+				<Tooltip
+					className="radix-themes-custom-fonts"
+					content={`Open ${CSS_LIB_NAMES[usedCssLib]} demo in StackBlitz`}
 				>
-					<form
-						action="https://codesandbox.io/api/v1/sandboxes/define"
-						method="POST"
-						target="_blank"
-					>
-						<input type="hidden" name="query" value="file=/App.jsx" />
-						<input type="hidden" name="environment" value="server" />
-						<input type="hidden" name="hidedevtools" value="1" />
-						<input
-							type="hidden"
-							name="parameters"
-							value={makeCodeSandboxParams(
-								frontmatter.name!,
-								sources,
-								usedCssLib,
-							)}
-						/>
-						<Tooltip
-							className="radix-themes-custom-fonts"
-							content={`Open ${CSS_LIB_NAMES[usedCssLib]} demo in CodeSandbox`}
+					<Theme appearance="dark" hasBackground={false}>
+						<IconButton
+							className={styles.SandboxButton}
+							variant="soft"
+							type="button"
+							color="gray"
+							highContrast
+							onClick={() =>
+								openStackBlitz(frontmatter.name!, sources, usedCssLib)
+							}
 						>
-							<Theme appearance="dark" hasBackground={false}>
-								<IconButton
-									className={styles.SandboxButton}
-									variant="soft"
-									type="submit"
-									color="gray"
-									highContrast
-								>
-									<CodeSandboxLogoIcon />
-								</IconButton>
-							</Theme>
-						</Tooltip>
-					</form>
-				</Flex>
+							<LightningBoltIcon />
+						</IconButton>
+					</Theme>
+				</Tooltip>
+			</Flex>
 
-				<Collapsible.Content asChild forceMount>
-					<Box
-						data-code-block-content
-						position="relative"
+			<Box
+				data-code-block-content
+				position="relative"
+				style={{
+					border: "1px solid var(--gray-a5)",
+					borderBottomLeftRadius: "var(--radius-4)",
+					borderBottomRightRadius: "var(--radius-4)",
+					borderTop: "none",
+				}}
+			>
+				<Tabs.Root
+					value={currentTabValue}
+					onValueChange={(value) => {
+						setCurrentTabValue(value);
+						setIsCodeExpanded(true);
+					}}
+				>
+					<Tabs.List
 						style={{
-							border: "1px solid var(--gray-a5)",
-							borderBottomLeftRadius: "var(--radius-4)",
-							borderBottomRightRadius: "var(--radius-4)",
-							borderTop: "none",
+							position: "relative",
+							backgroundColor: "var(--color-panel-solid)",
+							marginBottom: -1,
 						}}
 					>
-						<Tabs.Root
-							value={currentTabValue}
-							onValueChange={(value) => {
-								setCurrentTabValue(value);
-								setIsCodeExpanded(true);
-							}}
-						>
-							<Tabs.List
-								style={{
-									position: "relative",
-									backgroundColor: "var(--color-panel-solid)",
-									marginBottom: -1,
-								}}
+						{currentTabs.map((tab) => (
+							<Tabs.Trigger key={tab.id} value={tab.id}>
+								{tab.title}
+							</Tabs.Trigger>
+						))}
+
+						<Flex ml="auto" my="auto" gap="2">
+							<CodeBlock.CopyButton size="1" />
+
+							{cssLibProp === undefined && availableCssLibs.length > 1 ? (
+								<Select.Root
+									aria-label="Choose a styling solution"
+									size="1"
+									value={preferredCssLib}
+									onValueChange={(lib) => {
+										if (isValidCssLib(lib)) setPreferredCssLib(lib);
+									}}
+								>
+									<Select.Trigger
+										variant="soft"
+										color="gray"
+										mr="2"
+										style={{ minWidth: 115 }}
+									/>
+									<Select.Content className="radix-themes-custom-fonts">
+										{availableCssLibs.map((lib) => (
+											<Select.Item key={lib} value={lib}>
+												{CSS_LIB_NAMES[lib]}
+											</Select.Item>
+										))}
+									</Select.Content>
+								</Select.Root>
+							) : null}
+						</Flex>
+					</Tabs.List>
+
+					{currentTabs.map((tab) => (
+						<Tabs.Content key={tab.id} value={tab.id} asChild>
+							<CodeBlock.Content
+								id="code-block-content"
+								ref={contentRef}
+								tabIndex={-1}
 							>
-								{currentTabs.map((tab) => (
-									<Tabs.Trigger key={tab.id} value={tab.id}>
-										{tab.title}
-									</Tabs.Trigger>
-								))}
+								<Grid
+									position="relative"
+									width="100%"
+									rows={isCodeExpanded ? "1fr" : "150px"}
+									maxHeight="70vh"
+									minHeight="150px"
+								>
+									<CodeBlock.Pre
+										overflow={isCodeExpanded ? "scroll" : "hidden"}
+									>
+										<code>{tab.children}</code>
 
-								<Flex ml="auto" my="auto" gap="2">
-									<CodeBlock.CopyButton size="1" />
-
-									{cssLibProp === undefined && availableCssLibs.length > 1 ? (
-										<Select.Root
-											aria-label="Choose a styling solution"
-											size="1"
-											value={preferredCssLib}
-											onValueChange={(lib) => {
-												if (isValidCssLib(lib)) setPreferredCssLib(lib);
-											}}
+										<Box height="64px" />
+										<Flex
+											align="end"
+											justify="center"
+											className={styles.CollapsibleGradient}
 										>
-											<Select.Trigger
-												variant="soft"
-												color="gray"
-												mr="2"
-												style={{ minWidth: 115 }}
-											/>
-											<Select.Content className="radix-themes-custom-fonts">
-												{availableCssLibs.map((lib) => (
-													<Select.Item key={lib} value={lib}>
-														{CSS_LIB_NAMES[lib]}
-													</Select.Item>
-												))}
-											</Select.Content>
-										</Select.Root>
-									) : null}
-								</Flex>
-							</Tabs.List>
-
-							{currentTabs.map((tab) => (
-								<Tabs.Content key={tab.id} value={tab.id} asChild>
-									<CodeBlock.Content>
-										<Grid
-											position="relative"
-											width="100%"
-											rows={isCodeExpanded ? "1fr" : "150px"}
-											maxHeight="70vh"
-											minHeight="150px"
-										>
-											<CodeBlock.Pre
-												overflow={isCodeExpanded ? "scroll" : "hidden"}
+											<Box
+												position="relative"
+												style={{
+													backgroundColor: "var(--color-panel-solid)",
+												}}
 											>
-												<code>{tab.children}</code>
-
-												<Box height="64px" />
-												<Flex
-													align="end"
-													justify="center"
-													className={styles.CollapsibleGradient}
+												<Button
+													aria-controls="code-block-content"
+													aria-expanded={isCodeExpanded}
+													type="button"
+													size="1"
+													variant="soft"
+													highContrast
+													color="gray"
+													onClick={() => {
+														let isExpanded = false;
+														flushSync(() => {
+															setIsCodeExpanded((isCodeExpanded) => {
+																isExpanded = !isCodeExpanded;
+																return isExpanded;
+															});
+														});
+														if (isExpanded) {
+															contentRef.current?.focus();
+														}
+													}}
 												>
-													<Collapsible.Trigger asChild>
-														<Box
-															position="relative"
-															style={{
-																backgroundColor: "var(--color-panel-solid)",
-															}}
-														>
-															<Button
-																size="1"
-																variant="soft"
-																highContrast
-																color="gray"
-															>
-																{isCodeExpanded ? "Collapse" : "Expand"} code
-															</Button>
-														</Box>
-													</Collapsible.Trigger>
-												</Flex>
-											</CodeBlock.Pre>
-										</Grid>
-									</CodeBlock.Content>
-								</Tabs.Content>
-							))}
-						</Tabs.Root>
-					</Box>
-				</Collapsible.Content>
-			</Collapsible.Root>
+													{isCodeExpanded ? "Collapse" : "Expand"} code
+												</Button>
+											</Box>
+										</Flex>
+									</CodeBlock.Pre>
+								</Grid>
+							</CodeBlock.Content>
+						</Tabs.Content>
+					))}
+				</Tabs.Root>
+			</Box>
 		</Box>
 	);
 };
@@ -238,13 +241,12 @@ export const HeroCodeBlock = ({
 const onlyUnique = <T,>(value: T, index: number, self: T[]) =>
 	self.indexOf(value) === index;
 
-const makeCodeSandboxParams = (
+const openStackBlitz = (
 	componentName: string,
 	sources: Record<string, string>,
 	cssLib: CssLib,
 ) => {
-	let files = {};
-
+	let files: Record<string, string> = {};
 	switch (cssLib) {
 		case "css":
 			files = makeCssConfig(componentName, sources);
@@ -257,19 +259,30 @@ const makeCodeSandboxParams = (
 			break;
 	}
 
-	return getParameters({ files, template: "node" });
+	sdk.openProject(
+		{
+			title: `Radix Primitives ${componentName} demo`,
+			description: `${CSS_LIB_NAMES[cssLib]} demo of the Radix Primitives ${componentName} component`,
+			template: "node",
+			files,
+		},
+		{
+			newWindow: true,
+			openFile: `${kebabCase(componentName)}.jsx`,
+		},
+	);
 };
 
 const makeCssConfig = (
 	componentName: string,
 	sources: Record<string, string>,
-) => {
+): Record<string, string> => {
 	const dependencies = {
+		"radix-ui": "latest",
 		react: "latest",
 		"react-dom": "latest",
 		"@radix-ui/colors": "latest",
 		"@radix-ui/react-icons": "latest",
-		[`@radix-ui/react-${componentName}`]: "latest",
 		classnames: "latest",
 	};
 
@@ -278,76 +291,26 @@ const makeCssConfig = (
 		"@vitejs/plugin-react": "latest",
 	};
 
-	const files = {
-		"package.json": {
-			content: {
-				scripts: { start: "vite" },
-				dependencies,
-				devDependencies,
-			},
-			isBinary: false,
-		},
+	return {
+		"package.json": makePackageJson(dependencies, devDependencies),
 		...viteConfig,
-		"App.jsx": {
-			content: sources["index.jsx"],
-			isBinary: false,
-		},
-		"index.jsx": {
-			content: `import { createRoot } from 'react-dom/client';
-import App from './App';
-import './global.css';
-
-const container = document.getElementById('root');
-const root = createRoot(container);
-
-root.render(<App />);`,
-			isBinary: false,
-		},
-		"global.css": {
-			content: `* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(330deg, hsl(272, 53%, 50%) 0%, hsl(226, 68%, 56%) 100%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 120px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-svg {
-  display: block;
-}
-`,
-			isBinary: false,
-		},
-		"styles.css": {
-			content: sources["styles.css"],
-			isBinary: false,
-		},
+		[`${kebabCase(componentName)}.jsx`]: sources["index.jsx"],
+		"index.jsx": makeIndexEntry(componentName),
+		"global.css": globalCss,
+		"styles.css": sources["styles.css"],
 	};
-
-	return files;
 };
 
 const makeCssModulesConfig = (
 	componentName: string,
 	sources: Record<string, string>,
-) => {
+): Record<string, string> => {
 	const dependencies = {
+		"radix-ui": "latest",
 		react: "latest",
 		"react-dom": "latest",
 		"@radix-ui/colors": "latest",
 		"@radix-ui/react-icons": "latest",
-		[`@radix-ui/react-${componentName}`]: "latest",
 		classnames: "latest",
 	};
 
@@ -356,76 +319,26 @@ const makeCssModulesConfig = (
 		"@vitejs/plugin-react": "latest",
 	};
 
-	const files = {
-		"package.json": {
-			content: {
-				scripts: { start: "vite" },
-				dependencies,
-				devDependencies,
-			},
-			isBinary: false,
-		},
+	return {
+		"package.json": makePackageJson(dependencies, devDependencies),
 		...viteConfig,
-		"App.jsx": {
-			content: sources["index.jsx"],
-			isBinary: false,
-		},
-		"index.jsx": {
-			content: `import { createRoot } from 'react-dom/client';
-import App from './App';
-import './global.css';
-
-const container = document.getElementById('root');
-const root = createRoot(container);
-
-root.render(<App />);`,
-			isBinary: false,
-		},
-		"global.css": {
-			content: `* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(330deg, hsl(272, 53%, 50%) 0%, hsl(226, 68%, 56%) 100%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 120px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-svg {
-  display: block;
-}
-`,
-			isBinary: false,
-		},
-		"styles.module.css": {
-			content: sources["styles.module.css"],
-			isBinary: false,
-		},
+		[`${kebabCase(componentName)}.jsx`]: sources["index.jsx"],
+		"index.jsx": makeIndexEntry(componentName),
+		"global.css": globalCss,
+		"styles.module.css": sources["styles.module.css"],
 	};
-
-	return files;
 };
 
 const makeTailwindConfig = (
 	componentName: string,
 	sources: Record<string, string>,
-) => {
+): Record<string, string> => {
 	const dependencies = {
+		"radix-ui": "latest",
 		react: "latest",
 		"react-dom": "latest",
 		"@radix-ui/colors": "latest",
 		"@radix-ui/react-icons": "latest",
-		[`@radix-ui/react-${componentName}`]: "latest",
 		classnames: "latest",
 	};
 
@@ -433,52 +346,25 @@ const makeTailwindConfig = (
 		vite: "latest",
 		"@vitejs/plugin-react": "latest",
 		tailwindcss: "latest",
-		postcss: "latest",
-		autoprefixer: "latest",
+		"@tailwindcss/vite": "latest",
 	};
 
-	const files = {
-		"package.json": {
-			content: {
-				scripts: { start: "vite" },
-				dependencies,
-				devDependencies,
-			},
-			isBinary: false,
-		},
+	return {
+		"package.json": makePackageJson(dependencies, devDependencies),
 		...viteConfig,
-		"tailwind.config.js": {
-			content: sources["tailwind.config.js"],
-			isBinary: false,
-		},
-		"postcss.config.js": {
-			content: `module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  }
-}`,
-			isBinary: false,
-		},
-		"index.jsx": {
-			content: `import { createRoot } from 'react-dom/client';
-import App from './App';
-import './global.css';
+		"vite.config.js": `import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-
-root.render(<App />);`,
-			isBinary: false,
-		},
-		"App.jsx": {
-			isBinary: false,
-			content: sources["index.jsx"],
-		},
-		"global.css": {
-			content: `@tailwind base;
-@tailwind components;
-@tailwind utilities;
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})`,
+		"tailwind.config.js": sources["tailwind.config.js"],
+		"index.jsx": makeIndexEntry(componentName),
+		[`${kebabCase(componentName)}.jsx`]: sources["index.jsx"],
+		"global.css": `@import "tailwindcss";
+@config "./tailwind.config.js";
+@source "./${kebabCase(componentName)}.jsx";
 
 body {
   font-family: system-ui;
@@ -492,25 +378,114 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }`,
-			isBinary: false,
-		},
 	};
-
-	return files;
 };
 
-const viteConfig = {
-	"vite.config.js": {
-		content: `import { defineConfig } from 'vite'
+const makeIndexEntry = (componentName: string) => {
+	const component = `${pascalCase(componentName)}Demo`;
+	return `import { createRoot } from 'react-dom/client';
+import ${component} from './${kebabCase(componentName)}';
+import './global.css';
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+  <div class="radix-themes light">
+    <${component} />
+  </div>
+);
+`;
+};
+
+const makePackageJson = (
+	dependencies: Record<string, string>,
+	devDependencies: Record<string, string>,
+) =>
+	JSON.stringify(
+		{
+			scripts: { start: "vite", dev: "vite" },
+			dependencies,
+			devDependencies,
+		},
+		null,
+		2,
+	);
+
+const globalCss = `${[
+	"gray",
+	"mauve",
+	"slate",
+	"sage",
+	"olive",
+	"sand",
+	"tomato",
+	"red",
+	"ruby",
+	"crimson",
+	"pink",
+	"plum",
+	"purple",
+	"violet",
+	"iris",
+	"indigo",
+	"blue",
+	"cyan",
+	"teal",
+	"jade",
+	"green",
+	"grass",
+	"bronze",
+	"gold",
+	"brown",
+	"orange",
+	"amber",
+	"yellow",
+	"lime",
+	"mint",
+	"sky",
+]
+	.flatMap((color) => [
+		color,
+		`${color}-dark`,
+		`${color}-alpha`,
+		`${color}-dark-alpha`,
+	])
+	.map((color) => `@import "@radix-ui/colors/${color}.css";`)
+	.join("\n")}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(330deg, hsl(272, 53%, 50%) 0%, hsl(226, 68%, 56%) 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 120px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+svg {
+  display: block;
+}
+`;
+
+const viteConfig: Record<string, string> = {
+	"vite.config.js": `import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
 })`,
-		isBinary: false,
-	},
-	"index.html": {
-		content: `<!DOCTYPE html>
+	"index.html": `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -522,6 +497,8 @@ export default defineConfig({
         <script type="module" src="/index.jsx"></script>
       </body>
     </html>`,
-		isBinary: false,
-	},
 };
+
+function pascalCase(str: string) {
+	return upperFirst(camelCase(str));
+}

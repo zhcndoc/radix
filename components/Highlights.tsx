@@ -9,13 +9,17 @@ import {
 	Link,
 	Select,
 } from "@radix-ui/themes";
-import { ArrowTopRightIcon, CheckIcon } from "@radix-ui/react-icons";
-import { useRouter } from "next/router";
+import {
+	ArrowTopRightIcon,
+	CheckIcon,
+	FileTextIcon,
+} from "@radix-ui/react-icons";
+import { usePathname } from "next/navigation";
 import { VisuallyHidden } from "radix-ui";
 import { FrontmatterContext } from "./MDXComponents";
 
 export function Highlights({ features }: { features: React.ReactNode[] }) {
-	const router = useRouter();
+	const pathname = usePathname();
 	const frontmatter = React.useContext(FrontmatterContext);
 
 	const publishedName = frontmatter.publishedName || frontmatter.name;
@@ -35,24 +39,28 @@ export function Highlights({ features }: { features: React.ReactNode[] }) {
 						{features.map(
 							(feature, i) =>
 								feature != null && (
-									<Flex key={i} gap="4" align="start">
-										<Flex
-											width="24px"
-											height="24px"
-											align="center"
-											justify="center"
-											flexShrink="0"
-											style={{
-												backgroundColor: "var(--green-4)",
-												borderRadius: "50%",
-												color: "var(--green-11)",
-											}}
-										>
-											<CheckIcon />
-										</Flex>
-										<Text size="3" as="p">
-											{feature}
-										</Text>
+									<Flex key={i} gap="4" align="start" asChild>
+										<li>
+											<Flex
+												data-md-exclude
+												as="span"
+												width="24px"
+												height="24px"
+												align="center"
+												justify="center"
+												flexShrink="0"
+												style={{
+													backgroundColor: "var(--green-4)",
+													borderRadius: "50%",
+													color: "var(--green-11)",
+												}}
+											>
+												<CheckIcon />
+											</Flex>
+											<Text size="3" as="p">
+												{feature}
+											</Text>
+										</li>
 									</Flex>
 								),
 						)}
@@ -64,7 +72,7 @@ export function Highlights({ features }: { features: React.ReactNode[] }) {
 				style={{ width: "fit-content" }}
 				asChild
 				aria-labelledby="site-component-info-heading"
-				data-algolia-exclude
+				data-search-exclude
 			>
 				<nav>
 					<VisuallyHidden.Root asChild>
@@ -157,6 +165,20 @@ export function Highlights({ features }: { features: React.ReactNode[] }) {
 								</Flex>
 							</Box>
 						)}
+
+						<Box>
+							<Flex
+								asChild
+								display="inline-flex"
+								align="center"
+								position="relative"
+								gap="1"
+							>
+								<Link size="2" href={`${pathname}.md`}>
+									View as Markdown
+								</Link>
+							</Flex>
+						</Box>
 					</Flex>
 				</nav>
 			</Box>

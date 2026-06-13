@@ -1,3 +1,4 @@
+"use client";
 // Fork of https://github.com/JedWatson/react-input-autosize
 // Copyright (c) 2018 Jed Watson, MIT License
 import * as React from "react";
@@ -314,12 +315,17 @@ function NewAutosizeInput({
 		}
 	}, []);
 
+	const onAutoSideRef = React.useRef(onAutosize);
+	React.useEffect(() => {
+		onAutoSideRef.current = onAutosize;
+	}, [onAutosize]);
+
 	const inputWidthRef = React.useRef(inputWidth);
 	React.useEffect(() => {
 		const prevInputWidth = inputWidthRef.current;
 		inputWidthRef.current = inputWidth;
-		if (prevInputWidth !== inputWidth && isFunction(onAutosize)) {
-			onAutosize(inputWidth!);
+		if (prevInputWidth !== inputWidth && isFunction(onAutoSideRef.current)) {
+			onAutoSideRef.current(inputWidth!);
 		}
 		updateInputWidth();
 

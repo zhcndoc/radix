@@ -1,3 +1,4 @@
+"use client";
 import {
 	Box,
 	Container,
@@ -568,12 +569,7 @@ export const AccessibilitySection = () => {
 				</Box>
 
 				<Grid columns={{ initial: "1", xs: "2", md: "4" }} gap="3">
-					<Card
-						style={{
-							WebkitBackdropFilter: "blur(8px)",
-							backdropFilter: "blur(8px)",
-						}}
-					>
+					<Card>
 						<Box mb="3">
 							<CheckCircledIcon width="30" height="30" />
 						</Box>
@@ -586,12 +582,7 @@ export const AccessibilitySection = () => {
 						</Text>
 					</Card>
 
-					<Card
-						style={{
-							WebkitBackdropFilter: "blur(8px)",
-							backdropFilter: "blur(8px)",
-						}}
-					>
+					<Card>
 						<Box mb="3">
 							<KeyboardIcon width="30" height="30" />
 						</Box>
@@ -604,12 +595,7 @@ export const AccessibilitySection = () => {
 						</Text>
 					</Card>
 
-					<Card
-						style={{
-							WebkitBackdropFilter: "blur(8px)",
-							backdropFilter: "blur(8px)",
-						}}
-					>
+					<Card>
 						<Box mb="3">
 							<InputIcon width="30" height="30" />
 						</Box>
@@ -622,12 +608,7 @@ export const AccessibilitySection = () => {
 						</Text>
 					</Card>
 
-					<Card
-						style={{
-							WebkitBackdropFilter: "blur(8px)",
-							backdropFilter: "blur(8px)",
-						}}
-					>
+					<Card>
 						<Box mb="3">
 							<EyeClosedIcon width="30" height="30" />
 						</Box>
@@ -645,58 +626,43 @@ export const AccessibilitySection = () => {
 	);
 };
 
+const screenReaderItems: {
+	state: MockDropdownState;
+	label: string;
+	suffix: string;
+	prefix?: string;
+}[] = [
+	{ state: "closed", label: "Navigation,", suffix: "pop-up, button" },
+	{
+		state: "item1",
+		label: "Show Minimap,",
+		suffix: "menu item",
+		prefix: "ticked, ",
+	},
+	{ state: "item2", label: "Go to Symbol,", suffix: "menu item" },
+	{ state: "item3", label: "Go to Definition,", suffix: "menu item" },
+	{ state: "item4", label: "Go to References,", suffix: "menu item" },
+];
+
 const ScreenReaderOutput = ({
 	dropdownState,
 }: {
 	dropdownState: MockDropdownState;
-}) => {
-	if (dropdownState === "closed") {
-		return (
-			<span>
-				Navigation,
+}) => (
+	<>
+		{screenReaderItems.map(({ state, label, suffix, prefix }) => (
+			<span
+				key={state}
+				style={dropdownState !== state ? { display: "none" } : undefined}
+			>
+				{label}
 				<br />
-				menu <span style={{ whiteSpace: "nowrap" }}>pop-up</span>, button
+				{prefix}
+				<span style={{ whiteSpace: "nowrap" }}>{suffix}</span>
 			</span>
-		);
-	}
-	if (dropdownState === "item1") {
-		return (
-			<span>
-				Show Minimap,
-				<br />
-				ticked, <span style={{ whiteSpace: "nowrap" }}>menu item</span>
-			</span>
-		);
-	}
-	if (dropdownState === "item2") {
-		return (
-			<span>
-				Go to Symbol,
-				<br />
-				<span style={{ whiteSpace: "nowrap" }}>menu item</span>
-			</span>
-		);
-	}
-	if (dropdownState === "item3") {
-		return (
-			<span>
-				Go to Definition,
-				<br />
-				<span style={{ whiteSpace: "nowrap" }}>menu item</span>
-			</span>
-		);
-	}
-	if (dropdownState === "item4") {
-		return (
-			<span>
-				Go to References,
-				<br />
-				<span style={{ whiteSpace: "nowrap" }}>menu item</span>
-			</span>
-		);
-	}
-	return null;
-};
+		))}
+	</>
+);
 
 const MockDropdown = ({ state }: { state?: MockDropdownState }) => {
 	return (

@@ -1,6 +1,6 @@
+"use client";
 import * as React from "react";
 import { transform as sucraseTransform } from "sucrase";
-import { useIsomorphicLayoutEffect } from "@utils/useIsomorphicLayoutEffect";
 
 interface LiveCodeProps {
 	/** Code string to evaluate */
@@ -27,7 +27,7 @@ export const LiveCode = ({
 
 	// Update error handler with current error state after the render
 	// Using layout effect so handler can react with own DOM changes without flicker
-	useIsomorphicLayoutEffect(() => {
+	React.useLayoutEffect(() => {
 		onRender(currentError.current);
 	});
 
@@ -110,7 +110,7 @@ class ErrorBoundary extends React.Component<
 const evaluate = (code = "", scope: Record<string, unknown> = {}) => {
 	const scopeKeys = Object.keys(scope);
 	const scopeValues = scopeKeys.map((key) => scope[key]);
-	// eslint-disable-next-line @typescript-eslint/no-implied-eval
+	// oxlint-disable-next-line typescript/no-implied-eval
 	const fn = new Function("React", ...scopeKeys, code);
 	const result = fn(React, ...scopeValues);
 	return injectReactClassComponentPrototype(result, code);

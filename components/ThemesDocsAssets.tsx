@@ -1,3 +1,4 @@
+"use client";
 import {
 	Avatar,
 	Badge,
@@ -1229,6 +1230,7 @@ function AlbumCard() {
 			<Box py="5">
 				<Flex mb="4" justify="center" position="relative">
 					<img
+						alt="King Krule – The OOZ"
 						width="100"
 						height="100"
 						src="https://workos.imgix.net/images/e35b46dc-4384-43d1-932c-24fa44e212cd.png?auto=format&fit=clip&q=80"
@@ -1689,7 +1691,6 @@ export function ThemesBlogPostExampleTabNav() {
 	return (
 		<ThemesBlogPostExampleArea>
 			<TabNavDemo
-				baseUrl="/blog/themes-3"
 				items={["Account", "Documents", "Workspace"]}
 				size={{ initial: "1", xs: "2" }}
 			/>

@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import {
 	Box,
@@ -12,9 +13,6 @@ import * as Colors from "@radix-ui/colors";
 import tinycolor from "tinycolor2";
 
 type Scale = Record<string, string>;
-
-const HSLA_ALPHA_REGEX =
-	/hsla\(\s*\d{1,3}\s*,\s*\d{1,3}(?:\.\d+)?%\s*,\s*\d{1,3}(?:\.\d+)?%\s*,\s*(\d(?:\.\d+)?|\.\d+)\s*\)/;
 
 const toCssCasing = (str: string) =>
 	str
@@ -32,14 +30,11 @@ const scaleToHSLObject = (name: string, scale: Scale) => {
 const scaleToHexObject = (name: string, scale: Scale) => {
 	const values = Object.entries(scale)
 		.map(([key, value]) => {
-			// tinycolor doesn't know to parse alpha from the newer hsl syntax, so we extract it ourselves
-			const alpha = value.match(HSLA_ALPHA_REGEX)?.[1] ?? "1";
-			// Convert the alpha number to a hex string
-			const hexAlpha = Math.round(+alpha * 255)
-				.toString(16)
-				.padStart(2, "0");
-
-			return `	${key}: "${tinycolor(value).toHexString()}${hexAlpha === "ff" ? "" : hexAlpha}",`;
+			const color = tinycolor(value);
+			// Use 8-digit hex (#RRGGBBAA) for alpha colors, 6-digit for solid colors
+			const hex =
+				color.getAlpha() === 1 ? color.toHexString() : color.toHex8String();
+			return `	${key}: "${hex}",`;
 		})
 		.join("\n");
 	return `const ${name} = {\n${values}\n}`;
@@ -78,9 +73,9 @@ const scaleToSvg = (
 	} ${valueHeight}">${values
 		.map((value, i) => {
 			const x = i * valueWidth;
-			const hex = tinycolor(value).toHexString();
-			// tinycolor doesn't know to parse alpha from the newer hsl syntax, so we extract it ourselves
-			const alpha = value.match(HSLA_ALPHA_REGEX)?.[1] ?? "1";
+			const color = tinycolor(value);
+			const hex = color.toHexString();
+			const alpha = color.getAlpha();
 			return `<rect x="${x}" width="${valueWidth}" height="${valueHeight}" fill="${hex}" fill-opacity="${alpha}" />`;
 		})
 		.join("")}</svg>`;
@@ -129,7 +124,6 @@ export const ColorScale = ({
 	const isAlpha = name.endsWith("A");
 	const isDarkAlpha = name.endsWith("DarkA");
 	const isWhiteA = name.endsWith("whiteA");
-	const isBlackA = name.endsWith("blackA");
 
 	return (
 		<Flex
@@ -152,33 +146,27 @@ export const ColorScale = ({
 							width="48px"
 							flexShrink="1"
 							style={{
-								backgroundColor: isDarkAlpha
-									? Colors["grayDark"]["gray1"]
-									: isAlpha
-										? "white"
-										: "transparent",
-
-								// Show transparency grid for whiteA and blackA
-								...(isBlackA && {
-									backgroundColor: "white",
-									backgroundSize: "16px 16px",
-									backgroundPosition: "0px 0px, 8px 0px, 8px -8px, 0px 8px",
-									backgroundImage: `
-											linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
-											linear-gradient(135deg, #f8f8f8 25%, transparent 25%),
-											linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
-											linear-gradient(135deg, transparent 75%, #f8f8f8 75%)`,
-								}),
-								...(isWhiteA && {
-									backgroundColor: "#181818",
-									backgroundSize: "16px 16px",
-									backgroundPosition: "0px 0px, 8px 0px, 8px -8px, 0px 8px",
-									backgroundImage: `
-											linear-gradient(45deg, #222222 25%, transparent 25%),
-											linear-gradient(135deg, #222222 25%, transparent 25%),
-											linear-gradient(45deg, transparent 75%, #222222 75%),
-											linear-gradient(135deg, transparent 75%, #222222 75%)`,
-								}),
+								// Show transparency grid for all alpha colors
+								...(isAlpha
+									? {
+											backgroundColor:
+												isWhiteA || isDarkAlpha ? "#181818" : "#ffffff",
+											backgroundSize: "16px 16px",
+											backgroundPosition: "0 0, 8px 0, 8px -8px, 0 8px",
+											backgroundImage:
+												isWhiteA || isDarkAlpha
+													? `
+              linear-gradient(45deg, #222222 25%, transparent 25%),
+              linear-gradient(135deg, #222222 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #222222 75%),
+              linear-gradient(135deg, transparent 75%, #222222 75%)`
+													: `
+              linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
+              linear-gradient(135deg, #f8f8f8 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
+              linear-gradient(135deg, transparent 75%, #f8f8f8 75%)`,
+										}
+									: { backgroundColor: "transparent" }),
 							}}
 						>
 							<Box

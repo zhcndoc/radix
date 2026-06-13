@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import * as Icons from "@radix-ui/react-icons";
 import {
@@ -9,11 +10,10 @@ import {
 	Flex,
 } from "@radix-ui/themes";
 import { useCopyToast } from "./CopyToast";
-
-import styles from "./AllIcons.module.css";
 import { Tooltip as TooltipPrimitive } from "radix-ui";
+import styles from "./AllIcons.module.css";
 
-export const AllIcons = React.memo(() => {
+export const AllIcons = React.memo(function AllIcons() {
 	return (
 		<TooltipPrimitive.Provider disableHoverableContent>
 			<Grid className={styles.IconsContainer}>

@@ -1,11 +1,13 @@
+"use client";
 import Color from "colorjs.io";
 import { composeRefs } from "radix-ui/internal";
 import { TextField } from "@radix-ui/themes";
 import styles from "./ColorField.module.css";
 import * as React from "react";
 
-interface ColorFieldProps
-	extends React.ComponentPropsWithoutRef<typeof TextField.Root> {
+interface ColorFieldProps extends React.ComponentPropsWithoutRef<
+	typeof TextField.Root
+> {
 	value?: string;
 	defaultValue?: string;
 	onValueChange?: (value: string) => void;
@@ -44,7 +46,7 @@ export const ColorField = React.forwardRef<HTMLInputElement, ColorFieldProps>(
 		}, [inputValue]);
 
 		// Sync with the incoming value
-		useIsomorphicLayoutEffect(() => {
+		React.useLayoutEffect(() => {
 			const string = toShortFormat(value);
 
 			if (string) {
@@ -267,6 +269,3 @@ const isColorFunction = (value: string) => {
 		value.startsWith("xyz")
 	);
 };
-
-const useIsomorphicLayoutEffect =
-	typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;

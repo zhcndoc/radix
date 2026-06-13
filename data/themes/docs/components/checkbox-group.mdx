@@ -34,16 +34,16 @@ sourcePath: components/checkbox-group
 
 ```jsx live=true
 <Flex align="center" gap="2">
-	<CheckboxGroup.Root size="1" defaultValue="1">
+	<CheckboxGroup.Root size="1" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root size="2" defaultValue="1">
-		<CheckboxGroup.Item value="1" />
+	<CheckboxGroup.Root size="2" defaultValue={["2"]}>
+		<CheckboxGroup.Item value="2" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root size="3" defaultValue="1">
-		<CheckboxGroup.Item value="1" />
+	<CheckboxGroup.Root size="3" defaultValue={["3"]}>
+		<CheckboxGroup.Item value="3" />
 	</CheckboxGroup.Root>
 </Flex>
 ```
@@ -55,21 +55,21 @@ sourcePath: components/checkbox-group
 ```jsx live=true
 <Flex gap="2">
 	<Flex direction="column" asChild gap="2">
-		<CheckboxGroup.Root variant="surface" defaultValue="1">
+		<CheckboxGroup.Root variant="surface" defaultValue={["1"]}>
 			<CheckboxGroup.Item value="1" />
 			<CheckboxGroup.Item value="2" />
 		</CheckboxGroup.Root>
 	</Flex>
 
 	<Flex direction="column" asChild gap="2">
-		<CheckboxGroup.Root variant="classic" defaultValue="1">
+		<CheckboxGroup.Root variant="classic" defaultValue={["1"]}>
 			<CheckboxGroup.Item value="1" />
 			<CheckboxGroup.Item value="2" />
 		</CheckboxGroup.Root>
 	</Flex>
 
 	<Flex direction="column" asChild gap="2">
-		<CheckboxGroup.Root variant="soft" defaultValue="1">
+		<CheckboxGroup.Root variant="soft" defaultValue={["1"]}>
 			<CheckboxGroup.Item value="1" />
 			<CheckboxGroup.Item value="2" />
 		</CheckboxGroup.Root>
@@ -83,19 +83,19 @@ sourcePath: components/checkbox-group
 
 ```jsx live=true
 <Flex gap="2">
-	<CheckboxGroup.Root color="indigo" defaultValue="1">
+	<CheckboxGroup.Root color="indigo" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="cyan" defaultValue="1">
+	<CheckboxGroup.Root color="cyan" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="orange" defaultValue="1">
+	<CheckboxGroup.Root color="orange" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="crimson" defaultValue="1">
+	<CheckboxGroup.Root color="crimson" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 </Flex>
@@ -107,43 +107,43 @@ sourcePath: components/checkbox-group
 
 ```jsx live=true
 <Grid rows="2" gap="2" display="inline-grid" flow="column">
-	<CheckboxGroup.Root color="indigo" defaultValue="1">
+	<CheckboxGroup.Root color="indigo" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="indigo" defaultValue="1" highContrast>
+	<CheckboxGroup.Root color="indigo" defaultValue={["1"]} highContrast>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="cyan" defaultValue="1">
+	<CheckboxGroup.Root color="cyan" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="cyan" defaultValue="1" highContrast>
+	<CheckboxGroup.Root color="cyan" defaultValue={["1"]} highContrast>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="orange" defaultValue="1">
+	<CheckboxGroup.Root color="orange" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="orange" defaultValue="1" highContrast>
+	<CheckboxGroup.Root color="orange" defaultValue={["1"]} highContrast>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="crimson" defaultValue="1">
+	<CheckboxGroup.Root color="crimson" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="crimson" defaultValue="1" highContrast>
+	<CheckboxGroup.Root color="crimson" defaultValue={["1"]} highContrast>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="gray" defaultValue="1">
+	<CheckboxGroup.Root color="gray" defaultValue={["1"]}>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root color="gray" defaultValue="1" highContrast>
+	<CheckboxGroup.Root color="gray" defaultValue={["1"]} highContrast>
 		<CheckboxGroup.Item value="1" />
 	</CheckboxGroup.Root>
 </Grid>
@@ -155,7 +155,7 @@ sourcePath: components/checkbox-group
 
 ```jsx live="true"
 <Flex direction="column" gap="3">
-	<CheckboxGroup.Root size="1" defaultValue="1">
+	<CheckboxGroup.Root size="1" defaultValue={["1"]}>
 		<Text as="label" size="2">
 			<Flex gap="2">
 				<CheckboxGroup.Item value="1" /> 默认
@@ -169,7 +169,7 @@ sourcePath: components/checkbox-group
 		</Text>
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root size="2" defaultValue="1">
+	<CheckboxGroup.Root size="2" defaultValue={["1"]}>
 		<Text as="label" size="3">
 			<Flex gap="2">
 				<CheckboxGroup.Item value="1" /> 默认
@@ -183,7 +183,7 @@ sourcePath: components/checkbox-group
 		</Text>
 	</CheckboxGroup.Root>
 
-	<CheckboxGroup.Root size="3" defaultValue="1">
+	<CheckboxGroup.Root size="3" defaultValue={["1"]}>
 		<Text as="label" size="4">
 			<Flex gap="2">
 				<CheckboxGroup.Item value="1" /> 默认
@@ -207,9 +207,9 @@ sourcePath: components/checkbox-group
 
 ```jsx live="true"
 <Flex direction="column" gap="2">
-	<CheckboxGroup.Root defaultValue="2">
-		<CheckboxGroup.Item value="1">关闭</CheckboxGroup.Item>
-		<CheckboxGroup.Item value="2">开启</CheckboxGroup.Item>
+	<CheckboxGroup.Root defaultValue={["2"]}>
+		<CheckboxGroup.Item value="1">Off</CheckboxGroup.Item>
+		<CheckboxGroup.Item value="2">On</CheckboxGroup.Item>
 	</CheckboxGroup.Root>
 
 	<CheckboxGroup.Root defaultValue="2">

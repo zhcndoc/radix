@@ -48,7 +48,7 @@ const LivePreview = React.forwardRef<HTMLDivElement, LivePreviewProps>(
 		forwardedRef,
 	) {
 		return (
-			<Theme asChild className="radix-themes-default-fonts">
+			<Theme asChild className="radix-themes-default-fonts" data-md-exclude>
 				<Box
 					ref={forwardedRef}
 					className={classNames(styles.CodeBlockLivePreview, className)}
@@ -170,8 +170,9 @@ const Code = React.forwardRef<HTMLElement, CodeProps>(function Code(
 });
 Code.displayName = "CodeBlock.Code";
 
-interface CopyButtonProps
-	extends React.ComponentPropsWithoutRef<typeof IconButton> {}
+interface CopyButtonProps extends React.ComponentPropsWithoutRef<
+	typeof IconButton
+> {}
 const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
 	({ className, ...props }, forwardedRef) => {
 		const [hasCopied, setHasCopied] = React.useState(false);

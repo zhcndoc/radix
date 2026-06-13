@@ -28,15 +28,7 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb
 	]}
 />
 
-## 安装
-
-从命令行安装组件。
-
-```bash
-npm install @radix-ui/react-slider
-```
-
-## 结构
+## 架构
 
 导入所有部分并将其组合在一起。
 
@@ -68,10 +60,10 @@ export default () => (
 			default: "false",
 			description: (
 				<>
-					更改默认渲染元素为作为子元素传递的元素，合并它们的属性和行为。
+					将默认渲染元素更改为作为子元素传递的元素，并合并它们的属性和行为。
 					<br />
 					<br />
-					请阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详情。
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -80,7 +72,7 @@ export default () => (
 			required: false,
 			type: "number[]",
 			description:
-				"滑块在初次渲染时的值。使用在不需要控制滑块状态时。",
+				"滑块在初次渲染时的值。用于不需要控制滑块状态时。",
 		},
 		{
 			name: "value",
@@ -112,7 +104,7 @@ export default () => (
 			required: false,
 			type: "string",
 			description:
-				"滑块的名称。作为名称/值对的一部分与其拥有的表单一起提交。",
+				"滑块的名称。作为名称/值对的一部分与其所属表单一起提交。",
 		},
 		{
 			name: "disabled",
@@ -140,7 +132,7 @@ export default () => (
 			typeSimple: "enum",
 			description: (
 				<span>
-					滑块的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承，或者假定为LTR（从左到右）阅读模式。
+					滑块的阅读方向。如果省略，则从 <Code>DirectionProvider</Code> 全局继承，或者假定为 LTR（从左到右）阅读模式。
 				</span>
 			),
 		},
@@ -219,10 +211,10 @@ export default () => (
 			default: "false",
 			description: (
 				<>
-					更改默认渲染元素为作为子元素传递的元素，合并它们的属性和行为。
+					将默认渲染元素更改为作为子元素传递的元素，并合并它们的属性和行为。
 					<br />
 					<br />
-					请阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详情。
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -255,10 +247,10 @@ export default () => (
 			default: "false",
 			description: (
 				<>
-					更改默认渲染元素为作为子元素传递的元素，合并它们的属性和行为。
+					将默认渲染元素更改为作为子元素传递的元素，并合并它们的属性和行为。
 					<br />
 					<br />
-					请阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详情。
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},
@@ -291,10 +283,10 @@ export default () => (
 			default: "false",
 			description: (
 				<>
-					更改默认渲染元素为作为子元素传递的元素，合并它们的属性和行为。
+					将默认渲染元素更改为作为子元素传递的元素，并合并它们的属性和行为。
 					<br />
 					<br />
-					请阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详情。
+					请阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
 			),
 		},

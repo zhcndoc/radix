@@ -1,27 +1,30 @@
+"use client";
 import { Link } from "@radix-ui/themes";
+import { usePathname } from "next/navigation";
 import { Header, HeaderProps } from "./Header";
-import { useRouter } from "next/router";
+import NextLink from "next/link";
 
 export const ColorsHeader = (props: HeaderProps) => {
-	const router = useRouter();
-
+	const pathname = usePathname();
 	return (
 		<Header gitHubLink="https://github.com/radix-ui/colors" {...props}>
 			<Link
 				size="2"
 				color="gray"
-				href="/colors/docs"
-				highContrast={router.pathname.includes("/colors/docs")}
+				highContrast={pathname?.includes("/colors/docs")}
+				asChild
 			>
-				文档
+				<NextLink href="/colors/docs/overview/installation">
+					文档
+				</NextLink>
 			</Link>
 			<Link
 				size="2"
 				color="gray"
-				href="/colors/custom"
-				highContrast={router.pathname.includes("/colors/custom")}
+				highContrast={pathname?.includes("/colors/custom")}
+				asChild
 			>
-				自定义调色板
+				<NextLink href="/colors/custom">自定义调色板</NextLink>
 			</Link>
 		</Header>
 	);

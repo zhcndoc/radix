@@ -22,7 +22,6 @@ import {
 import { Hover } from "./Hover";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { allPeople } from "./people";
-import Head from "next/head";
 
 type ExampleLayoutProps = React.ComponentPropsWithoutRef<typeof Flex> & {
 	focusable?: boolean;
@@ -37,20 +36,19 @@ export const ExampleThemesMusicApp = ({
 
 	return (
 		<>
-			<Head>
-				{/* Add a custom color variable that changes between light and dark mode */}
-				<style>
-					{`
+			<style
+				dangerouslySetInnerHTML={{
+					// Add a custom color variable that changes between light and dark mode
+					__html: `
           :root, .light, .light-theme {
             --color-floating-panel: rgba(239, 247, 255, 0.615);
           }
           .dark, .dark-theme {
             --color-floating-panel: rgba(0, 14, 24, 0.593);
           }
-        `}
-				</style>
-			</Head>
-
+        `,
+				}}
+			/>
 			<Flex align="center" gap="6" {...props}>
 				<Flex flexShrink="0" gap="6" direction="column" width="416px">
 					<Card size="3">
@@ -79,6 +77,7 @@ export const ExampleThemesMusicApp = ({
 												objectFit: "cover",
 												borderRadius: "var(--radius-2)",
 											}}
+											alt={`Album cover for ${song.album}`}
 										/>
 									</Box>
 									<Box flexGrow="1" width="0">
@@ -353,6 +352,7 @@ export const ExampleThemesMusicApp = ({
 								<Flex align="center" gap="3" key={song.name}>
 									<Box asChild width="48px" height="48px">
 										<img
+											alt={`Album cover for ${song.album}`}
 											src={song.cover}
 											style={{
 												objectFit: "cover",
@@ -500,13 +500,7 @@ export const ExampleThemesMusicApp = ({
 									Your favorites
 								</Heading>
 
-								<Link
-									href="#"
-									onClick={(e) => e.preventDefault()}
-									tabIndex={tabIndex}
-									size="2"
-									weight="medium"
-								>
+								<Link href="#" tabIndex={tabIndex} size="2" weight="medium">
 									Show all
 								</Link>
 							</Flex>
@@ -531,13 +525,7 @@ export const ExampleThemesMusicApp = ({
 									Made for you
 								</Heading>
 
-								<Link
-									href="#"
-									onClick={(e) => e.preventDefault()}
-									tabIndex={tabIndex}
-									size="2"
-									weight="medium"
-								>
+								<Link href="#" tabIndex={tabIndex} size="2" weight="medium">
 									Show all
 								</Link>
 							</Flex>
@@ -561,13 +549,7 @@ export const ExampleThemesMusicApp = ({
 									Your friends listen
 								</Heading>
 
-								<Link
-									href="#"
-									onClick={(e) => e.preventDefault()}
-									tabIndex={tabIndex}
-									size="2"
-									weight="medium"
-								>
+								<Link href="#" tabIndex={tabIndex} size="2" weight="medium">
 									Show all
 								</Link>
 							</Flex>
@@ -690,6 +672,7 @@ export const ExampleThemesMusicApp = ({
 
 									<Flex align="center" gap="3">
 										<img
+											alt={`Album cover for ${songsHistory[6].album}`}
 											src={songsHistory[6].cover}
 											width="48"
 											height="48"
@@ -1009,11 +992,7 @@ export const ExampleThemesMusicApp = ({
 									</Text>
 
 									<Text size="2" as="p">
-										<Link
-											href="#"
-											onClick={(e) => e.preventDefault()}
-											tabIndex={tabIndex}
-										>
+										<Link href="#" tabIndex={tabIndex}>
 											Cancel subscription
 										</Link>
 									</Text>
@@ -1105,20 +1084,10 @@ export const ExampleThemesMusicApp = ({
 											Danger zone
 										</Text>
 										<Flex align="start" direction="column" gap="2">
-											<Link
-												href="#"
-												onClick={(e) => e.preventDefault()}
-												tabIndex={tabIndex}
-												size="2"
-											>
+											<Link href="#" tabIndex={tabIndex} size="2">
 												Reset recommendations
 											</Link>
-											<Link
-												href="#"
-												onClick={(e) => e.preventDefault()}
-												tabIndex={tabIndex}
-												size="2"
-											>
+											<Link href="#" tabIndex={tabIndex} size="2">
 												Delete profile
 											</Link>
 										</Flex>
@@ -1203,6 +1172,7 @@ export const ExampleThemesMusicApp = ({
 							<Card size="3">
 								<Flex m="4" justify="center" position="relative">
 									<img
+										alt="Album cover for King Krule – The OOZ"
 										width="200"
 										height="200"
 										src="https://workos.imgix.net/images/e35b46dc-4384-43d1-932c-24fa44e212cd.png?auto=format&fit=clip&q=80"
@@ -1247,9 +1217,9 @@ export const ExampleThemesMusicApp = ({
 									</Heading>
 
 									<Text align="center" as="p" color="gray" size="2" mb="4">
-										A dark and introspective album that showcases King Krule’s
-										distinctive blend of genres, while delivering hauntingly raw
-										and poetic lyrics.
+										A dark and introspective album that showcases King
+										Krule&apos;s distinctive blend of genres, while delivering
+										hauntingly raw and poetic lyrics.
 									</Text>
 
 									<Flex justify="center" gap="3">
@@ -1281,11 +1251,7 @@ export const ExampleThemesMusicApp = ({
 											<Flex direction="column" align="start" gap="1">
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<Link
-															href="#"
-															onClick={(e) => e.preventDefault()}
-															tabIndex={tabIndex}
-														>
+														<Link href="#" tabIndex={tabIndex}>
 															I seem to sink lower, gazing in the rays of the
 															solar
 														</Link>
@@ -1326,11 +1292,7 @@ export const ExampleThemesMusicApp = ({
 
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<Link
-															href="#"
-															onClick={(e) => e.preventDefault()}
-															tabIndex={tabIndex}
-														>
+														<Link href="#" tabIndex={tabIndex}>
 															Red on white but he sipped on KA soda
 														</Link>
 													</HoverCard.Trigger>
@@ -1346,14 +1308,10 @@ export const ExampleThemesMusicApp = ({
 													</HoverCard.Content>
 												</HoverCard.Root>
 												<Text>
-													Damn, that's Coca-Cola,{" "}
+													Damn, that&apos;s Coca-Cola,{" "}
 													<HoverCard.Root>
 														<HoverCard.Trigger>
-															<Link
-																href="#"
-																onClick={(e) => e.preventDefault()}
-																tabIndex={tabIndex}
-															>
+															<Link href="#" tabIndex={tabIndex}>
 																as TV sports the Olympic ebola
 															</Link>
 														</HoverCard.Trigger>
@@ -1365,8 +1323,8 @@ export const ExampleThemesMusicApp = ({
 																	Games due to an ebola outbreak in the region.
 																	The line serves to set the scene by saying he
 																	is watching television, or at least its on,
-																	and news of the athletes' banning would be
-																	what’s being broadcast.
+																	and news of the athletes&apos; banning would
+																	be what’s being broadcast.
 																</Text>
 															</Flex>
 														</HoverCard.Content>
@@ -1379,11 +1337,7 @@ export const ExampleThemesMusicApp = ({
 
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<Link
-															href="#"
-															onClick={(e) => e.preventDefault()}
-															tabIndex={tabIndex}
-														>
+														<Link href="#" tabIndex={tabIndex}>
 															He left the crime scene without the Motorola
 														</Link>
 													</HoverCard.Trigger>
@@ -1413,11 +1367,7 @@ export const ExampleThemesMusicApp = ({
 												<Text>I seem to sink lower</Text>
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<Link
-															href="#"
-															onClick={(e) => e.preventDefault()}
-															tabIndex={tabIndex}
-														>
+														<Link href="#" tabIndex={tabIndex}>
 															In biscuit town, in biscuit town
 														</Link>
 													</HoverCard.Trigger>
@@ -1437,8 +1387,8 @@ export const ExampleThemesMusicApp = ({
 
 											<Flex direction="column" align="start" gap="1">
 												<Text>
-													You're shallow waters, I’m the deep seabed And I’m the
-													reason you flow
+													You&apos;re shallow waters, I&apos;m the deep seabed
+													And I&apos;m the reason you flow
 												</Text>
 												I got more moons wrapped around my head and Jupiter
 												knows Whilst you orbit with some stupider hoes Only a
@@ -1498,6 +1448,7 @@ const AlbumCard = ({
 									height: "100%",
 									objectFit: "cover",
 								}}
+								alt={`Album cover for ${title}`}
 							/>
 						</AspectRatio>
 					</Inset>
@@ -1524,7 +1475,6 @@ const AlbumCard = ({
 			<Flex direction="column" position="relative" align="start">
 				<Link
 					href="#"
-					onClick={(e) => e.preventDefault()}
 					tabIndex={focusable ? undefined : -1}
 					size="2"
 					weight="medium"

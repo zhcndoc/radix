@@ -1,13 +1,13 @@
 ---
 metaTitle: 悬停卡片
-metaDescription: 供可视用户预览链接后面可用的内容。
+metaDescription: 为可见用户提供链接后方内容的预览。
 name: hover-card
 ---
 
 # 悬停卡片
 
 <Description>
-	供可视用户预览链接后面可用的内容。
+	为可见用户提供链接后方内容的预览。
 </Description>
 
 <HeroContainer>
@@ -18,23 +18,15 @@ name: hover-card
 
 <Highlights
 	features={[
-		"可以是受控或非受控的。",
-		"自定义侧面、对齐、偏移量、碰撞处理。",
+		"可以受控或非受控。",
+		"可自定义侧边、对齐、偏移量和碰撞处理。",
 		"可选渲染指向箭头。",
 		"支持自定义打开和关闭延迟。",
-		"屏幕阅读器忽略。",
+		"被屏幕阅读器忽略。",
 	]}
 />
 
-## 安装
-
-从命令行安装组件。
-
-```bash
-npm install @radix-ui/react-hover-card
-```
-
-## 结构
+## Anatomy
 
 导入所有部分并将它们组合在一起。
 
@@ -66,7 +58,7 @@ export default () => (
 			type: "boolean",
 			description: (
 				<span>
-					悬停卡片在初始渲染时的打开状态。使用
+					悬停卡片初始渲染时的打开状态。用于
 					当您不需要控制其打开状态时。
 				</span>
 			),
@@ -124,7 +116,7 @@ export default () => (
 					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -180,7 +172,7 @@ export default () => (
 					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -200,7 +192,7 @@ export default () => (
 			default: '"bottom"',
 			description: (
 				<span>
-					打开时渲染的触发器偏好的侧面。如果发生碰撞且 <Code>avoidCollisions</Code> 启用，则会反转。
+					打开时渲染的触发器偏好的侧边。如果发生碰撞且 <Code>avoidCollisions</Code> 启用，则会反转。
 				</span>
 			),
 		},
@@ -325,7 +317,7 @@ export default () => (
 			cssVariable: "--radix-hover-card-content-transform-origin",
 			description: (
 				<>
-					从内容和箭头位置/偏移计算出的 <Code>transform-origin</Code>
+					根据内容和箭头位置/偏移计算出的 <Code>transform-origin</Code>
 				</>
 			),
 		},
@@ -354,7 +346,7 @@ export default () => (
 
 ### 箭头
 
-可选的箭头元素，与悬停卡片一起渲染。可以用来帮助视觉上将触发器与 `HoverCard.Content` 连接。必须在 `HoverCard.Content` 内渲染。
+可选的箭头元素，与悬停卡片一起渲染。可用于帮助在视觉上将触发器与 `HoverCard.Content` 连接起来。必须在 `HoverCard.Content` 内渲染。
 
 <PropsTable
 	data={[
@@ -368,7 +360,7 @@ export default () => (
 					将默认渲染元素更改为作为子元素传递的元素，合并它们的属性和行为。
 					<br />
 					<br />
-					阅读我们的 <a href="../guides/composition">组成</a> 指南以获取更多详细信息。
+					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详细信息。
 				</>
 			),
 		},
@@ -526,7 +518,7 @@ export default () => (
 
 ## 无障碍性
 
-悬停卡片仅用于可视用户，内容对键盘用户不可访问。
+悬停卡片仅用于可见用户，内容对键盘用户不可访问。
 
 ### 键盘交互
 
