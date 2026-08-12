@@ -1,19 +1,10 @@
-import { ColorsDocsPage } from "@components/ColorsDocsPage";
-import { Favicon } from "@components/Favicon";
-import { MobileMenuProvider } from "@components/mobile-menu";
+import { ColorsDocsPage } from "@components/colors-docs-page";
+import { Favicon } from "@components/favicon";
 import { Theme } from "@radix-ui/themes";
 
-export default function ColorsDocsLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function ColorsDocsLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<Theme
-			accentColor="pink"
-			grayColor="gray"
-			className="radix-themes-custom-fonts"
-		>
+		<Theme accentColor="pink" grayColor="gray" className="radix-themes-custom-fonts">
 			<ColorsDocsPage>
 				<Favicon />
 				{children}

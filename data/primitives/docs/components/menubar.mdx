@@ -153,7 +153,7 @@ export default () => (
 	]}
 />
 
-### Menu
+### 菜单
 
 顶级菜单项，包含触发器与内容组合。
 
@@ -186,7 +186,7 @@ export default () => (
 	]}
 />
 
-### Trigger
+### 触发器
 
 切换内容的按钮。默认情况下，`Menubar.Content` 将相对于触发器进行定位。
 
@@ -251,7 +251,7 @@ export default () => (
 	]}
 />
 
-### Content
+### 内容
 
 菜单打开时弹出的组件。
 
@@ -409,7 +409,7 @@ export default () => (
 			default: "0",
 			description: (
 				<span>
-					在碰撞检测应发生的边界边缘与内容之间的像素距离。接受一个数字（适用于所有边），或一个部分填充对象，例如:{" "}
+					在碰撞检测应发生的边界边缘与内容之间的像素距离。接受一个数字（适用于所有边），或一个部分填充对象，例如：{" "}
 					<Code>{`{ top: 20, left: 20 }`}</Code>。
 				</span>
 			),
@@ -620,7 +620,7 @@ export default () => (
 	]}
 />
 
-### Label
+### 标签
 
 用于呈现标签。无法使用箭头键聚焦。
 
@@ -1082,6 +1082,17 @@ export default () => (
 			type: "number",
 			default: "0",
 			description: <span>与触发器之间的距离（以像素为单位）。</span>,
+		},
+		{
+			name: "align",
+			type: '"start" | "end"',
+			typeSimple: "enum",
+			default: '"start"',
+			description: (
+				<span>
+					子菜单相对于其锚定项目出现的方向。发生碰撞时可能会改变。
+				</span>
+			),
 		},
 		{
 			name: "alignOffset",

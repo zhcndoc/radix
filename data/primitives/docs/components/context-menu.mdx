@@ -32,7 +32,7 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/menu
 	]}
 />
 
-## Anatomy
+## 结构
 
 导入所有部件并将它们组合在一起。
 
@@ -94,6 +94,15 @@ export default () => (
 			description: (
 				<span>
 					子菜单的阅读方向（如适用）。如果省略，将从 <Code>DirectionProvider</Code> 全局继承，或假设 LTR（从左到右）阅读模式。
+				</span>
+			),
+		},
+		{
+			name: "open",
+			type: "boolean",
+			description: (
+				<span>
+					上下文菜单的受控打开状态。必须与 <Code>onOpenChange</Code> 一起使用。此属性用于读取打开状态并以编程方式关闭菜单——我们不建议以编程方式打开菜单，因为打开菜单依赖用户交互来定位菜单。
 				</span>
 			),
 		},
@@ -977,6 +986,17 @@ export default () => (
 			type: "number",
 			default: "0",
 			description: <span>与触发器的距离，以像素为单位。</span>,
+		},
+		{
+			name: "align",
+			type: '"start" | "end"',
+			typeSimple: "enum",
+			default: '"start"',
+			description: (
+				<span>
+					子菜单从其锚点项目出现的方向。发生碰撞时可能会改变。
+				</span>
+			),
 		},
 		{
 			name: "alignOffset",

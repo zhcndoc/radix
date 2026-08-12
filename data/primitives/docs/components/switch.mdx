@@ -169,7 +169,33 @@ export default () => (
 	]}
 />
 
-## 可及性
+## 示例
+
+### 解耦隐藏输入
+
+默认情况下，`Switch.Root` 会渲染一个视觉隐藏的 `input`，用于表单提交。要重新组合、移动或排除该输入，可以改用其较低层级的部分来构建 switch。
+
+> **重要：** 这些部分不稳定，并带有 `unstable_` 前缀，因此其 API 可能会在未来版本中发生变化。
+
+- `Switch.unstable_Provider` 提供 switch 状态，并接受与表单相关的属性（`name`、`value`、`checked`、`defaultChecked`、`required`、`disabled`、`onCheckedChange`）。
+- `Switch.unstable_Trigger` 是包裹 `Switch.Thumb` 的交互式按钮。
+- `Switch.unstable_BubbleInput` 是 `Switch.Root` 默认渲染的视觉隐藏输入。如果不需要表单提交，可以省略它。
+
+```jsx
+import { Switch } from "radix-ui";
+
+export default () => (
+	<Switch.unstable_Provider name="airplane-mode">
+		<Switch.unstable_Trigger>
+			<Switch.Thumb />
+		</Switch.unstable_Trigger>
+		{/* The hidden input can be omitted if you don't need form submission */}
+		<Switch.unstable_BubbleInput />
+	</Switch.unstable_Provider>
+);
+```
+
+## 可访问性
 
 符合[`switch`角色要求](https://www.w3.org/WAI/ARIA/apg/patterns/switch)。
 

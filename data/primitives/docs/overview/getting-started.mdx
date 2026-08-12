@@ -46,6 +46,12 @@ const PopoverDemo = () => (
 export default PopoverDemo;
 ```
 
+每个基础组件也都可以从其独立入口点使用。从子路径导入可以帮助某些打包工具更有效地执行 tree-shaking：
+
+```jsx
+import * as Popover from "radix-ui/popover";
+```
+
 ### 3. 添加样式
 
 在需要的地方添加样式。

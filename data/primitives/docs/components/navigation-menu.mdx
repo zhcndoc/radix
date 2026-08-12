@@ -479,6 +479,21 @@ export default () => (
 	]}
 />
 
+<CssVariablesTable
+	data={[
+		{
+			cssVariable: "--radix-navigation-menu-indicator-translate-x",
+			description:
+				"指示器的水平偏移量，根据活动触发器的位置计算得出。菜单为水平时存在。",
+		},
+		{
+			cssVariable: "--radix-navigation-menu-indicator-translate-y",
+			description:
+				"指示器的垂直偏移量，根据活动触发器的位置计算得出。菜单为垂直时存在。",
+		},
+	]}
+/>
+
 ### Viewport
 
 一个可选的视口元素，用于在列表之外渲染活动内容。
@@ -529,12 +544,12 @@ export default () => (
 		{
 			cssVariable: "--radix-navigation-menu-viewport-width",
 			description:
-				"视口在可见/隐藏状态下的宽度，从活动内容计算",
+				"视口在可见／隐藏状态下的宽度，根据活动内容计算得出",
 		},
 		{
 			cssVariable: "--radix-navigation-menu-viewport-height",
 			description:
-				"视口在可见/隐藏状态下的高度，从活动内容计算",
+				"视口在可见／隐藏状态下的高度，根据活动内容计算得出",
 		},
 	]}
 />

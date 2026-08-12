@@ -33,7 +33,7 @@ aria: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
 	]}
 />
 
-## Anatomy
+## 解剖结构
 
 导入所有部分并将它们组合在一起。
 
@@ -985,7 +985,207 @@ export default () => (
 
 ### 带子菜单的示例
 
-您可以通过组合使用 `DropdownMenu.Sub` 以及其部分来创建子菜单。
+<PropsTable
+	data={[
+		{
+			name: "asChild",
+			required: false,
+			type: "boolean",
+			default: "false",
+			description: (
+				<>
+					将默认渲染的元素更改为作为子元素传入的元素，同时合并它们的属性和行为。
+					<br />
+					<br />
+					阅读我们的 <a href="../guides/composition">Composition</a> 指南以了解更多详情。
+				</>
+			),
+		},
+		{
+			name: "loop",
+			required: false,
+			type: "boolean",
+			default: "false",
+			description: (
+				<span>
+					当 <Code>true</Code> 时，键盘导航将从最后一项循环到第一项，反之亦然。
+				</span>
+			),
+		},
+		{
+			name: "onEscapeKeyDown",
+			type: "(event: KeyboardEvent) => void",
+			typeSimple: "function",
+			description: (
+				<span>
+					按下 Escape 键时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来阻止该事件
+				</span>
+			),
+		},
+		{
+			name: "onPointerDownOutside",
+			type: "(event: PointerDownOutsideEvent) => void",
+			typeSimple: "function",
+			description: (
+				<span>
+					当指针事件发生在组件范围之外时调用的事件处理程序。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止该事件。
+				</span>
+			),
+		},
+		{
+			name: "onFocusOutside",
+			type: "(event: FocusOutsideEvent) => void",
+			typeSimple: "function",
+			description: (
+				<span>
+					当焦点移到组件范围之外时调用的事件处理程序。可以通过调用{" "}
+					<Code>event.preventDefault</Code> 来阻止该事件。
+				</span>
+			),
+		},
+		{
+			name: "onInteractOutside",
+			type: "(event: PointerDownOutsideEvent | FocusOutsideEvent) => void",
+			typeSimple: "function",
+			description: (
+				<span>
+					当交互（指针或焦点事件）发生在组件范围之外时调用的事件处理程序。可以通过调用 <Code>event.preventDefault</Code> 来阻止该事件。
+				</span>
+			),
+		},
+		{
+			name: "forceMount",
+			type: "boolean",
+			description: (
+				<span>
+					需要更多控制时，用于强制挂载。在使用 React 动画库控制动画时很有用。它继承自{" "}
+					<Code>DropdownMenu.Portal</Code>。
+				</span>
+			),
+		},
+		{
+			name: "sideOffset",
+			type: "number",
+			default: "0",
+			description: <span>与触发器之间的像素距离。</span>,
+		},
+		{
+			name: "align",
+			type: '"start" | "end"',
+			typeSimple: "enum",
+			default: '"start"',
+			description: (
+				<span>
+					子菜单相对于其锚点项显示的方向。发生碰撞时可能会改变。
+				</span>
+			),
+		},
+		{
+			name: "alignOffset",
+			type: "number",
+			default: "0",
+			description: (
+				<span>
+					相对于 <Code>"start"</Code> 或{" "}
+					<Code>"end"</Code> 对齐选项的像素偏移量。
+				</span>
+			),
+		},
+		{
+			name: "avoidCollisions",
+			type: "boolean",
+			default: "true",
+			description: (
+				<span>
+					当 <Code>true</Code> 时，覆盖 <Code>side</Code> 和
+					<Code>align</Code> 偏好，以防止与边界边缘发生碰撞。
+				</span>
+			),
+		},
+		{
+			name: "collisionBoundary",
+			type: "Element | null | Array<Element | null>",
+			typeSimple: "Boundary",
+			default: "[]",
+			description: (
+				<span>
+					用作碰撞边界的元素。默认情况下为视口，但你可以提供其他元素，将其包含在此检查中。
+				</span>
+			),
+		},
+		{
+			name: "collisionPadding",
+			type: "number | Partial<Record<Side, number>>",
+			typeSimple: "number | Padding",
+			default: "0",
+			description: (
+				<span>
+					碰撞检测应发生的位置与边界边缘之间的像素距离。接受一个数字（所有边相同），或一个部分填充对象，例如：{" "}
+					<Code>{`{ top: 20, left: 20 }`}</Code>。
+				</span>
+			),
+		},
+		{
+			name: "arrowPadding",
+			type: "number",
+			default: "0",
+			description: (
+				<span>
+					箭头与内容边缘之间的填充。如果你的内容具有 <Code>border-radius</Code>，这将防止其溢出圆角。
+				</span>
+			),
+		},
+		{
+			name: "sticky",
+			type: '"partial" | "always"',
+			typeSimple: "enum",
+			default: '"partial"',
+			description: (
+				<span>
+					对齐轴上的粘性行为。<Code>"partial"</Code> 会在触发器至少部分位于边界内时，将内容保持在边界内，而 <Code>"always"</Code> 无论如何都会将内容保持在边界内。
+				</span>
+			),
+		},
+		{
+			name: "hideWhenDetached",
+			type: "boolean",
+			default: "false",
+			description: (
+				<span>
+					当触发器完全被遮挡时是否隐藏内容。
+				</span>
+			),
+		},
+	]}
+/>
+
+<DataAttributesTable
+	data={[
+		{
+			attribute: "[data-state]",
+			values: ["open", "closed"],
+		},
+		{
+			attribute: "[data-side]",
+			values: ["left", "right", "bottom", "top"],
+		},
+		{
+			attribute: "[data-align]",
+			values: ["start", "end", "center"],
+		},
+		{
+			attribute: "[data-orientation]",
+			values: ["vertical", "horizontal"],
+		},
+	]}
+/>
+
+## 示例
+
+### 带子菜单的示例
+
+您可以通过将 `DropdownMenu.Sub` 与其各个部件结合使用来创建子菜单。
 
 ```jsx line=8-17
 <DropdownMenu.Root>
@@ -1186,7 +1386,7 @@ export default () => (
 );
 ```
 
-### 限制内容/子内容的大小
+### 限制内容／子内容的大小
 
 您可能想限制内容（或子内容）的宽度，以使其与触发器（或子触发器）的宽度匹配。您可能还希望限制其高度，以免超过视口。
 
@@ -1219,7 +1419,7 @@ export default () => (
 
 ### 基于原点的动画
 
-我们公开了 CSS 自定义属性 `--radix-dropdown-menu-content-transform-origin`。使用它从其计算的原点为内容动画，基于 `side`、`sideOffset`、`align`、`alignOffset` 和任何碰撞。
+我们公开了 CSS 自定义属性 `--radix-dropdown-menu-content-transform-origin`。使用它从其计算的原点为内容设置动画，基于 `side`、`sideOffset`、`align`、`alignOffset` 和任何碰撞。
 
 ```jsx line=9
 // index.jsx
@@ -1375,7 +1575,7 @@ export default () => (
 			),
 		},
 	]}
-/>
+/>。
 
 ## 自定义 API
 

@@ -262,6 +262,35 @@ export default () => (
     ]}
 />
 
+## 示例
+
+### 解耦隐藏输入
+
+默认情况下，`RadioGroup.Item` 会渲染一个视觉隐藏的 `input`，用于表单提交。若要重新组合、移动或排除该输入，可以改用更底层的部件来构建每个项目。
+
+> **重要：** 这些部件尚不稳定，并带有 `unstable_` 前缀，因此其 API 可能会在未来版本中发生变化。
+
+- `RadioGroup.unstable_ItemProvider` 提供项目状态，并接受项目的 `value` 和 `disabled` 属性。
+- `RadioGroup.unstable_ItemTrigger` 是包裹 `RadioGroup.Indicator` 的交互元素。
+- `RadioGroup.unstable_ItemBubbleInput` 是 `RadioGroup.Item` 默认渲染的视觉隐藏输入。不需要表单提交时，可以省略它。
+
+```jsx
+import { RadioGroup } from "radix-ui";
+
+export default () => (
+	<RadioGroup.Root>
+		{["one", "two", "three"].map((value) => (
+			<RadioGroup.unstable_ItemProvider key={value} value={value}>
+				<RadioGroup.unstable_ItemTrigger>
+					<RadioGroup.Indicator />
+				</RadioGroup.unstable_ItemTrigger>
+				<RadioGroup.unstable_ItemBubbleInput />
+			</RadioGroup.unstable_ItemProvider>
+		))}
+	</RadioGroup.Root>
+);
+```
+
 ## 可访问性
 
 遵循 [单选按钮组 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/radio) 并使用 [移动 tabindex](https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio) 来管理单选按钮项之间的焦点移动。

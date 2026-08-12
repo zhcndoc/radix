@@ -422,7 +422,39 @@ export default () => (
 );
 ```
 
-## 无障碍
+### 解耦隐藏的 input
+
+默认情况下，`Slider.Thumb` 会渲染一个在视觉上隐藏的 `input`，用于提交表单。若要重新组合、移动或排除该 `input`，可以改用更底层的部件构建每个滑块。
+
+> **重要：** 这些部件不稳定，并带有 `unstable_` 前缀，因此其 API 可能会在未来版本中发生变化。
+
+- `Slider.unstable_ThumbProvider` 提供滑块状态，并接受一个可选的 `name`，用于提交值。
+- `Slider.unstable_ThumbTrigger` 是可拖动的滑块元素。
+- `Slider.unstable_BubbleInput` 是 `Slider.Thumb` 默认渲染的视觉隐藏 `input`。不需要提交表单时可以省略它。
+
+```jsx
+import { Slider } from "radix-ui";
+
+export default () => (
+	<Slider.Root defaultValue={[25, 75]}>
+		<Slider.Track>
+			<Slider.Range />
+		</Slider.Track>
+
+		<Slider.unstable_ThumbProvider name="price[min]">
+			<Slider.unstable_ThumbTrigger />
+			<Slider.unstable_BubbleInput />
+		</Slider.unstable_ThumbProvider>
+
+		<Slider.unstable_ThumbProvider name="price[max]">
+			<Slider.unstable_ThumbTrigger />
+			<Slider.unstable_BubbleInput />
+		</Slider.unstable_ThumbProvider>
+	</Slider.Root>
+);
+```
+
+## 可访问性
 
 遵循 [滑块 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb)。
 
@@ -558,4 +590,4 @@ export const Slider = React.forwardRef((props, forwardedRef) => {
 </Slider.Root>
 ```
 
-我们建议使用指针事件（例如 `onPointerDown`，`onPointerUp`）。尽管存在上述限制，但这些事件更适合跨平台/设备处理，因为它们适用于所有指针输入类型（鼠标、触摸、笔等）。
+我们建议使用指针事件（例如 `onPointerDown`，`onPointerUp`）。尽管存在上述限制，但这些事件更适合跨平台／设备处理，因为它们适用于所有指针输入类型（鼠标、触摸、笔等）。

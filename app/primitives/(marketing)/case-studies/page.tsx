@@ -1,8 +1,8 @@
-import { Footer } from "@components/Footer";
-import { PrimitivesHeader } from "@components/PrimitivesHeader";
-import { PrimitivesMobileMenu } from "@components/PrimitivesMobileMenu";
-import { CaseStudyLogo } from "@components/marketing/CaseStudyLogo";
-import { LogoLink } from "@components/marketing/LogoLink";
+import { Footer } from "@components/footer";
+import { PrimitivesHeader } from "@components/primitives-header";
+import { PrimitivesMobileMenu } from "@components/primitives-mobile-menu";
+import { CaseStudyLogo } from "@components/marketing/case-study-logo";
+import { LogoLink } from "@components/marketing/logo-link";
 import { AccessibleIcon } from "radix-ui";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import {
@@ -38,16 +38,9 @@ export default function CaseStudy() {
 						<Heading size="8" mb="2" align="center">
 							Case studies
 						</Heading>
-						<Text
-							align="center"
-							size="4"
-							mb="3"
-							as="p"
-							style={{ maxWidth: 480 }}
-							color="gray"
-						>
-							Learn how teams behind everyone’s favorite products use Radix to
-							save time, boost quality, and set the bar for accessibility.
+						<Text align="center" size="4" mb="3" as="p" style={{ maxWidth: 480 }} color="gray">
+							Learn how teams behind everyone’s favorite products use Radix to save time, boost
+							quality, and set the bar for accessibility.
 						</Text>
 					</Flex>
 					<Grid

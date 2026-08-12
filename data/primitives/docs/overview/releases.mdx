@@ -7,6 +7,180 @@ metaDescription: Radix Primitives 发布及其变更日志。
 
 <Description>Radix Primitives 发布及其变更日志。</Description>
 
+## 2026年7月20日
+
+### Dialog
+
+- 修复了 Dialog 中标题或描述元素未渲染时损坏的 ARIA 引用。<PRLink id={4031} />
+
+### Slider
+
+- 修复了拖动滑块滑块穿过另一个滑块时未调用 `onValueCommit` 的错误。<PRLink id={3832} />
+
+### Toast
+
+- 修复了按下 `Escape` 时 `Toast` 移除未聚焦 Toast 的问题。<PRLink id={4005} />
+
+### Tooltip
+
+- 修复了 `Tooltip.Content` 子元素被挂载到 DOM 两次的问题。<PRLink id={4029} />
+
+### 其他更新
+
+- 修复了覆盖 `Popper.Content` 中内联动画样式的问题。<PRLink id={4046} />
+- 改进了 tree-shaking，使打包工具可以移除未使用的组件。组件部分现在标记为 `/* @__PURE__ */`，并使用具名渲染函数，而不是使用 `Component.displayName = ...` 赋值；后者此前会阻止某些打包工具执行死代码消除。<PRLink id={4038} />
+- 扩展了 `virtualRef` 属性类型，允许在弹出框组件中使用 `RefObject<Measurable | null>`。<PRLink id={4034} />
+- 修复了带有条件导出的仅开发环境检查，使开发环境警告能够从生产构建中移除。<PRLink id={4039} />
+- 添加了每个 primitive 的子路径入口点，因此可以直接导入每个 primitive，例如：`import { Accordion } from "radix-ui/accordion"` 或 `import * as Accordion from "radix-ui/accordion"`。这与根 `radix-ui` 入口点提供的命名空间导出保持一致。<PRLink id={4020} />
+- 修复了以下问题：在 `<form>` 内以编程方式更新 `Checkbox`、`Switch` 或 `RadioGroup` 的值（例如“全选”控件）时，隐藏的冒泡输入框会分派一个 `click` 事件，并传播到祖先的 `onClick` 处理程序。<PRLink id={4028} />
+
+## 2026 年 7 月 6 日
+
+### 其他更新
+
+- 为 Navigation Menu 项目指示器的 translate 值添加了 CSS 自定义属性。
+- 修复了 Dismissable Layer 中的一个错误：在外部点击时，背景中的嵌套弹出层会导致所有层关闭。<PRLink id={3987} />
+- 修复了 `Form.Message`、`Form.Control`、`Form.Label` 和 `Form.ValidityState` 在 `Form.Field` 组件外部渲染时出现运行时错误的问题。<PRLink id={3992} />
+- 修复了表单控件组件中的一个错误，确保关联的表单被重置时其值也会更新。此问题影响 `RadioGroup`、`Slider`、`Select` 和 `Switch`。<PRLink id={3958} />
+- 修复了菜单项目、选项卡触发器、工具栏链接和选择项目拦截来自可聚焦后代元素的 `Space`／`Enter` 按键的问题。<PRLink id={3999} />
+- 修复了调用不带参数的事件处理程序会抛出错误、导致后续事件处理程序无法调用的问题。此问题影响所有接受带有内部实现的事件处理程序的组件。<PRLink id={4001} />
+- 修复了 Context Menu 中的一个错误，确保菜单在打开状态下重新触发时，能够根据最新的指针位置正确重新锚定。<PRLink id={4003} />
+- 修复了 React 19.2 中过时的 `onEscapeKeyDown`／`onDismiss` 处理程序问题。<PRLink id={4015} />
+- 修复了 Roving Focus Group 中的项目在 Focus Scope 组件内挂载时不会自动获得焦点的问题。<PRLink id={4002} />
+- 修复了 Dismissable Layer 中源自 [React 的 `useEffectEvent` 错误](https://github.com/react/react/pull/34831) 的回归问题。<PRLink id={4015} />
+- 修复了移除角落后，`--radix-scroll-area-corner-width` 和 `--radix-scroll-area-corner-height` 不会重置为 `0` 的问题。此前这些值会一直保留，使剩余的滚动条上永久出现间隙。<PRLink id={4009} />
+- 修复了 Slider 中的一个错误：当当前值不在步进网格上时，使用键盘进行步进会跳过一个有效值。现在，步进会沿移动方向对齐到下一个符合步进的值，与原生 `<input type="range">` 的行为一致。<PRLink id={4006} />
+
+## 2026年6月30日
+
+- 在卸载 `Toast` 组件时清除了关闭计时器，以防止内存泄漏和测试环境中的错误。<PRLink id={3794} />
+- 修复了由不稳定的组合 ref 回调引用导致的 React 19 无限重新渲染循环。<PRLink id={3967} /> <PRLink id={3968} />
+- 移除了从生成的声明文件中对全局 `React.CSSProperties` 的扩展。<PRLink id={3983} />
+
+## 2026 年 6 月 6 日
+
+此版本引入了新的组合 API、受控的 Context Menu，以及针对各个原语的大量错误修复和性能改进。
+
+### Context Menu
+
+新增了对 [`ContextMenu.Root`](../components/context-menu#root) 上受控 `open` 属性的支持。该属性用于读取打开状态并以编程方式关闭菜单。我们不建议以编程方式打开菜单，因为打开菜单需要依赖用户交互，才能正确定位菜单。
+
+```tsx
+function ControlledContextMenu() {
+	const [open, setOpen] = React.useState(false);
+	return (
+		<ContextMenu.Root open={open} onOpenChange={setOpen}>
+			<ContextMenu.Trigger>Open</ContextMenu.Trigger>
+			<ContextMenu.Content>
+				<button type="button" onClick={() => setOpen(false)}>
+					Close me
+				</button>
+				<ContextMenu.Item>Item 1</ContextMenu.Item>
+				<ContextMenu.Item>Item 2</ContextMenu.Item>
+			</ContextMenu.Content>
+		</ContextMenu.Root>
+	);
+}
+```
+
+此外，我们修复了一个错误：在长按触摸事件中重新打开后，子菜单仍保持展开状态。
+
+### 新的不稳定组合部件
+
+现在，多个表单控件原语会公开其之前内部使用的组合，因此你可以直接访问并重新组合它们为表单提交而渲染的视觉隐藏输入。每个组件仍会默认渲染这些部件，新部件则以 `unstable_` 前缀导出。
+
+- **Radio Group** — `unstable_ItemProvider`、`unstable_ItemTrigger` 和 `unstable_ItemBubbleInput`
+- **Select** — `unstable_Provider` 和 `unstable_BubbleInput`
+- **Slider** — `unstable_ThumbProvider`、`unstable_ThumbTrigger` 和 `unstable_BubbleInput`
+- **Switch** — `unstable_Provider`、`unstable_Trigger` 和 `unstable_BubbleInput`
+
+```tsx
+import { Switch } from "radix-ui";
+
+function ExampleSwitch() {
+	return (
+		<Switch.unstable_Provider>
+			<Switch.unstable_Trigger>
+				<Switch.Thumb />
+			</Switch.unstable_Trigger>
+			{/* the hidden input is now exposed and can be omitted if not needed */}
+			<Switch.unstable_BubbleInput />
+		</Switch.unstable_Provider>
+	);
+}
+```
+
+### Select
+
+- 新增了对基于 presence 的退出动画的支持。
+- 修复了气泡隐藏输入在未选择任何值时提交空字符串的问题。
+- 修复了在打开的 shadow DOM 中渲染时，触摸滚动其内容后 Select 意外关闭的问题。
+- 修复了 `Select.Value` 同时与 `asChild` 和占位符一起使用时记录无效属性错误的问题。
+
+### Slider
+
+- 新增了对滑块拇指非键盘交互的 `focusVisible` 支持，以便配合程序化焦点管理，逐步启用使用 `:focus-visible` 的样式。
+- 修复了 `step` 值过小时拇指无响应的问题。
+- 修复了可滚动上下文中滑块的焦点问题。
+
+### Slot
+
+- 新增了通过渲染属性支持嵌套的 `Slottable` 项目。这允许包裹插槽元素，同时仍将 Slot 属性和引用合并到该元素上。
+- 修复了 React 19 中由 `Slot` 在每次渲染时创建新的引用回调而导致的无限重新渲染循环。
+- 改进了无效插槽子元素的错误消息。
+
+### Dialog
+
+- 修复了 Dialog 内 HTML 输入框在 iOS 上无法进行文本选择和编辑的问题。
+- 修复了关闭的 Dialog 中导致指针事件被禁用的问题。
+
+### 一次性密码字段
+
+- 修复了在不支持旧版 `"Text"` 剪贴板格式的环境中粘贴的问题，现在会将粘贴的值作为 `"text/plain"` 读取。
+- 修复了 React 19.2 及更高版本中的焦点管理问题。
+- 确保超出字段长度的粘贴值会被截断。
+
+### Tooltip
+
+- 修复了事件目标为非 Node 实体时的运行时错误。
+- 修复了 `skipDelayDuration={0}` 无法按预期工作的问题。之前，在触发器之间移动时，打开延迟仍可能被跳过。
+
+### 其他更新
+
+- 为 [Dropdown Menu](../components/dropdown-menu#subcontent)、[Context Menu](../components/context-menu#subcontent) 和 [Menubar](../components/menubar#subcontent) 的 `SubContent` 部件新增了 `align` 属性，用于控制子菜单相对于其锚点项目出现的方向。
+- 为 [`Toast.Provider`](../components/toast#provider) 新增了 `announcerContainer` 属性，以便你指定 toast 通知播报所使用的容器。
+- 在 Popper 锚点元素上公开了 `data-side` 和 `data-align` 属性。
+- 为 `Menu.SubContent` 新增了 `align` 属性。
+- 修复了 Scroll Area 滚动条缺少 `data-state` 属性的问题。
+- 修复了包含大量 popper 实例的页面出现“Maximum update depth exceeded”错误的问题，以及 React 19 中 `Presence` 出现的类似问题。
+- 现在使用 React 内置的 `useSyncExternalStore`（React 18 及更高版本），而不再使用仅限 CJS 的 shim。此前，在导入某些组件时，该 shim 会导致仅使用 ESM 的浏览器 bundle 崩溃。
+- 修复了触发器通过 `aria-controls` 引用不存在元素的问题，该问题发生在其内容从 DOM 中移除时 <PRLink id={3243} />。
+- 通过缓存共享的防焦点陷阱保护对并，仅在其边缘位置发生变化时写入 DOM，提升了打开 overlay 时的防焦点陷阱性能。
+- 为导致 RSC 中出现错误的模块添加了缺失的 `use client` 指令。
+
+## 2025 年 8 月 13 日
+
+### 一次性密码字段
+
+- 修复了 `Root` 组件被禁用时所有输入元素未被禁用的问题。
+- 修复了 iOS Chrome 自动完成的问题 <PRLink id={3641} />。
+
+### 其他更新
+
+- 修复了导致无限渲染循环的 Popper 问题。
+- 确保当关键帧包含可转义字符时，能够正确处理 `animationend` 事件 <PRLink id={2763} />。
+- 修复了 React 19 中 Slot 组件与延迟加载 React 组件的交互问题。对于延迟加载的组件实例，现在会使用生成的 promise 来渲染所需的组件。
+- 修复了多个 Toast 可访问性问题，包括从可聚焦元素中移除 `aria-hidden`、从列表项元素中移除 `role=status`，以及移除冗余的默认 `aria-atomic`。
+- 为内部上下文对象添加了 `displayName`，以改进调试。
+
+## 2025年5月20日
+
+- 依赖项维护版本，不包含面向用户的 API 更改。
+
+## 2025年5月6日
+
+- 依赖项维护版本，不包含面向用户的 API 变更。
+
 ## 2025年5月5日
 
 本次发布介绍了一种全新的预览原语：[`PasswordToggleField`](../components/password-toggle-field)。
@@ -40,8 +214,8 @@ export function PasswordField() {
 
 ### 其他更新
 
-- 为复选框添加不稳定的 `Provider`、`Trigger` 和 `BubbleInput` 部件 ([#3459](https://github.com/radix-ui/primitives/pull/3459))
-- 更新默认输入类型为 `text` 并传递给基础输入元素 ([#3510](https://github.com/radix-ui/primitives/pull/3510))
+- 为复选框添加不稳定的 `Provider`、`Trigger` 和 `BubbleInput` 部件（[#3459](https://github.com/radix-ui/primitives/pull/3459)）
+- 更新默认输入类型为 `text` 并传递给基础输入元素（[#3510](https://github.com/radix-ui/primitives/pull/3510)）。
 
 ## 2025年4月22日
 
@@ -86,7 +260,7 @@ export function Verify() {
 ### 其他更新
 
 - 所有内部气泡输入的表单控件现在默认使用 Radix `Primitive` 组件。这将允许我们在未来的版本中公开这些组件，以便用户能够更好地控制此行为。
-- 对 `useControllableState` 进行小幅改进，以增强性能，减少错误的发生，并在误用时记录警告
+- 对 `useControllableState` 进行小幅改进，以增强性能，减少错误的发生，并在误用时记录警告】【。
 
 ## 2025年4月8日
 
@@ -115,7 +289,7 @@ export function Verify() {
   - 弹出框
   - 选择
   - 吐司
-  - 工具提示
+  - 工具提示。
 
 ## 2024年10月1日
 
@@ -129,7 +303,7 @@ export function Verify() {
 
 <PackageRelease name="Checkbox" version="1.1.2" />
 
-- 修复无法预计更改无控复选框" 的故障 <PRLink id={2135} />
+- 修复无法预计更改无控复选框” 的故障 <PRLink id={2135} />
 - 将 `form` 属性转发到气泡输入元素，以修复非父表单提交 <PRLink id={3161} />
 
 <PackageRelease name="Dialog" version="1.1.2" />
@@ -178,7 +352,7 @@ export function Verify() {
 
 <PackageRelease name="Portal" version="1.1.1" />
 
-- 向 `package.json` 添加一个缺失的内部实用程序。提供 Portal 部件的相应包也进行了补丁更新。 <PRLink id={2966} />
+- 向 `package.json` 添加一个缺失的内部实用程序。提供 Portal 部件的相应包也进行了补丁更新。 <PRLink id={2966} />。
 
 ## 2024年6月19日
 
@@ -358,7 +532,7 @@ export function Verify() {
 
 <PackageRelease name="Form" version="0.0.2" 预览 />
 
-- 新原语 <PRLink id={1998} />
+- 新原语 <PRLink id={1998} />。
 
 ## 2023年2月24日
 
@@ -442,7 +616,7 @@ export function Verify() {
 
 <PackageRelease name="Select" version="1.1.2" />
 
-- 修复FireFox运行Cypress时的无效 `pointerId` <PRLink id={1753} />
+- 修复FireFox运行Cypress时的无效 `pointerId` <PRLink id={1753} />。
 
 ## 2022年10月17日
 
@@ -545,7 +719,7 @@ export function Verify() {
 - **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1429} />
 - **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
 - **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
-- 修复React 18中本地上下文菜单出现的问题 <PRLink id={1378} />
+- 修复 React 18 中本地上下文菜单出现的问题 <PRLink id={1378} />
 - 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
 - 添加 `data-state` 属性到 `Trigger` 部件 <PRLink id={1455} />
 - 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
@@ -564,7 +738,7 @@ export function Verify() {
 - **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
 - **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
 - 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
-- 防止Escape键在Firefox和Safari中退出全屏模式 <PRLink id={1423} />
+- 防止 Escape 键在 Firefox 和 Safari 中退出全屏模式 <PRLink id={1423} />
 - 在 `Content` 部件上添加 `collisionBoundary`、`arrowPadding`、`sticky`、`hideWhenDetached` 属性 <PRLink id={1531} />
 
 <PackageRelease name="Hover Card" version="1.0.0" 主要 />
@@ -604,9 +778,9 @@ export function Verify() {
 - **\[破坏性\]** 将 `data-state` 的值从 `active|inactive` 重命名为 `checked|unchecked` <PRLink id={1388} />
 - **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1459} />
 - 修复使用 `asChild` 时定位破坏的问题 <PRLink id={1245} />
-- 改善 `Select.Content` 具有填充时的触发器/内容对齐 <PRLink id={1312} />
-- 修复当项目少于5个时触发器/内容的对齐 <PRLink id={1355} />
-- 在未提供值时支持触发器/内容的对齐 <PRLink id={1379} />
+- 改善 `Select.Content` 具有填充时的触发器／内容对齐 <PRLink id={1312} />
+- 修复当项目少于 5 个时触发器／内容的对齐 <PRLink id={1355} />
+- 在未提供值时支持触发器／内容的对齐 <PRLink id={1379} />
 - 添加 `data-highlighted` 属性以支持样式 <PRLink id={1388} />
 - 通过在 `Select.Value` 上使用 `placeholder` 属性支持占位符 <PRLink id={1384} />
 - 解决与基础本地选择器的值不匹配问题 <PRLink id={1421} />
@@ -622,20 +796,20 @@ export function Verify() {
 <PackageRelease name="Toast" version="1.0.0" 主要 />
 
 - **\[破坏性\]** 默认的吐司顺序已更改，它们现在从旧到新自上而下呈现 <PRLink id={1469} />
-- 改善使用 `asChild` 时的TypeScript类型 <PRLink id={1300} />
-- 修复更新React的 `key` 属性时吐司重排序的问题 <PRLink id={1283} />
+- 改善使用 `asChild` 时的 TypeScript 类型 <PRLink id={1300} />
+- 修复更新 React 的 `key` 属性时吐司重排序的问题 <PRLink id={1283} />
 - 改善与动画库的兼容性 <PRLink id={1468} />
 
 <PackageRelease name="Tooltip" version="1.0.0" 主要 />
 
 - **\[破坏性\]** 添加新的 `Portal` 部件。为避免回归，使用该部件可以实现端口行为。请注意，不再管理 `z-index`，因此您可以完全控制分层。 <PRLink id={1427} />
-- **\[破坏性\]** 默认情况下，`Tooltip.Content`将在悬停时保持打开（符合WCAG 2.1悬停内容要求）。可以提供 `disableHoverableContent` 到 `Tooltip.Provider`以恢复之前的行为 <PRLink id={1490} />
+- **\[破坏性\]** 默认情况下，`Tooltip.Content` 将在悬停时保持打开（符合 WCAG 2.1 悬停内容要求）。可以提供 `disableHoverableContent` 到 `Tooltip.Provider` 以恢复之前的行为 <PRLink id={1490} />
 - **\[破坏性\]** `Tooltip.Content` 的 `side` 现在默认为 `top` <PRLink id={1490} />
 - **\[破坏性\]** `Tooltip.Provider` 现在是必需的，您必须包装您的应用以避免回归。 <PRLink id={1490} />
 - **\[破坏性\]** 移除 `Arrow` 部件上的 `offset` <PRLink id={1531} />
 - **\[破坏性\]** 将 `collisionTolerance` 重命名为 `collisionPadding`，并在 `Content` 部件上接受数字或填充对象 <PRLink id={1531} />
 - 改善工具提示与其他原语的分层 <PRLink id={1314} />
-- 修复当转换/动画触发器时工具提示关闭的问题 <PRLink id={937} />
+- 修复当转换／动画触发器时工具提示关闭的问题 <PRLink id={937} />
 
 ## 2022年2月28日
 
@@ -750,22 +924,22 @@ export function Verify() {
 
 <PackageRelease name="Toggle Group" version="0.1.4" />
 
-- Remove invalid `aria-orientation` attribute on `role=group` element <PRLink id={965} />
+- 移除 `role=group` 元素上无效的 `aria-orientation` 属性 <PRLink id={965} />
 
 <PackageRelease name="Toolbar" version="0.1.4" />
 
-- Fix `asChild` TypeScript error <PRLink id={924} />
-- Remove invalid `toolbaritem` role <PRLink id={950} />
+- 修复 `asChild` 的 TypeScript 错误 <PRLink id={924} />
+- 移除无效的 `toolbaritem` 角色 <PRLink id={950} />
 
 <PackageRelease name="Tooltip" version="0.1.6" major />
 
-- **\[Breaking\]** Add new `TooltipProvider` part. You must wrap your app to avoid regressions. <PRLink id={1007} />
-- **\[Breaking\]** Remove `type=button` attribute from `Tooltip.Trigger` <PRLink id={1011} />
-- Fix tooltip activation regression <PRLink id={1035} />
+- **\[破坏性\]** 添加新的 `TooltipProvider` 部件。必须包裹您的应用，以避免回归。 <PRLink id={1007} />
+- **\[破坏性\]** 从 `Tooltip.Trigger` 中移除 `type=button` 属性 <PRLink id={1011} />
+- 修复工具提示激活回归问题 <PRLink id={1035} />
 
 <PackageRelease name="Slot" version="0.1.2" />
 
-- Fix `key` warnings <PRLink id={1015} />
+- 修复 `key` 警告 <PRLink id={1015} />
 
 <Separator mt="7" />
 
@@ -1084,7 +1258,7 @@ export function Verify() {
 
 - 考虑不可见项目 <PRLink id={618} />
 - **\[破坏性\]** 移除 `anchorRef` 属性 <PRLink id={580} />
-- 防止选择空间键时页面滚动 <PRLink id={626} />
+- 防止选择空格键时页面滚动 <PRLink id={626} />
 
 <PackageRelease name="Hover Card" version="0.0.1" />
 
@@ -1258,11 +1432,11 @@ export function Verify() {
 
 <PackageRelease name="Dialog" version="0.0.3" />
 
-- 修复在tabbing out时会关闭的回归 <PRLink id={403} />
+- 修复在切换焦点离开时会关闭的回归 <PRLink id={403} />
 
 <PackageRelease name="Dropdown Menu" version="0.0.3" />
 
-- 修复坏掉的箭头键导航 <PRLink id={404} />
+- 修复损坏的箭头键导航 <PRLink id={404} />
 
 <Separator mt="7" />
 

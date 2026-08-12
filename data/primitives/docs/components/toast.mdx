@@ -85,6 +85,17 @@ export default () => (
 			description:
 				"滑动手势必须移动的距离（像素），才会触发关闭。",
 		},
+		{
+			name: "announcerContainer",
+			type: "Element | DocumentFragment",
+			typeSimple: "Element",
+			default: "document.body",
+			description: (
+				<span>
+					一个可选的容器，提示播报应附加到此容器中。当与焦点陷阱或使其他元素变为非活动状态的模态对话框一起使用时，这会很有用。
+				</span>
+			),
+		},
 	]}
 />
 
@@ -620,7 +631,7 @@ export default () => (
 			),
 		},
 	]}
-/>
+/>。
 
 ## 自定义 API
 

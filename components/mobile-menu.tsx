@@ -4,15 +4,10 @@ import { RemoveScroll } from "react-remove-scroll";
 import { Slot } from "radix-ui";
 import { Box, Portal, Theme } from "@radix-ui/themes";
 import { MobileMenuContext, useMobileMenuContext } from "./mobile-menu-context";
-import { useRouter } from "next/router";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Memoizer } from "./memoizer";
 
-export const MobileMenuProvider = ({
-	children,
-}: {
-	children: React.ReactNode;
-}) => {
+export const MobileMenuProvider = ({ children }: { children: React.ReactNode }) => {
 	const [open, setOpen] = React.useState(false);
 	const menuRootRef = React.useRef<HTMLDivElement>(null);
 	React.useEffect(() => {
@@ -74,14 +69,8 @@ export const MobileMenu = ({ children }: MobileMenuProps) => {
 function MobileMenuCloserApp() {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
-	const navKey =
-		(pathname ?? "") + (searchParams ? "?" + searchParams.toString() : "");
+	const navKey = (pathname ?? "") + (searchParams ? "?" + searchParams.toString() : "");
 	return <MobileMenuCloser navKey={navKey} />;
-}
-
-function MobileMenuCloserPages() {
-	const router = useRouter();
-	return <MobileMenuCloser navKey={router.asPath} />;
 }
 
 function MobileMenuCloser({ navKey }: { navKey: string }) {

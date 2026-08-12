@@ -60,6 +60,27 @@ function Button({ asChild, children, leftElement, rightElement, ...props }) {
 }
 ```
 
+### 包装插槽元素
+
+通过 `child` 属性将子元素传递给 `Slottable`，并提供一个渲染函数，以便将插槽元素包装在额外的标记中，同时 `Slot` 仍会将其属性和 refs 合并到子元素上。
+
+```jsx
+// your-button.jsx
+import * as React from "react";
+import { Slot } from "radix-ui";
+
+function Button({ asChild, children, ...props }) {
+	const Comp = asChild ? Slot.Root : "button";
+	return (
+		<Comp {...props}>
+			<Slot.Slottable child={children}>
+				{(child) => <span className="ButtonInner">{child}</span>}
+			</Slot.Slottable>
+		</Comp>
+	);
+}
+```
+
 ### 用法
 
 ```jsx
@@ -92,5 +113,22 @@ export default () => (
 	>
 		<button onClick={(event) => event.preventDefault()} />
 	</Slot.Root>
+);
+```
+
+### 类型化插槽
+
+`Slot.createSlot` 返回一个作用域限定为您传入的名称的 `Slot` 组件，该名称用于其错误消息。它接受类型参数，以指定插槽渲染的元素及其接受的属性，从而让使用者获得准确的类型。`Slot.SlotProps` 接受相同的类型参数。
+
+```tsx
+import * as React from "react";
+import { Slot } from "radix-ui";
+
+type ButtonProps = React.ComponentPropsWithoutRef<"button"> & {
+	variant?: "solid" | "ghost";
+};
+
+const ButtonSlot = Slot.createSlot<HTMLButtonElement, ButtonProps>(
+	"Button.Slot",
 );
 ```

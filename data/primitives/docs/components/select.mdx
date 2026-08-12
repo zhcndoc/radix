@@ -270,6 +270,16 @@ export default () => (
 <PropsTable
 	data={[
 		{
+			name: "forceMount",
+			type: "boolean",
+			description: (
+				<span>
+					用于在需要更多控制时强制挂载。在使用 React 动画库控制动画时很有用。如果在此部分使用，
+					则会由 <Code>Select.Content</Code> 继承。
+				</span>
+			),
+		},
+		{
 			name: "container",
 			type: "HTMLElement",
 			default: "document.body",
@@ -296,6 +306,16 @@ export default () => (
 					<br />
 					阅读我们的 <a href="../guides/composition">组合</a> 指南以获取更多详情。
 				</>
+			),
+		},
+		{
+			name: "forceMount",
+			type: "boolean",
+			description: (
+				<span>
+					用于在需要更多控制时强制挂载。在使用 React 动画库控制动画时很有用。它继承自{" "}
+					<Code>Select.Portal</Code>。
+				</span>
 			),
 		},
 		{
@@ -1089,6 +1109,32 @@ export default () => (
 	background: rgba(0, 0, 0, 0.3);
 	border-radius: 3px;
 }
+```
+
+### 解耦隐藏输入
+
+默认情况下，`Select.Root` 会渲染一个视觉上隐藏的 `select`，用于表单提交。要重新组合、移动或排除该元素，您可以改用其更底层的部分来构建 select。
+
+> **重要：** 这些部分不稳定，并带有 `unstable_` 前缀，因此其 API 可能会在未来版本中发生变化。
+
+- `Select.unstable_Provider` 提供 select 状态，并接受与表单相关的属性和状态属性（`name`、`value`、`defaultValue`、`onValueChange` 等）。
+- `Select.unstable_BubbleInput` 是 `Select.Root` 默认渲染的视觉上隐藏的 `select`。当您不需要表单提交时，可以省略它。
+
+```jsx
+import { Select } from "radix-ui";
+
+export default () => (
+	<Select.unstable_Provider name="fruit">
+		<Select.Trigger>
+			<Select.Value placeholder="Pick an option" />
+			<Select.Icon />
+		</Select.Trigger>
+		<Select.Portal>
+			<Select.Content>{/* Your content */}</Select.Content>
+		</Select.Portal>
+		<Select.unstable_BubbleInput />
+	</Select.unstable_Provider>
+);
 ```
 
 ## 可访问性

@@ -1,10 +1,10 @@
 import { getAllFrontmatter } from "@utils/mdx";
 import { getMdxBySlug } from "@utils/mdx";
-import { MdxContent } from "@components/MdxContent";
+import { MdxContent } from "@components/mdx-content";
 import { Box, Flex, Text } from "@radix-ui/themes";
-import { EditPageLink } from "@components/EditPageLink";
-import { DocsPageWrapper } from "@components/DocsPageWrapper";
-import { QuickNav } from "@components/QuickNav";
+import { EditPageLink } from "@components/edit-page-link";
+import { DocsPageWrapper } from "@components/docs-page-wrapper";
+import { QuickNav } from "@components/quick-nav";
 import { baseMetadata } from "@utils/metadata";
 import type { Metadata } from "next";
 
@@ -12,18 +12,14 @@ interface PageProps {
 	params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-	params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const { frontmatter } = await getMdxBySlug(BLOG_BASE, slug);
 	return {
 		...baseMetadata,
 		title: `${frontmatter.metaTitle} – Radix UI`,
 		description: frontmatter.metaDescription,
-		openGraph: frontmatter.metaImage
-			? { images: [frontmatter.metaImage] }
-			: undefined,
+		openGraph: frontmatter.metaImage ? { images: [frontmatter.metaImage] } : undefined,
 	};
 }
 

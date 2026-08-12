@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import type { generateRadixColors } from "@components/generateRadixColors";
+import type { generateRadixColors } from "@components/generate-radix-colors";
 import type { getColorName } from "./utils";
 
 export const ColorThemeContext = React.createContext<{
@@ -21,9 +21,7 @@ ColorThemeContext.displayName = "ColorThemeContext";
 export function useColorThemeContext() {
 	const context = React.use(ColorThemeContext);
 	if (!context) {
-		throw new Error(
-			"useColorThemeContext must be used within a ColorThemeProvider",
-		);
+		throw new Error("useColorThemeContext must be used within a ColorThemeProvider");
 	}
 	return context;
 }

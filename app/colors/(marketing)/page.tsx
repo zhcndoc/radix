@@ -12,10 +12,10 @@ import {
 	ScrollArea,
 	Button,
 } from "@radix-ui/themes";
-import { Footer } from "@components/Footer";
-import { ColorsHeader } from "@components/ColorsHeader";
-import { ColorsMarketingButton } from "@components/ColorsMarketingButton";
-import { SerifHeading } from "@components/SerifHeading";
+import { Footer } from "@components/footer";
+import { ColorsHeader } from "@components/colors-header";
+import { ColorsMarketingButton } from "@components/colors-marketing-button";
+import { SerifHeading } from "@components/serif-heading";
 import {
 	DesktopIcon,
 	EyeOpenIcon,
@@ -24,9 +24,9 @@ import {
 	MoonIcon,
 	TransparencyGridIcon,
 } from "@radix-ui/react-icons";
-import { Swatch } from "@components/Swatch";
-import { ColorUsageRange } from "@components/ColorUsageRange";
-import { ColorStepLabel } from "@components/ColorStepLabel";
+import { Swatch } from "@components/swatch";
+import { ColorUsageRange } from "@components/color-usage-range";
+import { ColorStepLabel } from "@components/color-step-label";
 import styles from "./page.module.css";
 
 export default function ColorsHome() {
@@ -49,8 +49,7 @@ export default function ColorsHome() {
 					right: 0,
 					height: 480,
 					opacity: 0.6,
-					background:
-						"linear-gradient(to bottom, var(--crimson-4), var(--amber-2), transparent)",
+					background: "linear-gradient(to bottom, var(--crimson-4), var(--amber-2), transparent)",
 				}}
 			/>
 			<ColorsHeader ghost />
@@ -104,18 +103,10 @@ export default function ColorsHome() {
 						<div className={styles.ColorsHomeGrid}>
 							<Box />
 							<ColorUsageRange gridColumn="2 / 4">背景</ColorUsageRange>
-							<ColorUsageRange gridColumn="4 / 7">
-								交互组件
-							</ColorUsageRange>
-							<ColorUsageRange gridColumn="7 / 10">
-								边界和分隔符
-							</ColorUsageRange>
-							<ColorUsageRange gridColumn="10 / 12">
-								纯色
-							</ColorUsageRange>
-							<ColorUsageRange gridColumn="12 / 14">
-								无障碍文本
-							</ColorUsageRange>
+							<ColorUsageRange gridColumn="4 / 7">交互组件</ColorUsageRange>
+							<ColorUsageRange gridColumn="7 / 10">边界和分隔符</ColorUsageRange>
+							<ColorUsageRange gridColumn="10 / 12">纯色</ColorUsageRange>
+							<ColorUsageRange gridColumn="12 / 14">无障碍文本</ColorUsageRange>
 
 							<Box />
 							<ColorStepLabel>1</ColorStepLabel>
@@ -171,11 +162,7 @@ export default function ColorsHome() {
 										{scale.charAt(0).toUpperCase() + scale.slice(1)}
 									</Text>
 									{Array.from({ length: 12 }, (_, i) => i + 1).map((step) => (
-										<Swatch
-											key={step}
-											scale={scale}
-											step={step.toString() as "1"}
-										/>
+										<Swatch key={step} scale={scale} step={step.toString() as "1"} />
 									))}
 								</React.Fragment>
 							))}
@@ -200,11 +187,7 @@ export default function ColorsHome() {
 										{scale.charAt(0).toUpperCase() + scale.slice(1)}
 									</Text>
 									{Array.from({ length: 12 }, (_, i) => i + 1).map((step) => (
-										<Swatch
-											key={step}
-											scale={scale}
-											step={step.toString() as "1"}
-										/>
+										<Swatch key={step} scale={scale} step={step.toString() as "1"} />
 									))}
 								</React.Fragment>
 							))}
@@ -216,10 +199,7 @@ export default function ColorsHome() {
 			<Box mx={{ initial: "5", xs: "6", sm: "7", md: "9" }}>
 				<Section size={{ initial: "2", md: "4" }}>
 					<Container>
-						<Grid
-							columns={{ sm: "3" }}
-							gap={{ initial: "7", sm: "6", md: "9" }}
-						>
+						<Grid columns={{ sm: "3" }} gap={{ initial: "7", sm: "6", md: "9" }}>
 							<Box style={{ maxWidth: 540 }}>
 								<Flex mb="3">
 									<EyeOpenIcon width="30" height="30" />

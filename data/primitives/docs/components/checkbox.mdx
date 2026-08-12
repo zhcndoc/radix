@@ -212,6 +212,29 @@ export default () => {
 };
 ```
 
+### 解耦隐藏输入
+
+默认情况下，`Checkbox.Root` 会渲染一个视觉上隐藏的 `input`，用于表单提交。要重新组合、移动或排除该输入，您可以改用其较低层级的部分来构建复选框。
+
+> **重要：** 这些部分尚不稳定，并以 `unstable_` 为前缀，因此其 API 可能会在未来版本中发生变化。
+
+- `Checkbox.unstable_Provider` 提供复选框状态，并接受与表单相关的属性（`name`、`value`、`checked`、`defaultChecked`、`required`、`disabled`、`onCheckedChange`）。
+- `Checkbox.unstable_Trigger` 是包裹 `Checkbox.Indicator` 的交互式按钮。
+- `Checkbox.unstable_BubbleInput` 是 `Checkbox.Root` 默认渲染的视觉上隐藏的输入。不需要表单提交时，可以省略它。
+
+```jsx
+import { Checkbox } from "radix-ui";
+
+export default () => (
+	<Checkbox.unstable_Provider name="terms">
+		<Checkbox.unstable_Trigger>
+			<Checkbox.Indicator />
+		</Checkbox.unstable_Trigger>
+		<Checkbox.unstable_BubbleInput />
+	</Checkbox.unstable_Provider>
+);
+```
+
 ## 可访问性
 
 遵循 [三态复选框 WAI-ARIA 设计模式](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox)。
